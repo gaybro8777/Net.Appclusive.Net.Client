@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4a99612f-19b3-4c88-a552-ccbb9bf27a2a" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="547716b7-b918-4c67-a86a-aacb2f90e2cd" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
   <MetadataSources>
     <MetadataSource Address="http://appclusive/api/Core" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="1e918142-e03c-4971-bf3b-90274b83007f" SourceId="1" SourceUrl="http://appclusive/api/Core" />
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="bef5423d-001b-4c00-9358-360504640343" SourceId="1" SourceUrl="http://appclusive/api/Core" />
   </Metadata>
   <Extensions />
   <Parameters>

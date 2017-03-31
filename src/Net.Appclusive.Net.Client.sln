@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.Api.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.Net.Client.Tests", "Net.Appclusive.Net.Client.Tests\Net.Appclusive.Net.Client.Tests.csproj", "{EA6D07B3-346D-4734-B3AA-2A8965B2A6D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.Public", "..\..\Net.Appclusive.Public\src\Net.Appclusive.Public\Net.Appclusive.Public.csproj", "{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{EA6D07B3-346D-4734-B3AA-2A8965B2A6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA6D07B3-346D-4734-B3AA-2A8965B2A6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA6D07B3-346D-4734-B3AA-2A8965B2A6D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

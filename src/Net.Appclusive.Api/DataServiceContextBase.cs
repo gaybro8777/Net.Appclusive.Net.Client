@@ -178,7 +178,7 @@ namespace Net.Appclusive.Api
         public DataServiceContextBase(Uri serviceRoot)
             : base(serviceRoot)
         {
-            Format.UseJson();
+            // N/A
         }
 
         //
@@ -204,7 +204,7 @@ namespace Net.Appclusive.Api
         public DataServiceContextBase(Uri serviceRoot, DataServiceProtocolVersion maxProtocolVersion)
             : base(serviceRoot, maxProtocolVersion)
         {
-            Format.UseJson();
+            // N/A
         }
 
         #endregion Constructors from DataServiceContext

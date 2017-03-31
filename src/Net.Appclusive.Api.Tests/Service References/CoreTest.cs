@@ -17,6 +17,7 @@
 using System;
 using System.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Net.Appclusive.Public.Domain.Identity;
 using Net.Appclusive.Public.Domain.Inventory;
 using Telerik.JustMock;
 
@@ -38,7 +39,7 @@ namespace Net.Appclusive.Api.Tests.Service_References
         {
             // Arrange
             var svc = new Core.Core(_serviceRoot);
-            var entity = new Item();
+            var entity = new User();
             Mock.Arrange(() => svc.AttachTo(Arg.AnyString, Arg.AnyObject)).OccursOnce();
 
             // Act
@@ -53,7 +54,7 @@ namespace Net.Appclusive.Api.Tests.Service_References
         {
             // Arrange
             var svc = new Core.Core(_serviceRoot);
-            var entity = new Item();
+            var entity = new User();
             var entitySetName = "InvalidEntitySetName";
             Mock.Arrange(() => svc.AttachTo(Arg.AnyString, Arg.AnyObject)).OccursOnce();
 

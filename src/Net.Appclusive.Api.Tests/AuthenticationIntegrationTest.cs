@@ -19,12 +19,15 @@ using System.Configuration;
 using System.Linq;
 using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Net.Appclusive.Public.Domain.Identity;
 
 namespace Net.Appclusive.Api.Tests
 {
     [TestClass]
     public class AuthenticationIntegrationTest
     {
+        private const string AUTHENTICATION_ENTITY_SET_NAME = "Authentications";
+
         private static readonly Uri _serviceRoot;
 
         static AuthenticationIntegrationTest()
@@ -51,8 +54,9 @@ namespace Net.Appclusive.Api.Tests
                     Password = "P@ssw0rd"
                 }
             };
+            svc.Format.UseJson();
 
-            Assert.IsTrue(svc.InvokeEntitySetActionWithSingleResult<bool>("Authentications", "BasicLogin", null));
+            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(AUTHENTICATION_ENTITY_SET_NAME, "BasicLogin", null));
 
             // Act
             var user = svc.Users.FirstOrDefault();
@@ -79,8 +83,9 @@ namespace Net.Appclusive.Api.Tests
                     Password = "JWT_TOKEN_HERE"
                 }
             };
+            svc.Format.UseJson();
 
-            Assert.IsTrue(svc.InvokeEntitySetActionWithSingleResult<bool>("Authentications", "BearerLogin", null));
+            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(AUTHENTICATION_ENTITY_SET_NAME, "BearerLogin", null));
 
             // Act
             var user = svc.Users.FirstOrDefault();
@@ -99,8 +104,9 @@ namespace Net.Appclusive.Api.Tests
         {
             // Arrange
             var svc = new Core.Core(_serviceRoot);
+            svc.Format.UseJson();
 
-            Assert.IsTrue(svc.InvokeEntitySetActionWithSingleResult<bool>("Authentications", "NegotiateLogin", null));
+            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(AUTHENTICATION_ENTITY_SET_NAME, "NegotiateLogin", null));
 
             // Act
             var user = svc.Users.FirstOrDefault();
@@ -127,6 +133,7 @@ namespace Net.Appclusive.Api.Tests
                     Password = "TOKEN2"
                 }
             };
+            svc.Format.UseJson();
 
             // Act
             var user = svc.Users.FirstOrDefault();
