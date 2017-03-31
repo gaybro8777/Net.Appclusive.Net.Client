@@ -42,7 +42,7 @@ namespace Net.Appclusive.Api
         private const string AUTHORIZATION_BEARER_SCHEME = "Bearer {0}";
 
         // Tenant
-        private const string DEFAULT_TENANT_HEADER_NAME = "TenantId";
+        public const string DEFAULT_TENANT_HEADER_NAME = "TenantId";
 
         // Headers
         private const string USERAGENT_HEADER_NAME = "UserAgent";
@@ -132,12 +132,8 @@ namespace Net.Appclusive.Api
 
                 var dataServiceContextFullName = definedType.FullName;
                 var definedTypeParts = dataServiceContextFullName.Split('.');
-                if (2 > definedTypeParts.Length)
-                {
-                    continue;
-                }
-
-                Contract.Assert(definedTypeParts[definedTypeParts.Length - 1] == definedTypeParts[definedTypeParts.Length - 2], $"'{dataServiceContextFullName}' must derive from DataServiceContextBase");
+                Contract.Assert(2 <= definedTypeParts.Length);
+                Contract.Assert(definedTypeParts[definedTypeParts.Length - 1] != definedTypeParts[definedTypeParts.Length - 2], $"'{dataServiceContextFullName}' must derive from DataServiceContextBase");
             }
         }
 
@@ -154,6 +150,7 @@ namespace Net.Appclusive.Api
         {
             // N/A
         }
+
         //
         // Summary:
         //     Initializes a new instance of the System.Data.Services.Client.DataServiceContext
@@ -178,12 +175,12 @@ namespace Net.Appclusive.Api
         //     client library is undefined. A Uri provided with a trailing slash is equivalent
         //     to one without such a trailing character.  With Silverlight, the serviceRoot
         //     can be a relative Uri that will be combined with System.Windows.Browser.HtmlPage.Document.DocumentUri.
-
         public DataServiceContextBase(Uri serviceRoot)
             : base(serviceRoot)
         {
-            // N/A
+            Format.UseJson();
         }
+
         //
         // Summary:
         //     Initializes a new instance of the System.Data.Services.Client.DataServiceContext
@@ -207,7 +204,7 @@ namespace Net.Appclusive.Api
         public DataServiceContextBase(Uri serviceRoot, DataServiceProtocolVersion maxProtocolVersion)
             : base(serviceRoot, maxProtocolVersion)
         {
-            // N/A
+            Format.UseJson();
         }
 
         #endregion Constructors from DataServiceContext
@@ -355,7 +352,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntitySetActionWithSingleResult(string entitySetName, string actionName, Type type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntitySetActionWithSingleResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntitySetActionWithSingleResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type);
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -366,7 +363,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntitySetActionWithSingleResult(object entity, string actionName, Type type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntitySetActionWithSingleResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntitySetActionWithSingleResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type);
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -377,7 +374,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntitySetActionWithSingleResult(string entitySetName, string actionName, object type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntitySetActionWithSingleResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntitySetActionWithSingleResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type.GetType());
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -388,7 +385,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntitySetActionWithSingleResult(object entity, string actionName, object type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntitySetActionWithSingleResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntitySetActionWithSingleResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type.GetType());
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -430,7 +427,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntitySetActionWithListResult(string entitySetName, string actionName, Type type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntitySetActionWithListResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntitySetActionWithListResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type);
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -441,7 +438,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntitySetActionWithListResult(object entity, string actionName, Type type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntitySetActionWithListResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntitySetActionWithListResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type);
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -452,7 +449,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntitySetActionWithListResult(string entitySetName, string actionName, object type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntitySetActionWithListResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntitySetActionWithListResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type.GetType());
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -463,7 +460,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntitySetActionWithListResult(object entity, string actionName, object type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntitySetActionWithListResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntitySetActionWithListResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type.GetType());
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -480,7 +477,7 @@ namespace Net.Appclusive.Api
             BodyOperationParameter[] bodyParameters;
             if (inputParameters is Hashtable)
             {
-                bodyParameters = GetBodyOperationParametersFromHashtable(inputParameters as Hashtable);
+                bodyParameters = GetBodyOperationParametersFromHashtable((Hashtable) inputParameters);
             }
             else if (inputParameters is Dictionary<string, object>)
             {
@@ -540,7 +537,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntityActionWithSingleResult(string entitySetName, long id, string actionName, Type type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntityActionWithSingleResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntityActionWithSingleResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type);
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -551,7 +548,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntityActionWithSingleResult(object entity, string actionName, Type type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntityActionWithSingleResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntityActionWithSingleResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type);
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -562,7 +559,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntityActionWithSingleResult(string entitySetName, long id, string actionName, object type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntityActionWithSingleResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntityActionWithSingleResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type.GetType());
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -573,7 +570,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntityActionWithSingleResult(object entity, string actionName, object type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntityActionWithSingleResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntityActionWithSingleResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type.GetType());
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -624,7 +621,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntityActionWithListResult(string entitySetName, long id, string actionName, Type type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntityActionWithListResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntityActionWithListResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type);
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -635,7 +632,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntityActionWithListResult(object entity, string actionName, Type type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntityActionWithListResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntityActionWithListResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type);
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -646,7 +643,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntityActionWithListResult(string entitySetName, long id, string actionName, object type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntityActionWithListResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntityActionWithListResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entitySetName");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type.GetType());
             Contract.Assert(null != genericMethod, "Cannot create generic method.");
@@ -657,7 +654,7 @@ namespace Net.Appclusive.Api
 
         public object InvokeEntityActionWithListResult(object entity, string actionName, object type, object inputParameters)
         {
-            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == "InvokeEntityActionWithListResult" && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
+            var methodInfo = GetCallerType().GetMethods().First(m => m.Name == nameof(InvokeEntityActionWithListResult) && m.IsGenericMethod && m.GetParameters()[0].Name == "entity");
             Contract.Assert(null != methodInfo, "No generic method type found.");
             var genericMethod = methodInfo.MakeGenericMethod(type.GetType());
             Contract.Assert(null != genericMethod, "Cannot create generic method.");

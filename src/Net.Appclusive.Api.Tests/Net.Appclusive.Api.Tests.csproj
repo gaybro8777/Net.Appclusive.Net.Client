@@ -139,9 +139,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.JustMock">
+      <HintPath>../JustMock/Telerik.JustMock.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>
@@ -160,11 +167,21 @@
     <Compile Include="..\CommonAssemblySettings.cs">
       <Link>Properties\CommonAssemblySettings.cs</Link>
     </Compile>
+    <Compile Include="AuthenticationIntegrationTest.cs" />
     <Compile Include="DataServiceContextBaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CoreTest.cs" />
+    <Compile Include="Service References\DiagnosticsTest.cs" />
+    <Compile Include="Service References\Northwind\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.datasvcmap</DependentUpon>
+    </Compile>
     <Compile Include="Test\TestCodeContracts.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Net.Appclusive.Api\Net.Appclusive.Api.csproj">
       <Project>{85cba151-145f-46ad-8175-e12c98a5951d}</Project>
@@ -172,7 +189,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Service References\Northwind\service.edmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceReferenceMetadataStorage Include="Service References\Northwind\">
+      <Type>datasvcmap</Type>
+    </ServiceReferenceMetadataStorage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Northwind\Reference.datasvcmap">
+      <Generator>DataServicesCoreClientGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
