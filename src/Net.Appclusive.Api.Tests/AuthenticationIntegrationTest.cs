@@ -50,7 +50,7 @@ namespace Net.Appclusive.Api.Tests
             {
                 Credentials = new NetworkCredential()
                 {
-                    UserName = System.Environment.UserName,
+                    UserName = "TestUser",
                     Password = "P@ssw0rd"
                 }
             };
