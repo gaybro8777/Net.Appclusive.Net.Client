@@ -148,6 +148,7 @@
     <Compile Include="..\CommonAssemblySettings.cs">
       <Link>Properties\CommonAssemblySettings.cs</Link>
     </Compile>
+    <Compile Include="Constants\Authentication.cs" />
     <Compile Include="ContractClassForIEditableDataServiceClientContext.cs" />
     <Compile Include="ContractClassForIOdataActionExecutor.cs" />
     <Compile Include="DataServiceContextBase.cs" />
