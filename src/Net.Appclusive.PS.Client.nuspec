@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Net.Appclusive.PS.Client</id>
+        <version>4.0.0</version>
+        <title>Net.Appclusive.PS.Client</title>
+        <authors>d-fens GmbH</authors>
+        <owners>d-fens GmbH</owners>
+		<licenseUrl>https://github.com/Appclusive/Net.Appclusive.Net.Client/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/Appclusive/Net.Appclusive.Net.Client</projectUrl>
+        <iconUrl>https://github.com/Appclusive/Net.Appclusive.Net.Client/blob/master/logo-32x32.png</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>Net.Appclusive.PS.Client
+========================
+
+PowerShell Client for the Appclusive Blueprint Modelling and Automation Engine
+
+d-fens GmbH, General-Guisan-Strasse 6, CH-6300 Zug, Switzerland
+
+## Download
+
+* Get it on [NuGet](https://www.nuget.org/packages/Net.Appclusive.PS.Client/)
+
+* Get it on [PowerShellGallery](https://www.powershellgallery.com/packages/Net.Appclusive.PS.Client)
+
+* See [Releases](https://github.com/Appclusive/Net.Appclusive.Net.Client/releases) and [Tags](https://github.com/Appclusive/Net.Appclusive.Net.Client/tags) on [GitHub](https://github.com/Appclusive/Net.Appclusive.Net.Client)
+		</description>
+        <summary>PowerShell Client for the Appclusive Blueprint Modelling and Automation Engine</summary>
+        <releaseNotes>20170404
+initial release
+		</releaseNotes>
+        <copyright>Copyright © 2017 d-fens GmbH</copyright>
+        <tags>dfch Appclusive Client PowerShell</tags>
+        <dependencies>
+          <dependency id="biz.dfch.CS.PowerShell.Commons" version="1.7.0" />
+          <dependency id="biz.dfch.CS.Commons" version="1.8.2" />
+          <dependency id="Microsoft.PowerShell.5.ReferenceAssemblies" version="1.0.0" />
+          <dependency id="Newtonsoft.Json" version="9.0.1" />
+        </dependencies>
+    </metadata>
+	<files>
+    <file src="..\LICENSE" target="tools\LICENSE" />
+    <file src="..\NOTICE" target="tools\NOTICE" />
+    <file src="..\README.md" target="tools\README.md" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\Install.ps1" target="Install.ps1" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\Import-Module.ps1" target="tools\" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.dll.config" target="tools\Net.Appclusive.PS.Client.config" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.psd1" target="tools\" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.psm1" target="tools\" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.dll" target="tools\" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.Api.dll" target="tools\" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\biz.dfch.CS.PowerShell.Commons.dll" target="tools\" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\biz.dfch.CS.Commons.dll" target="tools\" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\Newtonsoft.Json.dll" target="tools\" />
+    <file src="Net.Appclusive.PS.Client\bin\Release\Newtonsoft.Json.xml" target="tools\" />
+  </files>
+</package>
