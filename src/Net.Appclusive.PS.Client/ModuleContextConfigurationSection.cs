@@ -41,7 +41,7 @@ namespace Net.Appclusive.PS.Client
         /// <summary>
         /// Specifies the base uri of the Appclusive API
         /// </summary>
-        [ConfigurationProperty(API_BASE_URI_PROPERTY_NAME, DefaultValue = "http://abiquo.example.com/api", IsRequired = false)]
+        [ConfigurationProperty(API_BASE_URI_PROPERTY_NAME, DefaultValue = "http://appclusive.example.com/api", IsRequired = false)]
         public Uri ApiBaseUri
         {
             get { return (Uri)this[API_BASE_URI_PROPERTY_NAME]; }
