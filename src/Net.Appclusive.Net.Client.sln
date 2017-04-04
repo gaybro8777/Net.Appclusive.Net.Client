@@ -18,6 +18,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.Net.Client.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.Public", "..\..\Net.Appclusive.Public\src\Net.Appclusive.Public\Net.Appclusive.Public.csproj", "{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.PS.Client", "Net.Appclusive.PS.Client\Net.Appclusive.PS.Client.csproj", "{4D9541D7-37DF-4EC7-A7EC-32353AB3DDD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.PS.Client.Tests", "Net.Appclusive.PS.Client.Tests\Net.Appclusive.PS.Client.Tests.csproj", "{99A5053C-3744-4D94-9952-5F904218FC12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,14 @@ Global
 		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D9541D7-37DF-4EC7-A7EC-32353AB3DDD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D9541D7-37DF-4EC7-A7EC-32353AB3DDD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D9541D7-37DF-4EC7-A7EC-32353AB3DDD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D9541D7-37DF-4EC7-A7EC-32353AB3DDD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99A5053C-3744-4D94-9952-5F904218FC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99A5053C-3744-4D94-9952-5F904218FC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99A5053C-3744-4D94-9952-5F904218FC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99A5053C-3744-4D94-9952-5F904218FC12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
