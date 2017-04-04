@@ -107,6 +107,7 @@ namespace Net.Appclusive.Api.Tests
         /// 
         /// - Negotiate authentication has to be activated in 'authenticationManagerConfiguration' of Web.config
         /// </summary>
+        [Ignore]
         [TestMethod]
         public void NegotiateAuthenticationSucceeds()
         {
