@@ -149,11 +149,8 @@ namespace Net.Appclusive.Api.Tests
             // Act
             var user = svc.Users.FirstOrDefault();
 
-            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(AUTHENTICATION_ENTITY_SET_NAME, "Logout", null);
-
             // Assert
             Assert.IsNotNull(user);
-            Assert.IsTrue(logoutResult.Value);
         }
     }
 }
