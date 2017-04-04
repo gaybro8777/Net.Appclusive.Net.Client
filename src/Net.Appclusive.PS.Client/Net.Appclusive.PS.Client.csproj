@@ -169,6 +169,11 @@
     <Compile Include="Test\ITestCodeContracts.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Net.Appclusive.PS.Client.psd1" />
+    <None Include="Net.Appclusive.PS.Client.psm1" />
+    <None Include="Import-Module.ps1" />
+    <None Include="Install.ps1" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
