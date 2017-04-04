@@ -20,6 +20,7 @@ using System.Linq;
 using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Net.Appclusive.Api.Constants;
+using Net.Appclusive.Api.Core;
 using Net.Appclusive.Public.Domain.Identity;
 
 namespace Net.Appclusive.Api.Tests
@@ -62,8 +63,11 @@ namespace Net.Appclusive.Api.Tests
             // Act
             var user = svc.Users.FirstOrDefault();
 
+            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(AUTHENTICATION_ENTITY_SET_NAME, "Logout", null);
+
             // Assert
             Assert.IsNotNull(user);
+            Assert.IsTrue(logoutResult.Value);
         }
 
         /// <summary>
@@ -91,8 +95,11 @@ namespace Net.Appclusive.Api.Tests
             // Act
             var user = svc.Users.FirstOrDefault();
 
+            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(AUTHENTICATION_ENTITY_SET_NAME, "Logout", null);
+
             // Assert
             Assert.IsNotNull(user);
+            Assert.IsTrue(logoutResult.Value);
         }
 
         /// <summary>
@@ -112,8 +119,11 @@ namespace Net.Appclusive.Api.Tests
             // Act
             var user = svc.Users.FirstOrDefault();
 
+            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(AUTHENTICATION_ENTITY_SET_NAME, "Logout", null);
+
             // Assert
             Assert.IsNotNull(user);
+            Assert.IsTrue(logoutResult.Value);
         }
 
         /// <summary>
@@ -139,8 +149,11 @@ namespace Net.Appclusive.Api.Tests
             // Act
             var user = svc.Users.FirstOrDefault();
 
+            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(AUTHENTICATION_ENTITY_SET_NAME, "Logout", null);
+
             // Assert
             Assert.IsNotNull(user);
+            Assert.IsTrue(logoutResult.Value);
         }
     }
 }
