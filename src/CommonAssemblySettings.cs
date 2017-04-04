@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyDescription(".Net Client for the Appclusive Blueprint Modelling and Automation Engine")]
+[assembly: AssemblyDescription("C#/.Net and PowerShell Clients for the Appclusive Blueprint Modelling and Automation Engine")]
 [assembly: AssemblyCompany("d-fens GmbH")]
 [assembly: AssemblyCopyright("Copyright © 2013-2017 d-fens GmbH")]
 [assembly: AssemblyTrademark("The d-fens logo is a registered trademark in the European Union and/or other countries. Appclusive is a registered trademark in Switzerland and/or other countries.")]
