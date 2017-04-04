@@ -18,7 +18,6 @@ using System;
 using System.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Net.Appclusive.Public.Domain.Identity;
-using Net.Appclusive.Public.Domain.Inventory;
 using Telerik.JustMock;
 
 namespace Net.Appclusive.Api.Tests.Service_References
