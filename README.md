@@ -18,6 +18,8 @@ Coming soon
 
 * Get it on [NuGet](https://www.nuget.org/packages/Net.Appclusive.PS.Client/)
 
+* Get it on [PowerShellGallery](https://www.powershellgallery.com/packages/Net.Appclusive.PS.Client)
+
 * See [Releases](https://github.com/Appclusive/Net.Appclusive.Net.Client/releases) and [Tags](https://github.com/Appclusive/Net.Appclusive.Net.Client/tags) on [GitHub](https://github.com/Appclusive/Net.Appclusive.Net.Client)
 
 
