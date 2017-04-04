@@ -121,16 +121,8 @@
       <HintPath>..\packages\biz.dfch.CS.Commons.1.8.2\lib\biz.dfch.CS.Commons.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="biz.dfch.CS.Commons.Contracts, Version=1.8.2.19954, Culture=neutral, PublicKeyToken=ddc350d26de1d0d9, processorArchitecture=MSIL">
-      <HintPath>..\packages\biz.dfch.CS.Commons.1.8.2\lib\CodeContracts\biz.dfch.CS.Commons.Contracts.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="biz.dfch.CS.PowerShell.Commons, Version=1.7.0.20890, Culture=neutral, PublicKeyToken=ddc350d26de1d0d9, processorArchitecture=MSIL">
       <HintPath>..\packages\biz.dfch.CS.PowerShell.Commons.1.7.0\lib\biz.dfch.CS.PowerShell.Commons.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="biz.dfch.CS.PowerShell.Commons.Contracts, Version=1.7.0.20890, Culture=neutral, PublicKeyToken=ddc350d26de1d0d9, processorArchitecture=MSIL">
-      <HintPath>..\packages\biz.dfch.CS.PowerShell.Commons.1.7.0\lib\CodeContracts\biz.dfch.CS.PowerShell.Commons.Contracts.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
