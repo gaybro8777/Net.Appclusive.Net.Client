@@ -19,6 +19,7 @@ using System.Configuration;
 using System.Linq;
 using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Net.Appclusive.Api.Constants;
 using Net.Appclusive.Public.Domain.Identity;
 
 namespace Net.Appclusive.Api.Tests
@@ -79,7 +80,7 @@ namespace Net.Appclusive.Api.Tests
             {
                 Credentials = new NetworkCredential()
                 {
-                    UserName = DataServiceContextBase.AUTHORISATION_BAERER_USER_NAME,
+                    UserName = Authentication.AUTHORIZATION_BAERER_USER_NAME,
                     Password = "JWT_TOKEN_HERE"
                 }
             };
@@ -129,7 +130,7 @@ namespace Net.Appclusive.Api.Tests
             {
                 Credentials = new NetworkCredential()
                 {
-                    UserName = DataServiceContextBase.AUTHORISATION_BAERER_USER_NAME,
+                    UserName = Authentication.AUTHORIZATION_BAERER_USER_NAME,
                     Password = "TOKEN2"
                 }
             };

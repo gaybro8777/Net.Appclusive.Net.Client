@@ -59,5 +59,79 @@ namespace Net.Appclusive.PS.Client {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saving moduleContext to module variable FAILED..
+        /// </summary>
+        internal static string ImportConfiguration_ProcessRecord__SaveToModuleVariableFailed {
+            get {
+                return ResourceManager.GetString("ImportConfiguration_ProcessRecord__SaveToModuleVariableFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import configuration from &apos;{0}&apos;.
+        /// </summary>
+        internal static string ImportConfiguration_ProcessRecord__ShouldProcess {
+            get {
+                return ResourceManager.GetString("ImportConfiguration_ProcessRecord__ShouldProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: Creating ConfigurationFileMap FAILED..
+        /// </summary>
+        internal static string ModuleConfiguration_GetModuleContextConfigurationSection__FileMapCreationFailed {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_GetModuleContextConfigurationSection__FileMapCreationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: Opening Configuration FAILED due to no file..
+        /// </summary>
+        internal static string ModuleConfiguration_GetModuleContextConfigurationSection__NoConfigurationFile {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_GetModuleContextConfigurationSection__NoConfigurationFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: Opening Configuration FAILED..
+        /// </summary>
+        internal static string ModuleConfiguration_GetModuleContextConfigurationSection__OpenConfigurationFailed {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_GetModuleContextConfigurationSection__OpenConfigurationFailed" +
+                        "", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: Opening ConfigurationSection &apos;{1}&apos; FAILED..
+        /// </summary>
+        internal static string ModuleConfiguration_GetModuleContextConfigurationSection__OpenConfigurationSectionFailed {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_GetModuleContextConfigurationSection__OpenConfigurationSectio" +
+                        "nFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: The configuration file specified by the Path parameter does not exist..
+        /// </summary>
+        internal static string ModuleConfiguration_ResolveConfigurationFileInfo__FileDoesNotExist {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_ResolveConfigurationFileInfo__FileDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: The configuration file specified by the Path parameter must be a file and not a directory..
+        /// </summary>
+        internal static string ModuleConfiguration_ResolveConfigurationFileInfo__FileInfoIsDirectory {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_ResolveConfigurationFileInfo__FileInfoIsDirectory", resourceCulture);
+            }
+        }
     }
 }

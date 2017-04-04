@@ -134,6 +134,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.PowerShell.5.ReferenceAssemblies.1.0.0\lib\net4\System.Management.Automation.dll</HintPath>
@@ -150,12 +151,17 @@
     <Compile Include="..\CommonAssemblySettings.cs">
       <Link>Properties\CommonAssemblySettings.cs</Link>
     </Compile>
+    <Compile Include="Constants\Logging.cs" />
     <Compile Include="EnterServer.cs" />
+    <Compile Include="ImportConfiguration.cs" />
     <Compile Include="Messages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Messages.resx</DependentUpon>
     </Compile>
+    <Compile Include="ModuleConfiguration.cs" />
+    <Compile Include="ModuleContext.cs" />
+    <Compile Include="ModuleContextConfigurationSection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\ContractClassForITestCodeContracts.cs" />
     <Compile Include="Test\ITestCodeContracts.cs" />
@@ -172,7 +178,18 @@
     <EmbeddedResource Include="Messages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Net.Appclusive.Public\src\Net.Appclusive.Public\Net.Appclusive.Public.csproj">
+      <Project>{5ed5a163-5cbf-4a5b-913a-51bce3e1b6da}</Project>
+      <Name>Net.Appclusive.Public</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Net.Appclusive.Api\Net.Appclusive.Api.csproj">
+      <Project>{85cba151-145f-46ad-8175-e12c98a5951d}</Project>
+      <Name>Net.Appclusive.Api</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

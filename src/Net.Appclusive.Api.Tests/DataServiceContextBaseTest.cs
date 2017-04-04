@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Data.Services.Client;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Net.Appclusive.Api.Constants;
 using Net.Appclusive.Api.Tests.Northwind;
 
 namespace Net.Appclusive.Api.Tests
@@ -70,7 +71,7 @@ namespace Net.Appclusive.Api.Tests
             var result = sut.TenantHeaderName;
 
             // Assert
-            Assert.AreEqual(DataServiceContextBase.DEFAULT_TENANT_HEADER_NAME, result);
+            Assert.AreEqual(Authentication.Header.DEFAULT_TENANT_HEADER_NAME, result);
         }
 
         [TestMethod]

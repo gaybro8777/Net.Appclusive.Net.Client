@@ -6,7 +6,7 @@ $traceSource = [biz.dfch.CS.Commons.Diagnostics.Logger]::Get([Net.Appclusive.PS.
 $traceSource.TraceTransfer(0, ("[{0}] Host.InstanceId" -f $PID), $Host.InstanceId);
 
 $path = [Net.Appclusive.PS.Client.ModuleConfiguration]::ResolveConfigurationFileInfo($null)
-$moduleContextSection = [Net.Appclusive.PS.Client.ModuleConfiguration]::GetModuleContextSection($path);
+$moduleContextSection = [Net.Appclusive.PS.Client.ModuleConfiguration]::GetModuleContextConfigurationSection($path);
 [Net.Appclusive.PS.Client.ModuleConfiguration]::SetModuleContext($moduleContextSection)
 
 Set-Variable -Name $([Net.Appclusive.PS.Client.ModuleConfiguration]::MODULE_VARIABLE_NAME) -Value $([Net.Appclusive.Client.ModuleConfiguration]::Current) -Scope Global;
