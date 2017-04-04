@@ -10,6 +10,10 @@ d-fens GmbH, General-Guisan-Strasse 6, CH-6300 Zug, Switzerland
 
 ## Download
 
+### C#/.Net Client
+
+Coming soon
+
 ### PowerShell Client
 
 * Get it on [NuGet](https://www.nuget.org/packages/Net.Appclusive.PS.Client/)
