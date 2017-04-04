@@ -167,7 +167,9 @@
     <Compile Include="Test\ITestCodeContracts.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Net.Appclusive.PS.Client.psd1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
