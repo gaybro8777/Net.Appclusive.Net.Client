@@ -85,7 +85,7 @@ namespace Net.Appclusive.Api.Tests
                 Credentials = new NetworkCredential()
                 {
                     UserName = Authentication.AUTHORIZATION_BAERER_USER_NAME,
-                    Password = "JWT_TOKEN_HERE"
+                    Password = "JWT_HERE"
                 }
             };
             svc.Format.UseJson();
