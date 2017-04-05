@@ -18,7 +18,7 @@ namespace Net.Appclusive.Api.Constants
 {
     public static class Authentication
     {
-        public const string AUTHORIZATION_BAERER_USER_NAME = "[bearer@auth.appclusive.net]";
+        public const string AUTHORIZATION_BAERER_USER_NAME = "bearer@auth.appclusive.net";
         public const string AUTHORIZATION_BASIC_TEMPLATE = "Basic {0}";
         public const string AUTHORIZATION_BEARER_TEMPLATE = "Bearer {0}";
 
