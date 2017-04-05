@@ -28,8 +28,6 @@ namespace Net.Appclusive.Api.Tests
     [TestClass]
     public class AuthenticationIntegrationTest
     {
-        private const string AUTHENTICATION_ENTITY_SET_NAME = "Authentications";
-
         private static readonly Uri _serviceRoot;
 
         static AuthenticationIntegrationTest()
@@ -58,12 +56,12 @@ namespace Net.Appclusive.Api.Tests
             };
             svc.Format.UseJson();
 
-            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(AUTHENTICATION_ENTITY_SET_NAME, "BasicLogin", null));
+            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(nameof(Core.Core.Authentications), "BasicLogin", null));
 
             // Act
             var user = svc.Users.FirstOrDefault();
 
-            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(AUTHENTICATION_ENTITY_SET_NAME, "Logout", null);
+            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(nameof(Core.Core.Authentications), "Logout", null);
 
             // Assert
             Assert.IsNotNull(user);
@@ -90,12 +88,12 @@ namespace Net.Appclusive.Api.Tests
             };
             svc.Format.UseJson();
 
-            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(AUTHENTICATION_ENTITY_SET_NAME, "BearerLogin", null));
+            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(nameof(Core.Core.Authentications), "BearerLogin", null));
 
             // Act
             var user = svc.Users.FirstOrDefault();
 
-            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(AUTHENTICATION_ENTITY_SET_NAME, "Logout", null);
+            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(nameof(Core.Core.Authentications), "Logout", null);
 
             // Assert
             Assert.IsNotNull(user);
@@ -115,12 +113,12 @@ namespace Net.Appclusive.Api.Tests
             var svc = new Core.Core(_serviceRoot);
             svc.Format.UseJson();
 
-            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(AUTHENTICATION_ENTITY_SET_NAME, "NegotiateLogin", null));
+            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(nameof(Core.Core.Authentications), "NegotiateLogin", null));
 
             // Act
             var user = svc.Users.FirstOrDefault();
 
-            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(AUTHENTICATION_ENTITY_SET_NAME, "Logout", null);
+            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(nameof(Core.Core.Authentications), "Logout", null);
 
             // Assert
             Assert.IsNotNull(user);
