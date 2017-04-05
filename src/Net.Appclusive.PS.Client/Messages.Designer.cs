@@ -61,6 +61,42 @@ namespace Net.Appclusive.PS.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logging in to &apos;{0}&apos; ....
+        /// </summary>
+        internal static string EnterServer_ProcessRecord__Login {
+            get {
+                return ResourceManager.GetString("EnterServer_ProcessRecord__Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logging in to &apos;{0}&apos; (&apos;{1}&apos;) FAILED..
+        /// </summary>
+        internal static string EnterServer_ProcessRecord__LoginFailed {
+            get {
+                return ResourceManager.GetString("EnterServer_ProcessRecord__LoginFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logging in to &apos;{0}&apos; (&apos;{1}&apos;) SUCCEEDED..
+        /// </summary>
+        internal static string EnterServer_ProcessRecord__LoginSucceeded {
+            get {
+                return ResourceManager.GetString("EnterServer_ProcessRecord__LoginSucceeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ApiBaseUri &apos;{0}&apos; and ParameterSetName &apos;{1}&apos;..
+        /// </summary>
+        internal static string EnterServer_ProcessRecord__ShouldProcess {
+            get {
+                return ResourceManager.GetString("EnterServer_ProcessRecord__ShouldProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saving moduleContext to module variable FAILED..
         /// </summary>
         internal static string ImportConfiguration_ProcessRecord__SaveToModuleVariableFailed {
