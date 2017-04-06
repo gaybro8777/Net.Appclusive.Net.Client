@@ -16,7 +16,7 @@ namespace Net.Appclusive.Api.Diagnostics
     /// <summary>
     /// There are no comments for Diagnostics in the schema.
     /// </summary>
-    public partial class Diagnostics : global::System.Data.Services.Client.DataServiceContext
+    public partial class Diagnostics : DataServiceContextBase
     {
         /// <summary>
         /// Initialize a new Diagnostics object.
