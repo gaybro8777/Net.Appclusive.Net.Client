@@ -125,6 +125,14 @@ namespace Net.Appclusive.PS.Client
                 return;
             }
 
+            if (ParameterSets.PLAIN.Equals(ParameterSetName))
+            {
+                // Convert password to secure string
+                var secureString = new SecureString();
+                Password.ToCharArray().ToList().ForEach(c => secureString.AppendChar(c));
+                Credential = new PSCredential(Username, secureString);
+            }
+
             if (ParameterSets.MODULE_CONTEXT.Equals(ParameterSetName))
             {
                 Contract.Assert(null != ModuleConfiguration.Current.Credential);
@@ -132,13 +140,6 @@ namespace Net.Appclusive.PS.Client
 
                 Credential = ModuleConfiguration.Current.Credential;
                 ApiBaseUri = ModuleConfiguration.Current.ApiBaseUri;
-            }
-            else if (ParameterSets.PLAIN.Equals(ParameterSetName))
-            {
-                // Convert password to secure string
-                var secureString = new SecureString();
-                Password.ToCharArray().ToList().ForEach(c => secureString.AppendChar(c));
-                Credential = new PSCredential(Username, secureString);
             }
 
             var dataServiceClients = CreateDataServiceClients();
@@ -167,6 +168,8 @@ namespace Net.Appclusive.PS.Client
                 throw;
             }
 
+            // Set DataServiceClients variable of current configuration after successful login
+            ModuleConfiguration.Current.DataServiceClients = dataServiceClients;
             WriteObject(dataServiceClients);
         }
 
@@ -189,22 +192,22 @@ namespace Net.Appclusive.PS.Client
             var dataServiceClients = new Dictionary<string, DataServiceContextBase>();
             var credential = Credential.GetNetworkCredential();
 
-            var serviceReferenceTypeInfos =
+            var dataServiceClientTypes =
                 typeof(DataServiceContextBase).Assembly.DefinedTypes.Where(
                     t => t.BaseType == typeof(DataServiceContextBase));
 
-            foreach (var serviceReferenceTypeInfo in serviceReferenceTypeInfos)
+            foreach (var dataServiceClientType in dataServiceClientTypes)
             {
-                var serviceRootUri = new Uri(UriHelper.ConcatUri(ApiBaseUri.AbsoluteUri, serviceReferenceTypeInfo.Name));
-                var serviceReference = (DataServiceContextBase)Activator.CreateInstance(serviceReferenceTypeInfo, serviceRootUri);
-                serviceReference.Credentials = credential;
+                var serviceRootUri = new Uri(UriHelper.ConcatUri(ApiBaseUri.AbsoluteUri, dataServiceClientType.Name));
+                var dataServiceClient = (DataServiceContextBase)Activator.CreateInstance(dataServiceClientType, serviceRootUri);
+                dataServiceClient.Credentials = credential;
 
                 if (default(Guid) != TenantId)
                 {
-                    serviceReference.TenantId = TenantId.ToString();
+                    dataServiceClient.TenantId = TenantId.ToString();
                 }
 
-                dataServiceClients.Add(serviceReferenceTypeInfo.Name, serviceReference);
+                dataServiceClients.Add(dataServiceClientType.Name, dataServiceClient);
             }
 
             return dataServiceClients;

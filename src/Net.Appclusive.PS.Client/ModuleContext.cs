@@ -14,9 +14,12 @@
  * limitations under the License.
  */
 
+extern alias Api;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Management.Automation;
+using Api::Net.Appclusive.Api;
 using biz.dfch.CS.Commons.Diagnostics;
 using biz.dfch.CS.PowerShell.Commons;
 using TraceSource = biz.dfch.CS.Commons.Diagnostics.TraceSource;
@@ -34,9 +37,14 @@ namespace Net.Appclusive.PS.Client
         public Uri ApiBaseUri { get; set; }
 
         /// <summary>
-        /// Credentials to use when using authentication type plain
+        /// Credentials to use
         /// </summary>
         public PSCredential Credential { get; set; }
+
+        /// <summary>
+        /// Returns a dictionary of data service context references created during last Enter-Server call
+        /// </summary>
+        public Dictionary<string, DataServiceContextBase> DataServiceClients { get; set; }
 
         private static readonly Lazy<TraceSource> _traceSource = new Lazy<TraceSource>(() =>
         {
