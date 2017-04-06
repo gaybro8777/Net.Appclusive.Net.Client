@@ -9,7 +9,7 @@ $path = [Net.Appclusive.PS.Client.ModuleConfiguration]::ResolveConfigurationFile
 $moduleContextSection = [Net.Appclusive.PS.Client.ModuleConfiguration]::GetModuleContextConfigurationSection($path);
 [Net.Appclusive.PS.Client.ModuleConfiguration]::SetModuleContext($moduleContextSection)
 
-Set-Variable -Name $([Net.Appclusive.PS.Client.ModuleConfiguration]::MODULE_VARIABLE_NAME) -Value $([Net.Appclusive.Client.ModuleConfiguration]::Current) -Scope Global;
+Set-Variable -Name $([Net.Appclusive.PS.Client.ModuleConfiguration]::MODULE_VARIABLE_NAME) -Value $([Net.Appclusive.PS.Client.ModuleConfiguration]::Current) -Scope Global;
 
 # 
 # Copyright 2013-2017 d-fens GmbH
