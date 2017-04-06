@@ -69,7 +69,7 @@ namespace Net.Appclusive.PS.Client
         }
 
         /// <summary>
-        /// Specifies the base url of the Abiquo endpoint
+        /// Specifies the base URI of the Appclusive API
         /// </summary>
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = ParameterSets.PLAIN)]
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = ParameterSets.CREDENTIAL)]
