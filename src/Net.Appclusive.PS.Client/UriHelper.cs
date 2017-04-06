@@ -27,7 +27,10 @@ namespace Net.Appclusive.PS.Client
             Contract.Requires(!string.IsNullOrWhiteSpace(baseUri));
             Contract.Requires(!string.IsNullOrWhiteSpace(uriSuffix));
 
-            return string.Concat(baseUri.TrimEnd(CHARACTER_TO_TRIM_ON), CHARACTER_TO_TRIM_ON, uriSuffix.TrimStart(CHARACTER_TO_TRIM_ON).TrimEnd(CHARACTER_TO_TRIM_ON));
+            return string.Concat(
+                baseUri.TrimEnd(CHARACTER_TO_TRIM_ON),
+                CHARACTER_TO_TRIM_ON, 
+                uriSuffix.TrimStart(CHARACTER_TO_TRIM_ON).TrimEnd(CHARACTER_TO_TRIM_ON));
         }
     }
 }
