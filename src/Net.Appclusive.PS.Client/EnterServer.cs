@@ -119,7 +119,7 @@ namespace Net.Appclusive.PS.Client
         {
             base.ProcessRecord();
 
-            var shouldProcessMessage = string.Format(Messages.EnterServer_ProcessRecord__ShouldProcess, ApiBaseUri.AbsoluteUri, ParameterSetName);
+            var shouldProcessMessage = string.Format(Messages.EnterServer_ProcessRecord__ShouldProcess, ParameterSetName);
             if (!ShouldProcess(shouldProcessMessage))
             {
                 return;
@@ -149,7 +149,7 @@ namespace Net.Appclusive.PS.Client
 
             try
             {
-                ModuleConfiguration.Current.TraceSource.TraceEvent(TraceEventType.Verbose, (int)Constants.Logging.EventId.EnterServer, Messages.EnterServer_ProcessRecord__Login, ApiBaseUri.AbsoluteUri);
+                ModuleConfiguration.Current.TraceSource.TraceEvent(TraceEventType.Verbose, (int)Constants.Logging.EventId.EnterServer, Messages.EnterServer_ProcessRecord__Login, ApiBaseUri.AbsoluteUri, loginEndpoint);
 
                 dataServiceClients[nameof(Api::Net.Appclusive.Api.Core.Core)].InvokeEntitySetActionWithSingleResult<User>(nameof(Api::Net.Appclusive.Api.Core.Core.Authentications), loginEndpoint, null);
 
@@ -189,14 +189,14 @@ namespace Net.Appclusive.PS.Client
             var dataServiceClients = new Dictionary<string, DataServiceContextBase>();
             var credential = Credential.GetNetworkCredential();
 
-            var serviceReferenceTypes =
+            var serviceReferenceTypeInfos =
                 typeof(DataServiceContextBase).Assembly.DefinedTypes.Where(
                     t => t.BaseType == typeof(DataServiceContextBase));
 
-            foreach (var serviceReferenceType in serviceReferenceTypes)
+            foreach (var serviceReferenceTypeInfo in serviceReferenceTypeInfos)
             {
-                var serviceRootUri = new Uri(ApiBaseUri + serviceReferenceType.Name);
-                var serviceReference = (DataServiceContextBase)Activator.CreateInstance(serviceReferenceType, serviceRootUri);
+                var serviceRootUri = new Uri(UriHelper.ConcatUri(ApiBaseUri.AbsoluteUri, serviceReferenceTypeInfo.Name));
+                var serviceReference = (DataServiceContextBase)Activator.CreateInstance(serviceReferenceTypeInfo, serviceRootUri);
                 serviceReference.Credentials = credential;
 
                 if (default(Guid) != TenantId)
@@ -204,7 +204,7 @@ namespace Net.Appclusive.PS.Client
                     serviceReference.TenantId = TenantId.ToString();
                 }
 
-                dataServiceClients.Add(serviceReferenceType.Name, serviceReference);
+                dataServiceClients.Add(serviceReferenceTypeInfo.Name, serviceReference);
             }
 
             return dataServiceClients;

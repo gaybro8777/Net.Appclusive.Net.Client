@@ -178,6 +178,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\ContractClassForITestCodeContracts.cs" />
     <Compile Include="Test\ITestCodeContracts.cs" />
+    <Compile Include="UriHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

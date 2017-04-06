@@ -152,13 +152,13 @@
 1: ConfigSectionName</comment>
   </data>
   <data name="EnterServer_ProcessRecord__Login" xml:space="preserve">
-    <value>Logging in to '{0}' ...</value>
-    <comment>0: ApiBaseUri.AbsoluteUri</comment>
+    <value>Logging in to '{0}' ('{1}') ...</value>
+    <comment>0: ApiBase.AbsoluteUri
+1: loginEndpoint</comment>
   </data>
   <data name="EnterServer_ProcessRecord__ShouldProcess" xml:space="preserve">
-    <value>ApiBaseUri '{0}' and ParameterSetName '{1}'.</value>
-    <comment>0: ApiBaseUri
-1: ParameterSetName</comment>
+    <value>ParameterSetName '{0}'.</value>
+    <comment>0: ParameterSetName</comment>
   </data>
   <data name="EnterServer_ProcessRecord__LoginFailed" xml:space="preserve">
     <value>Logging in to '{0}' ('{1}') FAILED.</value>
