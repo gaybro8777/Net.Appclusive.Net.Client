@@ -29,7 +29,7 @@ namespace Net.Appclusive.PS.Client.Tests
     [TestClass]
     public class EnterServerTest
     {
-        private const string USERNAME = "TestUser";
+        private const string USERNAME = "admin";
         private const string PASSWORD = "P@ssw0rd";
         private const string API_BASE_URI = "http://appclusive/api/";
 
@@ -153,7 +153,7 @@ namespace Net.Appclusive.PS.Client.Tests
             var moduleContextSection = ModuleConfiguration.GetModuleContextConfigurationSection(fileInfo);
             ModuleConfiguration.SetModuleContext(moduleContextSection);
 
-            var parameters = string.Format(@"-UseModuleContext");
+            var parameters = "-UseModuleContext";
 
             // Act
             var results = PsCmdletAssert.Invoke(sut, parameters);
@@ -179,7 +179,7 @@ namespace Net.Appclusive.PS.Client.Tests
             var parameters = string.Format(@"-ApiBaseUri {0} -User '{1} -Password '{2}'", API_BASE_URI, USERNAME, PASSWORD);
 
             // Act
-            var results = PsCmdletAssert.Invoke(sut, parameters);
+            PsCmdletAssert.Invoke(sut, parameters);
 
             // Assert
         }
