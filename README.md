@@ -17,7 +17,7 @@ When adding a service reference proxy classes for all entity sets and complex ty
 After updating or adding a service reference the following steps have to be performed:
 
 * Change service reference class in `Reference.cs` to extend from `DataServiceContextBase`
-  [TeamCity Logo](https://github.com/Appclusive/Net.Appclusive.Net.Client/blob/develop/VS2015-screenshot.png)
+  ![Screenshot](https://github.com/Appclusive/Net.Appclusive.Net.Client/blob/develop/VS2015-screenshot.png)
   
   `public partial class Core : DataServiceContextBase`
 
