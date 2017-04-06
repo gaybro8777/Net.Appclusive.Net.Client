@@ -168,7 +168,7 @@ namespace Net.Appclusive.PS.Client
                 return;
             }
 
-            results.ForEach(WriteObject);
+            results.ForEach(tenant => WriteObject(tenant));
         }
 
         private void ProcessParameterSetList()
