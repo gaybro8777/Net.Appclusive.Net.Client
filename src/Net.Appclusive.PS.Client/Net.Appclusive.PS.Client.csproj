@@ -212,6 +212,7 @@
     <ProjectReference Include="..\Net.Appclusive.Api\Net.Appclusive.Api.csproj">
       <Project>{85cba151-145f-46ad-8175-e12c98a5951d}</Project>
       <Name>Net.Appclusive.Api</Name>
+      <Aliases>Api</Aliases>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

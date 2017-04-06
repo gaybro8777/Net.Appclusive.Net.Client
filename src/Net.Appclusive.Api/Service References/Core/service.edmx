@@ -123,6 +123,10 @@
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.Authentication" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="DetailsPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="Net_Appclusive_Public_Domain_Security_ItemAcl_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.ItemAcl" Role="DetailsPartner" Multiplicity="0..1" />
@@ -178,10 +182,6 @@
       <Association Name="Net_Appclusive_Public_Domain_Catalogue_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Catalogue.Blueprint" Role="DetailsPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
-        <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Net_Appclusive_Public_Domain_Control_Approval_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
@@ -514,6 +514,10 @@
         <Property Name="Description" Type="Edm.String" />
         <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
+      <Association Name="Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner">
+        <End Type="Net.Appclusive.Public.Domain.Security.Role" Role="Roles" Multiplicity="*" />
+        <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="RolesPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartner">
         <End Type="Net.Appclusive.Public.Domain.Security.ItemAcl" Role="Parent" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.ItemAcl" Role="ParentPartner" Multiplicity="0..1" />
@@ -582,13 +586,6 @@
         <End Type="Net.Appclusive.Public.Domain.Security.Role" Role="Role" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.ItemAce" Role="RolePartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner">
-        <End Type="Net.Appclusive.Public.Domain.Security.Role" Role="Roles" Multiplicity="*" />
-        <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="RolesPartner" Multiplicity="0..1" />
-      </Association>
-    </Schema>
-    <Schema Namespace="System.Security.Principal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="IIdentity" />
     </Schema>
     <Schema Namespace="Net.Appclusive.Public.Domain.Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="User">
@@ -625,6 +622,9 @@
         <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="User" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.ItemAce" Role="UserPartner" Multiplicity="0..1" />
       </Association>
+    </Schema>
+    <Schema Namespace="System.Security.Principal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="IIdentity" />
     </Schema>
     <Schema Namespace="Net.Appclusive.Public.Domain.Catalogue" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="Order">
@@ -854,6 +854,7 @@
         <EntitySet Name="Connections" EntityType="Net.Appclusive.Public.Domain.Inventory.Connection" />
         <EntitySet Name="Items" EntityType="Net.Appclusive.Public.Domain.Inventory.Item" />
         <EntitySet Name="Authentications" EntityType="Net.Appclusive.Public.Domain.Security.Authentication" />
+        <EntitySet Name="Users" EntityType="Net.Appclusive.Public.Domain.Identity.User" />
         <EntitySet Name="ItemAcls" EntityType="Net.Appclusive.Public.Domain.Security.ItemAcl" />
         <EntitySet Name="Aces" EntityType="Net.Appclusive.Public.Domain.Security.Ace" />
         <EntitySet Name="Roles" EntityType="Net.Appclusive.Public.Domain.Security.Role" />
@@ -868,7 +869,6 @@
         <EntitySet Name="Catalogues" EntityType="Net.Appclusive.Public.Domain.Catalogue.Catalogue" />
         <EntitySet Name="CatalogueItems" EntityType="Net.Appclusive.Public.Domain.Catalogue.CatalogueItem" />
         <EntitySet Name="Blueprints" EntityType="Net.Appclusive.Public.Domain.Catalogue.Blueprint" />
-        <EntitySet Name="Users" EntityType="Net.Appclusive.Public.Domain.Identity.User" />
         <EntitySet Name="Approvals" EntityType="Net.Appclusive.Public.Domain.Control.Approval" />
         <EntitySet Name="WorkItems" EntityType="Net.Appclusive.Public.Domain.Control.WorkItem" />
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Configuration.Example" IsBindable="true" EntitySet="Examples" m:IsAlwaysBindable="true">
@@ -955,17 +955,17 @@
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Security.Authentication" IsBindable="true" EntitySet="Authentications" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Authentication)" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="BasicLogin" ReturnType="Net.Appclusive.Public.Types.BoxedBool" IsBindable="true" m:IsAlwaysBindable="true">
+        <FunctionImport Name="BasicLogin" ReturnType="Net.Appclusive.Public.Domain.Identity.User" IsBindable="true" EntitySet="Users" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Authentication)" Nullable="false" />
           <Parameter Name="Headers" Type="biz.dfch.CS.Commons.DictionaryParameters" />
           <Parameter Name="Identity" Type="System.Security.Principal.IIdentity" />
         </FunctionImport>
-        <FunctionImport Name="NegotiateLogin" ReturnType="Net.Appclusive.Public.Types.BoxedBool" IsBindable="true" m:IsAlwaysBindable="true">
+        <FunctionImport Name="NegotiateLogin" ReturnType="Net.Appclusive.Public.Domain.Identity.User" IsBindable="true" EntitySet="Users" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Authentication)" Nullable="false" />
           <Parameter Name="Headers" Type="biz.dfch.CS.Commons.DictionaryParameters" />
           <Parameter Name="Identity" Type="System.Security.Principal.IIdentity" />
         </FunctionImport>
-        <FunctionImport Name="BearerLogin" ReturnType="Net.Appclusive.Public.Types.BoxedBool" IsBindable="true" m:IsAlwaysBindable="true">
+        <FunctionImport Name="BearerLogin" ReturnType="Net.Appclusive.Public.Domain.Identity.User" IsBindable="true" EntitySet="Users" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Authentication)" Nullable="false" />
           <Parameter Name="Headers" Type="biz.dfch.CS.Commons.DictionaryParameters" />
           <Parameter Name="Identity" Type="System.Security.Principal.IIdentity" />
@@ -1129,6 +1129,14 @@
           <End Role="DetailsPartner" EntitySet="Authentications" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartnerSet" Association="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner">
+          <End Role="RolesPartner" EntitySet="Users" />
+          <End Role="Roles" EntitySet="Roles" />
+        </AssociationSet>
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+          <End Role="DetailsPartner" EntitySet="Users" />
+          <End Role="Details" EntitySet="PublicEntityDetailss" />
+        </AssociationSet>
         <AssociationSet Name="Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartnerSet" Association="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartner">
           <End Role="ParentPartner" EntitySet="ItemAcls" />
           <End Role="Parent" EntitySet="ItemAcls" />
@@ -1283,14 +1291,6 @@
         </AssociationSet>
         <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="Blueprints" />
-          <End Role="Details" EntitySet="PublicEntityDetailss" />
-        </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartnerSet" Association="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner">
-          <End Role="RolesPartner" EntitySet="Users" />
-          <End Role="Roles" EntitySet="Roles" />
-        </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
-          <End Role="DetailsPartner" EntitySet="Users" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
         <AssociationSet Name="Net_Appclusive_Public_Domain_Control_Approval_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Control_Approval_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">

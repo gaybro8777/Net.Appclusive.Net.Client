@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+extern alias Api;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -22,9 +23,10 @@ using System.Linq;
 using System.Management.Automation;
 using System.Net;
 using System.Security;
+using Api::Net.Appclusive.Api;
+using Api::Net.Appclusive.Api.Constants;
+using Api::Net.Appclusive.Public.Domain.Identity;
 using biz.dfch.CS.PowerShell.Commons;
-using Net.Appclusive.Api;
-using Net.Appclusive.Api.Constants;
 
 namespace Net.Appclusive.PS.Client
 {
@@ -67,7 +69,7 @@ namespace Net.Appclusive.PS.Client
         }
 
         /// <summary>
-        /// Specifies the base url of the Abiquo endpoint
+        /// Specifies the base URI of the Appclusive API
         /// </summary>
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = ParameterSets.PLAIN)]
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = ParameterSets.CREDENTIAL)]
@@ -149,8 +151,8 @@ namespace Net.Appclusive.PS.Client
             {
                 ModuleConfiguration.Current.TraceSource.TraceEvent(TraceEventType.Verbose, (int)Constants.Logging.EventId.EnterServer, Messages.EnterServer_ProcessRecord__Login, ApiBaseUri.AbsoluteUri);
 
-                dataServiceClients[nameof(Api.Core.Core)].InvokeEntitySetActionWithSingleResult<User>(nameof(Api.Core.Core.Authentications), loginEndpoint, null);
-                
+                dataServiceClients[nameof(Api::Net.Appclusive.Api.Core.Core)].InvokeEntitySetActionWithSingleResult<User>(nameof(Api::Net.Appclusive.Api.Core.Core.Authentications), loginEndpoint, null);
+
                 ModuleConfiguration.Current.TraceSource.TraceEvent(TraceEventType.Information, (int)Constants.Logging.EventId.EnterServer, Messages.EnterServer_ProcessRecord__LoginSucceeded, ApiBaseUri.AbsoluteUri, loginEndpoint);
             }
             catch (AggregateException aggrex)
@@ -182,7 +184,7 @@ namespace Net.Appclusive.PS.Client
         {
             Contract.Requires(null != ApiBaseUri);
             Contract.Requires(null != Credential);
-            Contract.Ensures(Contract.Result<Dictionary<string, DataServiceContextBase>>().ContainsKey(nameof(Core)));
+            Contract.Ensures(Contract.Result<Dictionary<string, DataServiceContextBase>>().ContainsKey(nameof(Api::Net.Appclusive.Api.Core.Core)));
 
             var dataServiceClients = new Dictionary<string, DataServiceContextBase>();
             var credential = Credential.GetNetworkCredential();
@@ -193,7 +195,8 @@ namespace Net.Appclusive.PS.Client
 
             foreach (var serviceReferenceType in serviceReferenceTypes)
             {
-                var serviceReference = (DataServiceContextBase)Activator.CreateInstance(serviceReferenceType, ApiBaseUri);
+                var serviceRootUri = new Uri(ApiBaseUri + serviceReferenceType.Name);
+                var serviceReference = (DataServiceContextBase)Activator.CreateInstance(serviceReferenceType, serviceRootUri);
                 serviceReference.Credentials = credential;
 
                 if (default(Guid) != TenantId)
