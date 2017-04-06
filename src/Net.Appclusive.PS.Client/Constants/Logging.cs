@@ -40,11 +40,15 @@ namespace Net.Appclusive.PS.Client.Constants
             /// <summary>
             /// Get-Machine
             /// </summary>
-            GetKeyNameValue = ImportConfiguration + EVENT_ID_OFFSET,
+            GetTenant = ImportConfiguration + EVENT_ID_OFFSET,
             /// <summary>
             /// GetMachineIdNotFound
             /// </summary>
-            GetKeyNameValueIdNotFound,
+            GetTenantIdNotFound,
+            /// <summary>
+            /// GetMachineIdNotFound
+            /// </summary>
+            GetTenantNameNotFound,
         }
     }
 }

@@ -61,6 +61,42 @@ namespace Net.Appclusive.PS.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot find &apos;{0}&apos; with name &apos;{1}&apos;..
+        /// </summary>
+        internal static string Cmdlet_ProcessParamaterSetName__NotFound {
+            get {
+                return ResourceManager.GetString("Cmdlet_ProcessParamaterSetName__NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot find &apos;{0}&apos; with id &apos;{1}&apos;..
+        /// </summary>
+        internal static string Cmdlet_ProcessParameterSetId__NotFound {
+            get {
+                return ResourceManager.GetString("Cmdlet_ProcessParameterSetId__NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connect to the server before using the Cmdlet.
+        /// </summary>
+        internal static string Cmdlet_ProcessRecord__NotLoggedIn {
+            get {
+                return ResourceManager.GetString("Cmdlet_ProcessRecord__NotLoggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ParameterSetName &apos;{0}&apos;..
+        /// </summary>
+        internal static string Cmdlet_ProcessRecord__ShouldProcess {
+            get {
+                return ResourceManager.GetString("Cmdlet_ProcessRecord__ShouldProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Logging in to &apos;{0}&apos; (&apos;{1}&apos;) ....
         /// </summary>
         internal static string EnterServer_ProcessRecord__Login {
@@ -84,15 +120,6 @@ namespace Net.Appclusive.PS.Client {
         internal static string EnterServer_ProcessRecord__LoginSucceeded {
             get {
                 return ResourceManager.GetString("EnterServer_ProcessRecord__LoginSucceeded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ParameterSetName &apos;{0}&apos;..
-        /// </summary>
-        internal static string EnterServer_ProcessRecord__ShouldProcess {
-            get {
-                return ResourceManager.GetString("EnterServer_ProcessRecord__ShouldProcess", resourceCulture);
             }
         }
         

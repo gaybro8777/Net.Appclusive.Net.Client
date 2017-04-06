@@ -165,7 +165,9 @@
       <Link>Properties\CommonAssemblySettings.cs</Link>
     </Compile>
     <Compile Include="Constants\Logging.cs" />
+    <Compile Include="Constants\Odata.cs" />
     <Compile Include="EnterServer.cs" />
+    <Compile Include="GetTenant.cs" />
     <Compile Include="ImportConfiguration.cs" />
     <Compile Include="Messages.Designer.cs">
       <AutoGen>True</AutoGen>

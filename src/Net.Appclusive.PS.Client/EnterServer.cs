@@ -119,7 +119,7 @@ namespace Net.Appclusive.PS.Client
         {
             base.ProcessRecord();
 
-            var shouldProcessMessage = string.Format(Messages.EnterServer_ProcessRecord__ShouldProcess, ParameterSetName);
+            var shouldProcessMessage = string.Format(Messages.Cmdlet_ProcessRecord__ShouldProcess, ParameterSetName);
             if (!ShouldProcess(shouldProcessMessage))
             {
                 return;
