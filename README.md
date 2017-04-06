@@ -17,9 +17,12 @@ When adding a service reference proxy classes for all entity sets and complex ty
 After updating or adding a service reference the following steps have to be performed:
 
 * Change service reference class in `Reference.cs` to extend from `DataServiceContextBase`
+
   ![Screenshot](https://github.com/Appclusive/Net.Appclusive.Net.Client/blob/develop/VS2015-screenshot.png)
   
-  `public partial class Core : DataServiceContextBase`
+  ```C#
+  public partial class Core : DataServiceContextBase
+  ```
 
 * The duplicated proxy classes (i.e. `User`) have to be deleted in the corresponding `Reference.cs` files
 
