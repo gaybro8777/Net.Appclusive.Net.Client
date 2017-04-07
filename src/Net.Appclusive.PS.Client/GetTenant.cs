@@ -141,9 +141,8 @@ namespace Net.Appclusive.PS.Client
         {
             try
             {
-                var query = string.Format(Odata.BY_ID_GUID_QUERY_TEMPLATE, Id);
                 var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
-                var result = coreContext.Tenants.Filter(query);
+                var result = coreContext.Tenants.Id(Id);
                 WriteObject(result);
             }
             catch (Exception ex)
