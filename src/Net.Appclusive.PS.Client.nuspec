@@ -32,26 +32,36 @@ initial release
         <copyright>Copyright © 2017 d-fens GmbH</copyright>
         <tags>dfch Appclusive Client PowerShell</tags>
         <dependencies>
-          <dependency id="biz.dfch.CS.PowerShell.Commons" version="1.7.0" />
-          <dependency id="biz.dfch.CS.Commons" version="1.8.2" />
-          <dependency id="Microsoft.PowerShell.5.ReferenceAssemblies" version="1.0.0" />
-          <dependency id="Newtonsoft.Json" version="9.0.1" />
+			<dependency id="biz.dfch.CS.Commons" version="1.8.2" />
+			<dependency id="biz.dfch.CS.PowerShell.Commons" version="1.7.0" />
+			<dependency id="Microsoft.Data.Edm" version="5.6.4" />
+			<dependency id="Microsoft.Data.OData" version="5.6.4" />
+			<dependency id="Microsoft.Data.Services.Client" version="5.6.4" />
+			<dependency id="Microsoft.PowerShell.5.ReferenceAssemblies" version="1.0.0" />
+			<dependency id="Newtonsoft.Json" version="9.0.1" />
+			<dependency id="System.ComponentModel.Annotations" version="4.3.0" />
+			<dependency id="System.Spatial" version="5.6.4" />
         </dependencies>
     </metadata>
 	<files>
-    <file src="..\LICENSE" target="tools\LICENSE" />
-    <file src="..\NOTICE" target="tools\NOTICE" />
-    <file src="..\README.md" target="tools\README.md" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\Install.ps1" target="Install.ps1" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\Import-Module.ps1" target="tools\" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.dll.config" target="tools\Net.Appclusive.PS.Client.config" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.psd1" target="tools\" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.psm1" target="tools\" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.dll" target="tools\" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.Api.dll" target="tools\" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\biz.dfch.CS.PowerShell.Commons.dll" target="tools\" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\biz.dfch.CS.Commons.dll" target="tools\" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\Newtonsoft.Json.dll" target="tools\" />
-    <file src="Net.Appclusive.PS.Client\bin\Release\Newtonsoft.Json.xml" target="tools\" />
-  </files>
+		<file src="..\LICENSE" target="tools\LICENSE" />
+		<file src="..\NOTICE" target="tools\NOTICE" />
+		<file src="..\README.md" target="tools\README.md" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Install.ps1" target="Install.ps1" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Import-Module.ps1" target="tools\Import-Module.ps1" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.dll.config" target="tools\Net.Appclusive.PS.Client.config" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.psd1" target="tools\Net.Appclusive.PS.Client.psd1" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.psm1" target="tools\Net.Appclusive.PS.Client.psm1" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.dll" target="tools\Net.Appclusive.PS.Client.dll" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.Api.dll" target="tools\Net.Appclusive.Api.dll" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\biz.dfch.CS.Commons.dll" target="tools\biz.dfch.CS.Commons.dll" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\biz.dfch.CS.PowerShell.Commons.dll" target="tools\biz.dfch.CS.PowerShell.Commons.dll" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Newtonsoft.Json.dll" target="tools\Newtonsoft.Json.dll" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Newtonsoft.Json.xml" target="tools\Newtonsoft.Json.xml" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Microsoft.Data.Edm.dll" target="tools\Microsoft.Data.Edm.dll" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Microsoft.Data.OData.dll" target="tools\Microsoft.Data.OData.dll" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\Microsoft.Data.Services.Client.dll" target="tools\Microsoft.Data.Services.Client.dll" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\System.Spatial.dll" target="tools\System.Spatial.dll" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\System.Spatial.xml" target="tools\System.Spatial.xml" />
+	</files>
 </package>
