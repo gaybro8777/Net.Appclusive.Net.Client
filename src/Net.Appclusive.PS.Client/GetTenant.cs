@@ -151,7 +151,7 @@ namespace Net.Appclusive.PS.Client
             catch (Exception ex)
             {
                 WriteError(ErrorRecordFactory.GetGeneric(ex));
-                WriteError(ErrorRecordFactory.GetNotFound(Messages.Cmdlet_ProcessParameterSetId__NotFound, Constants.Logging.EventId.GetTenantIdNotFound.ToString(), nameof(Tenant), Id), writeToTraceSource: true);
+                WriteError(ErrorRecordFactory.GetNotFound(Messages.Cmdlet_ProcessParameterSetId__NotFound, Logging.EventId.GetTenantIdNotFound.ToString(), nameof(Tenant), Id), writeToTraceSource: true);
             }
         }
 
@@ -163,11 +163,11 @@ namespace Net.Appclusive.PS.Client
 
             if (!results.Any())
             {
-                WriteError(ErrorRecordFactory.GetNotFound(Messages.Cmdlet_ProcessParamaterSetName__NotFound, Constants.Logging.EventId.GetTenantNameNotFound.ToString(), nameof(Tenant), Name));
+                WriteError(ErrorRecordFactory.GetNotFound(Messages.Cmdlet_ProcessParamaterSetName__NotFound, Logging.EventId.GetTenantNameNotFound.ToString(), nameof(Tenant), Name));
                 return;
             }
 
-            results.ForEach(tenant => WriteObject(tenant));
+            WriteObject(results);
         }
 
         private void ProcessParameterSetList()
