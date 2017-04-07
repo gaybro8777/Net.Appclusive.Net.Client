@@ -70,7 +70,6 @@ namespace Net.Appclusive.PS.Client
         /// Specifies the entity id
         /// </summary>
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = ParameterSets.ID)]
-        [ValidateRange(1, int.MaxValue)]
         public Guid Id { get; set; }
 
         /// <summary>

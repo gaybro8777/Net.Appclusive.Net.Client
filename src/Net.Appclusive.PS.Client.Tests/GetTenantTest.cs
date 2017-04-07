@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace Net.Appclusive.PS.Client.Tests
 {
+    [TestClass]
     public class GetTenantTest
     {
 
