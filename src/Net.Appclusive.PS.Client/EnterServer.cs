@@ -207,6 +207,8 @@ namespace Net.Appclusive.PS.Client
                     dataServiceContext.TenantId = TenantId.ToString();
                 }
 
+                dataServiceContext.Format.UseJson();
+
                 dataServiceContexts.Add(dataServiceContextType.Name, dataServiceContext);
             }
 
