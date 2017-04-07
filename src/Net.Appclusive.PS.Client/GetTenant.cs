@@ -71,7 +71,7 @@ namespace Net.Appclusive.PS.Client
         /// </summary>
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = ParameterSets.ID)]
         [ValidateRange(1, int.MaxValue)]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Specifies the entity name
@@ -144,7 +144,7 @@ namespace Net.Appclusive.PS.Client
         {
             try
             {
-                var query = string.Format(Odata.BY_ID_QUERY_TEMPLATE, Id);
+                var query = string.Format(Odata.BY_ID_GUID_QUERY_TEMPLATE, Id);
                 var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
                 var result = coreContext.Tenants.AddQueryOption(Odata.FILTER, query);
                 WriteObject(result);
