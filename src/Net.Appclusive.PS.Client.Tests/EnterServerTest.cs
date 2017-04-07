@@ -29,16 +29,21 @@ namespace Net.Appclusive.PS.Client.Tests
     [TestClass]
     public class EnterServerTest
     {
-        private const string USERNAME = "Arbitrary";
-        private const string PASSWORD = "P@ssw0rd";
-        private const string API_BASE_URI = "http://appclusive/api/";
+        private static string _username;
+        private static string _password;
+        private static string _apiBaseUri;
 
         private readonly Type sut = typeof(EnterServer);
 
-        [TestInitialize]
-        public void TestInitialize()
+        [ClassInitialize]
+        public static void ClassInitialize(TestContext testContext)
         {
-            // N/A
+            var fileInfo = ModuleConfiguration.ResolveConfigurationFileInfo(null);
+            var moduleContextSection = ModuleConfiguration.GetModuleContextConfigurationSection(fileInfo);
+
+            _username = moduleContextSection.Credential.UserName;
+            _password = moduleContextSection.Credential.GetNetworkCredential().Password;
+            _apiBaseUri = moduleContextSection.ApiBaseUri.ToString();
         }
 
         [TestMethod]
@@ -53,7 +58,7 @@ namespace Net.Appclusive.PS.Client.Tests
         [ExpectParameterBindingException(MessagePattern = @"Username.+Password")]
         public void InvokeWithMissingParameterThrowsParameterBindingException()
         {
-            var parameters = string.Format("-ApiBaseUri {0}", API_BASE_URI);
+            var parameters = string.Format("-ApiBaseUri {0}", _apiBaseUri);
             PsCmdletAssert.Invoke(sut, parameters);
         }
 
@@ -61,7 +66,7 @@ namespace Net.Appclusive.PS.Client.Tests
         [ExpectParameterBindingValidationException(MessagePattern = @"Password")]
         public void InvokeWithEmptyPasswordParameterThrowsParameterBindingValidationException()
         {
-            var parameters = string.Format("-ApiBaseUri {0} -Username {1} -Password ''", API_BASE_URI, USERNAME);
+            var parameters = string.Format("-ApiBaseUri {0} -Username {1} -Password ''", _apiBaseUri, _username);
             PsCmdletAssert.Invoke(sut, parameters);
         }
 
@@ -69,7 +74,7 @@ namespace Net.Appclusive.PS.Client.Tests
         [ExpectParameterBindingValidationException(MessagePattern = @"Credential")]
         public void InvokeWithNullCredentialParameterThrowsParameterBindingValidationException()
         {
-            var parameters = string.Format("-ApiBaseUri {0} -Credential $null", API_BASE_URI);
+            var parameters = string.Format("-ApiBaseUri {0} -Credential $null", _apiBaseUri);
             PsCmdletAssert.Invoke(sut, parameters);
         }
 
@@ -77,7 +82,7 @@ namespace Net.Appclusive.PS.Client.Tests
         [ExpectParameterBindingException(MessagePattern = @"'Credential'.+.System\.String.")]
         public void InvokeWithInvalidCredentialParameterThrowsParameterBindingException()
         {
-            var parameters = string.Format("-ApiBaseUri {0} -Credential arbitrary-user-as-string", API_BASE_URI);
+            var parameters = string.Format("-ApiBaseUri {0} -Credential arbitrary-user-as-string", _apiBaseUri);
             PsCmdletAssert.Invoke(sut, parameters);
         }
 
@@ -85,7 +90,7 @@ namespace Net.Appclusive.PS.Client.Tests
         [ExpectParameterBindingException(MessagePattern = @"'TenantId'.+.System\.Guid.")]
         public void InvokeWithInvalidTenantIdParameterThrowsParameterBindingException()
         {
-            var parameters = string.Format("-ApiBaseUri {0} -Username {1} -Password {2} -TenantId 123", API_BASE_URI, USERNAME, PASSWORD);
+            var parameters = string.Format("-ApiBaseUri {0} -Username {1} -Password {2} -TenantId 123", _apiBaseUri, _username, _password);
             PsCmdletAssert.Invoke(sut, parameters);
         }
 
@@ -94,7 +99,7 @@ namespace Net.Appclusive.PS.Client.Tests
         public void InvokeWithParameterSetPlainSucceeds()
         {
             // Arrange
-            var parameters = string.Format(@"-ApiBaseUri {0} -User '{1}' -Password '{2}'", API_BASE_URI, USERNAME, PASSWORD);
+            var parameters = string.Format(@"-ApiBaseUri {0} -User '{1}' -Password '{2}'", _apiBaseUri, _username, _password);
 
             // Act
             var results = PsCmdletAssert.Invoke(sut, parameters);
@@ -113,7 +118,7 @@ namespace Net.Appclusive.PS.Client.Tests
         public void InvokeWithParameterSetPlainWithValidTenantIdSucceeds()
         {
             // Arrange
-            var parameters = string.Format(@"-ApiBaseUri {0} -User '{1}' -Password '{2}' -TenantId {3}", API_BASE_URI, USERNAME, PASSWORD, Identity.Tenant.SYSTEM_TID);
+            var parameters = string.Format(@"-ApiBaseUri {0} -User '{1}' -Password '{2}' -TenantId {3}", _apiBaseUri, _username, _password, Identity.Tenant.SYSTEM_TID);
 
             // Act
             var results = PsCmdletAssert.Invoke(sut, parameters);
@@ -131,7 +136,7 @@ namespace Net.Appclusive.PS.Client.Tests
         public void InvokeWithParameterSetCredSucceeds()
         {
             // Arrange
-            var parameters = string.Format(@"-ApiBaseUri {0} -Credential $([pscredential]::new('{1}', (ConvertTo-SecureString -AsPlainText -String {2} -Force)))", API_BASE_URI, USERNAME, PASSWORD);
+            var parameters = string.Format(@"-ApiBaseUri {0} -Credential $([pscredential]::new('{1}', (ConvertTo-SecureString -AsPlainText -String {2} -Force)))", _apiBaseUri, _username, _password);
 
             // Act
             var results = PsCmdletAssert.Invoke(sut, parameters);
@@ -176,7 +181,7 @@ namespace Net.Appclusive.PS.Client.Tests
         {
             // Arrange
             // missing string terminator
-            var parameters = string.Format(@"-ApiBaseUri {0} -User '{1} -Password '{2}'", API_BASE_URI, USERNAME, PASSWORD);
+            var parameters = string.Format(@"-ApiBaseUri {0} -User '{1} -Password '{2}'", _apiBaseUri, _username, _password);
 
             // Act
             PsCmdletAssert.Invoke(sut, parameters);

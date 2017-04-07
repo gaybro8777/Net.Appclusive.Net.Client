@@ -18,7 +18,6 @@ extern alias Api;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using System.Linq;
 using System.Management.Automation;
 using Api::Net.Appclusive.Api;
 using Api::Net.Appclusive.Public.Domain.Identity;
@@ -40,7 +39,7 @@ namespace Net.Appclusive.PS.Client
          ,
          SupportsShouldProcess = true
          ,
-         HelpUri = "http://docs.appclusive.net/en/latest/Clients/PowerShell/#get-tenant"
+         HelpUri = "http://docs.appclusive.net/en/latest/Clients/PowerShell/#get-cmdlets"
      )]
     [OutputType(typeof(Tenant))]
     public class GetTenant : PsCmdletBase
@@ -76,6 +75,7 @@ namespace Net.Appclusive.PS.Client
         /// Specifies the entity name
         /// </summary>
         [Parameter(Mandatory = true, Position = 0, ParameterSetName = ParameterSets.NAME)]
+        [ValidateNotNullOrEmpty]
         public string Name { get; set; }
 
         /// <summary>
@@ -89,6 +89,7 @@ namespace Net.Appclusive.PS.Client
         /// </summary>
         [Parameter(Mandatory = false)]
         [Alias("Services")]
+        [ValidateNotNull]
         public Dictionary<string, DataServiceContextBase> Svc { get; set; }
 
         /// <summary>
@@ -142,7 +143,7 @@ namespace Net.Appclusive.PS.Client
             {
                 var query = string.Format(Odata.BY_ID_GUID_QUERY_TEMPLATE, Id);
                 var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
-                var result = coreContext.Tenants.AddQueryOption(Odata.FILTER, query);
+                var result = coreContext.Tenants.AddQueryOption(Odata.FILTER, query).Execute();
                 WriteObject(result);
             }
             catch (Exception ex)
