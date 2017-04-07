@@ -101,7 +101,7 @@ namespace Net.Appclusive.PS.Client
 
             if (null == Svc)
             {
-                Svc = ModuleConfiguration.Current.DataServiceClients;
+                Svc = ModuleConfiguration.Current.DataServiceContexts;
             }
 
             Contract.Assert(null != Svc, Messages.Cmdlet_ProcessRecord__NotLoggedIn);
@@ -145,8 +145,8 @@ namespace Net.Appclusive.PS.Client
             try
             {
                 var query = string.Format(Odata.BY_ID_QUERY_TEMPLATE, Id);
-                var coreDataServiceClient = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceClients[nameof(Api::Net.Appclusive.Api.Core.Core)];
-                var result = coreDataServiceClient.Tenants.AddQueryOption(Odata.FILTER, query);
+                var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
+                var result = coreContext.Tenants.AddQueryOption(Odata.FILTER, query);
                 WriteObject(result);
             }
             catch (Exception ex)
@@ -159,8 +159,8 @@ namespace Net.Appclusive.PS.Client
         private void ProcessParameterSetName()
         {
             var query = string.Format(Odata.BY_NAME_QUERY_TEMPLATE, Name);
-            var coreDataServiceClient = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceClients[nameof(Api::Net.Appclusive.Api.Core.Core)];
-            var results = coreDataServiceClient.Tenants.AddQueryOption(Odata.FILTER, query).Execute();
+            var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
+            var results = coreContext.Tenants.AddQueryOption(Odata.FILTER, query).Execute();
 
             if (!results.Any())
             {
@@ -173,8 +173,8 @@ namespace Net.Appclusive.PS.Client
 
         private void ProcessParameterSetList()
         {
-            var coreDataServiceClient = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceClients[nameof(Api::Net.Appclusive.Api.Core.Core)];
-            var results = coreDataServiceClient.Tenants.Execute();
+            var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
+            var results = coreContext.Tenants.Execute();
             results.ForEach(WriteObject);
         }
     }

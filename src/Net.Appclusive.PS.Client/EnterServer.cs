@@ -142,7 +142,7 @@ namespace Net.Appclusive.PS.Client
                 ApiBaseUri = ModuleConfiguration.Current.ApiBaseUri;
             }
 
-            var dataServiceClients = CreateDataServiceClients();
+            var dataServiceContexts = CreateDataServiceContexts();
 
             // perform login
             // DFTODO - support negotiate authentication
@@ -152,7 +152,7 @@ namespace Net.Appclusive.PS.Client
             {
                 ModuleConfiguration.Current.TraceSource.TraceEvent(TraceEventType.Verbose, (int)Constants.Logging.EventId.EnterServer, Messages.EnterServer_ProcessRecord__Login, ApiBaseUri.AbsoluteUri, loginEndpoint);
 
-                dataServiceClients[nameof(Api::Net.Appclusive.Api.Core.Core)].InvokeEntitySetActionWithSingleResult<User>(nameof(Api::Net.Appclusive.Api.Core.Core.Authentications), loginEndpoint, null);
+                dataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)].InvokeEntitySetActionWithSingleResult<User>(nameof(Api::Net.Appclusive.Api.Core.Core.Authentications), loginEndpoint, null);
 
                 ModuleConfiguration.Current.TraceSource.TraceEvent(TraceEventType.Information, (int)Constants.Logging.EventId.EnterServer, Messages.EnterServer_ProcessRecord__LoginSucceeded, ApiBaseUri.AbsoluteUri, loginEndpoint);
             }
@@ -168,9 +168,9 @@ namespace Net.Appclusive.PS.Client
                 throw;
             }
 
-            // Set DataServiceClients variable of current configuration after successful login
-            ModuleConfiguration.Current.DataServiceClients = dataServiceClients;
-            WriteObject(dataServiceClients);
+            // Set DataServiceContexts variable of current configuration after successful login
+            ModuleConfiguration.Current.DataServiceContexts = dataServiceContexts;
+            WriteObject(dataServiceContexts);
         }
 
         private string ResolveLoginEndpoint(PSCredential credential)
@@ -183,34 +183,34 @@ namespace Net.Appclusive.PS.Client
             return "BasicLogin";
         }
 
-        private Dictionary<string, DataServiceContextBase> CreateDataServiceClients()
+        private Dictionary<string, DataServiceContextBase> CreateDataServiceContexts()
         {
             Contract.Requires(null != ApiBaseUri);
             Contract.Requires(null != Credential);
             Contract.Ensures(Contract.Result<Dictionary<string, DataServiceContextBase>>().ContainsKey(nameof(Api::Net.Appclusive.Api.Core.Core)));
 
-            var dataServiceClients = new Dictionary<string, DataServiceContextBase>();
+            var dataServiceContexts = new Dictionary<string, DataServiceContextBase>();
             var credential = Credential.GetNetworkCredential();
 
-            var dataServiceClientTypes =
+            var dataServiceContextTypes =
                 typeof(DataServiceContextBase).Assembly.DefinedTypes.Where(
                     t => t.BaseType == typeof(DataServiceContextBase));
 
-            foreach (var dataServiceClientType in dataServiceClientTypes)
+            foreach (var dataServiceContextType in dataServiceContextTypes)
             {
-                var serviceRootUri = new Uri(UriHelper.ConcatUri(ApiBaseUri.AbsoluteUri, dataServiceClientType.Name));
-                var dataServiceClient = (DataServiceContextBase)Activator.CreateInstance(dataServiceClientType, serviceRootUri);
-                dataServiceClient.Credentials = credential;
+                var serviceRootUri = new Uri(UriHelper.ConcatUri(ApiBaseUri.AbsoluteUri, dataServiceContextType.Name));
+                var dataServiceContext = (DataServiceContextBase)Activator.CreateInstance(dataServiceContextType, serviceRootUri);
+                dataServiceContext.Credentials = credential;
 
                 if (default(Guid) != TenantId)
                 {
-                    dataServiceClient.TenantId = TenantId.ToString();
+                    dataServiceContext.TenantId = TenantId.ToString();
                 }
 
-                dataServiceClients.Add(dataServiceClientType.Name, dataServiceClient);
+                dataServiceContexts.Add(dataServiceContextType.Name, dataServiceContext);
             }
 
-            return dataServiceClients;
+            return dataServiceContexts;
         }
 
         // this exception is rather nasty - so let's try to extract something useful from it

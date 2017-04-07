@@ -44,7 +44,7 @@ namespace Net.Appclusive.PS.Client
         /// <summary>
         /// Returns a dictionary of data service context references created during last Enter-Server call
         /// </summary>
-        public Dictionary<string, DataServiceContextBase> DataServiceClients { get; set; }
+        public Dictionary<string, DataServiceContextBase> DataServiceContexts { get; set; }
 
         private static readonly Lazy<TraceSource> _traceSource = new Lazy<TraceSource>(() =>
         {

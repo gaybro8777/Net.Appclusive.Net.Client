@@ -149,10 +149,10 @@
       <Link>Properties\CommonAssemblySettings.cs</Link>
     </Compile>
     <Compile Include="Constants\Authentication.cs" />
-    <Compile Include="ContractClassForIEditableDataServiceClientContext.cs" />
+    <Compile Include="ContractClassForIEditableDataServiceContext.cs" />
     <Compile Include="ContractClassForIOdataActionExecutor.cs" />
     <Compile Include="DataServiceContextBase.cs" />
-    <Compile Include="IEditableDataServiceClientContext.cs" />
+    <Compile Include="IEditableDataServiceContext.cs" />
     <Compile Include="IOdataActionExecutor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\Core\Reference.cs">

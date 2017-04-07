@@ -18,8 +18,8 @@ using System.Diagnostics.Contracts;
 
 namespace Net.Appclusive.Api
 {
-    [ContractClassFor(typeof(IEditableDataServiceClientContext))]
-    internal abstract class ContractClassForIEditableDataServiceClientContext : IEditableDataServiceClientContext
+    [ContractClassFor(typeof(IEditableDataServiceContext))]
+    internal abstract class ContractClassForIEditableDataServiceContext : IEditableDataServiceContext
     {
         public void AttachIfNeeded(object entity)
         {

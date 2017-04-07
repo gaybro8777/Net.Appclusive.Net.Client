@@ -33,7 +33,7 @@ namespace Net.Appclusive.Api
 {
     public class DataServiceContextBase :
         DataServiceContext,
-        IEditableDataServiceClientContext,
+        IEditableDataServiceContext,
         IOdataActionExecutor
     {
         // Headers
@@ -253,7 +253,7 @@ namespace Net.Appclusive.Api
             }
         }
 
-        #region IEditableDataServiceClientContext
+        #region IEditableDataServiceContext
 
         public void AttachIfNeeded(object entity)
         {
@@ -312,7 +312,7 @@ namespace Net.Appclusive.Api
             }
         }
 
-        #endregion IEditableDataServiceClientContext
+        #endregion IEditableDataServiceContext
 
         #region IOdataActionExecutor
 
