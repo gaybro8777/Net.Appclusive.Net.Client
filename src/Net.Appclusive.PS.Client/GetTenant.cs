@@ -132,11 +132,8 @@ namespace Net.Appclusive.PS.Client
                     }
 
                 default:
-                    bool isValidParameterSetName = false;
-                    Contract.Assert(isValidParameterSetName, ParameterSetName);
-                    break;
+                    throw new NotImplementedException();
             }
-
         }
 
         private void ProcessParameterSetId()
