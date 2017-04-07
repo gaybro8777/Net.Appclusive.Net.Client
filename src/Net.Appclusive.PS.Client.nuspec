@@ -40,6 +40,7 @@ initial release
 			<dependency id="Microsoft.PowerShell.5.ReferenceAssemblies" version="1.0.0" />
 			<dependency id="Newtonsoft.Json" version="9.0.1" />
 			<dependency id="System.ComponentModel.Annotations" version="4.3.0" />
+			<dependency id="System.Linq.Dynamic" version="1.0.7" />
 			<dependency id="System.Spatial" version="5.6.4" />
         </dependencies>
     </metadata>
@@ -61,6 +62,7 @@ initial release
 		<file src="Net.Appclusive.PS.Client\bin\Release\Microsoft.Data.Edm.dll" target="tools\Microsoft.Data.Edm.dll" />
 		<file src="Net.Appclusive.PS.Client\bin\Release\Microsoft.Data.OData.dll" target="tools\Microsoft.Data.OData.dll" />
 		<file src="Net.Appclusive.PS.Client\bin\Release\Microsoft.Data.Services.Client.dll" target="tools\Microsoft.Data.Services.Client.dll" />
+		<file src="Net.Appclusive.PS.Client\bin\Release\System.Linq.Dynamic.dll" target="tools\System.Linq.Dynamic.dll" />
 		<file src="Net.Appclusive.PS.Client\bin\Release\System.Spatial.dll" target="tools\System.Spatial.dll" />
 		<file src="Net.Appclusive.PS.Client\bin\Release\System.Spatial.xml" target="tools\System.Spatial.xml" />
 	</files>
