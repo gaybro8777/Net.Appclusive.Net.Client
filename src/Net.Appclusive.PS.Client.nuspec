@@ -32,8 +32,8 @@ initial release
         <copyright>Copyright © 2017 d-fens GmbH</copyright>
         <tags>dfch Appclusive Client PowerShell</tags>
         <dependencies>
-			<dependency id="biz.dfch.CS.Commons" version="1.8.2" />
-			<dependency id="biz.dfch.CS.PowerShell.Commons" version="1.7.0" />
+			<dependency id="biz.dfch.CS.Commons" version="1.12.0" />
+			<dependency id="biz.dfch.CS.PowerShell.Commons" version="2.0.0" />
 			<dependency id="Microsoft.Data.Edm" version="5.6.4" />
 			<dependency id="Microsoft.Data.OData" version="5.6.4" />
 			<dependency id="Microsoft.Data.Services.Client" version="5.6.4" />
