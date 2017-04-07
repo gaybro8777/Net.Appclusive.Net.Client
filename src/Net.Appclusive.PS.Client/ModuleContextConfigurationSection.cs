@@ -52,7 +52,7 @@ namespace Net.Appclusive.PS.Client
         /// Specifies the credential consisting of aa comma separated string to connect with
         /// </summary>
         [TypeConverter(typeof(PsCredentialTypeConverter))]
-        [ConfigurationProperty(CREDENTIAL_PROPERTY_NAME, DefaultValue = "admin,P@ssw0rd", IsRequired = false)]
+        [ConfigurationProperty(CREDENTIAL_PROPERTY_NAME, DefaultValue = "Arbitrary,P@ssw0rd", IsRequired = false)]
         public PSCredential Credential
         {
             get { return (PSCredential)this[CREDENTIAL_PROPERTY_NAME]; }

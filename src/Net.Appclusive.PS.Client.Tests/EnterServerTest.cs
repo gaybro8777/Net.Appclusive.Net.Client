@@ -29,7 +29,7 @@ namespace Net.Appclusive.PS.Client.Tests
     [TestClass]
     public class EnterServerTest
     {
-        private const string USERNAME = "admin";
+        private const string USERNAME = "Arbitrary";
         private const string PASSWORD = "P@ssw0rd";
         private const string API_BASE_URI = "http://appclusive/api/";
 
