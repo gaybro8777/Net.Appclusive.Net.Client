@@ -44,7 +44,7 @@ namespace Net.Appclusive.Api
         {
             Contract.Requires(default(Guid) != id);
 
-            return dataServiceQuery.FirstOrDefault(entity => entity.Id == id);
+            return dataServiceQuery.Where(entity => entity.Id == id).FirstOrDefault();
         }
     }
 }
