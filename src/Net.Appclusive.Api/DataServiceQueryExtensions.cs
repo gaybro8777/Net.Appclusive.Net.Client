@@ -44,7 +44,10 @@ namespace Net.Appclusive.Api
         {
             Contract.Requires(default(Guid) != id);
 
+            // IMPORTANT: Do NOT change to dataServiceQuery.FirstOrDefault(...) as FirstOrDefault(...) is not supported!!!
+            // ReSharper disable ReplaceWithSingleCallToFirstOrDefault
             return dataServiceQuery.Where(entity => entity.Id == id).FirstOrDefault();
+            // ReSharper restore ReplaceWithSingleCallToFirstOrDefault
         }
     }
 }
