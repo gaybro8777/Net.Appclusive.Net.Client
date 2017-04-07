@@ -63,6 +63,5 @@ initial release
 		<file src="Net.Appclusive.PS.Client\bin\Release\Microsoft.Data.Services.Client.dll" target="tools\Microsoft.Data.Services.Client.dll" />
 		<file src="Net.Appclusive.PS.Client\bin\Release\System.Spatial.dll" target="tools\System.Spatial.dll" />
 		<file src="Net.Appclusive.PS.Client\bin\Release\System.Spatial.xml" target="tools\System.Spatial.xml" />
-		<file src="Net.Appclusive.PS.Client\bin\Release\Net.Appclusive.PS.Client.dll.config" target="tools\Net.Appclusive.PS.Client.dll.config" />
 	</files>
 </package>
