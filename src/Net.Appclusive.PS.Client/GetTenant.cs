@@ -161,19 +161,14 @@ namespace Net.Appclusive.PS.Client
             var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
             var results = coreContext.Tenants.AddQueryOption(Odata.FILTER, query).Execute();
 
-            if (!results.Any())
-            {
-                WriteError(ErrorRecordFactory.GetNotFound(Messages.Cmdlet_ProcessParamaterSetName__NotFound, Logging.EventId.GetTenantNameNotFound.ToString(), nameof(Tenant), Name));
-                return;
-            }
-
-            WriteObject(results);
+            results.ForEach(WriteObject);
         }
 
         private void ProcessParameterSetList()
         {
             var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
             var results = coreContext.Tenants.Execute();
+
             results.ForEach(WriteObject);
         }
     }
