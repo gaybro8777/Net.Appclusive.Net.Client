@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-namespace Net.Appclusive.PS.Client.Constants
+namespace Net.Appclusive.Api.Constants
 {
-    public static class Odata
+    public static class DataService
     {
-        public const string BY_ID_LONG_QUERY_TEMPLATE = "Id eq {0}L";
-        public const string BY_ID_GUID_QUERY_TEMPLATE = "Id eq guid'{0}'";
-        public const string BY_NAME_QUERY_TEMPLATE = "Name eq '{0}'";
+        public static class QueryOption
+        {
+            public const string FILTER = "$filter";
+        }
     }
 }

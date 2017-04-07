@@ -126,7 +126,8 @@ namespace Net.Appclusive.PS.Client.Tests
         //        tenant
         //    };
 
-        //    Mock.Arrange(() => CoreContext.Tenants.AddQueryOption(Odata.BY_ID_GUID_QUERY_TEMPLATE, tenantId).Execute())
+        //    var query = string.Format(Odata.BY_ID_GUID_QUERY_TEMPLATE, tenantId);
+        //    Mock.Arrange(() => CoreContext.Tenants.Filter(query).Execute())
         //        .Returns(tenants)
         //        .OccursOnce();
 
@@ -155,7 +156,8 @@ namespace Net.Appclusive.PS.Client.Tests
         //        tenant
         //    };
 
-        //    Mock.Arrange(() => CoreContext.Tenants.AddQueryOption(Odata.BY_NAME_QUERY_TEMPLATE, tenantName).Execute())
+        //    var query = string.Format(Odata.BY_NAME_QUERY_TEMPLATE, tenantName);
+        //    Mock.Arrange(() => CoreContext.Tenants.Filter(query).Execute())
         //        .Returns(tenants)
         //        .OccursOnce();
 
@@ -173,26 +175,26 @@ namespace Net.Appclusive.PS.Client.Tests
         //    Assert.AreEqual(1, result.Count());
         //}
 
-        private Tenant CreateSampleTenant()
-        {
-            return new Tenant
-            {
-                Id = default(Guid)
-                ,
-                Name = nameof(Tenant.Name)
-                ,
-                Description = nameof(Tenant.Description)
-                ,
-                MappedId = nameof(Tenant.MappedId)
-                ,
-                MappedType = nameof(Tenant.MappedType)
-                ,
-                ParentId = Guid.NewGuid()
-                ,
-                Namespace = "net.sharedop"
-                ,
-                CustomerId = 42
-            };
-        }
+        //private Tenant CreateSampleTenant()
+        //{
+        //    return new Tenant
+        //    {
+        //        Id = default(Guid)
+        //        ,
+        //        Name = nameof(Tenant.Name)
+        //        ,
+        //        Description = nameof(Tenant.Description)
+        //        ,
+        //        MappedId = nameof(Tenant.MappedId)
+        //        ,
+        //        MappedType = nameof(Tenant.MappedType)
+        //        ,
+        //        ParentId = Guid.NewGuid()
+        //        ,
+        //        Namespace = "net.sharedop"
+        //        ,
+        //        CustomerId = 42
+        //    };
+        //}
     }
 }

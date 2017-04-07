@@ -143,7 +143,7 @@ namespace Net.Appclusive.PS.Client
             {
                 var query = string.Format(Odata.BY_ID_GUID_QUERY_TEMPLATE, Id);
                 var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
-                var result = coreContext.Tenants.AddQueryOption(Odata.FILTER, query);
+                var result = coreContext.Tenants.Filter(query);
                 WriteObject(result);
             }
             catch (Exception ex)
@@ -157,7 +157,7 @@ namespace Net.Appclusive.PS.Client
         {
             var query = string.Format(Odata.BY_NAME_QUERY_TEMPLATE, Name);
             var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
-            var results = coreContext.Tenants.AddQueryOption(Odata.FILTER, query).Execute();
+            var results = coreContext.Tenants.Filter(query).Execute();
 
             results.ForEach(WriteObject);
         }

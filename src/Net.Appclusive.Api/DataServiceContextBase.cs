@@ -206,7 +206,7 @@ namespace Net.Appclusive.Api
         {
             Contract.Ensures(null != Contract.Result<Version>());
 
-            var assembly = Assembly.GetExecutingAssembly();
+            var assembly = typeof(DataServiceContextBase).Assembly;
             var assemblyName = assembly.GetName();
             return assemblyName.Version;
         }
