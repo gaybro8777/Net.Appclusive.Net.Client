@@ -24,7 +24,6 @@ using Net.Appclusive.Api.Constants;
 using Net.Appclusive.Public.Domain.Identity;
 using Telerik.JustMock;
 using System.Linq.Dynamic;
-using Telerik.JustMock.Helpers;
 
 namespace Net.Appclusive.Api.Tests
 {
@@ -139,8 +138,13 @@ namespace Net.Appclusive.Api.Tests
             var sut = Mock.Create<DataServiceQuery<Tenant>>();
             var id = Guid.NewGuid();
 
-            Mock.Arrange(() => sut.FirstOrDefault(entity => entity.Id == id))
-                .Returns(new Tenant())
+            var tenants = new List<Tenant>
+            {
+                new Tenant()
+            };
+
+            Mock.Arrange(() => sut.Where(entity => entity.Id == id))
+                .Returns(tenants.AsQueryable)
                 .OccursOnce();
 
             // Act
