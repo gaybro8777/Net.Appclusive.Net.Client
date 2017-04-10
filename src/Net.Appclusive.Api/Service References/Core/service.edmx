@@ -135,6 +135,10 @@
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.Ace" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Security.Right" Role="DetailsPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="Net_Appclusive_Public_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.Role" Role="DetailsPartner" Multiplicity="0..1" />
@@ -194,10 +198,6 @@
       <Association Name="Net_Appclusive_Public_Domain_Control_WorkItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Control.WorkItem" Role="DetailsPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
-        <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Security.Right" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
     <Schema Namespace="Net.Appclusive.Public.Domain.Configuration" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -445,8 +445,8 @@
         </Key>
         <Property Name="AclId" Type="Edm.Int64" Nullable="false" />
         <Property Name="PermissionId" Type="Edm.Int64" Nullable="false" />
-        <Property Name="UserId" Type="Edm.Int64" Nullable="false" />
-        <Property Name="RoleId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="UserId" Type="Edm.Int64" />
+        <Property Name="RoleId" Type="Edm.Int64" />
         <Property Name="Type" Type="Edm.String" Nullable="false" />
         <Property Name="Id" Type="Edm.Int64" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
@@ -455,6 +455,15 @@
         <NavigationProperty Name="User" Relationship="Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Security_Ace_User_Net_Appclusive_Public_Domain_Identity_User_UserPartner" ToRole="User" FromRole="UserPartner" />
         <NavigationProperty Name="Role" Relationship="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Ace_Role_Net_Appclusive_Public_Domain_Security_Role_RolePartner" ToRole="Role" FromRole="RolePartner" />
         <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Ace_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
+      </EntityType>
+      <EntityType Name="Right">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
       <EntityType Name="Role">
         <Key>
@@ -509,15 +518,6 @@
         <Property Name="Description" Type="Edm.String" />
         <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Permission_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
-      <EntityType Name="Right">
-        <Key>
-          <PropertyRef Name="Id" />
-        </Key>
-        <Property Name="Id" Type="Edm.Int64" Nullable="false" />
-        <Property Name="Name" Type="Edm.String" Nullable="false" />
-        <Property Name="Description" Type="Edm.String" />
-        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
-      </EntityType>
       <Association Name="Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner">
         <End Type="Net.Appclusive.Public.Domain.Security.Role" Role="Roles" Multiplicity="*" />
         <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="RolesPartner" Multiplicity="0..1" />
@@ -549,14 +549,6 @@
       <Association Name="Net_Appclusive_Public_Domain_Security_Ace_Role_Net_Appclusive_Public_Domain_Security_Role_RolePartner">
         <End Type="Net.Appclusive.Public.Domain.Security.Role" Role="Role" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.Ace" Role="RolePartner" Multiplicity="0..1" />
-        <ReferentialConstraint>
-          <Principal Role="Role">
-            <PropertyRef Name="Id" />
-          </Principal>
-          <Dependent Role="RolePartner">
-            <PropertyRef Name="RoleId" />
-          </Dependent>
-        </ReferentialConstraint>
       </Association>
       <Association Name="Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_Security_Right_RightsPartner">
         <End Type="Net.Appclusive.Public.Domain.Security.Right" Role="Rights" Multiplicity="*" />
@@ -625,14 +617,6 @@
       <Association Name="Net_Appclusive_Public_Domain_Security_Ace_User_Net_Appclusive_Public_Domain_Identity_User_UserPartner">
         <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="User" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.Ace" Role="UserPartner" Multiplicity="0..1" />
-        <ReferentialConstraint>
-          <Principal Role="User">
-            <PropertyRef Name="Id" />
-          </Principal>
-          <Dependent Role="UserPartner">
-            <PropertyRef Name="UserId" />
-          </Dependent>
-        </ReferentialConstraint>
       </Association>
       <Association Name="Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public_Domain_Identity_User_UsersPartner">
         <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="Users" Multiplicity="*" />
@@ -885,6 +869,7 @@
         <EntitySet Name="Users" EntityType="Net.Appclusive.Public.Domain.Identity.User" />
         <EntitySet Name="ItemAcls" EntityType="Net.Appclusive.Public.Domain.Security.ItemAcl" />
         <EntitySet Name="Aces" EntityType="Net.Appclusive.Public.Domain.Security.Ace" />
+        <EntitySet Name="Rights" EntityType="Net.Appclusive.Public.Domain.Security.Right" />
         <EntitySet Name="Roles" EntityType="Net.Appclusive.Public.Domain.Security.Role" />
         <EntitySet Name="Acls" EntityType="Net.Appclusive.Public.Domain.Security.Acl" />
         <EntitySet Name="ItemAces" EntityType="Net.Appclusive.Public.Domain.Security.ItemAce" />
@@ -1007,6 +992,9 @@
         </FunctionImport>
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Security.Ace" IsBindable="true" EntitySet="Aces" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Ace)" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Security.Right" IsBindable="true" EntitySet="Rights" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Right)" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Security.Role" IsBindable="true" EntitySet="Roles" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Role)" Nullable="false" />
@@ -1201,9 +1189,17 @@
           <End Role="DetailsPartner" EntitySet="Aces" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+          <End Role="DetailsPartner" EntitySet="Rights" />
+          <End Role="Details" EntitySet="PublicEntityDetailss" />
+        </AssociationSet>
         <AssociationSet Name="Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public_Domain_Identity_User_UsersPartnerSet" Association="Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public_Domain_Identity_User_UsersPartner">
           <End Role="UsersPartner" EntitySet="Roles" />
           <End Role="Users" EntitySet="Users" />
+        </AssociationSet>
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_Security_Right_RightsPartnerSet" Association="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_Security_Right_RightsPartner">
+          <End Role="RightsPartner" EntitySet="Roles" />
+          <End Role="Rights" EntitySet="Rights" />
         </AssociationSet>
         <AssociationSet Name="Net_Appclusive_Public_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="Roles" />
