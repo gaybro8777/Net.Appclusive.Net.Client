@@ -37,6 +37,7 @@ namespace Net.Appclusive.Api
         {
             Contract.Requires(0 < id);
 
+            // IMPORTANT: Do NOT change to dataServiceQuery.FirstOrDefault(...) as FirstOrDefault(...) is not supported!!!
             return dataServiceQuery.Where("Id == @0", id).FirstOrDefault();
         }
 
