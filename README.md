@@ -13,7 +13,7 @@ d-fens GmbH, General-Guisan-Strasse 6, CH-6300 Zug, Switzerland
 
 ## Development
 
-For information concerning development of projects of [`Net.Appclusive.Net.Client`](https://github.com/Appclusive/Net.Appclusive.Net.Client) see [here]()
+For information concerning development of [`Net.Appclusive.Net.Client`](https://github.com/Appclusive/Net.Appclusive.Net.Client) see [here](http://docs.appclusive.net/en/latest/Development/NetAppclusiveNetClient/)
 
 ## Download
 
