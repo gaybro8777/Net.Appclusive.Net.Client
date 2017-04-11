@@ -149,7 +149,7 @@ namespace Net.Appclusive.Api.Tests
                 Credentials = new NetworkCredential()
                 {
                     UserName = Authentication.AUTHORIZATION_BAERER_USER_NAME,
-                    Password = "TOKEN1"
+                    Password = "TOKEN2"
                 }
                 ,
                 TenantId = SYSTEM_TENANT_ID
