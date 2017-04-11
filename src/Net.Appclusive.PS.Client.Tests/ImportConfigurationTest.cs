@@ -61,7 +61,7 @@ namespace Net.Appclusive.PS.Client.Tests
 
         [TestMethod]
         [ExpectContractFailure(MessagePattern = ModuleConfiguration.CONFIGURATION_FILE_NAME)]
-        public void InvokeWithEmptyPathResolvesDefaultConfigurationFileName()
+        public void InvokeWithEmptyPathResolvesDefaultConfigurationFileNameThrowsContractException()
         {
             Mock.SetupStatic(typeof(File));
             Mock.Arrange(() => File.Exists(Arg.IsAny<string>()))
