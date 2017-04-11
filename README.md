@@ -4,7 +4,7 @@
 [![Documentation](https://readthedocs.org/projects/pip/badge/)](http://docs.appclusive.net/en/latest/Clients/)
 [![Version](https://img.shields.io/nuget/v/Net.Appclusive.Net.Client.svg)](https://www.nuget.org/packages/Net.Appclusive.Net.Client/)
 [![Version](https://img.shields.io/nuget/v/Net.Appclusive.PS.Client.svg)](https://www.nuget.org/packages/Net.Appclusive.PS.Client/)
-[![PowerShell Gallery - Net.Appclusive.PS.Client](https://img.shields.io/badge/PowerShell%20Gallery-PowerShellGet-blue.svg)](https://www.powershellgallery.com/packages/Net.Appclusive.PS.Client)
+[![PowerShell Gallery - Net.Appclusive.PS.Client](https://img.shields.io/badge/PowerShell%20Gallery-Net.Appclusive.PS.Client-blue.svg)](https://www.powershellgallery.com/packages/Net.Appclusive.PS.Client)
 [![Minimum Supported PowerShell Version](https://img.shields.io/badge/PowerShell-5.0-blue.svg)](https://github.com/Appclusive/Net.Appclusive.Net.Client)
 
 C#/.Net and PowerShell Clients for the Appclusive Blueprint Modelling and Automation Engine
