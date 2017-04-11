@@ -28,6 +28,8 @@ namespace Net.Appclusive.Api.Tests
     [TestClass]
     public class AuthenticationIntegrationTest
     {
+        private const string SYSTEM_TENANT_ID = "11111111-1111-1111-1111-111111111111";
+
         private static readonly Uri _serviceRoot;
 
         static AuthenticationIntegrationTest()
@@ -53,6 +55,8 @@ namespace Net.Appclusive.Api.Tests
                     UserName = "Arbitrary",
                     Password = "P@ssw0rd"
                 }
+                ,
+                TenantId = SYSTEM_TENANT_ID
             };
             svc.Format.UseJson();
 
@@ -85,6 +89,8 @@ namespace Net.Appclusive.Api.Tests
                     UserName = Authentication.AUTHORIZATION_BAERER_USER_NAME,
                     Password = "JWT_HERE"
                 }
+                ,
+                TenantId = SYSTEM_TENANT_ID
             };
             svc.Format.UseJson();
 
@@ -110,7 +116,10 @@ namespace Net.Appclusive.Api.Tests
         public void NegotiateAuthenticationSucceeds()
         {
             // Arrange
-            var svc = new Core.Core(_serviceRoot);
+            var svc = new Core.Core(_serviceRoot)
+            {
+                TenantId = SYSTEM_TENANT_ID
+            };
             svc.Format.UseJson();
 
             Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(nameof(Core.Core.Authentications), "NegotiateLogin", null));
@@ -142,6 +151,8 @@ namespace Net.Appclusive.Api.Tests
                     UserName = Authentication.AUTHORIZATION_BAERER_USER_NAME,
                     Password = "TOKEN2"
                 }
+                ,
+                TenantId = SYSTEM_TENANT_ID
             };
             svc.Format.UseJson();
 
