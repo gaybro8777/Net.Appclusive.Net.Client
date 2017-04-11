@@ -11,6 +11,10 @@ C#/.Net and PowerShell Clients for the Appclusive Blueprint Modelling and Automa
 
 d-fens GmbH, General-Guisan-Strasse 6, CH-6300 Zug, Switzerland
 
+## Development
+
+For information concerning development of projects of [`Net.Appclusive.Net.Client`](https://github.com/Appclusive/Net.Appclusive.Net.Client) see [here]()
+
 ## Download
 
 ### C#/.Net Client
