@@ -854,20 +854,26 @@ namespace Net.Appclusive.Api
         {
             var result = default(string);
 
+            var networkCredential = (NetworkCredential)Credentials;
             if (IsBearerAuthentication())
             {
-                var networkCredentials = (NetworkCredential)Credentials;
-                result = string.Format(Authentication.AUTHORIZATION_BEARER_TEMPLATE, networkCredentials.Password);
+                result = string.Format(Authentication.AUTHORIZATION_BEARER_TEMPLATE, networkCredential.Password);
             }
 
             if (IsBasicAuthentication())
             {
-                var networkCredentials = (NetworkCredential)Credentials;
-                var basicAuthString = Convert.ToBase64String(Encoding.ASCII.GetBytes($"{networkCredentials.UserName}:{networkCredentials.Password}"));
-                result = string.Format(Authentication.AUTHORIZATION_BASIC_TEMPLATE, basicAuthString);
+                result = BuildBasicAuthorizationHeaderValue(networkCredential);
             }
 
             return result;
+        }
+
+        private string BuildBasicAuthorizationHeaderValue(NetworkCredential credential)
+        {
+            var basicAuthString = Convert.ToBase64String(string.IsNullOrEmpty(credential.Domain) ? 
+                Encoding.ASCII.GetBytes($"{credential.UserName}:{credential.Password}") : 
+                Encoding.ASCII.GetBytes($"{credential.Domain}\\{credential.UserName}:{credential.Password}"));
+            return string.Format(Authentication.AUTHORIZATION_BASIC_TEMPLATE, basicAuthString);
         }
     }
 }
