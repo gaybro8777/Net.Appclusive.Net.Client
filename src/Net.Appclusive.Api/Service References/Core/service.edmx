@@ -48,13 +48,13 @@
         <End Type="Net.Appclusive.Public.Types.NameValuePair" Role="Attributes" Multiplicity="*" />
         <End Type="Net.Appclusive.Public.Domain.Inventory.Item" Role="AttributesPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_OrderItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_OrderItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner">
         <End Type="Net.Appclusive.Public.Types.IdValuePair" Role="Configuration" Multiplicity="*" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.OrderItem" Role="ConfigurationPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.OrderItem" Role="ConfigurationPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner">
         <End Type="Net.Appclusive.Public.Types.IdValuePair" Role="Configuration" Multiplicity="*" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.CartItem" Role="ConfigurationPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.CartItem" Role="ConfigurationPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
     <Schema Namespace="Net.Appclusive.Public.Domain" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -123,6 +123,10 @@
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.Authentication" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="DetailsPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="Net_Appclusive_Public_Domain_Security_ItemAcl_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.ItemAcl" Role="DetailsPartner" Multiplicity="0..1" />
@@ -130,6 +134,10 @@
       <Association Name="Net_Appclusive_Public_Domain_Security_Ace_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.Ace" Role="DetailsPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Security.Right" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Net_Appclusive_Public_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
@@ -147,41 +155,41 @@
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.Permission" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_Order_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Order" Role="DetailsPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.Order" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Net_Appclusive_Public_Domain_Control_Job_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Control.Job" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Cart" Role="DetailsPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.Cart" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.OrderItem" Role="DetailsPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.OrderItem" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_CartItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_CartItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.CartItem" Role="DetailsPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.CartItem" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Catalogue" Role="DetailsPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.Catalogue" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_CatalogueItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.CatalogueItem" Role="DetailsPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.CatalogueItem" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Blueprint" Role="DetailsPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.Blueprint" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
-        <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="DetailsPartner" Multiplicity="0..1" />
+      <Association Name="Net_Appclusive_Public_Domain_Identity_Tenant_Details_Net_Appclusive_Public_Domain_TenantDetails_DetailsPartner">
+        <End Type="Net.Appclusive.Public.Domain.TenantDetails" Role="Details" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Identity.Tenant" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
       <Association Name="Net_Appclusive_Public_Domain_Control_Approval_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
@@ -190,10 +198,6 @@
       <Association Name="Net_Appclusive_Public_Domain_Control_WorkItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
         <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Control.WorkItem" Role="DetailsPartner" Multiplicity="0..1" />
-      </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
-        <End Type="Net.Appclusive.Public.Domain.PublicEntityDetails" Role="Details" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Security.Right" Role="DetailsPartner" Multiplicity="0..1" />
       </Association>
     </Schema>
     <Schema Namespace="Net.Appclusive.Public.Domain.Configuration" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -393,9 +397,9 @@
         <End Type="Net.Appclusive.Public.Domain.Inventory.Item" Role="Children" Multiplicity="*" />
         <End Type="Net.Appclusive.Public.Domain.Inventory.Item" Role="ChildrenPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartner">
         <End Type="Net.Appclusive.Public.Domain.Inventory.Model" Role="Model" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Blueprint" Role="ModelPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.Blueprint" Role="ModelPartner" Multiplicity="0..1" />
         <ReferentialConstraint>
           <Principal Role="Model">
             <PropertyRef Name="Id" />
@@ -441,8 +445,8 @@
         </Key>
         <Property Name="AclId" Type="Edm.Int64" Nullable="false" />
         <Property Name="PermissionId" Type="Edm.Int64" Nullable="false" />
-        <Property Name="UserId" Type="Edm.Int64" Nullable="false" />
-        <Property Name="RoleId" Type="Edm.Int64" Nullable="false" />
+        <Property Name="UserId" Type="Edm.Int64" />
+        <Property Name="RoleId" Type="Edm.Int64" />
         <Property Name="Type" Type="Edm.String" Nullable="false" />
         <Property Name="Id" Type="Edm.Int64" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
@@ -451,6 +455,15 @@
         <NavigationProperty Name="User" Relationship="Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Security_Ace_User_Net_Appclusive_Public_Domain_Identity_User_UserPartner" ToRole="User" FromRole="UserPartner" />
         <NavigationProperty Name="Role" Relationship="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Ace_Role_Net_Appclusive_Public_Domain_Security_Role_RolePartner" ToRole="Role" FromRole="RolePartner" />
         <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Ace_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
+      </EntityType>
+      <EntityType Name="Right">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Int64" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
       <EntityType Name="Role">
         <Key>
@@ -505,15 +518,10 @@
         <Property Name="Description" Type="Edm.String" />
         <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Permission_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
-      <EntityType Name="Right">
-        <Key>
-          <PropertyRef Name="Id" />
-        </Key>
-        <Property Name="Id" Type="Edm.Int64" Nullable="false" />
-        <Property Name="Name" Type="Edm.String" Nullable="false" />
-        <Property Name="Description" Type="Edm.String" />
-        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
-      </EntityType>
+      <Association Name="Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner">
+        <End Type="Net.Appclusive.Public.Domain.Security.Role" Role="Roles" Multiplicity="*" />
+        <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="RolesPartner" Multiplicity="0..1" />
+      </Association>
       <Association Name="Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartner">
         <End Type="Net.Appclusive.Public.Domain.Security.ItemAcl" Role="Parent" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.ItemAcl" Role="ParentPartner" Multiplicity="0..1" />
@@ -541,14 +549,6 @@
       <Association Name="Net_Appclusive_Public_Domain_Security_Ace_Role_Net_Appclusive_Public_Domain_Security_Role_RolePartner">
         <End Type="Net.Appclusive.Public.Domain.Security.Role" Role="Role" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.Ace" Role="RolePartner" Multiplicity="0..1" />
-        <ReferentialConstraint>
-          <Principal Role="Role">
-            <PropertyRef Name="Id" />
-          </Principal>
-          <Dependent Role="RolePartner">
-            <PropertyRef Name="RoleId" />
-          </Dependent>
-        </ReferentialConstraint>
       </Association>
       <Association Name="Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_Security_Right_RightsPartner">
         <End Type="Net.Appclusive.Public.Domain.Security.Right" Role="Rights" Multiplicity="*" />
@@ -582,13 +582,6 @@
         <End Type="Net.Appclusive.Public.Domain.Security.Role" Role="Role" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.ItemAce" Role="RolePartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner">
-        <End Type="Net.Appclusive.Public.Domain.Security.Role" Role="Roles" Multiplicity="*" />
-        <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="RolesPartner" Multiplicity="0..1" />
-      </Association>
-    </Schema>
-    <Schema Namespace="System.Security.Principal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-      <ComplexType Name="IIdentity" />
     </Schema>
     <Schema Namespace="Net.Appclusive.Public.Domain.Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="User">
@@ -605,17 +598,25 @@
         <NavigationProperty Name="Roles" Relationship="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner" ToRole="Roles" FromRole="RolesPartner" />
         <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
+      <EntityType Name="Tenant">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="MappedId" Type="Edm.String" Nullable="false" />
+        <Property Name="MappedType" Type="Edm.String" Nullable="false" />
+        <Property Name="ParentId" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Namespace" Type="Edm.String" Nullable="false" />
+        <Property Name="CustomerId" Type="Edm.Int64" Nullable="false" />
+        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Identity_Tenant_Details_Net_Appclusive_Public_Domain_TenantDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
+        <NavigationProperty Name="Parent" Relationship="Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Domain_Identity_Tenant_ParentPartner" ToRole="Parent" FromRole="ParentPartner" />
+        <NavigationProperty Name="Children" Relationship="Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appclusive_Public_Domain_Identity_Tenant_ChildrenPartner" ToRole="Children" FromRole="ChildrenPartner" />
+      </EntityType>
       <Association Name="Net_Appclusive_Public_Domain_Security_Ace_User_Net_Appclusive_Public_Domain_Identity_User_UserPartner">
         <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="User" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.Ace" Role="UserPartner" Multiplicity="0..1" />
-        <ReferentialConstraint>
-          <Principal Role="User">
-            <PropertyRef Name="Id" />
-          </Principal>
-          <Dependent Role="UserPartner">
-            <PropertyRef Name="UserId" />
-          </Dependent>
-        </ReferentialConstraint>
       </Association>
       <Association Name="Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public_Domain_Identity_User_UsersPartner">
         <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="Users" Multiplicity="*" />
@@ -625,8 +626,19 @@
         <End Type="Net.Appclusive.Public.Domain.Identity.User" Role="User" Multiplicity="0..1" />
         <End Type="Net.Appclusive.Public.Domain.Security.ItemAce" Role="UserPartner" Multiplicity="0..1" />
       </Association>
+      <Association Name="Net_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Domain_Identity_Tenant_ParentPartner">
+        <End Type="Net.Appclusive.Public.Domain.Identity.Tenant" Role="Parent" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Identity.Tenant" Role="ParentPartner" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appclusive_Public_Domain_Identity_Tenant_ChildrenPartner">
+        <End Type="Net.Appclusive.Public.Domain.Identity.Tenant" Role="Children" Multiplicity="*" />
+        <End Type="Net.Appclusive.Public.Domain.Identity.Tenant" Role="ChildrenPartner" Multiplicity="0..1" />
+      </Association>
     </Schema>
-    <Schema Namespace="Net.Appclusive.Public.Domain.Catalogue" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+    <Schema Namespace="System.Security.Principal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="IIdentity" />
+    </Schema>
+    <Schema Namespace="Net.Appclusive.Public.Domain.Order" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="Order">
         <Key>
           <PropertyRef Name="Id" />
@@ -635,9 +647,9 @@
         <Property Name="Id" Type="Edm.Int64" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
-        <NavigationProperty Name="OrderItems" Relationship="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_Order_OrderItems_Net_Appclusive_Public_Domain_Catalogue_OrderItem_OrderItemsPartner" ToRole="OrderItems" FromRole="OrderItemsPartner" />
-        <NavigationProperty Name="Job" Relationship="Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Catalogue_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner" ToRole="Job" FromRole="JobPartner" />
-        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_Order_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
+        <NavigationProperty Name="OrderItems" Relationship="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Appclusive_Public_Domain_Order_OrderItem_OrderItemsPartner" ToRole="OrderItems" FromRole="OrderItemsPartner" />
+        <NavigationProperty Name="Job" Relationship="Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner" ToRole="Job" FromRole="JobPartner" />
+        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
       <EntityType Name="Cart">
         <Key>
@@ -646,8 +658,8 @@
         <Property Name="Id" Type="Edm.Int64" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
-        <NavigationProperty Name="CartItems" Relationship="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_Cart_CartItems_Net_Appclusive_Public_Domain_Catalogue_CartItem_CartItemsPartner" ToRole="CartItems" FromRole="CartItemsPartner" />
-        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
+        <NavigationProperty Name="CartItems" Relationship="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartner" ToRole="CartItems" FromRole="CartItemsPartner" />
+        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
       <EntityType Name="OrderItem">
         <Key>
@@ -659,10 +671,10 @@
         <Property Name="Id" Type="Edm.Int64" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
-        <NavigationProperty Name="Order" Relationship="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_OrderItem_Order_Net_Appclusive_Public_Domain_Catalogue_Order_OrderPartner" ToRole="Order" FromRole="OrderPartner" />
-        <NavigationProperty Name="Job" Relationship="Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Catalogue_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner" ToRole="Job" FromRole="JobPartner" />
-        <NavigationProperty Name="Configuration" Relationship="Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Catalogue_OrderItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner" ToRole="Configuration" FromRole="ConfigurationPartner" />
-        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
+        <NavigationProperty Name="Order" Relationship="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPartner" ToRole="Order" FromRole="OrderPartner" />
+        <NavigationProperty Name="Job" Relationship="Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner" ToRole="Job" FromRole="JobPartner" />
+        <NavigationProperty Name="Configuration" Relationship="Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Order_OrderItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner" ToRole="Configuration" FromRole="ConfigurationPartner" />
+        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
       <EntityType Name="CartItem">
         <Key>
@@ -673,9 +685,9 @@
         <Property Name="Id" Type="Edm.Int64" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
-        <NavigationProperty Name="Cart" Relationship="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_CartItem_Cart_Net_Appclusive_Public_Domain_Catalogue_Cart_CartPartner" ToRole="Cart" FromRole="CartPartner" />
-        <NavigationProperty Name="Configuration" Relationship="Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Catalogue_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner" ToRole="Configuration" FromRole="ConfigurationPartner" />
-        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_CartItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
+        <NavigationProperty Name="Cart" Relationship="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Domain_Order_Cart_CartPartner" ToRole="Cart" FromRole="CartPartner" />
+        <NavigationProperty Name="Configuration" Relationship="Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Order_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner" ToRole="Configuration" FromRole="ConfigurationPartner" />
+        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_CartItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
       <EntityType Name="Catalogue">
         <Key>
@@ -684,8 +696,8 @@
         <Property Name="Id" Type="Edm.Int64" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
-        <NavigationProperty Name="CatalogueItems" Relationship="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_Catalogue_CatalogueItems_Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_CatalogueItemsPartner" ToRole="CatalogueItems" FromRole="CatalogueItemsPartner" />
-        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
+        <NavigationProperty Name="CatalogueItems" Relationship="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusive_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner" ToRole="CatalogueItems" FromRole="CatalogueItemsPartner" />
+        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
       <EntityType Name="CatalogueItem">
         <Key>
@@ -696,9 +708,9 @@
         <Property Name="Id" Type="Edm.Int64" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
-        <NavigationProperty Name="Catalogue" Relationship="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Catalogue_Catalogue_CataloguePartner" ToRole="Catalogue" FromRole="CataloguePartner" />
-        <NavigationProperty Name="Blueprint" Relationship="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Catalogue_Blueprint_BlueprintPartner" ToRole="Blueprint" FromRole="BlueprintPartner" />
-        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
+        <NavigationProperty Name="Catalogue" Relationship="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Order_Catalogue_CataloguePartner" ToRole="Catalogue" FromRole="CataloguePartner" />
+        <NavigationProperty Name="Blueprint" Relationship="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_BlueprintPartner" ToRole="Blueprint" FromRole="BlueprintPartner" />
+        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_CatalogueItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
       <EntityType Name="Blueprint">
         <Key>
@@ -708,20 +720,20 @@
         <Property Name="Id" Type="Edm.Int64" Nullable="false" />
         <Property Name="Name" Type="Edm.String" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
-        <NavigationProperty Name="Model" Relationship="Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Catalogue_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartner" ToRole="Model" FromRole="ModelPartner" />
-        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
+        <NavigationProperty Name="Model" Relationship="Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartner" ToRole="Model" FromRole="ModelPartner" />
+        <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_Order_OrderItems_Net_Appclusive_Public_Domain_Catalogue_OrderItem_OrderItemsPartner">
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.OrderItem" Role="OrderItems" Multiplicity="*" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Order" Role="OrderItemsPartner" Multiplicity="0..1" />
+      <Association Name="Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Appclusive_Public_Domain_Order_OrderItem_OrderItemsPartner">
+        <End Type="Net.Appclusive.Public.Domain.Order.OrderItem" Role="OrderItems" Multiplicity="*" />
+        <End Type="Net.Appclusive.Public.Domain.Order.Order" Role="OrderItemsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_Cart_CartItems_Net_Appclusive_Public_Domain_Catalogue_CartItem_CartItemsPartner">
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.CartItem" Role="CartItems" Multiplicity="*" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Cart" Role="CartItemsPartner" Multiplicity="0..1" />
+      <Association Name="Net_Appclusive_Public_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartner">
+        <End Type="Net.Appclusive.Public.Domain.Order.CartItem" Role="CartItems" Multiplicity="*" />
+        <End Type="Net.Appclusive.Public.Domain.Order.Cart" Role="CartItemsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_OrderItem_Order_Net_Appclusive_Public_Domain_Catalogue_Order_OrderPartner">
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Order" Role="Order" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.OrderItem" Role="OrderPartner" Multiplicity="0..1" />
+      <Association Name="Net_Appclusive_Public_Domain_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPartner">
+        <End Type="Net.Appclusive.Public.Domain.Order.Order" Role="Order" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.OrderItem" Role="OrderPartner" Multiplicity="0..1" />
         <ReferentialConstraint>
           <Principal Role="Order">
             <PropertyRef Name="Id" />
@@ -731,9 +743,9 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_CartItem_Cart_Net_Appclusive_Public_Domain_Catalogue_Cart_CartPartner">
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Cart" Role="Cart" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.CartItem" Role="CartPartner" Multiplicity="0..1" />
+      <Association Name="Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Domain_Order_Cart_CartPartner">
+        <End Type="Net.Appclusive.Public.Domain.Order.Cart" Role="Cart" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.CartItem" Role="CartPartner" Multiplicity="0..1" />
         <ReferentialConstraint>
           <Principal Role="Cart">
             <PropertyRef Name="Id" />
@@ -743,13 +755,13 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_Catalogue_CatalogueItems_Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_CatalogueItemsPartner">
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.CatalogueItem" Role="CatalogueItems" Multiplicity="*" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Catalogue" Role="CatalogueItemsPartner" Multiplicity="0..1" />
+      <Association Name="Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusive_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner">
+        <End Type="Net.Appclusive.Public.Domain.Order.CatalogueItem" Role="CatalogueItems" Multiplicity="*" />
+        <End Type="Net.Appclusive.Public.Domain.Order.Catalogue" Role="CatalogueItemsPartner" Multiplicity="0..1" />
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Catalogue_Catalogue_CataloguePartner">
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Catalogue" Role="Catalogue" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.CatalogueItem" Role="CataloguePartner" Multiplicity="0..1" />
+      <Association Name="Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Order_Catalogue_CataloguePartner">
+        <End Type="Net.Appclusive.Public.Domain.Order.Catalogue" Role="Catalogue" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.CatalogueItem" Role="CataloguePartner" Multiplicity="0..1" />
         <ReferentialConstraint>
           <Principal Role="Catalogue">
             <PropertyRef Name="Id" />
@@ -759,9 +771,9 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Catalogue_Blueprint_BlueprintPartner">
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Blueprint" Role="Blueprint" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.CatalogueItem" Role="BlueprintPartner" Multiplicity="0..1" />
+      <Association Name="Net_Appclusive_Public_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_BlueprintPartner">
+        <End Type="Net.Appclusive.Public.Domain.Order.Blueprint" Role="Blueprint" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.CatalogueItem" Role="BlueprintPartner" Multiplicity="0..1" />
         <ReferentialConstraint>
           <Principal Role="Blueprint">
             <PropertyRef Name="Id" />
@@ -810,9 +822,9 @@
         <Property Name="Description" Type="Edm.String" />
         <NavigationProperty Name="Details" Relationship="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Control_WorkItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" ToRole="Details" FromRole="DetailsPartner" />
       </EntityType>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner">
         <End Type="Net.Appclusive.Public.Domain.Control.Job" Role="Job" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.Order" Role="JobPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.Order" Role="JobPartner" Multiplicity="0..1" />
         <ReferentialConstraint>
           <Principal Role="Job">
             <PropertyRef Name="Id" />
@@ -822,9 +834,9 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
-      <Association Name="Net_Appclusive_Public_Domain_Catalogue_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner">
+      <Association Name="Net_Appclusive_Public_Domain_Order_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner">
         <End Type="Net.Appclusive.Public.Domain.Control.Job" Role="Job" Multiplicity="0..1" />
-        <End Type="Net.Appclusive.Public.Domain.Catalogue.OrderItem" Role="JobPartner" Multiplicity="0..1" />
+        <End Type="Net.Appclusive.Public.Domain.Order.OrderItem" Role="JobPartner" Multiplicity="0..1" />
         <ReferentialConstraint>
           <Principal Role="Job">
             <PropertyRef Name="Id" />
@@ -854,21 +866,23 @@
         <EntitySet Name="Connections" EntityType="Net.Appclusive.Public.Domain.Inventory.Connection" />
         <EntitySet Name="Items" EntityType="Net.Appclusive.Public.Domain.Inventory.Item" />
         <EntitySet Name="Authentications" EntityType="Net.Appclusive.Public.Domain.Security.Authentication" />
+        <EntitySet Name="Users" EntityType="Net.Appclusive.Public.Domain.Identity.User" />
         <EntitySet Name="ItemAcls" EntityType="Net.Appclusive.Public.Domain.Security.ItemAcl" />
         <EntitySet Name="Aces" EntityType="Net.Appclusive.Public.Domain.Security.Ace" />
+        <EntitySet Name="Rights" EntityType="Net.Appclusive.Public.Domain.Security.Right" />
         <EntitySet Name="Roles" EntityType="Net.Appclusive.Public.Domain.Security.Role" />
         <EntitySet Name="Acls" EntityType="Net.Appclusive.Public.Domain.Security.Acl" />
         <EntitySet Name="ItemAces" EntityType="Net.Appclusive.Public.Domain.Security.ItemAce" />
         <EntitySet Name="Permissions" EntityType="Net.Appclusive.Public.Domain.Security.Permission" />
-        <EntitySet Name="Orders" EntityType="Net.Appclusive.Public.Domain.Catalogue.Order" />
+        <EntitySet Name="Orders" EntityType="Net.Appclusive.Public.Domain.Order.Order" />
         <EntitySet Name="Jobs" EntityType="Net.Appclusive.Public.Domain.Control.Job" />
-        <EntitySet Name="Carts" EntityType="Net.Appclusive.Public.Domain.Catalogue.Cart" />
-        <EntitySet Name="OrderItems" EntityType="Net.Appclusive.Public.Domain.Catalogue.OrderItem" />
-        <EntitySet Name="CartItems" EntityType="Net.Appclusive.Public.Domain.Catalogue.CartItem" />
-        <EntitySet Name="Catalogues" EntityType="Net.Appclusive.Public.Domain.Catalogue.Catalogue" />
-        <EntitySet Name="CatalogueItems" EntityType="Net.Appclusive.Public.Domain.Catalogue.CatalogueItem" />
-        <EntitySet Name="Blueprints" EntityType="Net.Appclusive.Public.Domain.Catalogue.Blueprint" />
-        <EntitySet Name="Users" EntityType="Net.Appclusive.Public.Domain.Identity.User" />
+        <EntitySet Name="Carts" EntityType="Net.Appclusive.Public.Domain.Order.Cart" />
+        <EntitySet Name="OrderItems" EntityType="Net.Appclusive.Public.Domain.Order.OrderItem" />
+        <EntitySet Name="CartItems" EntityType="Net.Appclusive.Public.Domain.Order.CartItem" />
+        <EntitySet Name="Catalogues" EntityType="Net.Appclusive.Public.Domain.Order.Catalogue" />
+        <EntitySet Name="CatalogueItems" EntityType="Net.Appclusive.Public.Domain.Order.CatalogueItem" />
+        <EntitySet Name="Blueprints" EntityType="Net.Appclusive.Public.Domain.Order.Blueprint" />
+        <EntitySet Name="Tenants" EntityType="Net.Appclusive.Public.Domain.Identity.Tenant" />
         <EntitySet Name="Approvals" EntityType="Net.Appclusive.Public.Domain.Control.Approval" />
         <EntitySet Name="WorkItems" EntityType="Net.Appclusive.Public.Domain.Control.WorkItem" />
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Configuration.Example" IsBindable="true" EntitySet="Examples" m:IsAlwaysBindable="true">
@@ -955,17 +969,17 @@
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Security.Authentication" IsBindable="true" EntitySet="Authentications" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Authentication)" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="BasicLogin" ReturnType="Net.Appclusive.Public.Types.BoxedBool" IsBindable="true" m:IsAlwaysBindable="true">
+        <FunctionImport Name="BasicLogin" ReturnType="Net.Appclusive.Public.Domain.Identity.User" IsBindable="true" EntitySet="Users" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Authentication)" Nullable="false" />
           <Parameter Name="Headers" Type="biz.dfch.CS.Commons.DictionaryParameters" />
           <Parameter Name="Identity" Type="System.Security.Principal.IIdentity" />
         </FunctionImport>
-        <FunctionImport Name="NegotiateLogin" ReturnType="Net.Appclusive.Public.Types.BoxedBool" IsBindable="true" m:IsAlwaysBindable="true">
+        <FunctionImport Name="NegotiateLogin" ReturnType="Net.Appclusive.Public.Domain.Identity.User" IsBindable="true" EntitySet="Users" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Authentication)" Nullable="false" />
           <Parameter Name="Headers" Type="biz.dfch.CS.Commons.DictionaryParameters" />
           <Parameter Name="Identity" Type="System.Security.Principal.IIdentity" />
         </FunctionImport>
-        <FunctionImport Name="BearerLogin" ReturnType="Net.Appclusive.Public.Types.BoxedBool" IsBindable="true" m:IsAlwaysBindable="true">
+        <FunctionImport Name="BearerLogin" ReturnType="Net.Appclusive.Public.Domain.Identity.User" IsBindable="true" EntitySet="Users" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Authentication)" Nullable="false" />
           <Parameter Name="Headers" Type="biz.dfch.CS.Commons.DictionaryParameters" />
           <Parameter Name="Identity" Type="System.Security.Principal.IIdentity" />
@@ -979,6 +993,9 @@
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Security.Ace" IsBindable="true" EntitySet="Aces" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Ace)" Nullable="false" />
         </FunctionImport>
+        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Security.Right" IsBindable="true" EntitySet="Rights" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Right)" Nullable="false" />
+        </FunctionImport>
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Security.Role" IsBindable="true" EntitySet="Roles" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Role)" Nullable="false" />
         </FunctionImport>
@@ -991,35 +1008,38 @@
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Security.Permission" IsBindable="true" EntitySet="Permissions" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Permission)" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Catalogue.Order" IsBindable="true" EntitySet="Orders" m:IsAlwaysBindable="true">
-          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Catalogue.Order)" Nullable="false" />
+        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Order.Order" IsBindable="true" EntitySet="Orders" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Order.Order)" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Create" ReturnType="Net.Appclusive.Public.Domain.Control.Job" IsBindable="true" EntitySet="Jobs" m:IsAlwaysBindable="true">
-          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Catalogue.Order)" Nullable="false" />
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Order.Order)" Nullable="false" />
           <Parameter Name="CartId" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Catalogue.Cart" IsBindable="true" EntitySet="Carts" m:IsAlwaysBindable="true">
-          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Catalogue.Cart)" Nullable="false" />
+        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Order.Cart" IsBindable="true" EntitySet="Carts" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Order.Cart)" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Catalogue.OrderItem" IsBindable="true" EntitySet="OrderItems" m:IsAlwaysBindable="true">
-          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Catalogue.OrderItem)" Nullable="false" />
+        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Order.OrderItem" IsBindable="true" EntitySet="OrderItems" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Order.OrderItem)" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="ResumeBlueprintBookmark" ReturnType="Net.Appclusive.Public.Types.BoxedBool" IsBindable="true" m:IsAlwaysBindable="true">
-          <Parameter Name="bindingParameter" Type="Net.Appclusive.Public.Domain.Catalogue.OrderItem" />
+          <Parameter Name="bindingParameter" Type="Net.Appclusive.Public.Domain.Order.OrderItem" />
           <Parameter Name="Bookmark" Type="Edm.String" FixedLength="false" Unicode="false" />
           <Parameter Name="Parameters" Type="Edm.String" FixedLength="false" Unicode="false" />
         </FunctionImport>
-        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Catalogue.CartItem" IsBindable="true" EntitySet="CartItems" m:IsAlwaysBindable="true">
-          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Catalogue.CartItem)" Nullable="false" />
+        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Order.CartItem" IsBindable="true" EntitySet="CartItems" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Order.CartItem)" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Catalogue.Catalogue" IsBindable="true" EntitySet="Catalogues" m:IsAlwaysBindable="true">
-          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Catalogue.Catalogue)" Nullable="false" />
+        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Order.Catalogue" IsBindable="true" EntitySet="Catalogues" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Order.Catalogue)" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Catalogue.CatalogueItem" IsBindable="true" EntitySet="CatalogueItems" m:IsAlwaysBindable="true">
-          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Catalogue.CatalogueItem)" Nullable="false" />
+        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Order.CatalogueItem" IsBindable="true" EntitySet="CatalogueItems" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Order.CatalogueItem)" Nullable="false" />
         </FunctionImport>
-        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Catalogue.Blueprint" IsBindable="true" EntitySet="Blueprints" m:IsAlwaysBindable="true">
-          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Catalogue.Blueprint)" Nullable="false" />
+        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Order.Blueprint" IsBindable="true" EntitySet="Blueprints" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Order.Blueprint)" Nullable="false" />
+        </FunctionImport>
+        <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Identity.Tenant" IsBindable="true" EntitySet="Tenants" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Identity.Tenant)" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Identity.User" IsBindable="true" EntitySet="Users" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Identity.User)" Nullable="false" />
@@ -1129,6 +1149,14 @@
           <End Role="DetailsPartner" EntitySet="Authentications" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartnerSet" Association="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner">
+          <End Role="RolesPartner" EntitySet="Users" />
+          <End Role="Roles" EntitySet="Roles" />
+        </AssociationSet>
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+          <End Role="DetailsPartner" EntitySet="Users" />
+          <End Role="Details" EntitySet="PublicEntityDetailss" />
+        </AssociationSet>
         <AssociationSet Name="Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartnerSet" Association="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartner">
           <End Role="ParentPartner" EntitySet="ItemAcls" />
           <End Role="Parent" EntitySet="ItemAcls" />
@@ -1161,9 +1189,17 @@
           <End Role="DetailsPartner" EntitySet="Aces" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+          <End Role="DetailsPartner" EntitySet="Rights" />
+          <End Role="Details" EntitySet="PublicEntityDetailss" />
+        </AssociationSet>
         <AssociationSet Name="Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public_Domain_Identity_User_UsersPartnerSet" Association="Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public_Domain_Identity_User_UsersPartner">
           <End Role="UsersPartner" EntitySet="Roles" />
           <End Role="Users" EntitySet="Users" />
+        </AssociationSet>
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_Security_Right_RightsPartnerSet" Association="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_Security_Right_RightsPartner">
+          <End Role="RightsPartner" EntitySet="Roles" />
+          <End Role="Rights" EntitySet="Rights" />
         </AssociationSet>
         <AssociationSet Name="Net_Appclusive_Public_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="Roles" />
@@ -1205,15 +1241,15 @@
           <End Role="DetailsPartner" EntitySet="Permissions" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_Order_OrderItems_Net_Appclusive_Public_Domain_Catalogue_OrderItem_OrderItemsPartnerSet" Association="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_Order_OrderItems_Net_Appclusive_Public_Domain_Catalogue_OrderItem_OrderItemsPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Appclusive_Public_Domain_Order_OrderItem_OrderItemsPartnerSet" Association="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Appclusive_Public_Domain_Order_OrderItem_OrderItemsPartner">
           <End Role="OrderItemsPartner" EntitySet="Orders" />
           <End Role="OrderItems" EntitySet="OrderItems" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartnerSet" Association="Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Catalogue_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartnerSet" Association="Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner">
           <End Role="JobPartner" EntitySet="Orders" />
           <End Role="Job" EntitySet="Jobs" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_Order_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_Order_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="Orders" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
@@ -1221,77 +1257,81 @@
           <End Role="DetailsPartner" EntitySet="Jobs" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_Cart_CartItems_Net_Appclusive_Public_Domain_Catalogue_CartItem_CartItemsPartnerSet" Association="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_Cart_CartItems_Net_Appclusive_Public_Domain_Catalogue_CartItem_CartItemsPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartnerSet" Association="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartner">
           <End Role="CartItemsPartner" EntitySet="Carts" />
           <End Role="CartItems" EntitySet="CartItems" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="Carts" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_OrderItem_Order_Net_Appclusive_Public_Domain_Catalogue_Order_OrderPartnerSet" Association="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_OrderItem_Order_Net_Appclusive_Public_Domain_Catalogue_Order_OrderPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPartnerSet" Association="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPartner">
           <End Role="OrderPartner" EntitySet="OrderItems" />
           <End Role="Order" EntitySet="Orders" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartnerSet" Association="Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Catalogue_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartnerSet" Association="Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner">
           <End Role="JobPartner" EntitySet="OrderItems" />
           <End Role="Job" EntitySet="Jobs" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_OrderItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartnerSet" Association="Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Catalogue_OrderItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_OrderItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartnerSet" Association="Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Order_OrderItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner">
           <End Role="ConfigurationPartner" EntitySet="OrderItems" />
           <End Role="Configuration" EntitySet="IdValuePairs" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="OrderItems" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_CartItem_Cart_Net_Appclusive_Public_Domain_Catalogue_Cart_CartPartnerSet" Association="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_CartItem_Cart_Net_Appclusive_Public_Domain_Catalogue_Cart_CartPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Domain_Order_Cart_CartPartnerSet" Association="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Domain_Order_Cart_CartPartner">
           <End Role="CartPartner" EntitySet="CartItems" />
           <End Role="Cart" EntitySet="Carts" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartnerSet" Association="Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Catalogue_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartnerSet" Association="Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Order_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner">
           <End Role="ConfigurationPartner" EntitySet="CartItems" />
           <End Role="Configuration" EntitySet="IdValuePairs" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_CartItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_CartItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_CartItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_CartItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="CartItems" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_Catalogue_CatalogueItems_Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_CatalogueItemsPartnerSet" Association="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_Catalogue_CatalogueItems_Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_CatalogueItemsPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusive_Public_Domain_Order_CatalogueItem_CatalogueItemsPartnerSet" Association="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusive_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner">
           <End Role="CatalogueItemsPartner" EntitySet="Catalogues" />
           <End Role="CatalogueItems" EntitySet="CatalogueItems" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="Catalogues" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Catalogue_Catalogue_CataloguePartnerSet" Association="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Catalogue_Catalogue_CataloguePartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Order_Catalogue_CataloguePartnerSet" Association="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Order_Catalogue_CataloguePartner">
           <End Role="CataloguePartner" EntitySet="CatalogueItems" />
           <End Role="Catalogue" EntitySet="Catalogues" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Catalogue_Blueprint_BlueprintPartnerSet" Association="Net.Appclusive.Public.Domain.Catalogue.Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Catalogue_Blueprint_BlueprintPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_BlueprintPartnerSet" Association="Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_BlueprintPartner">
           <End Role="BlueprintPartner" EntitySet="CatalogueItems" />
           <End Role="Blueprint" EntitySet="Blueprints" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_CatalogueItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_CatalogueItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_CatalogueItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="CatalogueItems" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartnerSet" Association="Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Catalogue_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartnerSet" Association="Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartner">
           <End Role="ModelPartner" EntitySet="Blueprints" />
           <End Role="Model" EntitySet="Models" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Catalogue_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Catalogue_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Order_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="Blueprints" />
           <End Role="Details" EntitySet="PublicEntityDetailss" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartnerSet" Association="Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner">
-          <End Role="RolesPartner" EntitySet="Users" />
-          <End Role="Roles" EntitySet="Roles" />
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_Tenant_Details_Net_Appclusive_Public_Domain_TenantDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Identity_Tenant_Details_Net_Appclusive_Public_Domain_TenantDetails_DetailsPartner">
+          <End Role="DetailsPartner" EntitySet="Tenants" />
+          <End Role="Details" EntitySet="TenantDetailss" />
         </AssociationSet>
-        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
-          <End Role="DetailsPartner" EntitySet="Users" />
-          <End Role="Details" EntitySet="PublicEntityDetailss" />
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Domain_Identity_Tenant_ParentPartnerSet" Association="Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Domain_Identity_Tenant_ParentPartner">
+          <End Role="ParentPartner" EntitySet="Tenants" />
+          <End Role="Parent" EntitySet="Tenants" />
+        </AssociationSet>
+        <AssociationSet Name="Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appclusive_Public_Domain_Identity_Tenant_ChildrenPartnerSet" Association="Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appclusive_Public_Domain_Identity_Tenant_ChildrenPartner">
+          <End Role="ChildrenPartner" EntitySet="Tenants" />
+          <End Role="Children" EntitySet="Tenants" />
         </AssociationSet>
         <AssociationSet Name="Net_Appclusive_Public_Domain_Control_Approval_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" Association="Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Control_Approval_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner">
           <End Role="DetailsPartner" EntitySet="Approvals" />

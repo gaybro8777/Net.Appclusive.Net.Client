@@ -59,5 +59,142 @@ namespace Net.Appclusive.PS.Client {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot find &apos;{0}&apos; with name &apos;{1}&apos;..
+        /// </summary>
+        internal static string Cmdlet_ProcessParamaterSetName__NotFound {
+            get {
+                return ResourceManager.GetString("Cmdlet_ProcessParamaterSetName__NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot find &apos;{0}&apos; with id &apos;{1}&apos;..
+        /// </summary>
+        internal static string Cmdlet_ProcessParameterSetId__NotFound {
+            get {
+                return ResourceManager.GetString("Cmdlet_ProcessParameterSetId__NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connect to the server before using the Cmdlet.
+        /// </summary>
+        internal static string Cmdlet_ProcessRecord__NotLoggedIn {
+            get {
+                return ResourceManager.GetString("Cmdlet_ProcessRecord__NotLoggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ParameterSetName &apos;{0}&apos;..
+        /// </summary>
+        internal static string Cmdlet_ProcessRecord__ShouldProcessParameterSet {
+            get {
+                return ResourceManager.GetString("Cmdlet_ProcessRecord__ShouldProcessParameterSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logging in to &apos;{0}&apos; (&apos;{1}&apos;) ....
+        /// </summary>
+        internal static string EnterServer_ProcessRecord__Login {
+            get {
+                return ResourceManager.GetString("EnterServer_ProcessRecord__Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logging in to &apos;{0}&apos; (&apos;{1}&apos;) FAILED..
+        /// </summary>
+        internal static string EnterServer_ProcessRecord__LoginFailed {
+            get {
+                return ResourceManager.GetString("EnterServer_ProcessRecord__LoginFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logging in to &apos;{0}&apos; (&apos;{1}&apos;) SUCCEEDED..
+        /// </summary>
+        internal static string EnterServer_ProcessRecord__LoginSucceeded {
+            get {
+                return ResourceManager.GetString("EnterServer_ProcessRecord__LoginSucceeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saving moduleContext to module variable FAILED..
+        /// </summary>
+        internal static string ImportConfiguration_ProcessRecord__SaveToModuleVariableFailed {
+            get {
+                return ResourceManager.GetString("ImportConfiguration_ProcessRecord__SaveToModuleVariableFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import configuration from &apos;{0}&apos;.
+        /// </summary>
+        internal static string ImportConfiguration_ProcessRecord__ShouldProcess {
+            get {
+                return ResourceManager.GetString("ImportConfiguration_ProcessRecord__ShouldProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: Creating ConfigurationFileMap FAILED..
+        /// </summary>
+        internal static string ModuleConfiguration_GetModuleContextConfigurationSection__FileMapCreationFailed {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_GetModuleContextConfigurationSection__FileMapCreationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: Opening Configuration FAILED due to no file..
+        /// </summary>
+        internal static string ModuleConfiguration_GetModuleContextConfigurationSection__NoConfigurationFile {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_GetModuleContextConfigurationSection__NoConfigurationFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: Opening Configuration FAILED..
+        /// </summary>
+        internal static string ModuleConfiguration_GetModuleContextConfigurationSection__OpenConfigurationFailed {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_GetModuleContextConfigurationSection__OpenConfigurationFailed" +
+                        "", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: Opening ConfigurationSection &apos;{1}&apos; FAILED..
+        /// </summary>
+        internal static string ModuleConfiguration_GetModuleContextConfigurationSection__OpenConfigurationSectionFailed {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_GetModuleContextConfigurationSection__OpenConfigurationSectio" +
+                        "nFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: The configuration file specified by the Path parameter does not exist..
+        /// </summary>
+        internal static string ModuleConfiguration_ResolveConfigurationFileInfo__FileDoesNotExist {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_ResolveConfigurationFileInfo__FileDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: The configuration file specified by the Path parameter must be a file and not a directory..
+        /// </summary>
+        internal static string ModuleConfiguration_ResolveConfigurationFileInfo__FileInfoIsDirectory {
+            get {
+                return ResourceManager.GetString("ModuleConfiguration_ResolveConfigurationFileInfo__FileInfoIsDirectory", resourceCulture);
+            }
+        }
     }
 }

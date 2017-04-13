@@ -27,32 +27,25 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
+using Net.Appclusive.Api.Constants;
 
 namespace Net.Appclusive.Api
 {
     public class DataServiceContextBase :
         DataServiceContext,
-        IEditableDataServiceClientContext,
+        IEditableDataServiceContext,
         IOdataActionExecutor
     {
-        // Authentication
-        public const string AUTHORISATION_BAERER_USER_NAME = "[AuthorisationBaererUser]";
-        private const string AUTHORIZATION_HEADER_NAME = "Authorization";
-        private const string AUTHORIZATION_BASIC_SCHEME = "Basic {0}";
-        private const string AUTHORIZATION_BEARER_SCHEME = "Bearer {0}";
-
-        // Tenant
-        public const string DEFAULT_TENANT_HEADER_NAME = "TenantId";
-
         // Headers
         private const string USERAGENT_HEADER_NAME = "UserAgent";
         private const string CONTENT_TYPE_APPLICATION_XML = "application/xml";
-        private const string HTTP_METHOD_POST = "POST";
 
         // General
         private const string PLURALISATION_SUFFIX = "s";
         private const string URI_DELIMITER = "/";
         private const char URI_DELIMITER_CHAR = '/';
+
+        private static readonly string _httpPostMethod = nameof(HttpMethod.Post).ToUpper();
 
         private volatile string metadata;
         private readonly object syncRoot = new object();
@@ -64,7 +57,7 @@ namespace Net.Appclusive.Api
             {
                 if (string.IsNullOrEmpty(tenantHeaderName))
                 {
-                    tenantHeaderName = DEFAULT_TENANT_HEADER_NAME;
+                    tenantHeaderName = Authentication.Header.DEFAULT_TENANT_HEADER_NAME;
                 }
                 return tenantHeaderName;
             }
@@ -213,7 +206,7 @@ namespace Net.Appclusive.Api
         {
             Contract.Ensures(null != Contract.Result<Version>());
 
-            var assembly = Assembly.GetExecutingAssembly();
+            var assembly = typeof(DataServiceContextBase).Assembly;
             var assemblyName = assembly.GetName();
             return assemblyName.Version;
         }
@@ -238,10 +231,10 @@ namespace Net.Appclusive.Api
                 {
                     httpClient.DefaultRequestHeaders.Add(USERAGENT_HEADER_NAME, GetType().FullName);
 
-                    var authorisationHeaderValue = BuildAuthorisationHeaderValue();
-                    if (default(string) != authorisationHeaderValue)
+                    var authorizationHeaderValue = BuildAuthorizationHeaderValue();
+                    if (default(string) != authorizationHeaderValue)
                     {
-                        httpClient.DefaultRequestHeaders.Add(AUTHORIZATION_HEADER_NAME, authorisationHeaderValue);
+                        httpClient.DefaultRequestHeaders.Add(Authentication.Header.AUTHORIZATION, authorizationHeaderValue);
                     }
 
                     httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(CONTENT_TYPE_APPLICATION_XML));
@@ -260,7 +253,7 @@ namespace Net.Appclusive.Api
             }
         }
 
-        #region IEditableDataServiceClientContext
+        #region IEditableDataServiceContext
 
         public void AttachIfNeeded(object entity)
         {
@@ -319,7 +312,7 @@ namespace Net.Appclusive.Api
             }
         }
 
-        #endregion IEditableDataServiceClientContext
+        #endregion IEditableDataServiceContext
 
         #region IOdataActionExecutor
 
@@ -331,7 +324,6 @@ namespace Net.Appclusive.Api
 
         public void InvokeEntitySetActionWithVoidResult(string entitySetName, string actionName, object inputParameters)
         {
-            var methodName = HTTP_METHOD_POST;
             var uriAction = new Uri(string.Concat(BaseUri.AbsoluteUri.TrimEnd(URI_DELIMITER_CHAR), URI_DELIMITER, entitySetName, URI_DELIMITER, actionName));
 
             BodyOperationParameter[] bodyParameters;
@@ -347,7 +339,7 @@ namespace Net.Appclusive.Api
             {
                 bodyParameters = GetBodyOperationParametersFromObject(inputParameters);
             }
-            Execute(uriAction, methodName, bodyParameters);
+            Execute(uriAction, _httpPostMethod, bodyParameters);
         }
 
         public object InvokeEntitySetActionWithSingleResult(string entitySetName, string actionName, Type type, object inputParameters)
@@ -396,7 +388,6 @@ namespace Net.Appclusive.Api
 
         public T InvokeEntitySetActionWithSingleResult<T>(string entitySetName, string actionName, object inputParameters)
         {
-            const string METHOD_NAME = HTTP_METHOD_POST;
             var uriAction = new Uri(string.Concat(BaseUri.AbsoluteUri.TrimEnd(URI_DELIMITER_CHAR), URI_DELIMITER, entitySetName, URI_DELIMITER, actionName));
 
             BodyOperationParameter[] bodyParameters;
@@ -413,7 +404,7 @@ namespace Net.Appclusive.Api
                 bodyParameters = GetBodyOperationParametersFromObject(inputParameters);
             }
 
-            var result = Execute<T>(uriAction, METHOD_NAME, true, bodyParameters).Single();
+            var result = Execute<T>(uriAction, _httpPostMethod, true, bodyParameters).Single();
             return result;
         }
 
@@ -471,7 +462,6 @@ namespace Net.Appclusive.Api
 
         public IEnumerable<T> InvokeEntitySetActionWithListResult<T>(string entitySetName, string actionName, object inputParameters)
         {
-            const string METHOD_NAME = HTTP_METHOD_POST;
             var uriAction = new Uri(string.Concat(BaseUri.AbsoluteUri.TrimEnd(URI_DELIMITER_CHAR), URI_DELIMITER, entitySetName, URI_DELIMITER, actionName));
 
             BodyOperationParameter[] bodyParameters;
@@ -488,7 +478,7 @@ namespace Net.Appclusive.Api
                 bodyParameters = GetBodyOperationParametersFromObject(inputParameters);
             }
 
-            return Execute<T>(uriAction, METHOD_NAME, false, bodyParameters).ToList();
+            return Execute<T>(uriAction, _httpPostMethod, false, bodyParameters).ToList();
         }
 
         public IEnumerable<T> InvokeEntitySetActionWithListResult<T>(object entity, string actionName, object inputParameters)
@@ -515,7 +505,6 @@ namespace Net.Appclusive.Api
 
         public void InvokeEntityActionWithVoidResult(string entitySetName, object id, string actionName, object inputParameters)
         {
-            var methodName = HTTP_METHOD_POST;
             var entityUrl = GetEntityUrl(entitySetName, id);
             var uriAction = new Uri(string.Concat(BaseUri.AbsoluteUri.TrimEnd(URI_DELIMITER_CHAR), URI_DELIMITER, entityUrl, URI_DELIMITER, actionName));
 
@@ -532,7 +521,7 @@ namespace Net.Appclusive.Api
             {
                 bodyParameters = GetBodyOperationParametersFromObject(inputParameters);
             }
-            Execute(uriAction, methodName, bodyParameters);
+            Execute(uriAction, _httpPostMethod, bodyParameters);
         }
 
         public object InvokeEntityActionWithSingleResult(string entitySetName, long id, string actionName, Type type, object inputParameters)
@@ -586,7 +575,6 @@ namespace Net.Appclusive.Api
 
         public T InvokeEntityActionWithSingleResult<T>(string entitySetName, object id, string actionName, object inputParameters)
         {
-            const string METHOD_NAME = HTTP_METHOD_POST;
             var entityUrl = GetEntityUrl(entitySetName, id);
             var uriAction = new Uri(string.Concat(BaseUri.AbsoluteUri.TrimEnd(URI_DELIMITER_CHAR), URI_DELIMITER, entityUrl, URI_DELIMITER, actionName));
 
@@ -604,7 +592,7 @@ namespace Net.Appclusive.Api
                 bodyParameters = GetBodyOperationParametersFromObject(inputParameters);
             }
 
-            var result = Execute<T>(uriAction, METHOD_NAME, true, bodyParameters).Single();
+            var result = Execute<T>(uriAction, _httpPostMethod, true, bodyParameters).Single();
             return result;
         }
 
@@ -670,7 +658,6 @@ namespace Net.Appclusive.Api
 
         public IEnumerable<T> InvokeEntityActionWithListResult<T>(string entitySetName, object id, string actionName, object inputParameters)
         {
-            const string METHOD_NAME = HTTP_METHOD_POST;
             var entityUrl = GetEntityUrl(entitySetName, id);
             var uriAction = new Uri(string.Concat(BaseUri.AbsoluteUri.TrimEnd(URI_DELIMITER_CHAR), URI_DELIMITER, entityUrl, URI_DELIMITER, actionName));
 
@@ -688,7 +675,7 @@ namespace Net.Appclusive.Api
                 bodyParameters = GetBodyOperationParametersFromObject(inputParameters);
             }
 
-            return Execute<T>(uriAction, METHOD_NAME, false, bodyParameters).ToList();
+            return Execute<T>(uriAction, _httpPostMethod, false, bodyParameters).ToList();
         }
 
         public IEnumerable<T> InvokeEntityActionWithListResult<T>(object entity, string actionName, object inputParameters)
@@ -813,7 +800,7 @@ namespace Net.Appclusive.Api
 
                 if (!string.IsNullOrEmpty(networkCredentials.UserName) && !string.IsNullOrEmpty(networkCredentials.Password))
                 {
-                     return AUTHORISATION_BAERER_USER_NAME != networkCredentials.UserName;
+                     return Authentication.AUTHORIZATION_BAERER_USER_NAME != networkCredentials.UserName;
                 }
             }
             return false;
@@ -826,7 +813,7 @@ namespace Net.Appclusive.Api
                 var networkCredentials = (NetworkCredential)Credentials;
                 if (!string.IsNullOrEmpty(networkCredentials.UserName) && !string.IsNullOrEmpty(networkCredentials.Password))
                 {
-                    return AUTHORISATION_BAERER_USER_NAME == networkCredentials.UserName;
+                    return Authentication.AUTHORIZATION_BAERER_USER_NAME == networkCredentials.UserName;
                 }
             }
             return false;
@@ -851,10 +838,10 @@ namespace Net.Appclusive.Api
 
         public void DataServiceContext_SendingRequest2(object sender, SendingRequest2EventArgs e)
         {
-            var authorisationHeaderValue = BuildAuthorisationHeaderValue();
+            var authorisationHeaderValue = BuildAuthorizationHeaderValue();
             if (default(string) != authorisationHeaderValue)
             {
-                e.RequestMessage.SetHeader(AUTHORIZATION_HEADER_NAME, authorisationHeaderValue);
+                e.RequestMessage.SetHeader(Authentication.Header.AUTHORIZATION, authorisationHeaderValue);
             }
 
             if (IsTenantSpecified())
@@ -863,24 +850,30 @@ namespace Net.Appclusive.Api
             }
         }
 
-        private string BuildAuthorisationHeaderValue()
+        private string BuildAuthorizationHeaderValue()
         {
             var result = default(string);
 
+            var networkCredential = (NetworkCredential)Credentials;
             if (IsBearerAuthentication())
             {
-                var networkCredentials = (NetworkCredential)Credentials;
-                result = string.Format(AUTHORIZATION_BEARER_SCHEME, networkCredentials.Password);
+                result = string.Format(Authentication.AUTHORIZATION_BEARER_TEMPLATE, networkCredential.Password);
             }
 
             if (IsBasicAuthentication())
             {
-                var networkCredentials = (NetworkCredential)Credentials;
-                var basicAuthString = Convert.ToBase64String(Encoding.ASCII.GetBytes($"{networkCredentials.UserName}:{networkCredentials.Password}"));
-                result = string.Format(AUTHORIZATION_BASIC_SCHEME, basicAuthString);
+                result = BuildBasicAuthorizationHeaderValue(networkCredential);
             }
 
             return result;
+        }
+
+        private string BuildBasicAuthorizationHeaderValue(NetworkCredential credential)
+        {
+            var basicAuthString = Convert.ToBase64String(string.IsNullOrEmpty(credential.Domain) ? 
+                Encoding.ASCII.GetBytes($"{credential.UserName}:{credential.Password}") : 
+                Encoding.ASCII.GetBytes($"{credential.Domain}\\{credential.UserName}:{credential.Password}"));
+            return string.Format(Authentication.AUTHORIZATION_BASIC_TEMPLATE, basicAuthString);
         }
     }
 }

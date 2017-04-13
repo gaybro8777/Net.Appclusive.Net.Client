@@ -19,6 +19,8 @@ using System.Configuration;
 using System.Linq;
 using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Net.Appclusive.Api.Constants;
+using Net.Appclusive.Api.Core;
 using Net.Appclusive.Public.Domain.Identity;
 
 namespace Net.Appclusive.Api.Tests
@@ -26,7 +28,7 @@ namespace Net.Appclusive.Api.Tests
     [TestClass]
     public class AuthenticationIntegrationTest
     {
-        private const string AUTHENTICATION_ENTITY_SET_NAME = "Authentications";
+        private const string SYSTEM_TENANT_ID = "11111111-1111-1111-1111-111111111111";
 
         private static readonly Uri _serviceRoot;
 
@@ -50,19 +52,24 @@ namespace Net.Appclusive.Api.Tests
             {
                 Credentials = new NetworkCredential()
                 {
-                    UserName = "TestUser",
+                    UserName = @"Arbitrary",
                     Password = "P@ssw0rd"
                 }
+                ,
+                TenantId = SYSTEM_TENANT_ID
             };
             svc.Format.UseJson();
 
-            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(AUTHENTICATION_ENTITY_SET_NAME, "BasicLogin", null));
+            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(nameof(Core.Core.Authentications), "BasicLogin", null));
 
             // Act
             var user = svc.Users.FirstOrDefault();
 
+            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(nameof(Core.Core.Authentications), "Logout", null);
+
             // Assert
             Assert.IsNotNull(user);
+            Assert.IsTrue(logoutResult.Value);
         }
 
         /// <summary>
@@ -79,19 +86,24 @@ namespace Net.Appclusive.Api.Tests
             {
                 Credentials = new NetworkCredential()
                 {
-                    UserName = DataServiceContextBase.AUTHORISATION_BAERER_USER_NAME,
-                    Password = "JWT_TOKEN_HERE"
+                    UserName = Authentication.AUTHORIZATION_BAERER_USER_NAME,
+                    Password = "JWT_HERE"
                 }
+                ,
+                TenantId = SYSTEM_TENANT_ID
             };
             svc.Format.UseJson();
 
-            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(AUTHENTICATION_ENTITY_SET_NAME, "BearerLogin", null));
+            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(nameof(Core.Core.Authentications), "BearerLogin", null));
 
             // Act
             var user = svc.Users.FirstOrDefault();
 
+            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(nameof(Core.Core.Authentications), "Logout", null);
+
             // Assert
             Assert.IsNotNull(user);
+            Assert.IsTrue(logoutResult.Value);
         }
 
         /// <summary>
@@ -99,20 +111,27 @@ namespace Net.Appclusive.Api.Tests
         /// 
         /// - Negotiate authentication has to be activated in 'authenticationManagerConfiguration' of Web.config
         /// </summary>
+        [Ignore]
         [TestMethod]
         public void NegotiateAuthenticationSucceeds()
         {
             // Arrange
-            var svc = new Core.Core(_serviceRoot);
+            var svc = new Core.Core(_serviceRoot)
+            {
+                TenantId = SYSTEM_TENANT_ID
+            };
             svc.Format.UseJson();
 
-            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(AUTHENTICATION_ENTITY_SET_NAME, "NegotiateLogin", null));
+            Assert.IsNotNull(svc.InvokeEntitySetActionWithSingleResult<User>(nameof(Core.Core.Authentications), "NegotiateLogin", null));
 
             // Act
             var user = svc.Users.FirstOrDefault();
 
+            var logoutResult = svc.InvokeEntitySetActionWithSingleResult<BoxedBool>(nameof(Core.Core.Authentications), "Logout", null);
+
             // Assert
             Assert.IsNotNull(user);
+            Assert.IsTrue(logoutResult.Value);
         }
 
         /// <summary>
@@ -129,9 +148,11 @@ namespace Net.Appclusive.Api.Tests
             {
                 Credentials = new NetworkCredential()
                 {
-                    UserName = DataServiceContextBase.AUTHORISATION_BAERER_USER_NAME,
+                    UserName = Authentication.AUTHORIZATION_BAERER_USER_NAME,
                     Password = "TOKEN2"
                 }
+                ,
+                TenantId = SYSTEM_TENANT_ID
             };
             svc.Format.UseJson();
 
