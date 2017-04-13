@@ -8,7 +8,7 @@
         <owners>d-fens GmbH</owners>
 		<licenseUrl>https://github.com/Appclusive/Net.Appclusive.Net.Client/blob/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/Appclusive/Net.Appclusive.Net.Client</projectUrl>
-        <iconUrl>https://github.com/Appclusive/Net.Appclusive.Net.Client/blob/master/logo-32x32.png</iconUrl>
+        <iconUrl>https://raw.githubusercontent.com/Appclusive/Net.Appclusive.Net.Client/master/logo-32x32.png</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <description>Net.Appclusive.PS.Client
 ========================
