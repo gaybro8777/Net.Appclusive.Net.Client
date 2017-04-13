@@ -26,8 +26,14 @@ d-fens GmbH, General-Guisan-Strasse 6, CH-6300 Zug, Switzerland
 * See [Releases](https://github.com/Appclusive/Net.Appclusive.Net.Client/releases) and [Tags](https://github.com/Appclusive/Net.Appclusive.Net.Client/tags) on [GitHub](https://github.com/Appclusive/Net.Appclusive.Net.Client)
 		</description>
         <summary>PowerShell Client for the Appclusive Blueprint Modelling and Automation Engine</summary>
-        <releaseNotes>20170404
-initial release
+        <releaseNotes>20170413
+Initial release
+
+# FEATURES
+
+* Enter-Server Cmdlet
+* Get-Tenant Cmdlet
+* New-Acl Cmdlet
 		</releaseNotes>
         <copyright>Copyright © 2017 d-fens GmbH</copyright>
         <tags>dfch Appclusive Client PowerShell</tags>
