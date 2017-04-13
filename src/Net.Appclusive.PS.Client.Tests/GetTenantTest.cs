@@ -17,6 +17,7 @@
 extern alias Api;
 using System;
 using System.Collections.Generic;
+using System.Data.Services.Client;
 using System.Linq;
 using Api::Net.Appclusive.Api;
 using Api::Net.Appclusive.Public.Domain.Identity;
@@ -32,20 +33,6 @@ namespace Net.Appclusive.PS.Client.Tests
     public class GetTenantTest
     {
         private readonly Type sut = typeof(GetTenant);
-
-        private Api::Net.Appclusive.Api.Core.Core CoreContext { get; set; }
-        private Dictionary<string, DataServiceContextBase> Svc { get; set; }
-
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            CoreContext = Mock.Create<Api::Net.Appclusive.Api.Core.Core>();
-
-            Svc = new Dictionary<string, DataServiceContextBase>
-            {
-                {nameof(Api::Net.Appclusive.Api.Core.Core), CoreContext}
-            };
-        }
 
         [TestMethod]
         [ExpectParameterBindingException(MessagePattern = @"'Id'.+'System\.Guid'")]
@@ -87,114 +74,180 @@ namespace Net.Appclusive.PS.Client.Tests
             PsCmdletAssert.Invoke(sut, parameters);
         }
 
-        //[TestMethod]
-        //public void InvokeGetTenantListAvailableCallsApiAndReturnsResult()
-        //{
-        //    // Arrange
-        //    var tenant = CreateSampleTenant();
-        //    var tenants = new List<Tenant>
-        //    {
-        //        tenant
-        //    };
+        [TestMethod]
+        public void InvokeGetTenantListAvailableCallsApiAndReturnsResult()
+        {
+            // Arrange
+            var tenant = CreateSampleTenant();
+            var tenant2 = CreateSampleTenant();
+            var tenants = new List<Tenant>
+            {
+                tenant,
+                tenant2
+            };
 
-        //    Mock.Arrange(() => CoreContext.Tenants.Execute())
-        //        .Returns(tenants)
-        //        .OccursOnce();
+            var coreContext = Mock.Create<Api::Net.Appclusive.Api.Core.Core>();
+            var dataServiceQuery = Mock.Create <DataServiceQuery<Tenant>>();
 
-        //    var parameters = string.Format(@"-Svc {0}", Svc);
+            Mock.Arrange(() => coreContext.Tenants)
+                .Returns(dataServiceQuery)
+                .OccursOnce();
 
-        //    // Act
-        //    var results = PsCmdletAssert.Invoke(sut, parameters);
+            Mock.Arrange(() => dataServiceQuery.Execute())
+                .Returns(tenants)
+                .OccursOnce();
 
-        //    // Assert
-        //    Assert.IsNotNull(results);
-        //    Assert.AreEqual(1, results.Count);
-        //    var result = results[0].BaseObject as IEnumerable<Tenant>;
+            var svc = new Dictionary<string, DataServiceContextBase>
+            {
+                {
+                    nameof(Api::Net.Appclusive.Api.Core.Core),
+                    coreContext
+                }
+            };
 
-        //    Assert.IsNotNull(result);
-        //    Assert.AreEqual(1, result.Count());
-        //}
+            var parameters = new Dictionary<string, object>()
+            {
+                {nameof(svc), svc}
+            };
 
-        //[TestMethod]
-        //public void InvokeGetTenantWithIdCallsApiWithFilterAndReturnsResult()
-        //{
-        //    // Arrange
-        //    var tenant = CreateSampleTenant();
-        //    var tenantId = tenant.Id;
-        //    var tenants = new List<Tenant>
-        //    {
-        //        tenant
-        //    };
+            // Act
+            var results = PsCmdletAssert.Invoke(sut, parameters);
 
-        //    var query = string.Format(Odata.BY_ID_GUID_QUERY_TEMPLATE, tenantId);
-        //    Mock.Arrange(() => CoreContext.Tenants.Filter(query).Execute())
-        //        .Returns(tenants)
-        //        .OccursOnce();
+            // Assert
+            Assert.IsNotNull(results);
+            Assert.AreEqual(2, results.Count);
+            var result0 = results[0].BaseObject as Tenant;
+            var result1 = results[1].BaseObject as Tenant;
 
-        //    var parameters = string.Format(@"-Svc {0} -Id {1}", Svc, tenantId);
+            Assert.IsNotNull(result0);
+            Assert.IsNotNull(result1);
 
-        //    // Act
-        //    var results = PsCmdletAssert.Invoke(sut, parameters);
+            Mock.Assert(coreContext);
+            Mock.Assert(dataServiceQuery);
+        }
 
-        //    // Assert
-        //    Assert.IsNotNull(results);
-        //    Assert.AreEqual(1, results.Count);
-        //    var result = results[0].BaseObject as IEnumerable<Tenant>;
+        [TestMethod]
+        public void InvokeGetTenantWithIdParameterCallsApiWithFilterAndReturnsResult()
+        {
+            // Arrange
+            var tenant = CreateSampleTenant();
+            var tenantId = tenant.Id;
 
-        //    Assert.IsNotNull(result);
-        //    Assert.AreEqual(1, result.Count());
-        //}
+            var coreContext = Mock.Create<Api::Net.Appclusive.Api.Core.Core>();
+            var dataServiceQuery = Mock.Create<DataServiceQuery<Tenant>>();
 
-        //[TestMethod]
-        //public void InvokeGetTenantWithNameCallsApiWithFilterAndReturnsResult()
-        //{
-        //    // Arrange
-        //    var tenant = CreateSampleTenant();
-        //    var tenantName = tenant.Name;
-        //    var tenants = new List<Tenant>
-        //    {
-        //        tenant
-        //    };
+            Mock.Arrange(() => coreContext.Tenants)
+                .Returns(dataServiceQuery)
+                .OccursOnce();
 
-        //    var query = string.Format(Odata.BY_NAME_QUERY_TEMPLATE, tenantName);
-        //    Mock.Arrange(() => CoreContext.Tenants.Filter(query).Execute())
-        //        .Returns(tenants)
-        //        .OccursOnce();
+            Mock.Arrange(() => dataServiceQuery.Id(tenantId))
+                .Returns(tenant)
+                .OccursOnce();
 
-        //    var parameters = string.Format(@"-Svc {0} -Name {1}", Svc, tenantName);
+            var svc = new Dictionary<string, DataServiceContextBase>
+            {
+                {
+                    nameof(Api::Net.Appclusive.Api.Core.Core),
+                    coreContext
+                }
+            };
 
-        //    // Act
-        //    var results = PsCmdletAssert.Invoke(sut, parameters);
+            var parameters = new Dictionary<string, object>()
+            {
+                {nameof(GetTenant.Id), tenantId},
+                {nameof(svc), svc}
+            };
 
-        //    // Assert
-        //    Assert.IsNotNull(results);
-        //    Assert.AreEqual(1, results.Count);
-        //    var result = results[0].BaseObject as IEnumerable<Tenant>;
+            // Act
+            var results = PsCmdletAssert.Invoke(sut, parameters);
 
-        //    Assert.IsNotNull(result);
-        //    Assert.AreEqual(1, result.Count());
-        //}
+            // Assert
+            Assert.IsNotNull(results);
+            Assert.AreEqual(1, results.Count);
+            var result0 = results[0].BaseObject as Tenant;
 
-        //private Tenant CreateSampleTenant()
-        //{
-        //    return new Tenant
-        //    {
-        //        Id = default(Guid)
-        //        ,
-        //        Name = nameof(Tenant.Name)
-        //        ,
-        //        Description = nameof(Tenant.Description)
-        //        ,
-        //        MappedId = nameof(Tenant.MappedId)
-        //        ,
-        //        MappedType = nameof(Tenant.MappedType)
-        //        ,
-        //        ParentId = Guid.NewGuid()
-        //        ,
-        //        Namespace = "net.sharedop"
-        //        ,
-        //        CustomerId = 42
-        //    };
-        //}
+            Assert.IsNotNull(result0);
+            Assert.AreEqual(tenantId, result0.Id);
+
+            Mock.Assert(coreContext);
+            Mock.Assert(dataServiceQuery);
+        }
+
+        [TestMethod]
+        public void InvokeGetTenantWithNameParameterCallsApiWithFilterAndReturnsResult()
+        {
+            // Arrange
+            var tenant = CreateSampleTenant();
+            var tenant2 = CreateSampleTenant();
+            var tenantName = tenant.Name;
+            var tenants = new List<Tenant>
+            {
+                tenant,
+                tenant2
+            };
+
+            var coreContext = Mock.Create<Api::Net.Appclusive.Api.Core.Core>();
+            var dataServiceQuery = Mock.Create<DataServiceQuery<Tenant>>();
+
+            Mock.Arrange(() => coreContext.Tenants)
+                .Returns(dataServiceQuery)
+                .OccursOnce();
+
+            var query = string.Format(Odata.BY_NAME_QUERY_TEMPLATE, tenantName);
+            Mock.Arrange(() => dataServiceQuery.Filter(query).Execute())
+                .Returns(tenants)
+                .OccursOnce();
+
+            var svc = new Dictionary<string, DataServiceContextBase>
+            {
+                {
+                    nameof(Api::Net.Appclusive.Api.Core.Core),
+                    coreContext
+                }
+            };
+
+            var parameters = new Dictionary<string, object>()
+            {
+                {nameof(GetTenant.Name), tenantName},
+                {nameof(svc), svc}
+            };
+
+            // Act
+            var results = PsCmdletAssert.Invoke(sut, parameters);
+
+            // Assert
+            Assert.IsNotNull(results);
+            Assert.AreEqual(2, results.Count);
+            var result0 = results[0].BaseObject as Tenant;
+            var result1 = results[1].BaseObject as Tenant;
+
+            Assert.IsNotNull(result0);
+            Assert.IsNotNull(result1);
+
+            Mock.Assert(coreContext);
+            Mock.Assert(dataServiceQuery);
+        }
+
+        private Tenant CreateSampleTenant()
+        {
+            return new Tenant
+            {
+                Id = default(Guid)
+                ,
+                Name = nameof(Tenant.Name)
+                ,
+                Description = nameof(Tenant.Description)
+                ,
+                MappedId = nameof(Tenant.MappedId)
+                ,
+                MappedType = nameof(Tenant.MappedType)
+                ,
+                ParentId = Guid.NewGuid()
+                ,
+                Namespace = "net.sharedop"
+                ,
+                CustomerId = 42
+            };
+        }
     }
 }

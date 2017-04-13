@@ -106,7 +106,7 @@ namespace Net.Appclusive.PS.Client
 
             Contract.Assert(null != Svc, Messages.Cmdlet_ProcessRecord__NotLoggedIn);
 
-            var shouldProcessMessage = string.Format(Messages.Cmdlet_ProcessRecord__ShouldProcess, ParameterSetName);
+            var shouldProcessMessage = string.Format(Messages.Cmdlet_ProcessRecord__ShouldProcessParameterSet, ParameterSetName);
             if (!ShouldProcess(shouldProcessMessage))
             {
                 return;
@@ -141,7 +141,7 @@ namespace Net.Appclusive.PS.Client
         {
             try
             {
-                var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
+                var coreContext = (Api::Net.Appclusive.Api.Core.Core)Svc[nameof(Api::Net.Appclusive.Api.Core.Core)];
                 var result = coreContext.Tenants.Id(Id);
                 WriteObject(result);
             }
@@ -155,7 +155,7 @@ namespace Net.Appclusive.PS.Client
         private void ProcessParameterSetName()
         {
             var query = string.Format(Odata.BY_NAME_QUERY_TEMPLATE, Name);
-            var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
+            var coreContext = (Api::Net.Appclusive.Api.Core.Core)Svc[nameof(Api::Net.Appclusive.Api.Core.Core)];
             var results = coreContext.Tenants.Filter(query).Execute();
 
             results.ForEach(WriteObject);
@@ -163,7 +163,7 @@ namespace Net.Appclusive.PS.Client
 
         private void ProcessParameterSetList()
         {
-            var coreContext = (Api::Net.Appclusive.Api.Core.Core)ModuleConfiguration.Current.DataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)];
+            var coreContext = (Api::Net.Appclusive.Api.Core.Core)Svc[nameof(Api::Net.Appclusive.Api.Core.Core)];
             var results = coreContext.Tenants.Execute();
 
             results.ForEach(WriteObject);

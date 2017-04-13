@@ -156,7 +156,7 @@
     <comment>0: ApiBase.AbsoluteUri
 1: loginEndpoint</comment>
   </data>
-  <data name="Cmdlet_ProcessRecord__ShouldProcess" xml:space="preserve">
+  <data name="Cmdlet_ProcessRecord__ShouldProcessParameterSet" xml:space="preserve">
     <value>ParameterSetName '{0}'.</value>
     <comment>0: ParameterSetName</comment>
   </data>

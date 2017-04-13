@@ -90,9 +90,9 @@ namespace Net.Appclusive.PS.Client {
         /// <summary>
         ///   Looks up a localized string similar to ParameterSetName &apos;{0}&apos;..
         /// </summary>
-        internal static string Cmdlet_ProcessRecord__ShouldProcess {
+        internal static string Cmdlet_ProcessRecord__ShouldProcessParameterSet {
             get {
-                return ResourceManager.GetString("Cmdlet_ProcessRecord__ShouldProcess", resourceCulture);
+                return ResourceManager.GetString("Cmdlet_ProcessRecord__ShouldProcessParameterSet", resourceCulture);
             }
         }
         
