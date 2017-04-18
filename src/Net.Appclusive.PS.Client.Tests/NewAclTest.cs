@@ -139,10 +139,6 @@ namespace Net.Appclusive.PS.Client.Tests
                 .Returns(response)
                 .OccursOnce();
 
-            Mock.Arrange(() => response.BatchStatusCode)
-                .Returns(201)
-                .OccursOnce();
-
             var svc = new Dictionary<string, DataServiceContextBase>
             {
                 {

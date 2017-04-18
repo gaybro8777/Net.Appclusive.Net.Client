@@ -109,7 +109,6 @@ namespace Net.Appclusive.PS.Client
 
             coreContext.AddToAcls(acl);
             var response = Svc[nameof(Api::Net.Appclusive.Api.Core.Core)].SaveChanges();
-            Contract.Assert(201 == response.BatchStatusCode);
 
             WriteObject(acl);
         }
