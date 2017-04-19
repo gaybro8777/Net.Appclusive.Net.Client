@@ -17,6 +17,7 @@
 extern alias Api;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Linq;
 using System.Management.Automation;
 using Api::Net.Appclusive.Api;
 using Api::Net.Appclusive.Public.Domain.Security;
@@ -58,8 +59,6 @@ namespace Net.Appclusive.PS.Client
         /// Specifies the description of the Acl
         /// </summary>
         [Parameter(Mandatory = false)]
-        // DFTODO - set name as default value
-        //[PSDefaultValue(Value = )]
         public string Description { get; set; }
 
         /// <summary>
@@ -97,6 +96,11 @@ namespace Net.Appclusive.PS.Client
                 return;
             }
 
+            if (!MyInvocation.BoundParameters.ContainsKey(nameof(Description)))
+            {
+                Description = Name;
+            }
+
             var acl = new Acl
             {
                 Name = Name,
@@ -109,7 +113,10 @@ namespace Net.Appclusive.PS.Client
 
             coreContext.AddToAcls(acl);
             var response = Svc[nameof(Api::Net.Appclusive.Api.Core.Core)].SaveChanges();
-            Contract.Assert(201 == response.BatchStatusCode);
+
+            var changeOperationResponse = response.FirstOrDefault();
+            Contract.Assert(null != changeOperationResponse);
+            Contract.Assert(201 == changeOperationResponse.StatusCode);
 
             WriteObject(acl);
         }

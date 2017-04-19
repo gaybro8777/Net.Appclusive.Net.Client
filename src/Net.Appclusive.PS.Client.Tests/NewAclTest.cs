@@ -18,6 +18,7 @@ extern alias Api;
 using System;
 using System.Collections.Generic;
 using System.Data.Services.Client;
+using System.Linq;
 using System.Management.Automation;
 using Api::Net.Appclusive.Api;
 using biz.dfch.CS.Testing.Attributes;
@@ -130,6 +131,7 @@ namespace Net.Appclusive.PS.Client.Tests
             // Arrange
             var coreContext = Mock.Create<Api::Net.Appclusive.Api.Core.Core>();
             var response = Mock.Create<DataServiceResponse>();
+            var changeOperationResponse = Mock.Create<ChangeOperationResponse>();
 
             Mock.Arrange(() => coreContext.AddToAcls(Arg.IsAny<Acl>()))
                 .DoNothing()
@@ -139,7 +141,11 @@ namespace Net.Appclusive.PS.Client.Tests
                 .Returns(response)
                 .OccursOnce();
 
-            Mock.Arrange(() => response.BatchStatusCode)
+            Mock.Arrange(() => response.FirstOrDefault())
+                .Returns(changeOperationResponse)
+                .OccursOnce();
+
+            Mock.Arrange(() => changeOperationResponse.StatusCode)
                 .Returns(201)
                 .OccursOnce();
 
@@ -173,6 +179,7 @@ namespace Net.Appclusive.PS.Client.Tests
 
             Mock.Assert(coreContext);
             Mock.Assert(response);
+            Mock.Assert(changeOperationResponse);
         }
     }
 }
