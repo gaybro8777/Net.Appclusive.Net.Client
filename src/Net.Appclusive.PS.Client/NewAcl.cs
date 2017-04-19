@@ -59,8 +59,6 @@ namespace Net.Appclusive.PS.Client
         /// Specifies the description of the Acl
         /// </summary>
         [Parameter(Mandatory = false)]
-        // DFTODO - set name as default value
-        //[PSDefaultValue(Value = )]
         public string Description { get; set; }
 
         /// <summary>
@@ -96,6 +94,11 @@ namespace Net.Appclusive.PS.Client
             if (!ShouldProcess(shouldProcessMessage))
             {
                 return;
+            }
+
+            if (!MyInvocation.BoundParameters.ContainsKey(nameof(Description)))
+            {
+                Description = Name;
             }
 
             var acl = new Acl
