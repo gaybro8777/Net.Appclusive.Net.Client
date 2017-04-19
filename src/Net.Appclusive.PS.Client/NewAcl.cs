@@ -17,6 +17,7 @@
 extern alias Api;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Linq;
 using System.Management.Automation;
 using Api::Net.Appclusive.Api;
 using Api::Net.Appclusive.Public.Domain.Security;
@@ -109,6 +110,10 @@ namespace Net.Appclusive.PS.Client
 
             coreContext.AddToAcls(acl);
             var response = Svc[nameof(Api::Net.Appclusive.Api.Core.Core)].SaveChanges();
+
+            var changeOperationResponse = response.FirstOrDefault();
+            Contract.Assert(null != changeOperationResponse);
+            Contract.Assert(201 == changeOperationResponse.StatusCode);
 
             WriteObject(acl);
         }
