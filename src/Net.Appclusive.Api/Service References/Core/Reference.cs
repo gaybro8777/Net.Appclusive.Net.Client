@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Api.Core
 {
     
@@ -65,6 +65,11 @@ namespace Net.Appclusive.Api.Core
                 return resolvedType;
             }
             resolvedType = this.DefaultResolveType(typeName, "Net.Appclusive.Public.Domain.Control", "Net.Appclusive.Api.Core.Net.Appclusive.Public.Domain.Control");
+            if ((resolvedType != null))
+            {
+                return resolvedType;
+            }
+            resolvedType = this.DefaultResolveType(typeName, "Net.Appclusive.Core.Domain.Security", "Net.Appclusive.Api.Core.Net.Appclusive.Core.Domain.Security");
             if ((resolvedType != null))
             {
                 return resolvedType;
@@ -142,6 +147,10 @@ namespace Net.Appclusive.Api.Core
             if (clientType.Namespace.Equals("Net.Appclusive.Api.Core.Net.Appclusive.Public.Domain.Control", global::System.StringComparison.Ordinal))
             {
                 return string.Concat("Net.Appclusive.Public.Domain.Control.", clientType.Name);
+            }
+            if (clientType.Namespace.Equals("Net.Appclusive.Api.Core.Net.Appclusive.Core.Domain.Security", global::System.StringComparison.Ordinal))
+            {
+                return string.Concat("Net.Appclusive.Core.Domain.Security.", clientType.Name);
             }
             if (clientType.Namespace.Equals("Net.Appclusive.Api.Core.Net.Appclusive.Public.Domain.Order", global::System.StringComparison.Ordinal))
             {
@@ -1672,804 +1681,814 @@ namespace Net.Appclusive.Api.Core
                 "nant\" Role=\"ChildrenPartner\" Multiplicity=\"0..1\" /></Association></Schema><Schem" +
                 "a Namespace=\"System.Security.Principal\" xmlns=\"http://schemas.microsoft.com/ado/" +
                 "2009/11/edm\"><ComplexType Name=\"IIdentity\" /></Schema><Schema Namespace=\"Net.App" +
-                "clusive.Public.Domain.Order\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm" +
-                "\"><EntityType Name=\"Order\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"J" +
-                "obId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" N" +
-                "ullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Pr" +
-                "operty Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"OrderIte" +
-                "ms\" Relationship=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domai" +
-                "n_Order_Order_OrderItems_Net_Appclusive_Public_Domain_Order_OrderItem_OrderItems" +
-                "Partner\" ToRole=\"OrderItems\" FromRole=\"OrderItemsPartner\" /><NavigationProperty " +
-                "Name=\"Job\" Relationship=\"Net.Appclusive.Public.Domain.Control.Net_Appclusive_Pub" +
-                "lic_Domain_Order_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner\" " +
-                "ToRole=\"Job\" FromRole=\"JobPartner\" /><NavigationProperty Name=\"Details\" Relation" +
-                "ship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Order_Deta" +
-                "ils_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Det" +
-                "ails\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"Cart\"><Key><Pro" +
-                "pertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\"" +
-                " /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"De" +
-                "scription\" Type=\"Edm.String\" /><NavigationProperty Name=\"CartItems\" Relationship" +
-                "=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Cart_Car" +
-                "tItems_Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartner\" ToRole=\"Car" +
-                "tItems\" FromRole=\"CartItemsPartner\" /><NavigationProperty Name=\"Details\" Relatio" +
-                "nship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Cart_Deta" +
-                "ils_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Det" +
-                "ails\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"OrderItem\"><Key" +
-                "><PropertyRef Name=\"Id\" /></Key><Property Name=\"OrderId\" Type=\"Edm.Int64\" Nullab" +
-                "le=\"false\" /><Property Name=\"JobId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Propert" +
-                "y Name=\"BlueprintId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" Typ" +
-                "e=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullabl" +
-                "e=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty" +
-                " Name=\"Order\" Relationship=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Pu" +
-                "blic_Domain_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_Order" +
-                "Partner\" ToRole=\"Order\" FromRole=\"OrderPartner\" /><NavigationProperty Name=\"Job\"" +
-                " Relationship=\"Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain" +
-                "_Order_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner\" ToRole" +
-                "=\"Job\" FromRole=\"JobPartner\" /><NavigationProperty Name=\"Configuration\" Relation" +
-                "ship=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Order_OrderItem_C" +
-                "onfiguration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner\" ToRol" +
-                "e=\"Configuration\" FromRole=\"ConfigurationPartner\" /><NavigationProperty Name=\"De" +
-                "tails\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_O" +
-                "rder_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsP" +
-                "artner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Na" +
-                "me=\"CartItem\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"CartId\" Type=\"" +
-                "Edm.Int64\" Nullable=\"false\" /><Property Name=\"CatalogueItemId\" Type=\"Edm.Int64\" " +
-                "Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Prop" +
-                "erty Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Descriptio" +
-                "n\" Type=\"Edm.String\" /><NavigationProperty Name=\"Cart\" Relationship=\"Net.Appclus" +
-                "ive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_App" +
-                "clusive_Public_Domain_Order_Cart_CartPartner\" ToRole=\"Cart\" FromRole=\"CartPartne" +
-                "r\" /><NavigationProperty Name=\"Configuration\" Relationship=\"Net.Appclusive.Publi" +
-                "c.Types.Net_Appclusive_Public_Domain_Order_CartItem_Configuration_Net_Appclusive" +
-                "_Public_Types_IdValuePair_ConfigurationPartner\" ToRole=\"Configuration\" FromRole=" +
-                "\"ConfigurationPartner\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Ap" +
-                "pclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_CartItem_Details_Net_A" +
-                "ppclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" Fro" +
-                "mRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"Catalogue\"><Key><Propert" +
-                "yRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><" +
-                "Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Descri" +
-                "ption\" Type=\"Edm.String\" /><NavigationProperty Name=\"CatalogueItems\" Relationshi" +
-                "p=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Catalog" +
-                "ue_CatalogueItems_Net_Appclusive_Public_Domain_Order_CatalogueItem_CatalogueItem" +
-                "sPartner\" ToRole=\"CatalogueItems\" FromRole=\"CatalogueItemsPartner\" /><Navigation" +
+                "clusive.Core.Domain.Security\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/ed" +
+                "m\"><ComplexType Name=\"TokenResponse\"><Property Name=\"Token\" Type=\"Edm.String\" />" +
+                "</ComplexType></Schema><Schema Namespace=\"Net.Appclusive.Public.Domain.Order\" xm" +
+                "lns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityType Name=\"Order\"><Key" +
+                "><PropertyRef Name=\"Id\" /></Key><Property Name=\"JobId\" Type=\"Edm.Int64\" Nullable" +
+                "=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Nam" +
+                "e=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=" +
+                "\"Edm.String\" /><NavigationProperty Name=\"OrderItems\" Relationship=\"Net.Appclusiv" +
+                "e.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Ap" +
+                "pclusive_Public_Domain_Order_OrderItem_OrderItemsPartner\" ToRole=\"OrderItems\" Fr" +
+                "omRole=\"OrderItemsPartner\" /><NavigationProperty Name=\"Job\" Relationship=\"Net.Ap" +
+                "pclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_Order_Job_Net_" +
+                "Appclusive_Public_Domain_Control_Job_JobPartner\" ToRole=\"Job\" FromRole=\"JobPartn" +
+                "er\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Dom" +
+                "ain.Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclusive_Public_Domai" +
+                "n_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\"" +
+                " /></EntityType><EntityType Name=\"Cart\"><Key><PropertyRef Name=\"Id\" /></Key><Pro" +
+                "perty Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"" +
+                "Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" />" +
+                "<NavigationProperty Name=\"CartItems\" Relationship=\"Net.Appclusive.Public.Domain." +
+                "Order.Net_Appclusive_Public_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Do" +
+                "main_Order_CartItem_CartItemsPartner\" ToRole=\"CartItems\" FromRole=\"CartItemsPart" +
+                "ner\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Do" +
+                "main.Net_Appclusive_Public_Domain_Order_Cart_Details_Net_Appclusive_Public_Domai" +
+                "n_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\"" +
+                " /></EntityType><EntityType Name=\"OrderItem\"><Key><PropertyRef Name=\"Id\" /></Key" +
+                "><Property Name=\"OrderId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Jo" +
+                "bId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"BlueprintId\" Type=\"Edm." +
+                "Int64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" " +
+                "/><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Des" +
+                "cription\" Type=\"Edm.String\" /><NavigationProperty Name=\"Order\" Relationship=\"Net" +
+                ".Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_OrderItem_Ord" +
+                "er_Net_Appclusive_Public_Domain_Order_Order_OrderPartner\" ToRole=\"Order\" FromRol" +
+                "e=\"OrderPartner\" /><NavigationProperty Name=\"Job\" Relationship=\"Net.Appclusive.P" +
+                "ublic.Domain.Control.Net_Appclusive_Public_Domain_Order_OrderItem_Job_Net_Appclu" +
+                "sive_Public_Domain_Control_Job_JobPartner\" ToRole=\"Job\" FromRole=\"JobPartner\" />" +
+                "<NavigationProperty Name=\"Configuration\" Relationship=\"Net.Appclusive.Public.Typ" +
+                "es.Net_Appclusive_Public_Domain_Order_OrderItem_Configuration_Net_Appclusive_Pub" +
+                "lic_Types_IdValuePair_ConfigurationPartner\" ToRole=\"Configuration\" FromRole=\"Con" +
+                "figurationPartner\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclu" +
+                "sive.Public.Domain.Net_Appclusive_Public_Domain_Order_OrderItem_Details_Net_Appc" +
+                "lusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRo" +
+                "le=\"DetailsPartner\" /></EntityType><EntityType Name=\"CartItem\"><Key><PropertyRef" +
+                " Name=\"Id\" /></Key><Property Name=\"CartId\" Type=\"Edm.Int64\" Nullable=\"false\" /><" +
+                "Property Name=\"CatalogueItemId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Na" +
+                "me=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.Stri" +
+                "ng\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Navigat" +
+                "ionProperty Name=\"Cart\" Relationship=\"Net.Appclusive.Public.Domain.Order.Net_App" +
+                "clusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Domain_Order_Car" +
+                "t_CartPartner\" ToRole=\"Cart\" FromRole=\"CartPartner\" /><NavigationProperty Name=\"" +
+                "Configuration\" Relationship=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_D" +
+                "omain_Order_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_Confi" +
+                "gurationPartner\" ToRole=\"Configuration\" FromRole=\"ConfigurationPartner\" /><Navig" +
+                "ationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appc" +
+                "lusive_Public_Domain_Order_CartItem_Details_Net_Appclusive_Public_Domain_PublicE" +
+                "ntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></Enti" +
+                "tyType><EntityType Name=\"Catalogue\"><Key><PropertyRef Name=\"Id\" /></Key><Propert" +
+                "y Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm." +
+                "String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Nav" +
+                "igationProperty Name=\"CatalogueItems\" Relationship=\"Net.Appclusive.Public.Domain" +
+                ".Order.Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusiv" +
+                "e_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner\" ToRole=\"CatalogueItem" +
+                "s\" FromRole=\"CatalogueItemsPartner\" /><NavigationProperty Name=\"Details\" Relatio" +
+                "nship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Catalogue" +
+                "_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole" +
+                "=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"CatalogueI" +
+                "tem\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"CatalogueId\" Type=\"Edm." +
+                "Int64\" Nullable=\"false\" /><Property Name=\"BlueprintId\" Type=\"Edm.Int64\" Nullable" +
+                "=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Nam" +
+                "e=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=" +
+                "\"Edm.String\" /><NavigationProperty Name=\"Catalogue\" Relationship=\"Net.Appclusive" +
+                ".Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_" +
+                "Net_Appclusive_Public_Domain_Order_Catalogue_CataloguePartner\" ToRole=\"Catalogue" +
+                "\" FromRole=\"CataloguePartner\" /><NavigationProperty Name=\"Blueprint\" Relationshi" +
+                "p=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart7 = "_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprin" +
+                "t_BlueprintPartner\" ToRole=\"Blueprint\" FromRole=\"BlueprintPartner\" /><Navigation" +
                 "Property Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusiv" +
-                "e_Public_Domain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntit" +
-                "yDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityTy" +
-                "pe><EntityType Name=\"CatalogueItem\"><Key><PropertyRef Name=\"Id\" /></Key><Propert" +
-                "y Name=\"CatalogueId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Bluepri" +
-                "ntId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" N" +
-                "ullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Pr" +
-                "operty Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"Catalogu" +
-                "e\" Relationship=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain" +
-                "_Order_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Order_Catalogue_Cata" +
-                "loguePartner\" ToRole=\"Catalogue\" FromRole=\"CataloguePartner\" /><NavigationProper" +
-                "ty Name=\"Blueprint\" Relationship=\"Net.Appclusive.Public.Domain.Order.Net_Appclus" +
-                "ive_Public_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Ord" +
-                "er_Blueprint_BlueprintPartner\" ToRole=\"Blueprint\" FromRole=\"BlueprintPartner\" />" +
-                "<NavigationProperty Name=\"Details\" Relationship=\"Net.Appclu";
+                "e_Public_Domain_Order_CatalogueItem_Details_Net_Appclusive_Public_Domain_PublicE" +
+                "ntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></Enti" +
+                "tyType><EntityType Name=\"Blueprint\"><Key><PropertyRef Name=\"Id\" /></Key><Propert" +
+                "y Name=\"ModelId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"E" +
+                "dm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"f" +
+                "alse\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Nam" +
+                "e=\"Model\" Relationship=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Pu" +
+                "blic_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_M" +
+                "odelPartner\" ToRole=\"Model\" FromRole=\"ModelPartner\" /><NavigationProperty Name=\"" +
+                "Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain" +
+                "_Order_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Detail" +
+                "sPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><Association" +
+                " Name=\"Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Appclusive_Public" +
+                "_Domain_Order_OrderItem_OrderItemsPartner\"><End Type=\"Net.Appclusive.Public.Doma" +
+                "in.Order.OrderItem\" Role=\"OrderItems\" Multiplicity=\"*\" /><End Type=\"Net.Appclusi" +
+                "ve.Public.Domain.Order.Order\" Role=\"OrderItemsPartner\" Multiplicity=\"0..1\" /></A" +
+                "ssociation><Association Name=\"Net_Appclusive_Public_Domain_Order_Cart_CartItems_" +
+                "Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartner\"><End Type=\"Net.App" +
+                "clusive.Public.Domain.Order.CartItem\" Role=\"CartItems\" Multiplicity=\"*\" /><End T" +
+                "ype=\"Net.Appclusive.Public.Domain.Order.Cart\" Role=\"CartItemsPartner\" Multiplici" +
+                "ty=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Order_" +
+                "OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPartner\"><End Type" +
+                "=\"Net.Appclusive.Public.Domain.Order.Order\" Role=\"Order\" Multiplicity=\"0..1\" /><" +
+                "End Type=\"Net.Appclusive.Public.Domain.Order.OrderItem\" Role=\"OrderPartner\" Mult" +
+                "iplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Order\"><PropertyRef Na" +
+                "me=\"Id\" /></Principal><Dependent Role=\"OrderPartner\"><PropertyRef Name=\"OrderId\"" +
+                " /></Dependent></ReferentialConstraint></Association><Association Name=\"Net_Appc" +
+                "lusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Domain_Order_Cart" +
+                "_CartPartner\"><End Type=\"Net.Appclusive.Public.Domain.Order.Cart\" Role=\"Cart\" Mu" +
+                "ltiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Order.CartItem\" Role" +
+                "=\"CartPartner\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Car" +
+                "t\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"CartPartner\"><PropertyR" +
+                "ef Name=\"CartId\" /></Dependent></ReferentialConstraint></Association><Associatio" +
+                "n Name=\"Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusi" +
+                "ve_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner\"><End Type=\"Net.Appcl" +
+                "usive.Public.Domain.Order.CatalogueItem\" Role=\"CatalogueItems\" Multiplicity=\"*\" " +
+                "/><End Type=\"Net.Appclusive.Public.Domain.Order.Catalogue\" Role=\"CatalogueItemsP" +
+                "artner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Pu" +
+                "blic_Domain_Order_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Order_Cat" +
+                "alogue_CataloguePartner\"><End Type=\"Net.Appclusive.Public.Domain.Order.Catalogue" +
+                "\" Role=\"Catalogue\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain" +
+                ".Order.CatalogueItem\" Role=\"CataloguePartner\" Multiplicity=\"0..1\" /><Referential" +
+                "Constraint><Principal Role=\"Catalogue\"><PropertyRef Name=\"Id\" /></Principal><Dep" +
+                "endent Role=\"CataloguePartner\"><PropertyRef Name=\"CatalogueId\" /></Dependent></R" +
+                "eferentialConstraint></Association><Association Name=\"Net_Appclusive_Public_Doma" +
+                "in_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_Bl" +
+                "ueprintPartner\"><End Type=\"Net.Appclusive.Public.Domain.Order.Blueprint\" Role=\"B" +
+                "lueprint\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Order.Ca" +
+                "talogueItem\" Role=\"BlueprintPartner\" Multiplicity=\"0..1\" /><ReferentialConstrain" +
+                "t><Principal Role=\"Blueprint\"><PropertyRef Name=\"Id\" /></Principal><Dependent Ro" +
+                "le=\"BlueprintPartner\"><PropertyRef Name=\"BlueprintId\" /></Dependent></Referentia" +
+                "lConstraint></Association></Schema><Schema Namespace=\"Net.Appclusive.Public.Doma" +
+                "in.Control\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityType Nam" +
+                "e=\"Job\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Status\" Type=\"Edm.St" +
+                "ring\" Nullable=\"false\" /><Property Name=\"Action\" Type=\"Edm.String\" /><Property N" +
+                "ame=\"ActionParameters\" Type=\"Edm.String\" /><Property Name=\"Id\" Type=\"Edm.Int64\" " +
+                "Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><P" +
+                "roperty Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"Details" +
+                "\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Contro" +
+                "l_Job_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" T" +
+                "oRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"Appro" +
+                "val\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Type\" Type=\"Edm.String\"" +
+                " Nullable=\"false\" /><Property Name=\"Status\" Type=\"Edm.String\" Nullable=\"false\" /" +
+                "><Property Name=\"Remark\" Type=\"Edm.String\" /><Property Name=\"RoleId\" Type=\"Edm.I" +
+                "nt64\" Nullable=\"false\" /><Property Name=\"UserId\" Type=\"Edm.Int64\" Nullable=\"fals" +
+                "e\" /><Property Name=\"InitiatorId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property " +
+                "Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.St" +
+                "ring\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Navig" +
+                "ationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appc" +
+                "lusive_Public_Domain_Control_Approval_Details_Net_Appclusive_Public_Domain_Publi" +
+                "cEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></En" +
+                "tityType><EntityType Name=\"WorkItem\"><Key><PropertyRef Name=\"Id\" /></Key><Proper" +
+                "ty Name=\"Parameters\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Id\" Ty" +
+                "pe=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullab" +
+                "le=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationPropert" +
+                "y Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Publi" +
+                "c_Domain_Control_WorkItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetai" +
+                "ls_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><As" +
+                "sociation Name=\"Net_Appclusive_Public_Domain_Order_Order_Job_Net_Appclusive_Publ" +
+                "ic_Domain_Control_Job_JobPartner\"><End Type=\"Net.Appclusive.Public.Domain.Contro" +
+                "l.Job\" Role=\"Job\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain." +
+                "Order.Order\" Role=\"JobPartner\" Multiplicity=\"0..1\" /><ReferentialConstraint><Pri" +
+                "ncipal Role=\"Job\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"JobPartn" +
+                "er\"><PropertyRef Name=\"JobId\" /></Dependent></ReferentialConstraint></Associatio" +
+                "n><Association Name=\"Net_Appclusive_Public_Domain_Order_OrderItem_Job_Net_Appclu" +
+                "sive_Public_Domain_Control_Job_JobPartner\"><End Type=\"Net.Appclusive.Public.Doma" +
+                "in.Control.Job\" Role=\"Job\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Publi" +
+                "c.Domain.Order.OrderItem\" Role=\"JobPartner\" Multiplicity=\"0..1\" /><ReferentialCo" +
+                "nstraint><Principal Role=\"Job\"><PropertyRef Name=\"Id\" /></Principal><Dependent R" +
+                "ole=\"JobPartner\"><PropertyRef Name=\"JobId\" /></Dependent></ReferentialConstraint" +
+                "></Association></Schema><Schema Namespace=\"Default\" xmlns=\"";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart7 = "sive.Public.Domain.Net_Appclusive_Public_Domain_Order_CatalogueItem_Details_Net_A" +
-                "ppclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" Fro" +
-                "mRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"Blueprint\"><Key><Propert" +
-                "yRef Name=\"Id\" /></Key><Property Name=\"ModelId\" Type=\"Edm.Int64\" Nullable=\"false" +
-                "\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name" +
-                "\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.St" +
-                "ring\" /><NavigationProperty Name=\"Model\" Relationship=\"Net.Appclusive.Public.Dom" +
-                "ain.Inventory.Net_Appclusive_Public_Domain_Order_Blueprint_Model_Net_Appclusive_" +
-                "Public_Domain_Inventory_Model_ModelPartner\" ToRole=\"Model\" FromRole=\"ModelPartne" +
-                "r\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Doma" +
-                "in.Net_Appclusive_Public_Domain_Order_Blueprint_Details_Net_Appclusive_Public_Do" +
-                "main_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartn" +
-                "er\" /></EntityType><Association Name=\"Net_Appclusive_Public_Domain_Order_Order_O" +
-                "rderItems_Net_Appclusive_Public_Domain_Order_OrderItem_OrderItemsPartner\"><End T" +
-                "ype=\"Net.Appclusive.Public.Domain.Order.OrderItem\" Role=\"OrderItems\" Multiplicit" +
-                "y=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Order.Order\" Role=\"OrderItemsPar" +
-                "tner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Publ" +
-                "ic_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Domain_Order_CartItem_CartI" +
-                "temsPartner\"><End Type=\"Net.Appclusive.Public.Domain.Order.CartItem\" Role=\"CartI" +
-                "tems\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Order.Cart\" Rol" +
-                "e=\"CartItemsPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_" +
-                "Appclusive_Public_Domain_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Orde" +
-                "r_Order_OrderPartner\"><End Type=\"Net.Appclusive.Public.Domain.Order.Order\" Role=" +
-                "\"Order\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Order.Orde" +
-                "rItem\" Role=\"OrderPartner\" Multiplicity=\"0..1\" /><ReferentialConstraint><Princip" +
-                "al Role=\"Order\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"OrderPartn" +
-                "er\"><PropertyRef Name=\"OrderId\" /></Dependent></ReferentialConstraint></Associat" +
-                "ion><Association Name=\"Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_Appc" +
-                "lusive_Public_Domain_Order_Cart_CartPartner\"><End Type=\"Net.Appclusive.Public.Do" +
-                "main.Order.Cart\" Role=\"Cart\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Pub" +
-                "lic.Domain.Order.CartItem\" Role=\"CartPartner\" Multiplicity=\"0..1\" /><Referential" +
-                "Constraint><Principal Role=\"Cart\"><PropertyRef Name=\"Id\" /></Principal><Dependen" +
-                "t Role=\"CartPartner\"><PropertyRef Name=\"CartId\" /></Dependent></ReferentialConst" +
-                "raint></Association><Association Name=\"Net_Appclusive_Public_Domain_Order_Catalo" +
-                "gue_CatalogueItems_Net_Appclusive_Public_Domain_Order_CatalogueItem_CatalogueIte" +
-                "msPartner\"><End Type=\"Net.Appclusive.Public.Domain.Order.CatalogueItem\" Role=\"Ca" +
-                "talogueItems\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Order.C" +
-                "atalogue\" Role=\"CatalogueItemsPartner\" Multiplicity=\"0..1\" /></Association><Asso" +
-                "ciation Name=\"Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_Net_App" +
-                "clusive_Public_Domain_Order_Catalogue_CataloguePartner\"><End Type=\"Net.Appclusiv" +
-                "e.Public.Domain.Order.Catalogue\" Role=\"Catalogue\" Multiplicity=\"0..1\" /><End Typ" +
-                "e=\"Net.Appclusive.Public.Domain.Order.CatalogueItem\" Role=\"CataloguePartner\" Mul" +
-                "tiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Catalogue\"><PropertyR" +
-                "ef Name=\"Id\" /></Principal><Dependent Role=\"CataloguePartner\"><PropertyRef Name=" +
-                "\"CatalogueId\" /></Dependent></ReferentialConstraint></Association><Association N" +
-                "ame=\"Net_Appclusive_Public_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_P" +
-                "ublic_Domain_Order_Blueprint_BlueprintPartner\"><End Type=\"Net.Appclusive.Public." +
-                "Domain.Order.Blueprint\" Role=\"Blueprint\" Multiplicity=\"0..1\" /><End Type=\"Net.Ap" +
-                "pclusive.Public.Domain.Order.CatalogueItem\" Role=\"BlueprintPartner\" Multiplicity" +
-                "=\"0..1\" /><ReferentialConstraint><Principal Role=\"Blueprint\"><PropertyRef Name=\"" +
-                "Id\" /></Principal><Dependent Role=\"BlueprintPartner\"><PropertyRef Name=\"Blueprin" +
-                "tId\" /></Dependent></ReferentialConstraint></Association></Schema><Schema Namesp" +
-                "ace=\"Net.Appclusive.Public.Domain.Control\" xmlns=\"http://schemas.microsoft.com/a" +
-                "do/2009/11/edm\"><EntityType Name=\"Job\"><Key><PropertyRef Name=\"Id\" /></Key><Prop" +
-                "erty Name=\"Status\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Action\" " +
-                "Type=\"Edm.String\" /><Property Name=\"ActionParameters\" Type=\"Edm.String\" /><Prope" +
-                "rty Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Ed" +
-                "m.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><N" +
-                "avigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_" +
-                "Appclusive_Public_Domain_Control_Job_Details_Net_Appclusive_Public_Domain_Public" +
-                "EntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></Ent" +
-                "ityType><EntityType Name=\"Approval\"><Key><PropertyRef Name=\"Id\" /></Key><Propert" +
-                "y Name=\"Type\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Status\" Type=" +
-                "\"Edm.String\" Nullable=\"false\" /><Property Name=\"Remark\" Type=\"Edm.String\" /><Pro" +
-                "perty Name=\"RoleId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"UserId\" " +
-                "Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"InitiatorId\" Type=\"Edm.Int64" +
-                "\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Pr" +
-                "operty Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Descript" +
-                "ion\" Type=\"Edm.String\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Ap" +
-                "pclusive.Public.Domain.Net_Appclusive_Public_Domain_Control_Approval_Details_Net" +
-                "_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" F" +
-                "romRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"WorkItem\"><Key><Proper" +
-                "tyRef Name=\"Id\" /></Key><Property Name=\"Parameters\" Type=\"Edm.String\" Nullable=\"" +
-                "false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=" +
-                "\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"E" +
-                "dm.String\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Pub" +
-                "lic.Domain.Net_Appclusive_Public_Domain_Control_WorkItem_Details_Net_Appclusive_" +
-                "Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"Det" +
-                "ailsPartner\" /></EntityType><Association Name=\"Net_Appclusive_Public_Domain_Orde" +
-                "r_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner\"><End Type=\"Net." +
-                "Appclusive.Public.Domain.Control.Job\" Role=\"Job\" Multiplicity=\"0..1\" /><End Type" +
-                "=\"Net.Appclusive.Public.Domain.Order.Order\" Role=\"JobPartner\" Multiplicity=\"0..1" +
-                "\" /><ReferentialConstraint><Principal Role=\"Job\"><PropertyRef Name=\"Id\" /></Prin" +
-                "cipal><Dependent Role=\"JobPartner\"><PropertyRef Name=\"JobId\" /></Dependent></Ref" +
-                "erentialConstraint></Association><Association Name=\"Net_Appclusive_Public_Domain" +
-                "_Order_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner\"><End T" +
-                "ype=\"Net.Appclusive.Public.Domain.Control.Job\" Role=\"Job\" Multiplicity=\"0..1\" />" +
-                "<End Type=\"Net.Appclusive.Public.Domain.Order.OrderItem\" Role=\"JobPartner\" Multi" +
-                "plicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Job\"><PropertyRef Name=" +
-                "\"Id\" /></Principal><Dependent Role=\"JobPartner\"><PropertyRef Name=\"JobId\" /></De" +
-                "pendent></ReferentialConstraint></Association></Schema><Schema Namespace=\"Defaul" +
-                "t\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityContainer Name=\"C" +
-                "ore\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"IdNamePairs\" EntityType=" +
-                "\"Net.Appclusive.Public.Types.IdNamePair\" /><EntitySet Name=";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart8 = "\"IdValuePairs\" EntityType=\"Net.Appclusive.Public.Types.IdValuePair\" /><EntitySet " +
-                "Name=\"NameValuePairs\" EntityType=\"Net.Appclusive.Public.Types.NameValuePair\" /><" +
-                "EntitySet Name=\"IdNameDescriptionTuples\" EntityType=\"Net.Appclusive.Public.Types" +
-                ".IdNameDescriptionTuple\" /><EntitySet Name=\"TenantDetailss\" EntityType=\"Net.Appc" +
-                "lusive.Public.Domain.TenantDetails\" /><EntitySet Name=\"PublicEntityDetailss\" Ent" +
-                "ityType=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /><EntitySet Name=\"Ex" +
-                "amples\" EntityType=\"Net.Appclusive.Public.Domain.Configuration.Example\" /><Entit" +
-                "ySet Name=\"ManagementCredentials\" EntityType=\"Net.Appclusive.Public.Domain.Confi" +
-                "guration.ManagementCredential\" /><EntitySet Name=\"ManagementUris\" EntityType=\"Ne" +
-                "t.Appclusive.Public.Domain.Configuration.ManagementUri\" /><EntitySet Name=\"Volat" +
-                "ileKeyNameValues\" EntityType=\"Net.Appclusive.Public.Domain.Configuration.Volatil" +
-                "eKeyNameValue\" /><EntitySet Name=\"KeyNameValues\" EntityType=\"Net.Appclusive.Publ" +
-                "ic.Domain.Configuration.KeyNameValue\" /><EntitySet Name=\"Attributes\" EntityType=" +
-                "\"Net.Appclusive.Public.Domain.Inventory.Attribute\" /><EntitySet Name=\"Behaviours" +
-                "\" EntityType=\"Net.Appclusive.Public.Domain.Inventory.Behaviour\" /><EntitySet Nam" +
-                "e=\"Models\" EntityType=\"Net.Appclusive.Public.Domain.Inventory.Model\" /><EntitySe" +
-                "t Name=\"Connections\" EntityType=\"Net.Appclusive.Public.Domain.Inventory.Connecti" +
-                "on\" /><EntitySet Name=\"Items\" EntityType=\"Net.Appclusive.Public.Domain.Inventory" +
-                ".Item\" /><EntitySet Name=\"Authentications\" EntityType=\"Net.Appclusive.Public.Dom" +
-                "ain.Security.Authentication\" /><EntitySet Name=\"Users\" EntityType=\"Net.Appclusiv" +
-                "e.Public.Domain.Identity.User\" /><EntitySet Name=\"ItemAcls\" EntityType=\"Net.Appc" +
-                "lusive.Public.Domain.Security.ItemAcl\" /><EntitySet Name=\"Aces\" EntityType=\"Net." +
-                "Appclusive.Public.Domain.Security.Ace\" /><EntitySet Name=\"Rights\" EntityType=\"Ne" +
-                "t.Appclusive.Public.Domain.Security.Right\" /><EntitySet Name=\"Roles\" EntityType=" +
-                "\"Net.Appclusive.Public.Domain.Security.Role\" /><EntitySet Name=\"Acls\" EntityType" +
-                "=\"Net.Appclusive.Public.Domain.Security.Acl\" /><EntitySet Name=\"ItemAces\" Entity" +
-                "Type=\"Net.Appclusive.Public.Domain.Security.ItemAce\" /><EntitySet Name=\"Permissi" +
-                "ons\" EntityType=\"Net.Appclusive.Public.Domain.Security.Permission\" /><EntitySet " +
-                "Name=\"Orders\" EntityType=\"Net.Appclusive.Public.Domain.Order.Order\" /><EntitySet" +
-                " Name=\"Jobs\" EntityType=\"Net.Appclusive.Public.Domain.Control.Job\" /><EntitySet " +
-                "Name=\"Carts\" EntityType=\"Net.Appclusive.Public.Domain.Order.Cart\" /><EntitySet N" +
-                "ame=\"OrderItems\" EntityType=\"Net.Appclusive.Public.Domain.Order.OrderItem\" /><En" +
-                "titySet Name=\"CartItems\" EntityType=\"Net.Appclusive.Public.Domain.Order.CartItem" +
-                "\" /><EntitySet Name=\"Catalogues\" EntityType=\"Net.Appclusive.Public.Domain.Order." +
-                "Catalogue\" /><EntitySet Name=\"CatalogueItems\" EntityType=\"Net.Appclusive.Public." +
-                "Domain.Order.CatalogueItem\" /><EntitySet Name=\"Blueprints\" EntityType=\"Net.Appcl" +
-                "usive.Public.Domain.Order.Blueprint\" /><EntitySet Name=\"Tenants\" EntityType=\"Net" +
-                ".Appclusive.Public.Domain.Identity.Tenant\" /><EntitySet Name=\"Approvals\" EntityT" +
-                "ype=\"Net.Appclusive.Public.Domain.Control.Approval\" /><EntitySet Name=\"WorkItems" +
-                "\" EntityType=\"Net.Appclusive.Public.Domain.Control.WorkItem\" /><FunctionImport N" +
-                "ame=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Configuration.Example\" I" +
-                "sBindable=\"true\" EntitySet=\"Examples\" m:IsAlwaysBindable=\"true\"><Parameter Name=" +
-                "\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.E" +
-                "xample)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"OverriddenAct" +
-                "ionNameForDoit\" ReturnType=\"Net.Appclusive.Public.Types.BoxedString\" IsBindable=" +
-                "\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Net.Ap" +
-                "pclusive.Public.Domain.Configuration.Example\" /></FunctionImport><FunctionImport" +
-                " Name=\"ForReal\" ReturnType=\"Collection(biz.dfch.CS.Commons.DictionaryParameters)" +
-                "\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\"" +
-                " Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.Example)\" Nullable=" +
-                "\"false\" /><Parameter Name=\"RequiredProperty\" Type=\"Edm.String\" FixedLength=\"fals" +
-                "e\" Unicode=\"false\" /><Parameter Name=\"OptionalProperty\" Type=\"Edm.String\" FixedL" +
-                "ength=\"false\" Unicode=\"false\" /><Parameter Name=\"LongProperty\" Type=\"Edm.Int64\" " +
-                "Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Silent\" ReturnType=\"Ne" +
-                "t.Appclusive.Core.Domain.EmptyActionParameters\" IsBindable=\"true\" m:IsAlwaysBind" +
-                "able=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.P" +
-                "ublic.Domain.Configuration.Example)\" Nullable=\"false\" /></FunctionImport><Functi" +
-                "onImport Name=\"AltogetherNow\" ReturnType=\"Net.Appclusive.Core.Domain.Configurati" +
-                "on.AltogetherNowReturnType\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Paramet" +
-                "er Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configu" +
-                "ration.Example)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"GetAc" +
-                "tionInformation\" ReturnType=\"Net.Appclusive.Public.Types.BoxedString\" IsBindable" +
-                "=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Colle" +
-                "ction(Net.Appclusive.Public.Domain.Configuration.Example)\" Nullable=\"false\" /><P" +
-                "arameter Name=\"Endpoint\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /" +
-                "><Parameter Name=\"EntityTypeName\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=" +
-                "\"false\" /><Parameter Name=\"ActionName\" Type=\"Edm.String\" FixedLength=\"false\" Uni" +
-                "code=\"false\" /></FunctionImport><FunctionImport Name=\"GetActionNames\" ReturnType" +
-                "=\"Collection(System.Collections.ObjectModel.Collection_1OfString)\" IsBindable=\"t" +
-                "rue\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collecti" +
-                "on(Net.Appclusive.Public.Domain.Configuration.Example)\" Nullable=\"false\" /><Para" +
-                "meter Name=\"Endpoint\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><P" +
-                "arameter Name=\"EntityTypeName\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"fa" +
-                "lse\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusi" +
-                "ve.Public.Domain.Configuration.ManagementCredential\" IsBindable=\"true\" EntitySet" +
-                "=\"ManagementCredentials\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParam" +
-                "eter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.ManagementCred" +
-                "ential)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" Ret" +
-                "urnType=\"Net.Appclusive.Public.Domain.Configuration.ManagementUri\" IsBindable=\"t" +
-                "rue\" EntitySet=\"ManagementUris\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindi" +
-                "ngParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.Managem" +
-                "entUri)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" Ret" +
-                "urnType=\"Net.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue\" IsBind" +
-                "able=\"true\" EntitySet=\"VolatileKeyNameValues\" m:IsAlwaysBindable=\"true\"><Paramet" +
-                "er Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configu" +
-                "ration.VolatileKeyNameValue)\" Nullable=\"false\" /></FunctionImport><FunctionImpor" +
-                "t Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Configuration.KeyName" +
-                "Value\" IsBindable=\"true\" EntitySet=\"KeyNameValues\" m:IsAlwaysBindable=\"true\"><Pa" +
-                "rameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Co" +
-                "nfiguration.KeyNameValue)\" Nullable=\"false\" /></FunctionImport><FunctionImport N" +
-                "ame=\"EntitySetActionReturningString\" ReturnType=\"Net.Appclusive.Public.Types.Box" +
-                "edString\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPa" +
-                "rameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.KeyNameValu" +
-                "e)\" Nullable=\"false\" /></FunctionImport><FunctionImport Nam";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart9 = "e=\"EntityActionReturningBool\" ReturnType=\"Net.Appclusive.Public.Types.BoxedBool\" " +
-                "IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" T" +
-                "ype=\"Net.Appclusive.Public.Domain.Configuration.KeyNameValue\" /></FunctionImport" +
-                "><FunctionImport Name=\"EntitySetActionReturningICollectionString\" ReturnType=\"Co" +
-                "llection(System.Collections.ObjectModel.Collection_1OfString)\" IsBindable=\"true\"" +
-                " m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(N" +
-                "et.Appclusive.Public.Domain.Configuration.KeyNameValue)\" Nullable=\"false\" /></Fu" +
-                "nctionImport><FunctionImport Name=\"EntityActionReturningDictionary\" ReturnType=\"" +
-                "Collection(biz.dfch.CS.Commons.DictionaryParameters)\" IsBindable=\"true\" m:IsAlwa" +
-                "ysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Net.Appclusive.Public" +
-                ".Domain.Configuration.KeyNameValue\" /></FunctionImport><FunctionImport Name=\"Ent" +
-                "ityActionReturningDto\" ReturnType=\"Net.Appclusive.Core.Domain.Configuration.Enti" +
-                "tyActionReturningDto\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Nam" +
-                "e=\"bindingParameter\" Type=\"Net.Appclusive.Public.Domain.Configuration.KeyNameVal" +
-                "ue\" /><Parameter Name=\"StringProperty\" Type=\"Edm.String\" FixedLength=\"false\" Uni" +
-                "code=\"false\" /><Parameter Name=\"LongProperty\" Type=\"Edm.Int64\" Nullable=\"false\" " +
-                "/></FunctionImport><FunctionImport Name=\"New\" ReturnType=\"Net.Appclusive.Public." +
-                "Types.BoxedString\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"" +
-                "bindingParameter\" Type=\"Net.Appclusive.Public.Domain.Configuration.KeyNameValue\"" +
-                " /><Parameter Name=\"Id\" Type=\"Edm.Int32\" Nullable=\"false\" /><Parameter Name=\"Sou" +
-                "rceString\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></FunctionImp" +
-                "ort><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Inv" +
-                "entory.Attribute\" IsBindable=\"true\" EntitySet=\"Attributes\" m:IsAlwaysBindable=\"t" +
-                "rue\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.D" +
-                "omain.Inventory.Attribute)\" Nullable=\"false\" /></FunctionImport><FunctionImport " +
-                "Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Inventory.Behaviour\" Is" +
-                "Bindable=\"true\" EntitySet=\"Behaviours\" m:IsAlwaysBindable=\"true\"><Parameter Name" +
-                "=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Inventory.Beha" +
-                "viour)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" Retu" +
-                "rnType=\"Net.Appclusive.Public.Domain.Inventory.Model\" IsBindable=\"true\" EntitySe" +
-                "t=\"Models\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Co" +
-                "llection(Net.Appclusive.Public.Domain.Inventory.Model)\" Nullable=\"false\" /></Fun" +
-                "ctionImport><FunctionImport Name=\"Behaviours\" ReturnType=\"Collection(System.Coll" +
-                "ections.Generic.List_1OfString)\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Pa" +
-                "rameter Name=\"bindingParameter\" Type=\"Net.Appclusive.Public.Domain.Inventory.Mod" +
-                "el\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusiv" +
-                "e.Public.Domain.Inventory.Connection\" IsBindable=\"true\" EntitySet=\"Connections\" " +
-                "m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Ne" +
-                "t.Appclusive.Public.Domain.Inventory.Connection)\" Nullable=\"false\" /></FunctionI" +
-                "mport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.I" +
-                "nventory.Item\" IsBindable=\"true\" EntitySet=\"Items\" m:IsAlwaysBindable=\"true\"><Pa" +
-                "rameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.In" +
-                "ventory.Item)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Templat" +
-                "e\" ReturnType=\"Net.Appclusive.Public.Domain.Security.Authentication\" IsBindable=" +
-                "\"true\" EntitySet=\"Authentications\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bi" +
-                "ndingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Authentic" +
-                "ation)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"BasicLogin\" Re" +
-                "turnType=\"Net.Appclusive.Public.Domain.Identity.User\" IsBindable=\"true\" EntitySe" +
-                "t=\"Users\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Col" +
-                "lection(Net.Appclusive.Public.Domain.Security.Authentication)\" Nullable=\"false\" " +
-                "/><Parameter Name=\"Headers\" Type=\"biz.dfch.CS.Commons.DictionaryParameters\" /><P" +
-                "arameter Name=\"Identity\" Type=\"System.Security.Principal.IIdentity\" /></Function" +
-                "Import><FunctionImport Name=\"NegotiateLogin\" ReturnType=\"Net.Appclusive.Public.D" +
-                "omain.Identity.User\" IsBindable=\"true\" EntitySet=\"Users\" m:IsAlwaysBindable=\"tru" +
+            private const string ModelPart8 = "http://schemas.microsoft.com/ado/2009/11/edm\"><EntityContainer Name=\"Core\" m:IsDe" +
+                "faultEntityContainer=\"true\"><EntitySet Name=\"IdNamePairs\" EntityType=\"Net.Appclu" +
+                "sive.Public.Types.IdNamePair\" /><EntitySet Name=\"IdValuePairs\" EntityType=\"Net.A" +
+                "ppclusive.Public.Types.IdValuePair\" /><EntitySet Name=\"NameValuePairs\" EntityTyp" +
+                "e=\"Net.Appclusive.Public.Types.NameValuePair\" /><EntitySet Name=\"IdNameDescripti" +
+                "onTuples\" EntityType=\"Net.Appclusive.Public.Types.IdNameDescriptionTuple\" /><Ent" +
+                "itySet Name=\"TenantDetailss\" EntityType=\"Net.Appclusive.Public.Domain.TenantDeta" +
+                "ils\" /><EntitySet Name=\"PublicEntityDetailss\" EntityType=\"Net.Appclusive.Public." +
+                "Domain.PublicEntityDetails\" /><EntitySet Name=\"Examples\" EntityType=\"Net.Appclus" +
+                "ive.Public.Domain.Configuration.Example\" /><EntitySet Name=\"ManagementCredential" +
+                "s\" EntityType=\"Net.Appclusive.Public.Domain.Configuration.ManagementCredential\" " +
+                "/><EntitySet Name=\"ManagementUris\" EntityType=\"Net.Appclusive.Public.Domain.Conf" +
+                "iguration.ManagementUri\" /><EntitySet Name=\"VolatileKeyNameValues\" EntityType=\"N" +
+                "et.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue\" /><EntitySet Nam" +
+                "e=\"KeyNameValues\" EntityType=\"Net.Appclusive.Public.Domain.Configuration.KeyName" +
+                "Value\" /><EntitySet Name=\"Attributes\" EntityType=\"Net.Appclusive.Public.Domain.I" +
+                "nventory.Attribute\" /><EntitySet Name=\"Behaviours\" EntityType=\"Net.Appclusive.Pu" +
+                "blic.Domain.Inventory.Behaviour\" /><EntitySet Name=\"Models\" EntityType=\"Net.Appc" +
+                "lusive.Public.Domain.Inventory.Model\" /><EntitySet Name=\"Connections\" EntityType" +
+                "=\"Net.Appclusive.Public.Domain.Inventory.Connection\" /><EntitySet Name=\"Items\" E" +
+                "ntityType=\"Net.Appclusive.Public.Domain.Inventory.Item\" /><EntitySet Name=\"Authe" +
+                "ntications\" EntityType=\"Net.Appclusive.Public.Domain.Security.Authentication\" />" +
+                "<EntitySet Name=\"Users\" EntityType=\"Net.Appclusive.Public.Domain.Identity.User\" " +
+                "/><EntitySet Name=\"ItemAcls\" EntityType=\"Net.Appclusive.Public.Domain.Security.I" +
+                "temAcl\" /><EntitySet Name=\"Aces\" EntityType=\"Net.Appclusive.Public.Domain.Securi" +
+                "ty.Ace\" /><EntitySet Name=\"Rights\" EntityType=\"Net.Appclusive.Public.Domain.Secu" +
+                "rity.Right\" /><EntitySet Name=\"Roles\" EntityType=\"Net.Appclusive.Public.Domain.S" +
+                "ecurity.Role\" /><EntitySet Name=\"Acls\" EntityType=\"Net.Appclusive.Public.Domain." +
+                "Security.Acl\" /><EntitySet Name=\"ItemAces\" EntityType=\"Net.Appclusive.Public.Dom" +
+                "ain.Security.ItemAce\" /><EntitySet Name=\"Permissions\" EntityType=\"Net.Appclusive" +
+                ".Public.Domain.Security.Permission\" /><EntitySet Name=\"Orders\" EntityType=\"Net.A" +
+                "ppclusive.Public.Domain.Order.Order\" /><EntitySet Name=\"Jobs\" EntityType=\"Net.Ap" +
+                "pclusive.Public.Domain.Control.Job\" /><EntitySet Name=\"Carts\" EntityType=\"Net.Ap" +
+                "pclusive.Public.Domain.Order.Cart\" /><EntitySet Name=\"OrderItems\" EntityType=\"Ne" +
+                "t.Appclusive.Public.Domain.Order.OrderItem\" /><EntitySet Name=\"CartItems\" Entity" +
+                "Type=\"Net.Appclusive.Public.Domain.Order.CartItem\" /><EntitySet Name=\"Catalogues" +
+                "\" EntityType=\"Net.Appclusive.Public.Domain.Order.Catalogue\" /><EntitySet Name=\"C" +
+                "atalogueItems\" EntityType=\"Net.Appclusive.Public.Domain.Order.CatalogueItem\" /><" +
+                "EntitySet Name=\"Blueprints\" EntityType=\"Net.Appclusive.Public.Domain.Order.Bluep" +
+                "rint\" /><EntitySet Name=\"Tenants\" EntityType=\"Net.Appclusive.Public.Domain.Ident" +
+                "ity.Tenant\" /><EntitySet Name=\"Approvals\" EntityType=\"Net.Appclusive.Public.Doma" +
+                "in.Control.Approval\" /><EntitySet Name=\"WorkItems\" EntityType=\"Net.Appclusive.Pu" +
+                "blic.Domain.Control.WorkItem\" /><FunctionImport Name=\"Template\" ReturnType=\"Net." +
+                "Appclusive.Public.Domain.Configuration.Example\" IsBindable=\"true\" EntitySet=\"Exa" +
+                "mples\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collec" +
+                "tion(Net.Appclusive.Public.Domain.Configuration.Example)\" Nullable=\"false\" /></F" +
+                "unctionImport><FunctionImport Name=\"OverriddenActionNameForDoit\" ReturnType=\"Net" +
+                ".Appclusive.Public.Types.BoxedString\" IsBindable=\"true\" m:IsAlwaysBindable=\"true" +
+                "\"><Parameter Name=\"bindingParameter\" Type=\"Net.Appclusive.Public.Domain.Configur" +
+                "ation.Example\" /></FunctionImport><FunctionImport Name=\"ForReal\" ReturnType=\"Col" +
+                "lection(biz.dfch.CS.Commons.DictionaryParameters)\" IsBindable=\"true\" m:IsAlwaysB" +
+                "indable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusiv" +
+                "e.Public.Domain.Configuration.Example)\" Nullable=\"false\" /><Parameter Name=\"Requ" +
+                "iredProperty\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter" +
+                " Name=\"OptionalProperty\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /" +
+                "><Parameter Name=\"LongProperty\" Type=\"Edm.Int64\" Nullable=\"false\" /></FunctionIm" +
+                "port><FunctionImport Name=\"Silent\" ReturnType=\"Net.Appclusive.Core.Domain.EmptyA" +
+                "ctionParameters\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bi" +
+                "ndingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.Exam" +
+                "ple)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"AltogetherNow\" R" +
+                "eturnType=\"Net.Appclusive.Core.Domain.Configuration.AltogetherNowReturnType\" IsB" +
+                "indable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type" +
+                "=\"Collection(Net.Appclusive.Public.Domain.Configuration.Example)\" Nullable=\"fals" +
+                "e\" /></FunctionImport><FunctionImport Name=\"GetActionInformation\" ReturnType=\"Ne" +
+                "t.Appclusive.Public.Types.BoxedString\" IsBindable=\"true\" m:IsAlwaysBindable=\"tru" +
                 "e\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Dom" +
-                "ain.Security.Authentication)\" Nullable=\"false\" /><Parameter Name=\"Headers\" Type=" +
-                "\"biz.dfch.CS.Commons.DictionaryParameters\" /><Parameter Name=\"Identity\" Type=\"Sy" +
-                "stem.Security.Principal.IIdentity\" /></FunctionImport><FunctionImport Name=\"Bear" +
-                "erLogin\" ReturnType=\"Net.Appclusive.Public.Domain.Identity.User\" IsBindable=\"tru" +
-                "e\" EntitySet=\"Users\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter" +
-                "\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Authentication)\" Nullab" +
-                "le=\"false\" /><Parameter Name=\"Headers\" Type=\"biz.dfch.CS.Commons.DictionaryParam" +
-                "eters\" /><Parameter Name=\"Identity\" Type=\"System.Security.Principal.IIdentity\" /" +
-                "></FunctionImport><FunctionImport Name=\"Logout\" ReturnType=\"Net.Appclusive.Publi" +
-                "c.Types.BoxedBool\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"" +
-                "bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Authent" +
-                "ication)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" Re" +
-                "turnType=\"Net.Appclusive.Public.Domain.Security.ItemAcl\" IsBindable=\"true\" Entit" +
-                "ySet=\"ItemAcls\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Typ" +
-                "e=\"Collection(Net.Appclusive.Public.Domain.Security.ItemAcl)\" Nullable=\"false\" /" +
-                "></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Pub" +
-                "lic.Domain.Security.Ace\" IsBindable=\"true\" EntitySet=\"Aces\" m:IsAlwaysBindable=\"" +
-                "true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public." +
-                "Domain.Security.Ace)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"" +
-                "Template\" ReturnType=\"Net.Appclusive.Public.Domain.Security.Right\" IsBindable=\"t" +
-                "rue\" EntitySet=\"Rights\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParame" +
-                "ter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Right)\" Nullable=\"fa" +
-                "lse\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusi" +
-                "ve.Public.Domain.Security.Role\" IsBindable=\"true\" EntitySet=\"Roles\" m:IsAlwaysBi" +
-                "ndable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive" +
-                ".Public.Domain.Security.Role)\" Nullable=\"false\" /></FunctionImport><FunctionImpo" +
-                "rt Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Security.Acl\" IsBind" +
-                "able=\"true\" EntitySet=\"Acls\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingP" +
-                "arameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Acl)\" Nullable=" +
-                "\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appcl" +
-                "usive.Public.Domain.Security.ItemAce\" IsBindable=\"true\" EntitySet=\"ItemAces\" m:I" +
-                "sAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.A" +
-                "ppclusive.Public.Domain.Security.ItemAce)\" Nullable=\"false\" /></FunctionImport><" +
-                "FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Security" +
-                ".Permission\" IsBindable=\"true\" EntitySet=\"Permissions\" m:IsAlwaysBindable=\"true\"" +
-                "><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domai" +
-                "n.Security.Permission)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name" +
-                "=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Order.Order\" IsBindable=\"tr" +
-                "ue\" EntitySet=\"Orders\" m:IsAlwaysBindable=\"true\"><Parameter";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart10 = " Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Order.Orde" +
-                "r)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Create\" ReturnType" +
-                "=\"Net.Appclusive.Public.Domain.Control.Job\" IsBindable=\"true\" EntitySet=\"Jobs\" m" +
-                ":IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net" +
-                ".Appclusive.Public.Domain.Order.Order)\" Nullable=\"false\" /><Parameter Name=\"Cart" +
-                "Id\" Type=\"Edm.Int64\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"T" +
-                "emplate\" ReturnType=\"Net.Appclusive.Public.Domain.Order.Cart\" IsBindable=\"true\" " +
-                "EntitySet=\"Carts\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" T" +
-                "ype=\"Collection(Net.Appclusive.Public.Domain.Order.Cart)\" Nullable=\"false\" /></F" +
+                "ain.Configuration.Example)\" Nullable=\"false\" /><Parameter Name=\"Endpoint\" Type=\"" +
+                "Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter Name=\"EntityTypeNam" +
+                "e\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter Name=\"Acti" +
+                "onName\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></FunctionImport" +
+                "><FunctionImport Name=\"GetActionNames\" ReturnType=\"Collection(System.Collections" +
+                ".ObjectModel.Collection_1OfString)\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\">" +
+                "<Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain" +
+                ".Configuration.Example)\" Nullable=\"false\" /><Parameter Name=\"Endpoint\" Type=\"Edm" +
+                ".String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter Name=\"EntityTypeName\" " +
+                "Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></FunctionImport><Functi" +
+                "onImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Configuration." +
+                "ManagementCredential\" IsBindable=\"true\" EntitySet=\"ManagementCredentials\" m:IsAl" +
+                "waysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appc" +
+                "lusive.Public.Domain.Configuration.ManagementCredential)\" Nullable=\"false\" /></F" +
                 "unctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public." +
-                "Domain.Order.OrderItem\" IsBindable=\"true\" EntitySet=\"OrderItems\" m:IsAlwaysBinda" +
-                "ble=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Pu" +
-                "blic.Domain.Order.OrderItem)\" Nullable=\"false\" /></FunctionImport><FunctionImpor" +
-                "t Name=\"ResumeBlueprintBookmark\" ReturnType=\"Net.Appclusive.Public.Types.BoxedBo" +
-                "ol\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParamete" +
-                "r\" Type=\"Net.Appclusive.Public.Domain.Order.OrderItem\" /><Parameter Name=\"Bookma" +
-                "rk\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter Name=\"Par" +
-                "ameters\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></FunctionImpor" +
-                "t><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Order" +
-                ".CartItem\" IsBindable=\"true\" EntitySet=\"CartItems\" m:IsAlwaysBindable=\"true\"><Pa" +
-                "rameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Or" +
-                "der.CartItem)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Templat" +
-                "e\" ReturnType=\"Net.Appclusive.Public.Domain.Order.Catalogue\" IsBindable=\"true\" E" +
-                "ntitySet=\"Catalogues\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParamete" +
-                "r\" Type=\"Collection(Net.Appclusive.Public.Domain.Order.Catalogue)\" Nullable=\"fal" +
-                "se\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusiv" +
-                "e.Public.Domain.Order.CatalogueItem\" IsBindable=\"true\" EntitySet=\"CatalogueItems" +
-                "\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(" +
-                "Net.Appclusive.Public.Domain.Order.CatalogueItem)\" Nullable=\"false\" /></Function" +
+                "Domain.Configuration.ManagementUri\" IsBindable=\"true\" EntitySet=\"ManagementUris\"" +
+                " m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(N" +
+                "et.Appclusive.Public.Domain.Configuration.ManagementUri)\" Nullable=\"false\" /></F" +
+                "unctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public." +
+                "Domain.Configuration.VolatileKeyNameValue\" IsBindable=\"true\" EntitySet=\"Volatile" +
+                "KeyNameValues\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type" +
+                "=\"Collection(Net.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue)\" N" +
+                "ullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"N" +
+                "et.Appclusive.Public.Domain.Configuration.KeyNameValue\" IsBindable=\"true\" Entity" +
+                "Set=\"KeyNameValues\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\"" +
+                " Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.KeyNameValue)\" Null" +
+                "able=\"false\" /></FunctionImport><FunctionImport Name=\"EntitySetActionReturningSt" +
+                "ring\" ReturnType=\"Net.Appclusive.Public.Types.BoxedString\" ";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart9 = "IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Ty" +
+                "pe=\"Collection(Net.Appclusive.Public.Domain.Configuration.KeyNameValue)\" Nullabl" +
+                "e=\"false\" /></FunctionImport><FunctionImport Name=\"EntityActionReturningBool\" Re" +
+                "turnType=\"Net.Appclusive.Public.Types.BoxedBool\" IsBindable=\"true\" m:IsAlwaysBin" +
+                "dable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Net.Appclusive.Public.Doma" +
+                "in.Configuration.KeyNameValue\" /></FunctionImport><FunctionImport Name=\"EntitySe" +
+                "tActionReturningICollectionString\" ReturnType=\"Collection(System.Collections.Obj" +
+                "ectModel.Collection_1OfString)\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Par" +
+                "ameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Con" +
+                "figuration.KeyNameValue)\" Nullable=\"false\" /></FunctionImport><FunctionImport Na" +
+                "me=\"EntityActionReturningDictionary\" ReturnType=\"Collection(biz.dfch.CS.Commons." +
+                "DictionaryParameters)\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Na" +
+                "me=\"bindingParameter\" Type=\"Net.Appclusive.Public.Domain.Configuration.KeyNameVa" +
+                "lue\" /></FunctionImport><FunctionImport Name=\"EntityActionReturningDto\" ReturnTy" +
+                "pe=\"Net.Appclusive.Core.Domain.Configuration.EntityActionReturningDto\" IsBindabl" +
+                "e=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Net." +
+                "Appclusive.Public.Domain.Configuration.KeyNameValue\" /><Parameter Name=\"StringPr" +
+                "operty\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter Name=" +
+                "\"LongProperty\" Type=\"Edm.Int64\" Nullable=\"false\" /></FunctionImport><FunctionImp" +
+                "ort Name=\"New\" ReturnType=\"Net.Appclusive.Public.Types.BoxedString\" IsBindable=\"" +
+                "true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Net.App" +
+                "clusive.Public.Domain.Configuration.KeyNameValue\" /><Parameter Name=\"Id\" Type=\"E" +
+                "dm.Int32\" Nullable=\"false\" /><Parameter Name=\"SourceString\" Type=\"Edm.String\" Fi" +
+                "xedLength=\"false\" Unicode=\"false\" /></FunctionImport><FunctionImport Name=\"Templ" +
+                "ate\" ReturnType=\"Net.Appclusive.Public.Domain.Inventory.Attribute\" IsBindable=\"t" +
+                "rue\" EntitySet=\"Attributes\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPa" +
+                "rameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Inventory.Attribute)\" Nul" +
+                "lable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net" +
+                ".Appclusive.Public.Domain.Inventory.Behaviour\" IsBindable=\"true\" EntitySet=\"Beha" +
+                "viours\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Colle" +
+                "ction(Net.Appclusive.Public.Domain.Inventory.Behaviour)\" Nullable=\"false\" /></Fu" +
+                "nctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.D" +
+                "omain.Inventory.Model\" IsBindable=\"true\" EntitySet=\"Models\" m:IsAlwaysBindable=\"" +
+                "true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public." +
+                "Domain.Inventory.Model)\" Nullable=\"false\" /></FunctionImport><FunctionImport Nam" +
+                "e=\"Behaviours\" ReturnType=\"Collection(System.Collections.Generic.List_1OfString)" +
+                "\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\"" +
+                " Type=\"Net.Appclusive.Public.Domain.Inventory.Model\" /></FunctionImport><Functio" +
+                "nImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Inventory.Conne" +
+                "ction\" IsBindable=\"true\" EntitySet=\"Connections\" m:IsAlwaysBindable=\"true\"><Para" +
+                "meter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Inve" +
+                "ntory.Connection)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Tem" +
+                "plate\" ReturnType=\"Net.Appclusive.Public.Domain.Inventory.Item\" IsBindable=\"true" +
+                "\" EntitySet=\"Items\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\"" +
+                " Type=\"Collection(Net.Appclusive.Public.Domain.Inventory.Item)\" Nullable=\"false\"" +
+                " /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.P" +
+                "ublic.Domain.Security.Authentication\" IsBindable=\"true\" EntitySet=\"Authenticatio" +
+                "ns\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collectio" +
+                "n(Net.Appclusive.Public.Domain.Security.Authentication)\" Nullable=\"false\" /></Fu" +
+                "nctionImport><FunctionImport Name=\"BasicLogin\" ReturnType=\"Net.Appclusive.Public" +
+                ".Domain.Identity.User\" IsBindable=\"true\" EntitySet=\"Users\" m:IsAlwaysBindable=\"t" +
+                "rue\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.D" +
+                "omain.Security.Authentication)\" Nullable=\"false\" /><Parameter Name=\"Headers\" Typ" +
+                "e=\"biz.dfch.CS.Commons.DictionaryParameters\" /><Parameter Name=\"Identity\" Type=\"" +
+                "System.Security.Principal.IIdentity\" /></FunctionImport><FunctionImport Name=\"Ne" +
+                "gotiateLogin\" ReturnType=\"Net.Appclusive.Public.Domain.Identity.User\" IsBindable" +
+                "=\"true\" EntitySet=\"Users\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPara" +
+                "meter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Authentication)\" N" +
+                "ullable=\"false\" /><Parameter Name=\"Headers\" Type=\"biz.dfch.CS.Commons.Dictionary" +
+                "Parameters\" /><Parameter Name=\"Identity\" Type=\"System.Security.Principal.IIdenti" +
+                "ty\" /></FunctionImport><FunctionImport Name=\"BearerLogin\" ReturnType=\"Net.Appclu" +
+                "sive.Public.Domain.Identity.User\" IsBindable=\"true\" EntitySet=\"Users\" m:IsAlways" +
+                "Bindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusi" +
+                "ve.Public.Domain.Security.Authentication)\" Nullable=\"false\" /><Parameter Name=\"H" +
+                "eaders\" Type=\"biz.dfch.CS.Commons.DictionaryParameters\" /><Parameter Name=\"Ident" +
+                "ity\" Type=\"System.Security.Principal.IIdentity\" /></FunctionImport><FunctionImpo" +
+                "rt Name=\"Logout\" ReturnType=\"Net.Appclusive.Public.Types.BoxedBool\" IsBindable=\"" +
+                "true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collect" +
+                "ion(Net.Appclusive.Public.Domain.Security.Authentication)\" Nullable=\"false\" /><P" +
+                "arameter Name=\"Headers\" Type=\"biz.dfch.CS.Commons.DictionaryParameters\" /><Param" +
+                "eter Name=\"Identity\" Type=\"System.Security.Principal.IIdentity\" /></FunctionImpo" +
+                "rt><FunctionImport Name=\"Impersonate\" ReturnType=\"Net.Appclusive.Core.Domain.Sec" +
+                "urity.TokenResponse\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name" +
+                "=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Authe" +
+                "ntication)\" Nullable=\"false\" /><Parameter Name=\"UserId\" Type=\"Edm.Int64\" Nullabl" +
+                "e=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.App" +
+                "clusive.Public.Domain.Security.ItemAcl\" IsBindable=\"true\" EntitySet=\"ItemAcls\" m" +
+                ":IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net" +
+                ".Appclusive.Public.Domain.Security.ItemAcl)\" Nullable=\"false\" /></FunctionImport" +
+                "><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Securi" +
+                "ty.Ace\" IsBindable=\"true\" EntitySet=\"Aces\" m:IsAlwaysBindable=\"true\"><Parameter " +
+                "Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.A" +
+                "ce)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnT" +
+                "ype=\"Net.Appclusive.Public.Domain.Security.Right\" IsBindable=\"true\" EntitySet=\"R" +
+                "ights\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collec" +
+                "tion(Net.Appclusive.Public.Domain.Security.Right)\" Nullable=\"false\" /></Function" +
                 "Import><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain." +
-                "Order.Blueprint\" IsBindable=\"true\" EntitySet=\"Blueprints\" m:IsAlwaysBindable=\"tr" +
+                "Security.Role\" IsBindable=\"true\" EntitySet=\"Roles\" m:IsAlwaysBindable=\"true\"><Pa" +
+                "rameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Se" +
+                "curity.Role)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template" +
+                "\" ReturnType=\"Net.Appclusive.Public.Domain.Security.Acl\" IsBindable=\"true\" Entit" +
+                "ySet=\"Acls\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"C" +
+                "ollection(Net.Appclusive.Public.Domain.Security.Acl)\" Nullable=\"false\" /></Funct" +
+                "ionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.A";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart10 = "ppclusive.Public.Domain.Security.ItemAce\" IsBindable=\"true\" EntitySet=\"ItemAces\" " +
+                "m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Ne" +
+                "t.Appclusive.Public.Domain.Security.ItemAce)\" Nullable=\"false\" /></FunctionImpor" +
+                "t><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Secur" +
+                "ity.Permission\" IsBindable=\"true\" EntitySet=\"Permissions\" m:IsAlwaysBindable=\"tr" +
                 "ue\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Do" +
-                "main.Order.Blueprint)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=" +
-                "\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Identity.Tenant\" IsBindable=" +
-                "\"true\" EntitySet=\"Tenants\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPar" +
-                "ameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Identity.Tenant)\" Nullable" +
-                "=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appc" +
-                "lusive.Public.Domain.Identity.User\" IsBindable=\"true\" EntitySet=\"Users\" m:IsAlwa" +
+                "main.Security.Permission)\" Nullable=\"false\" /></FunctionImport><FunctionImport N" +
+                "ame=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Order.Order\" IsBindable=" +
+                "\"true\" EntitySet=\"Orders\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPara" +
+                "meter\" Type=\"Collection(Net.Appclusive.Public.Domain.Order.Order)\" Nullable=\"fal" +
+                "se\" /></FunctionImport><FunctionImport Name=\"Create\" ReturnType=\"Net.Appclusive." +
+                "Public.Domain.Control.Job\" IsBindable=\"true\" EntitySet=\"Jobs\" m:IsAlwaysBindable" +
+                "=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Publi" +
+                "c.Domain.Order.Order)\" Nullable=\"false\" /><Parameter Name=\"CartId\" Type=\"Edm.Int" +
+                "64\" Nullable=\"false\" /><Parameter Name=\"ParentItemId\" Type=\"Edm.Int64\" Nullable=" +
+                "\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appcl" +
+                "usive.Public.Domain.Order.Cart\" IsBindable=\"true\" EntitySet=\"Carts\" m:IsAlwaysBi" +
+                "ndable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive" +
+                ".Public.Domain.Order.Cart)\" Nullable=\"false\" /></FunctionImport><FunctionImport " +
+                "Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Order.OrderItem\" IsBind" +
+                "able=\"true\" EntitySet=\"OrderItems\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bi" +
+                "ndingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Order.OrderItem)\" " +
+                "Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"ResumeBlueprintBookmar" +
+                "k\" ReturnType=\"Net.Appclusive.Public.Types.BoxedBool\" IsBindable=\"true\" m:IsAlwa" +
+                "ysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Net.Appclusive.Public" +
+                ".Domain.Order.OrderItem\" /><Parameter Name=\"Bookmark\" Type=\"Edm.String\" FixedLen" +
+                "gth=\"false\" Unicode=\"false\" /><Parameter Name=\"Parameters\" Type=\"Edm.String\" Fix" +
+                "edLength=\"false\" Unicode=\"false\" /></FunctionImport><FunctionImport Name=\"Templa" +
+                "te\" ReturnType=\"Net.Appclusive.Public.Domain.Order.CartItem\" IsBindable=\"true\" E" +
+                "ntitySet=\"CartItems\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter" +
+                "\" Type=\"Collection(Net.Appclusive.Public.Domain.Order.CartItem)\" Nullable=\"false" +
+                "\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive." +
+                "Public.Domain.Order.Catalogue\" IsBindable=\"true\" EntitySet=\"Catalogues\" m:IsAlwa" +
                 "ysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclu" +
-                "sive.Public.Domain.Identity.User)\" Nullable=\"false\" /></FunctionImport><Function" +
-                "Import Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Control.Approval" +
-                "\" IsBindable=\"true\" EntitySet=\"Approvals\" m:IsAlwaysBindable=\"true\"><Parameter N" +
-                "ame=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Control.App" +
-                "roval)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Approve\" Retur" +
-                "nType=\"Net.Appclusive.Public.Types.BoxedBool\" IsBindable=\"true\" m:IsAlwaysBindab" +
-                "le=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Net.Appclusive.Public.Domain." +
-                "Control.Approval\" /><Parameter Name=\"Remark\" Type=\"Edm.String\" FixedLength=\"fals" +
-                "e\" Unicode=\"false\" /></FunctionImport><FunctionImport Name=\"Decline\" ReturnType=" +
-                "\"Net.Appclusive.Public.Types.BoxedBool\" IsBindable=\"true\" m:IsAlwaysBindable=\"tr" +
-                "ue\"><Parameter Name=\"bindingParameter\" Type=\"Net.Appclusive.Public.Domain.Contro" +
-                "l.Approval\" /><Parameter Name=\"Remark\" Type=\"Edm.String\" FixedLength=\"false\" Uni" +
-                "code=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net." +
-                "Appclusive.Public.Domain.Control.WorkItem\" IsBindable=\"true\" EntitySet=\"WorkItem" +
-                "s\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection" +
-                "(Net.Appclusive.Public.Domain.Control.WorkItem)\" Nullable=\"false\" /></FunctionIm" +
-                "port><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Co" +
-                "ntrol.Job\" IsBindable=\"true\" EntitySet=\"Jobs\" m:IsAlwaysBindable=\"true\"><Paramet" +
-                "er Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Control" +
-                ".Job)\" Nullable=\"false\" /></FunctionImport><AssociationSet Name=\"Net_Appclusive_" +
-                "Public_Domain_Configuration_Example_Details_Net_Appclusive_Public_Domain_PublicE" +
-                "ntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Ap" +
-                "pclusive_Public_Domain_Configuration_Example_Details_Net_Appclusive_Public_Domai" +
-                "n_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Exam" +
-                "ples\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet>" +
-                "<AssociationSet Name=\"Net_Appclusive_Public_Domain_Configuration_ManagementCrede" +
-                "ntial_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" +
+                "sive.Public.Domain.Order.Catalogue)\" Nullable=\"false\" /></FunctionImport><Functi" +
+                "onImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Order.Catalogu" +
+                "eItem\" IsBindable=\"true\" EntitySet=\"CatalogueItems\" m:IsAlwaysBindable=\"true\"><P" +
+                "arameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.O" +
+                "rder.CatalogueItem)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"T" +
+                "emplate\" ReturnType=\"Net.Appclusive.Public.Domain.Order.Blueprint\" IsBindable=\"t" +
+                "rue\" EntitySet=\"Blueprints\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPa" +
+                "rameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Order.Blueprint)\" Nullabl" +
+                "e=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.App" +
+                "clusive.Public.Domain.Identity.Tenant\" IsBindable=\"true\" EntitySet=\"Tenants\" m:I" +
+                "sAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.A" +
+                "ppclusive.Public.Domain.Identity.Tenant)\" Nullable=\"false\" /></FunctionImport><F" +
+                "unctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Identity." +
+                "User\" IsBindable=\"true\" EntitySet=\"Users\" m:IsAlwaysBindable=\"true\"><Parameter N" +
+                "ame=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Identity.Us" +
+                "er)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnT" +
+                "ype=\"Net.Appclusive.Public.Domain.Control.Approval\" IsBindable=\"true\" EntitySet=" +
+                "\"Approvals\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"C" +
+                "ollection(Net.Appclusive.Public.Domain.Control.Approval)\" Nullable=\"false\" /></F" +
+                "unctionImport><FunctionImport Name=\"Approve\" ReturnType=\"Net.Appclusive.Public.T" +
+                "ypes.BoxedBool\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bin" +
+                "dingParameter\" Type=\"Net.Appclusive.Public.Domain.Control.Approval\" /><Parameter" +
+                " Name=\"Remark\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></Functio" +
+                "nImport><FunctionImport Name=\"Decline\" ReturnType=\"Net.Appclusive.Public.Types.B" +
+                "oxedBool\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPa" +
+                "rameter\" Type=\"Net.Appclusive.Public.Domain.Control.Approval\" /><Parameter Name=" +
+                "\"Remark\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></FunctionImpor" +
+                "t><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Contr" +
+                "ol.WorkItem\" IsBindable=\"true\" EntitySet=\"WorkItems\" m:IsAlwaysBindable=\"true\"><" +
+                "Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain." +
+                "Control.WorkItem)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Tem" +
+                "plate\" ReturnType=\"Net.Appclusive.Public.Domain.Control.Job\" IsBindable=\"true\" E" +
+                "ntitySet=\"Jobs\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Typ" +
+                "e=\"Collection(Net.Appclusive.Public.Domain.Control.Job)\" Nullable=\"false\" /></Fu" +
+                "nctionImport><AssociationSet Name=\"Net_Appclusive_Public_Domain_Configuration_Ex" +
+                "ample_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" +
                 "\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Configu" +
-                "ration_ManagementCredential_Details_Net_Appclusive_Public_Domain_PublicEntityDet" +
-                "ails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"ManagementCredentials" +
-                "\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Ass" +
-                "ociationSet Name=\"Net_Appclusive_Public_Domain_Configuration_ManagementUri_Manag" +
-                "ementCredential_Net_Appclusive_Public_Domain_Configuration_ManagementCredential_" +
-                "ManagementCredentialPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Config" +
-                "uration.Net_Appclusive_Public_Domain_Configuration_ManagementUri_ManagementCrede" +
-                "ntial_Net_Appclusive_Public_Domain_Configuration_ManagementCredential_Management" +
-                "CredentialPartner\"><End Role=\"ManagementCredentialPartner\" EntitySet=\"Management" +
-                "Uris\" /><End Role=\"ManagementCredential\" EntitySet=\"ManagementCredentials\" /></A" +
-                "ssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Configuration_M" +
-                "anagementUri_ManagementCredentials_Net_Appclusive_Public_Domain_Configuration_Ma" +
-                "nagementCredential_ManagementCredentialsPartnerSet\" Association=\"Net.Appclusive." +
-                "Public.Domain.Configuration.Net_Appclusive_Public_Domain_Configuration_Managemen" +
-                "tUri_ManagementCredentials_Net_Appclusive_Public_Domain_Configuration_Management" +
-                "Credential_ManagementCredentialsPartner\"><End Role=\"ManagementCredentialsPartner" +
-                "\" EntitySet=\"ManagementUris\" /><End Role=\"ManagementCredentials\" EntitySet=\"Mana" +
-                "gementCredentials\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Publi" +
-                "c_Domain_Configuration_ManagementUri_Details_Net_Appclusive_Public_Domain_Public" +
-                "EntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_A" +
-                "ppclusive_Public_Domain_Configuration_ManagementUri_Details_Net_Appclusive_Publi" +
-                "c_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySe" +
-                "t=\"ManagementUris\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></As" +
-                "sociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Configuration_Vo" +
-                "latileKeyNameValue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Deta" +
-                "ilsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_D" +
-                "omain_Configuration_VolatileKeyNameValue_Details_Net_Appclu";
+                "ration_Example_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsP" +
+                "artner\"><End Role=\"DetailsPartner\" EntitySet=\"Examples\" /><End Role=\"Details\" En" +
+                "titySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appc" +
+                "lusive_Public_Domain_Configuration_ManagementCredential_Details_Net_Appclusive_P" +
+                "ublic_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive." +
+                "Public.Domain.Net_Appclusive_Public_Domain_Configuration_ManagementCredential_De" +
+                "tails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role" +
+                "=\"DetailsPartner\" EntitySet=\"ManagementCredentials\" /><End Role=\"Details\" Entity" +
+                "Set=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusi" +
+                "ve_Public_Domain_Configuration_ManagementUri_ManagementCredential_Net_Appclusive" +
+                "_Public_Domain_Configuration_ManagementCredential_ManagementCredentialPartnerSet" +
+                "\" Association=\"Net.Appclusive.Public.Domain.Configuration.Net_Appclusive_Public_" +
+                "Domain_Configuration_ManagementUri_ManagementCredential_Net_Appclusive_Public_Do" +
+                "main_Configuration_ManagementCredential_ManagementCredentialPartner\"><End Role=\"" +
+                "ManagementCredentialPartner\" EntitySet=\"ManagementUris\" /><End Role=\"ManagementC" +
+                "redential\" EntitySet=\"ManagementCredentials\" /></AssociationSet><AssociationSet " +
+                "Name=\"Net_Appclusive_Public_Domain_Configuration_ManagementUri_ManagementCredent" +
+                "ials_Net_Appclusive_Public_Domain_Configuration_ManagementCredential_ManagementC" +
+                "redentialsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Configuration.Ne" +
+                "t_Appclusive_Public_Domain_Configuration_ManagementUri_ManagementCredentials_Net" +
+                "_Appclusive_Public_Domain_Configuration_ManagementCredential_ManagementCredentia" +
+                "lsPartner\"><End Role=\"ManagementCredentialsPartner\" EntitySet=\"ManagementUris\" /" +
+                "><End Role=\"ManagementCredentials\" EntitySet=\"ManagementCre";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart11 = "sive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\"" +
-                " EntitySet=\"VolatileKeyNameValues\" /><End Role=\"Details\" EntitySet=\"PublicEntity" +
-                "Detailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_" +
-                "Configuration_KeyNameValue_Details_Net_Appclusive_Public_Domain_PublicEntityDeta" +
+            private const string ModelPart11 = "dentials\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_C" +
+                "onfiguration_ManagementUri_Details_Net_Appclusive_Public_Domain_PublicEntityDeta" +
                 "ils_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_" +
-                "Public_Domain_Configuration_KeyNameValue_Details_Net_Appclusive_Public_Domain_Pu" +
-                "blicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"KeyNameV" +
-                "alues\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet" +
-                "><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Attribute_Details_" +
-                "Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=" +
-                "\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_Attribute_D" +
-                "etails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Rol" +
-                "e=\"DetailsPartner\" EntitySet=\"Attributes\" /><End Role=\"Details\" EntitySet=\"Publi" +
-                "cEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_" +
-                "Domain_Inventory_Behaviour_Children_Net_Appclusive_Public_Domain_Inventory_Behav" +
-                "iour_ChildrenPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Inventory.Net" +
-                "_Appclusive_Public_Domain_Inventory_Behaviour_Children_Net_Appclusive_Public_Dom" +
-                "ain_Inventory_Behaviour_ChildrenPartner\"><End Role=\"ChildrenPartner\" EntitySet=\"" +
-                "Behaviours\" /><End Role=\"Children\" EntitySet=\"Behaviours\" /></AssociationSet><As" +
-                "sociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Behaviour_Parents_Net_" +
-                "Appclusive_Public_Domain_Inventory_Behaviour_ParentsPartnerSet\" Association=\"Net" +
-                ".Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inventory_Behav" +
-                "iour_Parents_Net_Appclusive_Public_Domain_Inventory_Behaviour_ParentsPartner\"><E" +
-                "nd Role=\"ParentsPartner\" EntitySet=\"Behaviours\" /><End Role=\"Parents\" EntitySet=" +
-                "\"Behaviours\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Doma" +
-                "in_Inventory_Behaviour_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_" +
-                "DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Publ" +
-                "ic_Domain_Inventory_Behaviour_Details_Net_Appclusive_Public_Domain_PublicEntityD" +
-                "etails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Behaviours\" /><End " +
-                "Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationS" +
-                "et Name=\"Net_Appclusive_Public_Domain_Inventory_Model_Behaviours_Net_Appclusive_" +
-                "Public_Types_IdNameDescriptionTuple_BehavioursPartnerSet\" Association=\"Net.Appcl" +
-                "usive.Public.Types.Net_Appclusive_Public_Domain_Inventory_Model_Behaviours_Net_A" +
-                "ppclusive_Public_Types_IdNameDescriptionTuple_BehavioursPartner\"><End Role=\"Beha" +
-                "vioursPartner\" EntitySet=\"Models\" /><End Role=\"Behaviours\" EntitySet=\"IdNameDesc" +
-                "riptionTuples\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Do" +
-                "main_Inventory_Model_ModelAttributes_Net_Appclusive_Public_Types_IdNameDescripti" +
-                "onTuple_ModelAttributesPartnerSet\" Association=\"Net.Appclusive.Public.Types.Net_" +
-                "Appclusive_Public_Domain_Inventory_Model_ModelAttributes_Net_Appclusive_Public_T" +
-                "ypes_IdNameDescriptionTuple_ModelAttributesPartner\"><End Role=\"ModelAttributesPa" +
-                "rtner\" EntitySet=\"Models\" /><End Role=\"ModelAttributes\" EntitySet=\"IdNameDescrip" +
-                "tionTuples\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domai" +
-                "n_Inventory_Model_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Detai" +
-                "lsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Do" +
-                "main_Inventory_Model_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_De" +
-                "tailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Models\" /><End Role=\"Details" +
-                "\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_" +
-                "Appclusive_Public_Domain_Inventory_Connection_Source_Net_Appclusive_Public_Domai" +
-                "n_Inventory_Item_SourcePartnerSet\" Association=\"Net.Appclusive.Public.Domain.Inv" +
-                "entory.Net_Appclusive_Public_Domain_Inventory_Connection_Source_Net_Appclusive_P" +
-                "ublic_Domain_Inventory_Item_SourcePartner\"><End Role=\"SourcePartner\" EntitySet=\"" +
-                "Connections\" /><End Role=\"Source\" EntitySet=\"Items\" /></AssociationSet><Associat" +
-                "ionSet Name=\"Net_Appclusive_Public_Domain_Inventory_Connection_Destination_Net_A" +
-                "ppclusive_Public_Domain_Inventory_Item_DestinationPartnerSet\" Association=\"Net.A" +
-                "ppclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inventory_Connect" +
-                "ion_Destination_Net_Appclusive_Public_Domain_Inventory_Item_DestinationPartner\">" +
-                "<End Role=\"DestinationPartner\" EntitySet=\"Connections\" /><End Role=\"Destination\"" +
-                " EntitySet=\"Items\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Publi" +
-                "c_Domain_Inventory_Connection_Behaviour_Net_Appclusive_Public_Domain_Inventory_B" +
-                "ehaviour_BehaviourPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Inventor" +
-                "y.Net_Appclusive_Public_Domain_Inventory_Connection_Behaviour_Net_Appclusive_Pub" +
-                "lic_Domain_Inventory_Behaviour_BehaviourPartner\"><End Role=\"BehaviourPartner\" En" +
-                "titySet=\"Connections\" /><End Role=\"Behaviour\" EntitySet=\"Behaviours\" /></Associa" +
-                "tionSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Connection_" +
-                "Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Asso" +
-                "ciation=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_Con" +
-                "nection_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"" +
-                "><End Role=\"DetailsPartner\" EntitySet=\"Connections\" /><End Role=\"Details\" Entity" +
-                "Set=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusi" +
-                "ve_Public_Domain_Inventory_Item_Children_Net_Appclusive_Public_Domain_Inventory_" +
-                "Item_ChildrenPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Inventory.Net" +
-                "_Appclusive_Public_Domain_Inventory_Item_Children_Net_Appclusive_Public_Domain_I" +
-                "nventory_Item_ChildrenPartner\"><End Role=\"ChildrenPartner\" EntitySet=\"Items\" /><" +
-                "End Role=\"Children\" EntitySet=\"Items\" /></AssociationSet><AssociationSet Name=\"N" +
-                "et_Appclusive_Public_Domain_Inventory_Item_Attributes_Net_Appclusive_Public_Type" +
-                "s_NameValuePair_AttributesPartnerSet\" Association=\"Net.Appclusive.Public.Types.N" +
-                "et_Appclusive_Public_Domain_Inventory_Item_Attributes_Net_Appclusive_Public_Type" +
-                "s_NameValuePair_AttributesPartner\"><End Role=\"AttributesPartner\" EntitySet=\"Item" +
-                "s\" /><End Role=\"Attributes\" EntitySet=\"NameValuePairs\" /></AssociationSet><Assoc" +
-                "iationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Item_Details_Net_Appclusi" +
-                "ve_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclus" +
-                "ive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_Item_Details_Net_Appclu" +
-                "sive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner" +
-                "\" EntitySet=\"Items\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></A" +
-                "ssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Authen" +
-                "tication_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" +
-                "Set\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Secu" +
-                "rity_Authentication_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Det" +
-                "ailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Authentications\" /><End Role=" +
-                "\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Na" +
-                "me=\"Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domai" +
-                "n_Security_Role_RolesPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Secur" +
-                "ity.Net_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domai" +
-                "n_Security_Role_RolesPartner\"><End Role=\"RolesPartner\" Enti";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart12 = "tySet=\"Users\" /><End Role=\"Roles\" EntitySet=\"Roles\" /></AssociationSet><Associati" +
-                "onSet Name=\"Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_Pu" +
-                "blic_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.P" +
-                "ublic.Domain.Net_Appclusive_Public_Domain_Identity_User_Details_Net_Appclusive_P" +
-                "ublic_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" Enti" +
-                "tySet=\"Users\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></Associa" +
-                "tionSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_ItemAcl_Pare" +
-                "nt_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartnerSet\" Association=\"" +
-                "Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Item" +
-                "Acl_Parent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartner\"><End Rol" +
-                "e=\"ParentPartner\" EntitySet=\"ItemAcls\" /><End Role=\"Parent\" EntitySet=\"ItemAcls\"" +
-                " /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_" +
-                "ItemAcl_Children_Net_Appclusive_Public_Domain_Security_ItemAcl_ChildrenPartnerSe" +
-                "t\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Doma" +
-                "in_Security_ItemAcl_Children_Net_Appclusive_Public_Domain_Security_ItemAcl_Child" +
-                "renPartner\"><End Role=\"ChildrenPartner\" EntitySet=\"ItemAcls\" /><End Role=\"Childr" +
-                "en\" EntitySet=\"ItemAcls\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive" +
-                "_Public_Domain_Security_ItemAcl_Aces_Net_Appclusive_Public_Domain_Security_ItemA" +
-                "ce_AcesPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appclu" +
-                "sive_Public_Domain_Security_ItemAcl_Aces_Net_Appclusive_Public_Domain_Security_I" +
-                "temAce_AcesPartner\"><End Role=\"AcesPartner\" EntitySet=\"ItemAcls\" /><End Role=\"Ac" +
-                "es\" EntitySet=\"ItemAces\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive" +
-                "_Public_Domain_Security_ItemAcl_Details_Net_Appclusive_Public_Domain_PublicEntit" +
-                "yDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclu" +
-                "sive_Public_Domain_Security_ItemAcl_Details_Net_Appclusive_Public_Domain_PublicE" +
-                "ntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"ItemAcls\" /><" +
-                "End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Associat" +
-                "ionSet Name=\"Net_Appclusive_Public_Domain_Security_Ace_Permission_Net_Appclusive" +
-                "_Public_Domain_Security_Permission_PermissionPartnerSet\" Association=\"Net.Appclu" +
-                "sive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Ace_Permission" +
-                "_Net_Appclusive_Public_Domain_Security_Permission_PermissionPartner\"><End Role=\"" +
-                "PermissionPartner\" EntitySet=\"Aces\" /><End Role=\"Permission\" EntitySet=\"Permissi" +
-                "ons\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Secur" +
-                "ity_Ace_User_Net_Appclusive_Public_Domain_Identity_User_UserPartnerSet\" Associat" +
-                "ion=\"Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Security" +
-                "_Ace_User_Net_Appclusive_Public_Domain_Identity_User_UserPartner\"><End Role=\"Use" +
-                "rPartner\" EntitySet=\"Aces\" /><End Role=\"User\" EntitySet=\"Users\" /></AssociationS" +
-                "et><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Ace_Role_Net_Appc" +
-                "lusive_Public_Domain_Security_Role_RolePartnerSet\" Association=\"Net.Appclusive.P" +
-                "ublic.Domain.Security.Net_Appclusive_Public_Domain_Security_Ace_Role_Net_Appclus" +
-                "ive_Public_Domain_Security_Role_RolePartner\"><End Role=\"RolePartner\" EntitySet=\"" +
-                "Aces\" /><End Role=\"Role\" EntitySet=\"Roles\" /></AssociationSet><AssociationSet Na" +
-                "me=\"Net_Appclusive_Public_Domain_Security_Ace_Details_Net_Appclusive_Public_Doma" +
-                "in_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Dom" +
-                "ain.Net_Appclusive_Public_Domain_Security_Ace_Details_Net_Appclusive_Public_Doma" +
-                "in_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Ace" +
-                "s\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><As" +
-                "sociationSet Name=\"Net_Appclusive_Public_Domain_Security_Right_Details_Net_Appcl" +
-                "usive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appc" +
-                "lusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Right_Details_Net_App" +
-                "clusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPart" +
-                "ner\" EntitySet=\"Rights\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /" +
-                "></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Ro" +
-                "le_Users_Net_Appclusive_Public_Domain_Identity_User_UsersPartnerSet\" Association" +
-                "=\"Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Security_Ro" +
-                "le_Users_Net_Appclusive_Public_Domain_Identity_User_UsersPartner\"><End Role=\"Use" +
-                "rsPartner\" EntitySet=\"Roles\" /><End Role=\"Users\" EntitySet=\"Users\" /></Associati" +
-                "onSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Role_Rights_Ne" +
-                "t_Appclusive_Public_Domain_Security_Right_RightsPartnerSet\" Association=\"Net.App" +
-                "clusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Role_Rights" +
-                "_Net_Appclusive_Public_Domain_Security_Right_RightsPartner\"><End Role=\"RightsPar" +
-                "tner\" EntitySet=\"Roles\" /><End Role=\"Rights\" EntitySet=\"Rights\" /></AssociationS" +
-                "et><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Role_Details_Net_" +
-                "Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net" +
-                ".Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Role_Details_Net" +
-                "_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"Details" +
-                "Partner\" EntitySet=\"Roles\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss" +
-                "\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security" +
-                "_Acl_Parent_Net_Appclusive_Public_Domain_Security_Acl_ParentPartnerSet\" Associat" +
-                "ion=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security" +
-                "_Acl_Parent_Net_Appclusive_Public_Domain_Security_Acl_ParentPartner\"><End Role=\"" +
-                "ParentPartner\" EntitySet=\"Acls\" /><End Role=\"Parent\" EntitySet=\"Acls\" /></Associ" +
-                "ationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Acl_Childre" +
-                "n_Net_Appclusive_Public_Domain_Security_Acl_ChildrenPartnerSet\" Association=\"Net" +
-                ".Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Acl_Chi" +
-                "ldren_Net_Appclusive_Public_Domain_Security_Acl_ChildrenPartner\"><End Role=\"Chil" +
-                "drenPartner\" EntitySet=\"Acls\" /><End Role=\"Children\" EntitySet=\"Acls\" /></Associ" +
-                "ationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Acl_Aces_Ne" +
-                "t_Appclusive_Public_Domain_Security_Ace_AcesPartnerSet\" Association=\"Net.Appclus" +
-                "ive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Acl_Aces_Net_Ap" +
-                "pclusive_Public_Domain_Security_Ace_AcesPartner\"><End Role=\"AcesPartner\" EntityS" +
-                "et=\"Acls\" /><End Role=\"Aces\" EntitySet=\"Aces\" /></AssociationSet><AssociationSet" +
-                " Name=\"Net_Appclusive_Public_Domain_Security_Acl_Details_Net_Appclusive_Public_D" +
-                "omain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public." +
-                "Domain.Net_Appclusive_Public_Domain_Security_Acl_Details_Net_Appclusive_Public_D" +
+                "Public_Domain_Configuration_ManagementUri_Details_Net_Appclusive_Public_Domain_P" +
+                "ublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Managem" +
+                "entUris\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationS" +
+                "et><AssociationSet Name=\"Net_Appclusive_Public_Domain_Configuration_VolatileKeyN" +
+                "ameValue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" +
+                "Set\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Conf" +
+                "iguration_VolatileKeyNameValue_Details_Net_Appclusive_Public_Domain_PublicEntity" +
+                "Details_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"VolatileKeyNameVal" +
+                "ues\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><" +
+                "AssociationSet Name=\"Net_Appclusive_Public_Domain_Configuration_KeyNameValue_Det" +
+                "ails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Associa" +
+                "tion=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Configuration_Ke" +
+                "yNameValue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartn" +
+                "er\"><End Role=\"DetailsPartner\" EntitySet=\"KeyNameValues\" /><End Role=\"Details\" E" +
+                "ntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_App" +
+                "clusive_Public_Domain_Inventory_Attribute_Details_Net_Appclusive_Public_Domain_P" +
+                "ublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain." +
+                "Net_Appclusive_Public_Domain_Inventory_Attribute_Details_Net_Appclusive_Public_D" +
                 "omain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"" +
-                "Acls\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet>" +
-                "<AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_ItemAce_Permission_N" +
-                "et_Appclusive_Public_Domain_Security_Permission_PermissionPartnerSet\" Associatio" +
-                "n=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_I" +
-                "temAce_Permission_Net_Appclusive_Public_Domain_Security_Permission_PermissionPar" +
-                "tner\"><End Role=\"PermissionPartner\" EntitySet=\"ItemAces\" /><End Role=\"Permission" +
-                "\" EntitySet=\"Permissions\" /></AssociationSet><AssociationSet Name=\"Net_Appclusiv" +
-                "e_Public_Domain_Security_ItemAce_Role_Net_Appclusive_Public";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart13 = "_Domain_Security_Role_RolePartnerSet\" Association=\"Net.Appclusive.Public.Domain.S" +
-                "ecurity.Net_Appclusive_Public_Domain_Security_ItemAce_Role_Net_Appclusive_Public" +
-                "_Domain_Security_Role_RolePartner\"><End Role=\"RolePartner\" EntitySet=\"ItemAces\" " +
-                "/><End Role=\"Role\" EntitySet=\"Roles\" /></AssociationSet><AssociationSet Name=\"Ne" +
-                "t_Appclusive_Public_Domain_Security_ItemAce_User_Net_Appclusive_Public_Domain_Id" +
-                "entity_User_UserPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Identity.N" +
-                "et_Appclusive_Public_Domain_Security_ItemAce_User_Net_Appclusive_Public_Domain_I" +
-                "dentity_User_UserPartner\"><End Role=\"UserPartner\" EntitySet=\"ItemAces\" /><End Ro" +
-                "le=\"User\" EntitySet=\"Users\" /></AssociationSet><AssociationSet Name=\"Net_Appclus" +
-                "ive_Public_Domain_Security_ItemAce_Details_Net_Appclusive_Public_Domain_PublicEn" +
-                "tityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_App" +
-                "clusive_Public_Domain_Security_ItemAce_Details_Net_Appclusive_Public_Domain_Publ" +
-                "icEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"ItemAces\" " +
-                "/><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Assoc" +
-                "iationSet Name=\"Net_Appclusive_Public_Domain_Security_Permission_Details_Net_App" +
-                "clusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Ap" +
-                "pclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Permission_Details_" +
-                "Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"Deta" +
-                "ilsPartner\" EntitySet=\"Permissions\" /><End Role=\"Details\" EntitySet=\"PublicEntit" +
-                "yDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain" +
-                "_Order_Order_OrderItems_Net_Appclusive_Public_Domain_Order_OrderItem_OrderItemsP" +
-                "artnerSet\" Association=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public" +
-                "_Domain_Order_Order_OrderItems_Net_Appclusive_Public_Domain_Order_OrderItem_Orde" +
-                "rItemsPartner\"><End Role=\"OrderItemsPartner\" EntitySet=\"Orders\" /><End Role=\"Ord" +
-                "erItems\" EntitySet=\"OrderItems\" /></AssociationSet><AssociationSet Name=\"Net_App" +
-                "clusive_Public_Domain_Order_Order_Job_Net_Appclusive_Public_Domain_Control_Job_J" +
-                "obPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Control.Net_Appclusive_P" +
-                "ublic_Domain_Order_Order_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner" +
-                "\"><End Role=\"JobPartner\" EntitySet=\"Orders\" /><End Role=\"Job\" EntitySet=\"Jobs\" /" +
-                "></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Order" +
-                "_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Ass" +
-                "ociation=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Order_" +
+                "Attributes\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></Associati" +
+                "onSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Behaviour_Chi" +
+                "ldren_Net_Appclusive_Public_Domain_Inventory_Behaviour_ChildrenPartnerSet\" Assoc" +
+                "iation=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inve" +
+                "ntory_Behaviour_Children_Net_Appclusive_Public_Domain_Inventory_Behaviour_Childr" +
+                "enPartner\"><End Role=\"ChildrenPartner\" EntitySet=\"Behaviours\" /><End Role=\"Child" +
+                "ren\" EntitySet=\"Behaviours\" /></AssociationSet><AssociationSet Name=\"Net_Appclus" +
+                "ive_Public_Domain_Inventory_Behaviour_Parents_Net_Appclusive_Public_Domain_Inven" +
+                "tory_Behaviour_ParentsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Inve" +
+                "ntory.Net_Appclusive_Public_Domain_Inventory_Behaviour_Parents_Net_Appclusive_Pu" +
+                "blic_Domain_Inventory_Behaviour_ParentsPartner\"><End Role=\"ParentsPartner\" Entit" +
+                "ySet=\"Behaviours\" /><End Role=\"Parents\" EntitySet=\"Behaviours\" /></AssociationSe" +
+                "t><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Behaviour_Details" +
+                "_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association" +
+                "=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_Behaviour_" +
                 "Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Ro" +
-                "le=\"DetailsPartner\" EntitySet=\"Orders\" /><End Role=\"Details\" EntitySet=\"PublicEn" +
-                "tityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Dom" +
-                "ain_Control_Job_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Details" +
-                "PartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Doma" +
-                "in_Control_Job_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsP" +
-                "artner\"><End Role=\"DetailsPartner\" EntitySet=\"Jobs\" /><End Role=\"Details\" Entity" +
-                "Set=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusi" +
-                "ve_Public_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Domain_Order_CartIte" +
-                "m_CartItemsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Order.Net_Appcl" +
-                "usive_Public_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Domain_Order_Cart" +
-                "Item_CartItemsPartner\"><End Role=\"CartItemsPartner\" EntitySet=\"Carts\" /><End Rol" +
-                "e=\"CartItems\" EntitySet=\"CartItems\" /></AssociationSet><AssociationSet Name=\"Net" +
-                "_Appclusive_Public_Domain_Order_Cart_Details_Net_Appclusive_Public_Domain_Public" +
-                "EntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_A" +
-                "ppclusive_Public_Domain_Order_Cart_Details_Net_Appclusive_Public_Domain_PublicEn" +
-                "tityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Carts\" /><End " +
-                "Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationS" +
-                "et Name=\"Net_Appclusive_Public_Domain_Order_OrderItem_Order_Net_Appclusive_Publi" +
-                "c_Domain_Order_Order_OrderPartnerSet\" Association=\"Net.Appclusive.Public.Domain." +
-                "Order.Net_Appclusive_Public_Domain_Order_OrderItem_Order_Net_Appclusive_Public_D" +
-                "omain_Order_Order_OrderPartner\"><End Role=\"OrderPartner\" EntitySet=\"OrderItems\" " +
-                "/><End Role=\"Order\" EntitySet=\"Orders\" /></AssociationSet><AssociationSet Name=\"" +
-                "Net_Appclusive_Public_Domain_Order_OrderItem_Job_Net_Appclusive_Public_Domain_Co" +
-                "ntrol_Job_JobPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Control.Net_A" +
-                "ppclusive_Public_Domain_Order_OrderItem_Job_Net_Appclusive_Public_Domain_Control" +
-                "_Job_JobPartner\"><End Role=\"JobPartner\" EntitySet=\"OrderItems\" /><End Role=\"Job\"" +
-                " EntitySet=\"Jobs\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public" +
-                "_Domain_Order_OrderItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_Co" +
-                "nfigurationPartnerSet\" Association=\"Net.Appclusive.Public.Types.Net_Appclusive_P" +
-                "ublic_Domain_Order_OrderItem_Configuration_Net_Appclusive_Public_Types_IdValuePa" +
-                "ir_ConfigurationPartner\"><End Role=\"ConfigurationPartner\" EntitySet=\"OrderItems\"" +
-                " /><End Role=\"Configuration\" EntitySet=\"IdValuePairs\" /></AssociationSet><Associ" +
-                "ationSet Name=\"Net_Appclusive_Public_Domain_Order_OrderItem_Details_Net_Appclusi" +
-                "ve_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclus" +
-                "ive.Public.Domain.Net_Appclusive_Public_Domain_Order_OrderItem_Details_Net_Appcl" +
-                "usive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartne" +
-                "r\" EntitySet=\"OrderItems\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\"" +
-                " /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Car" +
-                "tItem_Cart_Net_Appclusive_Public_Domain_Order_Cart_CartPartnerSet\" Association=\"" +
-                "Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CartItem_C" +
-                "art_Net_Appclusive_Public_Domain_Order_Cart_CartPartner\"><End Role=\"CartPartner\"" +
-                " EntitySet=\"CartItems\" /><End Role=\"Cart\" EntitySet=\"Carts\" /></AssociationSet><" +
-                "AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_CartItem_Configuration_N" +
-                "et_Appclusive_Public_Types_IdValuePair_ConfigurationPartnerSet\" Association=\"Net" +
-                ".Appclusive.Public.Types.Net_Appclusive_Public_Domain_Order_CartItem_Configurati" +
-                "on_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner\"><End Role=\"Conf" +
-                "igurationPartner\" EntitySet=\"CartItems\" /><End Role=\"Configuration\" EntitySet=\"I" +
-                "dValuePairs\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Doma" +
-                "in_Order_CartItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Detai" +
-                "lsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Do" +
-                "main_Order_CartItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Det" +
-                "ailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"CartItems\" /><End Role=\"Detai" +
-                "ls\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Ne" +
-                "t_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusive_Public_" +
-                "Domain_Order_CatalogueItem_CatalogueItemsPartnerSet\" Association=\"Net.Appclusive" +
-                ".Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems" +
-                "_Net_Appclusive_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner\"><End Ro" +
-                "le=\"CatalogueItemsPartner\" EntitySet=\"Catalogues\" /><End Role=\"CatalogueItems\" E" +
-                "ntitySet=\"CatalogueItems\" /></AssociationSet><AssociationSet Name=\"Net_Appclusiv" +
-                "e_Public_Domain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntit" +
-                "yDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Pub";
+                "le=\"DetailsPartner\" EntitySet=\"Behaviours\" /><End Role=\"Details\" EntitySet=\"Publ" +
+                "icEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public" +
+                "_Domain_Inventory_Model_Behaviours_Net_Appclusive_Public_Types_IdNameDescription" +
+                "Tuple_BehavioursPartnerSet\" Association=\"Net.Appclusive.Public.Types.Net_Appclus" +
+                "ive_Public_Domain_Inventory_Model_Behaviours_Net_Appclusive_Public_Types_IdNameD" +
+                "escriptionTuple_BehavioursPartner\"><End Role=\"BehavioursPartner\" EntitySet=\"Mode" +
+                "ls\" /><End Role=\"Behaviours\" EntitySet=\"IdNameDescriptionTuples\" /></Association" +
+                "Set><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Model_ModelAttr" +
+                "ibutes_Net_Appclusive_Public_Types_IdNameDescriptionTuple_ModelAttributesPartner" +
+                "Set\" Association=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Inven" +
+                "tory_Model_ModelAttributes_Net_Appclusive_Public_Types_IdNameDescriptionTuple_Mo" +
+                "delAttributesPartner\"><End Role=\"ModelAttributesPartner\" EntitySet=\"Models\" /><E" +
+                "nd Role=\"ModelAttributes\" EntitySet=\"IdNameDescriptionTuples\" /></AssociationSet" +
+                "><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Model_Details_Net_" +
+                "Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net" +
+                ".Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_Model_Details_N" +
+                "et_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"Detai" +
+                "lsPartner\" EntitySet=\"Models\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetai" +
+                "lss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inven" +
+                "tory_Connection_Source_Net_Appclusive_Public_Domain_Inventory_Item_SourcePartner" +
+                "Set\" Association=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_D" +
+                "omain_Inventory_Connection_Source_Net_Appclusive_Public_Domain_Inventory_Item_So" +
+                "urcePartner\"><End Role=\"SourcePartner\" EntitySet=\"Connections\" /><End Role=\"Sour" +
+                "ce\" EntitySet=\"Items\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Pu" +
+                "blic_Domain_Inventory_Connection_Destination_Net_Appclusive_Public_Domain_Invent" +
+                "ory_Item_DestinationPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Invent" +
+                "ory.Net_Appclusive_Public_Domain_Inventory_Connection_Destination_Net_Appclusive" +
+                "_Public_Domain_Inventory_Item_DestinationPartner\"><End Role=\"DestinationPartner\"" +
+                " EntitySet=\"Connections\" /><End Role=\"Destination\" EntitySet=\"Items\" /></Associa" +
+                "tionSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Connection_" +
+                "Behaviour_Net_Appclusive_Public_Domain_Inventory_Behaviour_BehaviourPartnerSet\" " +
+                "Association=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain" +
+                "_Inventory_Connection_Behaviour_Net_Appclusive_Public_Domain_Inventory_Behaviour" +
+                "_BehaviourPartner\"><End Role=\"BehaviourPartner\" EntitySet=\"Connections\" /><End R" +
+                "ole=\"Behaviour\" EntitySet=\"Behaviours\" /></AssociationSet><AssociationSet Name=\"" +
+                "Net_Appclusive_Public_Domain_Inventory_Connection_Details_Net_Appclusive_Public_" +
+                "Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public" +
+                ".Domain.Net_Appclusive_Public_Domain_Inventory_Connection_Details_Net_Appclusive" +
+                "_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" En" +
+                "titySet=\"Connections\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /><" +
+                "/AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Ite" +
+                "m_Children_Net_Appclusive_Public_Domain_Inventory_Item_ChildrenPartnerSet\" Assoc" +
+                "iation=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inve" +
+                "ntory_Item_Children_Net_Appclusive_Public_Domain_Inventory_Item_ChildrenPartner\"" +
+                "><End Role=\"ChildrenPartner\" EntitySet=\"Items\" /><End Role=\"Children\" EntitySet=" +
+                "\"Items\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_In" +
+                "ventory_Item_Attributes_Net_Appclusive_Public_Types_NameValuePair_AttributesPart" +
+                "nerSet\" Association=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_In" +
+                "ventory_Item_Attributes_Net_Appclusive_Public_Types_NameValuePair_AttributesPart" +
+                "ner\"><End Role=\"AttributesPartner\" EntitySet=\"Items\" /><End Role=\"Attributes\" En" +
+                "titySet=\"NameValuePairs\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive" +
+                "_Public_Domain_Inventory_Item_Details_Net_Appclusive_Public_Domain_PublicEntityD" +
+                "etails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusi" +
+                "ve_Public_Domain_Inventory_Item_Details_Net_Appclusive_Public_Domain_PublicEntit" +
+                "yDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Items\" /><End Rol" +
+                "e=\"Details\" EntitySet=\"PublicEntityDetailss\" /></Associatio";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart14 = "lic.Domain.Net_Appclusive_Public_Domain_Order_Catalogue_Details_Net_Appclusive_Pu" +
-                "blic_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" Entit" +
-                "ySet=\"Catalogues\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></Ass" +
-                "ociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_CatalogueIt" +
-                "em_Catalogue_Net_Appclusive_Public_Domain_Order_Catalogue_CataloguePartnerSet\" A" +
-                "ssociation=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Orde" +
-                "r_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Order_Catalogue_Catalogue" +
-                "Partner\"><End Role=\"CataloguePartner\" EntitySet=\"CatalogueItems\" /><End Role=\"Ca" +
-                "talogue\" EntitySet=\"Catalogues\" /></AssociationSet><AssociationSet Name=\"Net_App" +
-                "clusive_Public_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain" +
-                "_Order_Blueprint_BlueprintPartnerSet\" Association=\"Net.Appclusive.Public.Domain." +
-                "Order.Net_Appclusive_Public_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_" +
-                "Public_Domain_Order_Blueprint_BlueprintPartner\"><End Role=\"BlueprintPartner\" Ent" +
-                "itySet=\"CatalogueItems\" /><End Role=\"Blueprint\" EntitySet=\"Blueprints\" /></Assoc" +
-                "iationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_CatalogueItem" +
-                "_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Ass" +
-                "ociation=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Catalo" +
-                "gueItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"" +
-                "><End Role=\"DetailsPartner\" EntitySet=\"CatalogueItems\" /><End Role=\"Details\" Ent" +
+            private const string ModelPart12 = "nSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Authentication_D" +
+                "etails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Assoc" +
+                "iation=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Authe" +
+                "ntication_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartne" +
+                "r\"><End Role=\"DetailsPartner\" EntitySet=\"Authentications\" /><End Role=\"Details\" " +
+                "EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Ap" +
+                "pclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security" +
+                "_Role_RolesPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Ap" +
+                "pclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security" +
+                "_Role_RolesPartner\"><End Role=\"RolesPartner\" EntitySet=\"Users\" /><End Role=\"Role" +
+                "s\" EntitySet=\"Roles\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Pub" +
+                "lic_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetail" +
+                "s_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Pu" +
+                "blic_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetai" +
+                "ls_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Users\" /><End Role=\"Det" +
+                "ails\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"" +
+                "Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Public_Domai" +
+                "n_Security_ItemAcl_ParentPartnerSet\" Association=\"Net.Appclusive.Public.Domain.S" +
+                "ecurity.Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Publ" +
+                "ic_Domain_Security_ItemAcl_ParentPartner\"><End Role=\"ParentPartner\" EntitySet=\"I" +
+                "temAcls\" /><End Role=\"Parent\" EntitySet=\"ItemAcls\" /></AssociationSet><Associati" +
+                "onSet Name=\"Net_Appclusive_Public_Domain_Security_ItemAcl_Children_Net_Appclusiv" +
+                "e_Public_Domain_Security_ItemAcl_ChildrenPartnerSet\" Association=\"Net.Appclusive" +
+                ".Public.Domain.Security.Net_Appclusive_Public_Domain_Security_ItemAcl_Children_N" +
+                "et_Appclusive_Public_Domain_Security_ItemAcl_ChildrenPartner\"><End Role=\"Childre" +
+                "nPartner\" EntitySet=\"ItemAcls\" /><End Role=\"Children\" EntitySet=\"ItemAcls\" /></A" +
+                "ssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_ItemAc" +
+                "l_Aces_Net_Appclusive_Public_Domain_Security_ItemAce_AcesPartnerSet\" Association" +
+                "=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_It" +
+                "emAcl_Aces_Net_Appclusive_Public_Domain_Security_ItemAce_AcesPartner\"><End Role=" +
+                "\"AcesPartner\" EntitySet=\"ItemAcls\" /><End Role=\"Aces\" EntitySet=\"ItemAces\" /></A" +
+                "ssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_ItemAc" +
+                "l_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" As" +
+                "sociation=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_It" +
+                "emAcl_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><" +
+                "End Role=\"DetailsPartner\" EntitySet=\"ItemAcls\" /><End Role=\"Details\" EntitySet=\"" +
+                "PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Pu" +
+                "blic_Domain_Security_Ace_Permission_Net_Appclusive_Public_Domain_Security_Permis" +
+                "sion_PermissionPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Ne" +
+                "t_Appclusive_Public_Domain_Security_Ace_Permission_Net_Appclusive_Public_Domain_" +
+                "Security_Permission_PermissionPartner\"><End Role=\"PermissionPartner\" EntitySet=\"" +
+                "Aces\" /><End Role=\"Permission\" EntitySet=\"Permissions\" /></AssociationSet><Assoc" +
+                "iationSet Name=\"Net_Appclusive_Public_Domain_Security_Ace_User_Net_Appclusive_Pu" +
+                "blic_Domain_Identity_User_UserPartnerSet\" Association=\"Net.Appclusive.Public.Dom" +
+                "ain.Identity.Net_Appclusive_Public_Domain_Security_Ace_User_Net_Appclusive_Publi" +
+                "c_Domain_Identity_User_UserPartner\"><End Role=\"UserPartner\" EntitySet=\"Aces\" /><" +
+                "End Role=\"User\" EntitySet=\"Users\" /></AssociationSet><AssociationSet Name=\"Net_A" +
+                "ppclusive_Public_Domain_Security_Ace_Role_Net_Appclusive_Public_Domain_Security_" +
+                "Role_RolePartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appc" +
+                "lusive_Public_Domain_Security_Ace_Role_Net_Appclusive_Public_Domain_Security_Rol" +
+                "e_RolePartner\"><End Role=\"RolePartner\" EntitySet=\"Aces\" /><End Role=\"Role\" Entit" +
+                "ySet=\"Roles\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Doma" +
+                "in_Security_Ace_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Details" +
+                "PartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Doma" +
+                "in_Security_Ace_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Details" +
+                "Partner\"><End Role=\"DetailsPartner\" EntitySet=\"Aces\" /><End Role=\"Details\" Entit" +
+                "ySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclus" +
+                "ive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEnti" +
+                "tyDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appcl" +
+                "usive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEn" +
+                "tityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Rights\" /><End" +
+                " Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Association" +
+                "Set Name=\"Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public" +
+                "_Domain_Identity_User_UsersPartnerSet\" Association=\"Net.Appclusive.Public.Domain" +
+                ".Identity.Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public" +
+                "_Domain_Identity_User_UsersPartner\"><End Role=\"UsersPartner\" EntitySet=\"Roles\" /" +
+                "><End Role=\"Users\" EntitySet=\"Users\" /></AssociationSet><AssociationSet Name=\"Ne" +
+                "t_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_Sec" +
+                "urity_Right_RightsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security" +
+                ".Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_" +
+                "Security_Right_RightsPartner\"><End Role=\"RightsPartner\" EntitySet=\"Roles\" /><End" +
+                " Role=\"Rights\" EntitySet=\"Rights\" /></AssociationSet><AssociationSet Name=\"Net_A" +
+                "ppclusive_Public_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_Publi" +
+                "cEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_" +
+                "Appclusive_Public_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_Publ" +
+                "icEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Roles\" /><" +
+                "End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Associat" +
+                "ionSet Name=\"Net_Appclusive_Public_Domain_Security_Acl_Parent_Net_Appclusive_Pub" +
+                "lic_Domain_Security_Acl_ParentPartnerSet\" Association=\"Net.Appclusive.Public.Dom" +
+                "ain.Security.Net_Appclusive_Public_Domain_Security_Acl_Parent_Net_Appclusive_Pub" +
+                "lic_Domain_Security_Acl_ParentPartner\"><End Role=\"ParentPartner\" EntitySet=\"Acls" +
+                "\" /><End Role=\"Parent\" EntitySet=\"Acls\" /></AssociationSet><AssociationSet Name=" +
+                "\"Net_Appclusive_Public_Domain_Security_Acl_Children_Net_Appclusive_Public_Domain" +
+                "_Security_Acl_ChildrenPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Secu" +
+                "rity.Net_Appclusive_Public_Domain_Security_Acl_Children_Net_Appclusive_Public_Do" +
+                "main_Security_Acl_ChildrenPartner\"><End Role=\"ChildrenPartner\" EntitySet=\"Acls\" " +
+                "/><End Role=\"Children\" EntitySet=\"Acls\" /></AssociationSet><AssociationSet Name=" +
+                "\"Net_Appclusive_Public_Domain_Security_Acl_Aces_Net_Appclusive_Public_Domain_Sec" +
+                "urity_Ace_AcesPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net" +
+                "_Appclusive_Public_Domain_Security_Acl_Aces_Net_Appclusive_Public_Domain_Securit" +
+                "y_Ace_AcesPartner\"><End Role=\"AcesPartner\" EntitySet=\"Acls\" /><End Role=\"Aces\" E" +
+                "ntitySet=\"Aces\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_D" +
+                "omain_Security_Acl_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Deta" +
+                "ilsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Ne";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart13 = "t_Appclusive_Public_Domain_Security_Acl_Details_Net_Appclusive_Public_Domain_Publ" +
+                "icEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Acls\" /><E" +
+                "nd Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Associati" +
+                "onSet Name=\"Net_Appclusive_Public_Domain_Security_ItemAce_Permission_Net_Appclus" +
+                "ive_Public_Domain_Security_Permission_PermissionPartnerSet\" Association=\"Net.App" +
+                "clusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_ItemAce_Per" +
+                "mission_Net_Appclusive_Public_Domain_Security_Permission_PermissionPartner\"><End" +
+                " Role=\"PermissionPartner\" EntitySet=\"ItemAces\" /><End Role=\"Permission\" EntitySe" +
+                "t=\"Permissions\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_D" +
+                "omain_Security_ItemAce_Role_Net_Appclusive_Public_Domain_Security_Role_RolePartn" +
+                "erSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_" +
+                "Domain_Security_ItemAce_Role_Net_Appclusive_Public_Domain_Security_Role_RolePart" +
+                "ner\"><End Role=\"RolePartner\" EntitySet=\"ItemAces\" /><End Role=\"Role\" EntitySet=\"" +
+                "Roles\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Sec" +
+                "urity_ItemAce_User_Net_Appclusive_Public_Domain_Identity_User_UserPartnerSet\" As" +
+                "sociation=\"Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Se" +
+                "curity_ItemAce_User_Net_Appclusive_Public_Domain_Identity_User_UserPartner\"><End" +
+                " Role=\"UserPartner\" EntitySet=\"ItemAces\" /><End Role=\"User\" EntitySet=\"Users\" />" +
+                "</AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Ite" +
+                "mAce_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\"" +
+                " Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security" +
+                "_ItemAce_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" +
+                "\"><End Role=\"DetailsPartner\" EntitySet=\"ItemAces\" /><End Role=\"Details\" EntitySe" +
+                "t=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive" +
+                "_Public_Domain_Security_Permission_Details_Net_Appclusive_Public_Domain_PublicEn" +
+                "tityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_App" +
+                "clusive_Public_Domain_Security_Permission_Details_Net_Appclusive_Public_Domain_P" +
+                "ublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Permiss" +
+                "ions\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet>" +
+                "<AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Ap" +
+                "pclusive_Public_Domain_Order_OrderItem_OrderItemsPartnerSet\" Association=\"Net.Ap" +
+                "pclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Order_OrderItems" +
+                "_Net_Appclusive_Public_Domain_Order_OrderItem_OrderItemsPartner\"><End Role=\"Orde" +
+                "rItemsPartner\" EntitySet=\"Orders\" /><End Role=\"OrderItems\" EntitySet=\"OrderItems" +
+                "\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Or" +
+                "der_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartnerSet\" Association=\"Net" +
+                ".Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_Order_Job_N" +
+                "et_Appclusive_Public_Domain_Control_Job_JobPartner\"><End Role=\"JobPartner\" Entit" +
+                "ySet=\"Orders\" /><End Role=\"Job\" EntitySet=\"Jobs\" /></AssociationSet><Association" +
+                "Set Name=\"Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclusive_Public" +
+                "_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Publi" +
+                "c.Domain.Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclusive_Public_" +
+                "Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=" +
+                "\"Orders\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationS" +
+                "et><AssociationSet Name=\"Net_Appclusive_Public_Domain_Control_Job_Details_Net_Ap" +
+                "pclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.A" +
+                "ppclusive.Public.Domain.Net_Appclusive_Public_Domain_Control_Job_Details_Net_App" +
+                "clusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPart" +
+                "ner\" EntitySet=\"Jobs\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /><" +
+                "/AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Cart_Ca" +
+                "rtItems_Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartnerSet\" Associa" +
+                "tion=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Cart" +
+                "_CartItems_Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartner\"><End Ro" +
+                "le=\"CartItemsPartner\" EntitySet=\"Carts\" /><End Role=\"CartItems\" EntitySet=\"CartI" +
+                "tems\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Orde" +
+                "r_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSe" +
+                "t\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_" +
+                "Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><E" +
+                "nd Role=\"DetailsPartner\" EntitySet=\"Carts\" /><End Role=\"Details\" EntitySet=\"Publ" +
+                "icEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public" +
+                "_Domain_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPart" +
+                "nerSet\" Association=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Do" +
+                "main_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPartner" +
+                "\"><End Role=\"OrderPartner\" EntitySet=\"OrderItems\" /><End Role=\"Order\" EntitySet=" +
+                "\"Orders\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_O" +
+                "rder_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartnerSet\" Assoc" +
+                "iation=\"Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_" +
+                "OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner\"><End Role=\"Jo" +
+                "bPartner\" EntitySet=\"OrderItems\" /><End Role=\"Job\" EntitySet=\"Jobs\" /></Associat" +
+                "ionSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_OrderItem_Config" +
+                "uration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartnerSet\" Associa" +
+                "tion=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Order_OrderItem_C" +
+                "onfiguration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner\"><End " +
+                "Role=\"ConfigurationPartner\" EntitySet=\"OrderItems\" /><End Role=\"Configuration\" E" +
+                "ntitySet=\"IdValuePairs\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_" +
+                "Public_Domain_Order_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityD" +
+                "etails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusi" +
+                "ve_Public_Domain_Order_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEnti" +
+                "tyDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"OrderItems\" /><E" +
+                "nd Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Associati" +
+                "onSet Name=\"Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Publ" +
+                "ic_Domain_Order_Cart_CartPartnerSet\" Association=\"Net.Appclusive.Public.Domain.O" +
+                "rder.Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Doma" +
+                "in_Order_Cart_CartPartner\"><End Role=\"CartPartner\" EntitySet=\"CartItems\" /><End " +
+                "Role=\"Cart\" EntitySet=\"Carts\" /></AssociationSet><AssociationSet Name=\"Net_Appcl" +
+                "usive_Public_Domain_Order_CartItem_Configuration_Net_Appclusive_Public_Types_IdV" +
+                "aluePair_ConfigurationPartnerSet\" Association=\"Net.Appclusive.Public.Types.Net_A" +
+                "ppclusive_Public_Domain_Order_CartItem_Configuration_Net_Appclusive_Public_Types" +
+                "_IdValuePair_ConfigurationPartner\"><End Role=\"ConfigurationPartner\" EntitySet=\"C" +
+                "artItems\" /><End Role=\"Configuration\" EntitySet=\"IdValuePairs\" /></AssociationSe" +
+                "t><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_CartItem_Details_Net_" +
+                "Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net" +
+                ".Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_CartItem_Details_Ne" +
+                "t_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartn";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart14 = "er\"><End Role=\"DetailsPartner\" EntitySet=\"CartItems\" /><End Role=\"Details\" Entity" +
+                "Set=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusi" +
+                "ve_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusive_Public_Domain_Ord" +
+                "er_CatalogueItem_CatalogueItemsPartnerSet\" Association=\"Net.Appclusive.Public.Do" +
+                "main.Order.Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appcl" +
+                "usive_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner\"><End Role=\"Catalo" +
+                "gueItemsPartner\" EntitySet=\"Catalogues\" /><End Role=\"CatalogueItems\" EntitySet=\"" +
+                "CatalogueItems\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_D" +
+                "omain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_D" +
+                "etailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Publi" +
+                "c_Domain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetail" +
+                "s_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Catalogues\" /><End Role=" +
+                "\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Na" +
+                "me=\"Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_Net_Appclusive_Pu" +
+                "blic_Domain_Order_Catalogue_CataloguePartnerSet\" Association=\"Net.Appclusive.Pub" +
+                "lic.Domain.Order.Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_Net_" +
+                "Appclusive_Public_Domain_Order_Catalogue_CataloguePartner\"><End Role=\"CatalogueP" +
+                "artner\" EntitySet=\"CatalogueItems\" /><End Role=\"Catalogue\" EntitySet=\"Catalogues" +
+                "\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Ca" +
+                "talogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_BlueprintPart" +
+                "nerSet\" Association=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Do" +
+                "main_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_" +
+                "BlueprintPartner\"><End Role=\"BlueprintPartner\" EntitySet=\"CatalogueItems\" /><End" +
+                " Role=\"Blueprint\" EntitySet=\"Blueprints\" /></AssociationSet><AssociationSet Name" +
+                "=\"Net_Appclusive_Public_Domain_Order_CatalogueItem_Details_Net_Appclusive_Public" +
+                "_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Publi" +
+                "c.Domain.Net_Appclusive_Public_Domain_Order_CatalogueItem_Details_Net_Appclusive" +
+                "_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" En" +
+                "titySet=\"CatalogueItems\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" " +
+                "/></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Blue" +
+                "print_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartnerSet\" Associ" +
+                "ation=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Order" +
+                "_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartner\"><End" +
+                " Role=\"ModelPartner\" EntitySet=\"Blueprints\" /><End Role=\"Model\" EntitySet=\"Model" +
+                "s\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_B" +
+                "lueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" +
+                "Set\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Orde" +
+                "r_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPart" +
+                "ner\"><End Role=\"DetailsPartner\" EntitySet=\"Blueprints\" /><End Role=\"Details\" Ent" +
                 "itySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appcl" +
-                "usive_Public_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory" +
-                "_Model_ModelPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Inventory.Net_" +
-                "Appclusive_Public_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inve" +
-                "ntory_Model_ModelPartner\"><End Role=\"ModelPartner\" EntitySet=\"Blueprints\" /><End" +
-                " Role=\"Model\" EntitySet=\"Models\" /></AssociationSet><AssociationSet Name=\"Net_Ap" +
-                "pclusive_Public_Domain_Order_Blueprint_Details_Net_Appclusive_Public_Domain_Publ" +
-                "icEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net" +
-                "_Appclusive_Public_Domain_Order_Blueprint_Details_Net_Appclusive_Public_Domain_P" +
-                "ublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Bluepri" +
-                "nts\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><" +
-                "AssociationSet Name=\"Net_Appclusive_Public_Domain_Identity_Tenant_Details_Net_Ap" +
-                "pclusive_Public_Domain_TenantDetails_DetailsPartnerSet\" Association=\"Net.Appclus" +
-                "ive.Public.Domain.Net_Appclusive_Public_Domain_Identity_Tenant_Details_Net_Appcl" +
-                "usive_Public_Domain_TenantDetails_DetailsPartner\"><End Role=\"DetailsPartner\" Ent" +
-                "itySet=\"Tenants\" /><End Role=\"Details\" EntitySet=\"TenantDetailss\" /></Associatio" +
-                "nSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Identity_Tenant_Parent_N" +
-                "et_Appclusive_Public_Domain_Identity_Tenant_ParentPartnerSet\" Association=\"Net.A" +
-                "ppclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_Pa" +
-                "rent_Net_Appclusive_Public_Domain_Identity_Tenant_ParentPartner\"><End Role=\"Pare" +
-                "ntPartner\" EntitySet=\"Tenants\" /><End Role=\"Parent\" EntitySet=\"Tenants\" /></Asso" +
-                "ciationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Identity_Tenant_Ch" +
-                "ildren_Net_Appclusive_Public_Domain_Identity_Tenant_ChildrenPartnerSet\" Associat" +
-                "ion=\"Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Identity" +
-                "_Tenant_Children_Net_Appclusive_Public_Domain_Identity_Tenant_ChildrenPartner\"><" +
-                "End Role=\"ChildrenPartner\" EntitySet=\"Tenants\" /><End Role=\"Children\" EntitySet=" +
-                "\"Tenants\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_" +
-                "Control_Approval_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Detail" +
-                "sPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Dom" +
-                "ain_Control_Approval_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_De" +
-                "tailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Approvals\" /><End Role=\"Deta" +
-                "ils\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"N" +
-                "et_Appclusive_Public_Domain_Control_WorkItem_Details_Net_Appclusive_Public_Domai" +
-                "n_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Doma" +
-                "in.Net_Appclusive_Public_Domain_Control_WorkItem_Details_Net_Appclusive_Public_D" +
-                "omain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"" +
-                "WorkItems\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></Associatio" +
-                "nSet></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
+                "usive_Public_Domain_Identity_Tenant_Details_Net_Appclusive_Public_Domain_TenantD" +
+                "etails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusi" +
+                "ve_Public_Domain_Identity_Tenant_Details_Net_Appclusive_Public_Domain_TenantDeta" +
+                "ils_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Tenants\" /><End Role=\"" +
+                "Details\" EntitySet=\"TenantDetailss\" /></AssociationSet><AssociationSet Name=\"Net" +
+                "_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Domain_Id" +
+                "entity_Tenant_ParentPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Identi" +
+                "ty.Net_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Dom" +
+                "ain_Identity_Tenant_ParentPartner\"><End Role=\"ParentPartner\" EntitySet=\"Tenants\"" +
+                " /><End Role=\"Parent\" EntitySet=\"Tenants\" /></AssociationSet><AssociationSet Nam" +
+                "e=\"Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appclusive_Public_D" +
+                "omain_Identity_Tenant_ChildrenPartnerSet\" Association=\"Net.Appclusive.Public.Dom" +
+                "ain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appclusiv" +
+                "e_Public_Domain_Identity_Tenant_ChildrenPartner\"><End Role=\"ChildrenPartner\" Ent" +
+                "itySet=\"Tenants\" /><End Role=\"Children\" EntitySet=\"Tenants\" /></AssociationSet><" +
+                "AssociationSet Name=\"Net_Appclusive_Public_Domain_Control_Approval_Details_Net_A" +
+                "ppclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net." +
+                "Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Control_Approval_Details_N" +
+                "et_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"Detai" +
+                "lsPartner\" EntitySet=\"Approvals\" /><End Role=\"Details\" EntitySet=\"PublicEntityDe" +
+                "tailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Co" +
+                "ntrol_WorkItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsP" +
+                "artnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domai" +
+                "n_Control_WorkItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Deta" +
+                "ilsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"WorkItems\" /><End Role=\"Detail" +
+                "s\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet></EntityContainer></Schem" +
+                "a></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
@@ -2916,7 +2935,7 @@ namespace Net.Appclusive.Api.Core
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Public.Domain.Inventory
 {
     
@@ -3983,7 +4002,7 @@ namespace Net.Appclusive.Public.Domain.Inventory
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Public.Domain.Order
 {
     
@@ -5247,7 +5266,7 @@ namespace Net.Appclusive.Public.Domain.Order
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Public.Domain
 {
     
@@ -5591,7 +5610,7 @@ namespace Net.Appclusive.Public.Domain
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Public.Domain.Configuration
 {
     
@@ -6487,7 +6506,7 @@ namespace Net.Appclusive.Public.Domain.Configuration
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Public.Domain.Security
 {
     
@@ -8065,7 +8084,7 @@ namespace Net.Appclusive.Public.Domain.Security
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Public.Domain.Identity
 {
     
@@ -8577,7 +8596,7 @@ namespace Net.Appclusive.Public.Domain.Identity
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Public.Domain.Control
 {
     
@@ -9171,7 +9190,7 @@ namespace Net.Appclusive.Public.Domain.Control
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Api.Core.biz.dfch.CS.Commons
 {
     
@@ -9215,7 +9234,7 @@ namespace Net.Appclusive.Api.Core.biz.dfch.CS.Commons
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Core.Domain
 {
     
@@ -9237,7 +9256,7 @@ namespace Net.Appclusive.Core.Domain
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Core.Domain.Configuration
 {
     
@@ -9385,7 +9404,7 @@ namespace Net.Appclusive.Core.Domain.Configuration
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Api.Core.System.Collections.ObjectModel
 {
     
@@ -9407,7 +9426,7 @@ namespace Net.Appclusive.Api.Core.System.Collections.ObjectModel
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Api.Core.System.Collections.Generic
 {
     
@@ -9462,7 +9481,7 @@ namespace Net.Appclusive.Api.Core.System.Collections.Generic
     }
 }
 // Original file name:
-// Generation date: 4/11/2017 6:48:29 PM
+// Generation date: 5/3/2017 9:38:28 AM
 namespace Net.Appclusive.Api.Core.System.Security.Principal
 {
     
@@ -9471,6 +9490,50 @@ namespace Net.Appclusive.Api.Core.System.Security.Principal
     /// </summary>
     public partial class IIdentity : global::System.ComponentModel.INotifyPropertyChanged
     {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+}
+// Original file name:
+// Generation date: 5/3/2017 9:38:28 AM
+namespace Net.Appclusive.Core.Domain.Security
+{
+    
+    /// <summary>
+    /// There are no comments for ComplexType Net.Appclusive.Core.Domain.Security.TokenResponse in the schema.
+    /// </summary>
+    public partial class TokenResponse : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// There are no comments for Property Token in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Token
+        {
+            get
+            {
+                return this._Token;
+            }
+            set
+            {
+                this.OnTokenChanging(value);
+                this._Token = value;
+                this.OnTokenChanged();
+                this.OnPropertyChanged("Token");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Token;
+        partial void OnTokenChanging(string value);
+        partial void OnTokenChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

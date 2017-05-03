@@ -638,6 +638,11 @@
     <Schema Namespace="System.Security.Principal" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <ComplexType Name="IIdentity" />
     </Schema>
+    <Schema Namespace="Net.Appclusive.Core.Domain.Security" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <ComplexType Name="TokenResponse">
+        <Property Name="Token" Type="Edm.String" />
+      </ComplexType>
+    </Schema>
     <Schema Namespace="Net.Appclusive.Public.Domain.Order" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
       <EntityType Name="Order">
         <Key>
@@ -986,6 +991,12 @@
         </FunctionImport>
         <FunctionImport Name="Logout" ReturnType="Net.Appclusive.Public.Types.BoxedBool" IsBindable="true" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Authentication)" Nullable="false" />
+          <Parameter Name="Headers" Type="biz.dfch.CS.Commons.DictionaryParameters" />
+          <Parameter Name="Identity" Type="System.Security.Principal.IIdentity" />
+        </FunctionImport>
+        <FunctionImport Name="Impersonate" ReturnType="Net.Appclusive.Core.Domain.Security.TokenResponse" IsBindable="true" m:IsAlwaysBindable="true">
+          <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.Authentication)" Nullable="false" />
+          <Parameter Name="UserId" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Security.ItemAcl" IsBindable="true" EntitySet="ItemAcls" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Security.ItemAcl)" Nullable="false" />
@@ -1014,6 +1025,7 @@
         <FunctionImport Name="Create" ReturnType="Net.Appclusive.Public.Domain.Control.Job" IsBindable="true" EntitySet="Jobs" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Order.Order)" Nullable="false" />
           <Parameter Name="CartId" Type="Edm.Int64" Nullable="false" />
+          <Parameter Name="ParentItemId" Type="Edm.Int64" Nullable="false" />
         </FunctionImport>
         <FunctionImport Name="Template" ReturnType="Net.Appclusive.Public.Domain.Order.Cart" IsBindable="true" EntitySet="Carts" m:IsAlwaysBindable="true">
           <Parameter Name="bindingParameter" Type="Collection(Net.Appclusive.Public.Domain.Order.Cart)" Nullable="false" />
