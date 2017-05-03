@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
+// Generation date: 5/3/2017 10:33:41 AM
 namespace Net.Appclusive.Api.Core
 {
     
@@ -39,7 +39,7 @@ namespace Net.Appclusive.Api.Core
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected global::System.Type ResolveTypeFromName(string typeName)
         {
-            global::System.Type resolvedType = this.DefaultResolveType(typeName, "Net.Appclusive.Public.Domain.Configuration", "Net.Appclusive.Api.Core.Net.Appclusive.Public.Domain.Configuration");
+            global::System.Type resolvedType = this.DefaultResolveType(typeName, "Net.Appclusive.Public.Domain.Configuration", "Net.Appclusive.Api.Core");
             if ((resolvedType != null))
             {
                 return resolvedType;
@@ -89,7 +89,7 @@ namespace Net.Appclusive.Api.Core
             {
                 return resolvedType;
             }
-            resolvedType = this.DefaultResolveType(typeName, "Net.Appclusive.Public.Types", "Net.Appclusive.Api.Core");
+            resolvedType = this.DefaultResolveType(typeName, "Net.Appclusive.Public.Types", "Net.Appclusive.Api.Core.Net.Appclusive.Public.Types");
             if ((resolvedType != null))
             {
                 return resolvedType;
@@ -124,10 +124,6 @@ namespace Net.Appclusive.Api.Core
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected string ResolveNameFromType(global::System.Type clientType)
         {
-            if (clientType.Namespace.Equals("Net.Appclusive.Api.Core.Net.Appclusive.Public.Domain.Configuration", global::System.StringComparison.Ordinal))
-            {
-                return string.Concat("Net.Appclusive.Public.Domain.Configuration.", clientType.Name);
-            }
             if (clientType.Namespace.Equals("Net.Appclusive.Api.Core.Net.Appclusive.Core.Domain.Configuration", global::System.StringComparison.Ordinal))
             {
                 return string.Concat("Net.Appclusive.Core.Domain.Configuration.", clientType.Name);
@@ -164,6 +160,10 @@ namespace Net.Appclusive.Api.Core
             {
                 return string.Concat("Net.Appclusive.Public.Domain.", clientType.Name);
             }
+            if (clientType.Namespace.Equals("Net.Appclusive.Api.Core.Net.Appclusive.Public.Types", global::System.StringComparison.Ordinal))
+            {
+                return string.Concat("Net.Appclusive.Public.Types.", clientType.Name);
+            }
             if (clientType.Namespace.Equals("Net.Appclusive.Api.Core.Net.Appclusive.Core.Domain", global::System.StringComparison.Ordinal))
             {
                 return string.Concat("Net.Appclusive.Core.Domain.", clientType.Name);
@@ -182,197 +182,95 @@ namespace Net.Appclusive.Api.Core
             }
             if (clientType.Namespace.Equals("Net.Appclusive.Api.Core", global::System.StringComparison.Ordinal))
             {
-                return string.Concat("Net.Appclusive.Public.Types.", clientType.Name);
+                return string.Concat("Net.Appclusive.Public.Domain.Configuration.", clientType.Name);
             }
             return clientType.FullName;
         }
         /// <summary>
-        /// There are no comments for IdNamePairs in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<IdNamePair> IdNamePairs
-        {
-            get
-            {
-                if ((this._IdNamePairs == null))
-                {
-                    this._IdNamePairs = base.CreateQuery<IdNamePair>("IdNamePairs");
-                }
-                return this._IdNamePairs;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<IdNamePair> _IdNamePairs;
-        /// <summary>
-        /// There are no comments for IdValuePairs in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<IdValuePair> IdValuePairs
-        {
-            get
-            {
-                if ((this._IdValuePairs == null))
-                {
-                    this._IdValuePairs = base.CreateQuery<IdValuePair>("IdValuePairs");
-                }
-                return this._IdValuePairs;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<IdValuePair> _IdValuePairs;
-        /// <summary>
-        /// There are no comments for NameValuePairs in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<NameValuePair> NameValuePairs
-        {
-            get
-            {
-                if ((this._NameValuePairs == null))
-                {
-                    this._NameValuePairs = base.CreateQuery<NameValuePair>("NameValuePairs");
-                }
-                return this._NameValuePairs;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<NameValuePair> _NameValuePairs;
-        /// <summary>
-        /// There are no comments for IdNameDescriptionTuples in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<IdNameDescriptionTuple> IdNameDescriptionTuples
-        {
-            get
-            {
-                if ((this._IdNameDescriptionTuples == null))
-                {
-                    this._IdNameDescriptionTuples = base.CreateQuery<IdNameDescriptionTuple>("IdNameDescriptionTuples");
-                }
-                return this._IdNameDescriptionTuples;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<IdNameDescriptionTuple> _IdNameDescriptionTuples;
-        /// <summary>
-        /// There are no comments for TenantDetailss in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.TenantDetails> TenantDetailss
-        {
-            get
-            {
-                if ((this._TenantDetailss == null))
-                {
-                    this._TenantDetailss = base.CreateQuery<Net.Appclusive.Public.Domain.TenantDetails>("TenantDetailss");
-                }
-                return this._TenantDetailss;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.TenantDetails> _TenantDetailss;
-        /// <summary>
-        /// There are no comments for PublicEntityDetailss in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.PublicEntityDetails> PublicEntityDetailss
-        {
-            get
-            {
-                if ((this._PublicEntityDetailss == null))
-                {
-                    this._PublicEntityDetailss = base.CreateQuery<Net.Appclusive.Public.Domain.PublicEntityDetails>("PublicEntityDetailss");
-                }
-                return this._PublicEntityDetailss;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.PublicEntityDetails> _PublicEntityDetailss;
-        /// <summary>
         /// There are no comments for Examples in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Configuration.Example> Examples
+        public global::System.Data.Services.Client.DataServiceQuery<Example> Examples
         {
             get
             {
                 if ((this._Examples == null))
                 {
-                    this._Examples = base.CreateQuery<Net.Appclusive.Public.Domain.Configuration.Example>("Examples");
+                    this._Examples = base.CreateQuery<Example>("Examples");
                 }
                 return this._Examples;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Configuration.Example> _Examples;
+        private global::System.Data.Services.Client.DataServiceQuery<Example> _Examples;
         /// <summary>
         /// There are no comments for ManagementCredentials in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Configuration.ManagementCredential> ManagementCredentials
+        public global::System.Data.Services.Client.DataServiceQuery<ManagementCredential> ManagementCredentials
         {
             get
             {
                 if ((this._ManagementCredentials == null))
                 {
-                    this._ManagementCredentials = base.CreateQuery<Net.Appclusive.Public.Domain.Configuration.ManagementCredential>("ManagementCredentials");
+                    this._ManagementCredentials = base.CreateQuery<ManagementCredential>("ManagementCredentials");
                 }
                 return this._ManagementCredentials;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Configuration.ManagementCredential> _ManagementCredentials;
+        private global::System.Data.Services.Client.DataServiceQuery<ManagementCredential> _ManagementCredentials;
         /// <summary>
         /// There are no comments for ManagementUris in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Configuration.ManagementUri> ManagementUris
+        public global::System.Data.Services.Client.DataServiceQuery<ManagementUri> ManagementUris
         {
             get
             {
                 if ((this._ManagementUris == null))
                 {
-                    this._ManagementUris = base.CreateQuery<Net.Appclusive.Public.Domain.Configuration.ManagementUri>("ManagementUris");
+                    this._ManagementUris = base.CreateQuery<ManagementUri>("ManagementUris");
                 }
                 return this._ManagementUris;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Configuration.ManagementUri> _ManagementUris;
+        private global::System.Data.Services.Client.DataServiceQuery<ManagementUri> _ManagementUris;
         /// <summary>
         /// There are no comments for VolatileKeyNameValues in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue> VolatileKeyNameValues
+        public global::System.Data.Services.Client.DataServiceQuery<VolatileKeyNameValue> VolatileKeyNameValues
         {
             get
             {
                 if ((this._VolatileKeyNameValues == null))
                 {
-                    this._VolatileKeyNameValues = base.CreateQuery<Net.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue>("VolatileKeyNameValues");
+                    this._VolatileKeyNameValues = base.CreateQuery<VolatileKeyNameValue>("VolatileKeyNameValues");
                 }
                 return this._VolatileKeyNameValues;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue> _VolatileKeyNameValues;
+        private global::System.Data.Services.Client.DataServiceQuery<VolatileKeyNameValue> _VolatileKeyNameValues;
         /// <summary>
         /// There are no comments for KeyNameValues in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Configuration.KeyNameValue> KeyNameValues
+        public global::System.Data.Services.Client.DataServiceQuery<KeyNameValue> KeyNameValues
         {
             get
             {
                 if ((this._KeyNameValues == null))
                 {
-                    this._KeyNameValues = base.CreateQuery<Net.Appclusive.Public.Domain.Configuration.KeyNameValue>("KeyNameValues");
+                    this._KeyNameValues = base.CreateQuery<KeyNameValue>("KeyNameValues");
                 }
                 return this._KeyNameValues;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Configuration.KeyNameValue> _KeyNameValues;
+        private global::System.Data.Services.Client.DataServiceQuery<KeyNameValue> _KeyNameValues;
         /// <summary>
         /// There are no comments for Attributes in the schema.
         /// </summary>
@@ -799,58 +697,10 @@ namespace Net.Appclusive.Api.Core
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Control.WorkItem> _WorkItems;
         /// <summary>
-        /// There are no comments for IdNamePairs in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToIdNamePairs(IdNamePair idNamePair)
-        {
-            base.AddObject("IdNamePairs", idNamePair);
-        }
-        /// <summary>
-        /// There are no comments for IdValuePairs in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToIdValuePairs(IdValuePair idValuePair)
-        {
-            base.AddObject("IdValuePairs", idValuePair);
-        }
-        /// <summary>
-        /// There are no comments for NameValuePairs in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToNameValuePairs(NameValuePair nameValuePair)
-        {
-            base.AddObject("NameValuePairs", nameValuePair);
-        }
-        /// <summary>
-        /// There are no comments for IdNameDescriptionTuples in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToIdNameDescriptionTuples(IdNameDescriptionTuple idNameDescriptionTuple)
-        {
-            base.AddObject("IdNameDescriptionTuples", idNameDescriptionTuple);
-        }
-        /// <summary>
-        /// There are no comments for TenantDetailss in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToTenantDetailss(Net.Appclusive.Public.Domain.TenantDetails tenantDetails)
-        {
-            base.AddObject("TenantDetailss", tenantDetails);
-        }
-        /// <summary>
-        /// There are no comments for PublicEntityDetailss in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToPublicEntityDetailss(Net.Appclusive.Public.Domain.PublicEntityDetails publicEntityDetails)
-        {
-            base.AddObject("PublicEntityDetailss", publicEntityDetails);
-        }
-        /// <summary>
         /// There are no comments for Examples in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToExamples(Net.Appclusive.Public.Domain.Configuration.Example example)
+        public void AddToExamples(Example example)
         {
             base.AddObject("Examples", example);
         }
@@ -858,7 +708,7 @@ namespace Net.Appclusive.Api.Core
         /// There are no comments for ManagementCredentials in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToManagementCredentials(Net.Appclusive.Public.Domain.Configuration.ManagementCredential managementCredential)
+        public void AddToManagementCredentials(ManagementCredential managementCredential)
         {
             base.AddObject("ManagementCredentials", managementCredential);
         }
@@ -866,7 +716,7 @@ namespace Net.Appclusive.Api.Core
         /// There are no comments for ManagementUris in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToManagementUris(Net.Appclusive.Public.Domain.Configuration.ManagementUri managementUri)
+        public void AddToManagementUris(ManagementUri managementUri)
         {
             base.AddObject("ManagementUris", managementUri);
         }
@@ -874,7 +724,7 @@ namespace Net.Appclusive.Api.Core
         /// There are no comments for VolatileKeyNameValues in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToVolatileKeyNameValues(Net.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue volatileKeyNameValue)
+        public void AddToVolatileKeyNameValues(VolatileKeyNameValue volatileKeyNameValue)
         {
             base.AddObject("VolatileKeyNameValues", volatileKeyNameValue);
         }
@@ -882,7 +732,7 @@ namespace Net.Appclusive.Api.Core
         /// There are no comments for KeyNameValues in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToKeyNameValues(Net.Appclusive.Public.Domain.Configuration.KeyNameValue keyNameValue)
+        public void AddToKeyNameValues(KeyNameValue keyNameValue)
         {
             base.AddObject("KeyNameValues", keyNameValue);
         }
@@ -1096,771 +946,532 @@ namespace Net.Appclusive.Api.Core
                 "x\"><edmx:DataServices m:DataServiceVersion=\"3.0\" m:MaxDataServiceVersion=\"3.0\" x" +
                 "mlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\"><Schema " +
                 "Namespace=\"Net.Appclusive.Public.Types\" xmlns=\"http://schemas.microsoft.com/ado/" +
-                "2009/11/edm\"><EntityType Name=\"IdNamePair\"><Key><PropertyRef Name=\"Id\" /></Key><" +
-                "Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Typ" +
-                "e=\"Edm.String\" /></EntityType><EntityType Name=\"IdValuePair\"><Key><PropertyRef N" +
-                "ame=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Proper" +
-                "ty Name=\"Value\" Type=\"Edm.String\" /></EntityType><EntityType Name=\"NameValuePair" +
-                "\"><Key><PropertyRef Name=\"Name\" /></Key><Property Name=\"Name\" Type=\"Edm.String\" " +
-                "Nullable=\"false\" /><Property Name=\"Value\" Type=\"Edm.String\" /></EntityType><Enti" +
-                "tyType Name=\"IdNameDescriptionTuple\"><Key><PropertyRef Name=\"Id\" /></Key><Proper" +
-                "ty Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm" +
-                ".String\" /><Property Name=\"Description\" Type=\"Edm.String\" /></EntityType><Comple" +
-                "xType Name=\"BoxedString\"><Property Name=\"Value\" Type=\"Edm.String\" /></ComplexTyp" +
-                "e><ComplexType Name=\"BoxedBool\"><Property Name=\"Value\" Type=\"Edm.Boolean\" Nullab" +
-                "le=\"false\" /></ComplexType><Association Name=\"Net_Appclusive_Public_Domain_Inven" +
-                "tory_Model_Behaviours_Net_Appclusive_Public_Types_IdNameDescriptionTuple_Behavio" +
-                "ursPartner\"><End Type=\"Net.Appclusive.Public.Types.IdNameDescriptionTuple\" Role=" +
-                "\"Behaviours\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Inventor" +
-                "y.Model\" Role=\"BehavioursPartner\" Multiplicity=\"0..1\" /></Association><Associati" +
-                "on Name=\"Net_Appclusive_Public_Domain_Inventory_Model_ModelAttributes_Net_Appclu" +
-                "sive_Public_Types_IdNameDescriptionTuple_ModelAttributesPartner\"><End Type=\"Net." +
-                "Appclusive.Public.Types.IdNameDescriptionTuple\" Role=\"ModelAttributes\" Multiplic" +
-                "ity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Inventory.Model\" Role=\"ModelAt" +
-                "tributesPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appc" +
-                "lusive_Public_Domain_Inventory_Item_Attributes_Net_Appclusive_Public_Types_NameV" +
-                "aluePair_AttributesPartner\"><End Type=\"Net.Appclusive.Public.Types.NameValuePair" +
-                "\" Role=\"Attributes\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.I" +
-                "nventory.Item\" Role=\"AttributesPartner\" Multiplicity=\"0..1\" /></Association><Ass" +
-                "ociation Name=\"Net_Appclusive_Public_Domain_Order_OrderItem_Configuration_Net_Ap" +
-                "pclusive_Public_Types_IdValuePair_ConfigurationPartner\"><End Type=\"Net.Appclusiv" +
-                "e.Public.Types.IdValuePair\" Role=\"Configuration\" Multiplicity=\"*\" /><End Type=\"N" +
-                "et.Appclusive.Public.Domain.Order.OrderItem\" Role=\"ConfigurationPartner\" Multipl" +
-                "icity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Ord" +
-                "er_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationP" +
-                "artner\"><End Type=\"Net.Appclusive.Public.Types.IdValuePair\" Role=\"Configuration\"" +
-                " Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Order.CartItem\" Role" +
-                "=\"ConfigurationPartner\" Multiplicity=\"0..1\" /></Association></Schema><Schema Nam" +
-                "espace=\"Net.Appclusive.Public.Domain\" xmlns=\"http://schemas.microsoft.com/ado/20" +
-                "09/11/edm\"><EntityType Name=\"TenantDetails\"><Key><PropertyRef Name=\"RowVersion\" " +
-                "/></Key><Property Name=\"CreatedById\" Type=\"Edm.Int64\" Nullable=\"false\" /><Proper" +
-                "ty Name=\"ModifiedById\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Creat" +
-                "ed\" Type=\"Edm.DateTimeOffset\" Nullable=\"false\" /><Property Name=\"Modified\" Type=" +
-                "\"Edm.DateTimeOffset\" Nullable=\"false\" /><Property Name=\"RowVersion\" Type=\"Edm.Bi" +
-                "nary\" Nullable=\"false\" /></EntityType><EntityType Name=\"PublicEntityDetails\"><Ke" +
-                "y><PropertyRef Name=\"RowVersion\" /></Key><Property Name=\"Tid\" Type=\"Edm.Guid\" Nu" +
-                "llable=\"false\" /><Property Name=\"CreatedById\" Type=\"Edm.Int64\" Nullable=\"false\" " +
+                "2009/11/edm\"><ComplexType Name=\"IdNamePair\"><Property Name=\"Id\" Type=\"Edm.Int64\"" +
+                " Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" /></ComplexType><Com" +
+                "plexType Name=\"IdValuePair\"><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false" +
+                "\" /><Property Name=\"Value\" Type=\"Edm.String\" /></ComplexType><ComplexType Name=\"" +
+                "NameValuePair\"><Property Name=\"Name\" Type=\"Edm.String\" /><Property Name=\"Value\" " +
+                "Type=\"Edm.String\" /></ComplexType><ComplexType Name=\"IdNameDescriptionTuple\"><Pr" +
+                "operty Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=" +
+                "\"Edm.String\" /><Property Name=\"Description\" Type=\"Edm.String\" /></ComplexType><C" +
+                "omplexType Name=\"BoxedString\"><Property Name=\"Value\" Type=\"Edm.String\" /></Compl" +
+                "exType><ComplexType Name=\"BoxedBool\"><Property Name=\"Value\" Type=\"Edm.Boolean\" N" +
+                "ullable=\"false\" /></ComplexType></Schema><Schema Namespace=\"Net.Appclusive.Publi" +
+                "c.Domain\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><ComplexType Name" +
+                "=\"TenantDetails\"><Property Name=\"CreatedById\" Type=\"Edm.Int64\" Nullable=\"false\" " +
                 "/><Property Name=\"ModifiedById\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Na" +
                 "me=\"Created\" Type=\"Edm.DateTimeOffset\" Nullable=\"false\" /><Property Name=\"Modifi" +
                 "ed\" Type=\"Edm.DateTimeOffset\" Nullable=\"false\" /><Property Name=\"RowVersion\" Typ" +
-                "e=\"Edm.Binary\" Nullable=\"false\" /></EntityType><Association Name=\"Net_Appclusive" +
-                "_Public_Domain_Configuration_Example_Details_Net_Appclusive_Public_Domain_Public" +
-                "EntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEnti" +
-                "tyDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public" +
-                ".Domain.Configuration.Example\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Ass" +
-                "ociation><Association Name=\"Net_Appclusive_Public_Domain_Configuration_Managemen" +
-                "tCredential_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPart" +
-                "ner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\"" +
-                " Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Configuration.Man" +
-                "agementCredential\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association><As" +
-                "sociation Name=\"Net_Appclusive_Public_Domain_Configuration_ManagementUri_Details" +
-                "_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net" +
-                ".Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1" +
-                "\" /><End Type=\"Net.Appclusive.Public.Domain.Configuration.ManagementUri\" Role=\"D" +
-                "etailsPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclu" +
-                "sive_Public_Domain_Configuration_VolatileKeyNameValue_Details_Net_Appclusive_Pub" +
-                "lic_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public." +
-                "Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net." +
-                "Appclusive.Public.Domain.Configuration.VolatileKeyNameValue\" Role=\"DetailsPartne" +
-                "r\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_" +
-                "Domain_Configuration_KeyNameValue_Details_Net_Appclusive_Public_Domain_PublicEnt" +
-                "ityDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityD" +
-                "etails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Do" +
-                "main.Configuration.KeyNameValue\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></A" +
-                "ssociation><Association Name=\"Net_Appclusive_Public_Domain_Inventory_Attribute_D" +
-                "etails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Typ" +
-                "e=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity" +
-                "=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Inventory.Attribute\" Role=\"Det" +
-                "ailsPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusi" +
-                "ve_Public_Domain_Inventory_Behaviour_Details_Net_Appclusive_Public_Domain_Public" +
-                "EntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEnti" +
-                "tyDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public" +
-                ".Domain.Inventory.Behaviour\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Assoc" +
-                "iation><Association Name=\"Net_Appclusive_Public_Domain_Inventory_Model_Details_N" +
-                "et_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net.A" +
-                "ppclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" " +
-                "/><End Type=\"Net.Appclusive.Public.Domain.Inventory.Model\" Role=\"DetailsPartner\"" +
-                " Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Do" +
-                "main_Inventory_Connection_Details_Net_Appclusive_Public_Domain_PublicEntityDetai" +
-                "ls_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" " +
-                "Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Inv" +
-                "entory.Connection\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association><As" +
-                "sociation Name=\"Net_Appclusive_Public_Domain_Inventory_Item";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart1 = "_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Ty" +
-                "pe=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicit" +
-                "y=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Inventory.Item\" Role=\"Details" +
-                "Partner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_P" +
-                "ublic_Domain_Security_Authentication_Details_Net_Appclusive_Public_Domain_Public" +
-                "EntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEnti" +
-                "tyDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public" +
-                ".Domain.Security.Authentication\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></A" +
-                "ssociation><Association Name=\"Net_Appclusive_Public_Domain_Identity_User_Details" +
-                "_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net" +
-                ".Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1" +
-                "\" /><End Type=\"Net.Appclusive.Public.Domain.Identity.User\" Role=\"DetailsPartner\"" +
-                " Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Do" +
-                "main_Security_ItemAcl_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_D" +
-                "etailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Role" +
-                "=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Securit" +
-                "y.ItemAcl\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association><Associatio" +
-                "n Name=\"Net_Appclusive_Public_Domain_Security_Ace_Details_Net_Appclusive_Public_" +
-                "Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Doma" +
-                "in.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appc" +
-                "lusive.Public.Domain.Security.Ace\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /><" +
-                "/Association><Association Name=\"Net_Appclusive_Public_Domain_Security_Right_Deta" +
-                "ils_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"" +
-                "Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0" +
-                "..1\" /><End Type=\"Net.Appclusive.Public.Domain.Security.Right\" Role=\"DetailsPart" +
-                "ner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Publi" +
-                "c_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_" +
-                "DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Rol" +
-                "e=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Securi" +
-                "ty.Role\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association><Association " +
-                "Name=\"Net_Appclusive_Public_Domain_Security_Acl_Details_Net_Appclusive_Public_Do" +
-                "main_PublicEntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain" +
-                ".PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclu" +
-                "sive.Public.Domain.Security.Acl\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></A" +
-                "ssociation><Association Name=\"Net_Appclusive_Public_Domain_Security_ItemAce_Deta" +
-                "ils_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"" +
-                "Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0" +
-                "..1\" /><End Type=\"Net.Appclusive.Public.Domain.Security.ItemAce\" Role=\"DetailsPa" +
-                "rtner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Pub" +
-                "lic_Domain_Security_Permission_Details_Net_Appclusive_Public_Domain_PublicEntity" +
-                "Details_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDeta" +
-                "ils\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domai" +
-                "n.Security.Permission\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association" +
-                "><Association Name=\"Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclus" +
-                "ive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive." +
-                "Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Typ" +
-                "e=\"Net.Appclusive.Public.Domain.Order.Order\" Role=\"DetailsPartner\" Multiplicity=" +
-                "\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Control_J" +
-                "ob_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End" +
-                " Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multipli" +
-                "city=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Control.Job\" Role=\"Details" +
-                "Partner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_P" +
-                "ublic_Domain_Order_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails" +
-                "_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Ro" +
-                "le=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Order" +
-                ".Cart\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association><Association Na" +
-                "me=\"Net_Appclusive_Public_Domain_Order_OrderItem_Details_Net_Appclusive_Public_D" +
-                "omain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domai" +
-                "n.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appcl" +
-                "usive.Public.Domain.Order.OrderItem\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /" +
-                "></Association><Association Name=\"Net_Appclusive_Public_Domain_Order_CartItem_De" +
-                "tails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type" +
-                "=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=" +
-                "\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Order.CartItem\" Role=\"DetailsPa" +
-                "rtner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Pub" +
-                "lic_Domain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDeta" +
-                "ils_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\"" +
-                " Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Or" +
-                "der.Catalogue\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association><Associ" +
-                "ation Name=\"Net_Appclusive_Public_Domain_Order_CatalogueItem_Details_Net_Appclus" +
-                "ive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive." +
-                "Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Typ" +
-                "e=\"Net.Appclusive.Public.Domain.Order.CatalogueItem\" Role=\"DetailsPartner\" Multi" +
-                "plicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_O" +
-                "rder_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsP" +
-                "artner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Detai" +
-                "ls\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Order.Blueprin" +
-                "t\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"" +
-                "Net_Appclusive_Public_Domain_Identity_Tenant_Details_Net_Appclusive_Public_Domai" +
-                "n_TenantDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.TenantDe" +
-                "tails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Dom" +
-                "ain.Identity.Tenant\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association><" +
-                "Association Name=\"Net_Appclusive_Public_Domain_Control_Approval_Details_Net_Appc" +
-                "lusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net.Appclusi" +
-                "ve.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End " +
-                "Type=\"Net.Appclusive.Public.Domain.Control.Approval\" Role=\"DetailsPartner\" Multi" +
-                "plicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_C" +
-                "ontrol_WorkItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Details" +
-                "Partner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Deta" +
-                "ils\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Control.WorkI" +
-                "tem\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association></Schema><Schema " +
-                "Namespace=\"Net.Appclusive.Public.Domain.Configuration\" xmlns=\"http://schemas.mic" +
-                "rosoft.com/ado/2009/11/edm\"><EntityType Name=\"Example\"><Key><PropertyRef Name=\"I" +
-                "d\" /></Key><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"f";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart2 = "alse\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name" +
-                "=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"Details\" Relationsh" +
-                "ip=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Configuration_Exam" +
-                "ple_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToR" +
-                "ole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"Managem" +
-                "entCredential\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Username\" Typ" +
-                "e=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Password\" Type=\"Edm.String\" Nu" +
-                "llable=\"false\" /><Property Name=\"Type\" Type=\"Edm.String\" Nullable=\"false\" /><Pro" +
-                "perty Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"" +
-                "Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" />" +
-                "<NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Ne" +
-                "t_Appclusive_Public_Domain_Configuration_ManagementCredential_Details_Net_Appclu" +
-                "sive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole" +
-                "=\"DetailsPartner\" /></EntityType><EntityType Name=\"ManagementUri\"><Key><Property" +
-                "Ref Name=\"Id\" /></Key><Property Name=\"Value\" Type=\"Edm.String\" Nullable=\"false\" " +
-                "/><Property Name=\"Type\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Man" +
-                "agementCredentialId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" Typ" +
-                "e=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullabl" +
-                "e=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty" +
-                " Name=\"ManagementCredential\" Relationship=\"Net.Appclusive.Public.Domain.Configur" +
-                "ation.Net_Appclusive_Public_Domain_Configuration_ManagementUri_ManagementCredent" +
-                "ial_Net_Appclusive_Public_Domain_Configuration_ManagementCredential_ManagementCr" +
-                "edentialPartner\" ToRole=\"ManagementCredential\" FromRole=\"ManagementCredentialPar" +
-                "tner\" /><NavigationProperty Name=\"ManagementCredentials\" Relationship=\"Net.Appcl" +
-                "usive.Public.Domain.Configuration.Net_Appclusive_Public_Domain_Configuration_Man" +
-                "agementUri_ManagementCredentials_Net_Appclusive_Public_Domain_Configuration_Mana" +
-                "gementCredential_ManagementCredentialsPartner\" ToRole=\"ManagementCredentials\" Fr" +
-                "omRole=\"ManagementCredentialsPartner\" /><NavigationProperty Name=\"Details\" Relat" +
-                "ionship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Configuration" +
-                "_ManagementUri_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsP" +
-                "artner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Na" +
-                "me=\"VolatileKeyNameValue\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Ke" +
-                "y\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Value\" Type=\"Edm.String\"" +
-                " Nullable=\"false\" /><Property Name=\"ValidUntil\" Type=\"Edm.DateTimeOffset\" Nullab" +
-                "le=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property N" +
-                "ame=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Typ" +
-                "e=\"Edm.String\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive" +
-                ".Public.Domain.Net_Appclusive_Public_Domain_Configuration_VolatileKeyNameValue_D" +
-                "etails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"" +
-                "Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"KeyNameValue" +
-                "\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Key\" Type=\"Edm.String\" Nul" +
-                "lable=\"false\" /><Property Name=\"Value\" Type=\"Edm.String\" Nullable=\"false\" /><Pro" +
-                "perty Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"" +
-                "Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" />" +
-                "<NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Ne" +
-                "t_Appclusive_Public_Domain_Configuration_KeyNameValue_Details_Net_Appclusive_Pub" +
-                "lic_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"Detail" +
-                "sPartner\" /></EntityType><Association Name=\"Net_Appclusive_Public_Domain_Configu" +
-                "ration_ManagementUri_ManagementCredential_Net_Appclusive_Public_Domain_Configura" +
-                "tion_ManagementCredential_ManagementCredentialPartner\"><End Type=\"Net.Appclusive" +
-                ".Public.Domain.Configuration.ManagementCredential\" Role=\"ManagementCredential\" M" +
-                "ultiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Configuration.Manag" +
-                "ementUri\" Role=\"ManagementCredentialPartner\" Multiplicity=\"0..1\" /><ReferentialC" +
-                "onstraint><Principal Role=\"ManagementCredential\"><PropertyRef Name=\"Id\" /></Prin" +
-                "cipal><Dependent Role=\"ManagementCredentialPartner\"><PropertyRef Name=\"Managemen" +
-                "tCredentialId\" /></Dependent></ReferentialConstraint></Association><Association " +
-                "Name=\"Net_Appclusive_Public_Domain_Configuration_ManagementUri_ManagementCredent" +
-                "ials_Net_Appclusive_Public_Domain_Configuration_ManagementCredential_ManagementC" +
-                "redentialsPartner\"><End Type=\"Net.Appclusive.Public.Domain.Configuration.Managem" +
-                "entCredential\" Role=\"ManagementCredentials\" Multiplicity=\"*\" /><End Type=\"Net.Ap" +
-                "pclusive.Public.Domain.Configuration.ManagementUri\" Role=\"ManagementCredentialsP" +
-                "artner\" Multiplicity=\"0..1\" /></Association></Schema><Schema Namespace=\"biz.dfch" +
-                ".CS.Commons\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><ComplexType N" +
-                "ame=\"DictionaryParameters\"><Property Name=\"Keys\" Type=\"Collection(Edm.String)\" /" +
-                "></ComplexType></Schema><Schema Namespace=\"Net.Appclusive.Core.Domain\" xmlns=\"ht" +
-                "tp://schemas.microsoft.com/ado/2009/11/edm\"><ComplexType Name=\"EmptyActionParame" +
-                "ters\" /></Schema><Schema Namespace=\"Net.Appclusive.Core.Domain.Configuration\" xm" +
-                "lns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><ComplexType Name=\"Altogether" +
-                "NowReturnType\"><Property Name=\"StringProperty\" Type=\"Edm.String\" /><Property Nam" +
-                "e=\"LongProperty\" Type=\"Edm.Int64\" Nullable=\"false\" /></ComplexType><ComplexType " +
-                "Name=\"EntityActionReturningDto\"><Property Name=\"StringProperty\" Type=\"Edm.String" +
-                "\" /><Property Name=\"LongProperty\" Type=\"Edm.Int64\" Nullable=\"false\" /></ComplexT" +
-                "ype></Schema><Schema Namespace=\"System.Collections.ObjectModel\" xmlns=\"http://sc" +
-                "hemas.microsoft.com/ado/2009/11/edm\"><ComplexType Name=\"Collection_1OfString\" />" +
-                "</Schema><Schema Namespace=\"Net.Appclusive.Public.Domain.Inventory\" xmlns=\"http:" +
-                "//schemas.microsoft.com/ado/2009/11/edm\"><EntityType Name=\"Attribute\"><Key><Prop" +
-                "ertyRef Name=\"Id\" /></Key><Property Name=\"Value\" Type=\"Edm.String\" /><Property N" +
-                "ame=\"ItemId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"ModelAttributeI" +
-                "d\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Null" +
-                "able=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Prope" +
-                "rty Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"Details\" Re" +
-                "lationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_" +
-                "Attribute_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartne" +
-                "r\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"B" +
-                "ehaviour\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"BehaviourDefinitio" +
-                "nId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nu" +
-                "llable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Pro" +
-                "perty Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"Children\"" +
-                " Relationship=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Doma" +
-                "in_Inventory_Behaviour_Children_Net_Appclusive_Public_Domain_Inventory_Behaviour" +
-                "_ChildrenPartner\" ToRole=\"Children\" FromRole=\"ChildrenPartner\" /><NavigationProp" +
-                "erty Name=\"Parents\" Relationship=\"Net.Appclusive.Public.Domain.Inventory.Net_App" +
-                "clusive_Public_Domain_Inventory_Behaviour_Parents_Net_Appclusive_Public_Domain_I" +
-                "nventory_Behaviour_ParentsPartner\" ToRole=\"Parents\" FromRol";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart3 = "e=\"ParentsPartner\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclus" +
-                "ive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_Behaviour_Details_Net_A" +
-                "ppclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" Fro" +
-                "mRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"Model\"><Key><PropertyRef" +
-                " Name=\"Id\" /></Key><Property Name=\"ParentId\" Type=\"Edm.Int64\" Nullable=\"false\" /" +
-                "><Property Name=\"IsActionModel\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property " +
-                "Name=\"BehaviourDefinitionForId\" Type=\"Edm.Int64\" /><Property Name=\"Id\" Type=\"Edm" +
-                ".Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"fal" +
-                "se\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=" +
-                "\"Behaviours\" Relationship=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_Dom" +
-                "ain_Inventory_Model_Behaviours_Net_Appclusive_Public_Types_IdNameDescriptionTupl" +
-                "e_BehavioursPartner\" ToRole=\"Behaviours\" FromRole=\"BehavioursPartner\" /><Navigat" +
-                "ionProperty Name=\"ModelAttributes\" Relationship=\"Net.Appclusive.Public.Types.Net" +
-                "_Appclusive_Public_Domain_Inventory_Model_ModelAttributes_Net_Appclusive_Public_" +
-                "Types_IdNameDescriptionTuple_ModelAttributesPartner\" ToRole=\"ModelAttributes\" Fr" +
-                "omRole=\"ModelAttributesPartner\" /><NavigationProperty Name=\"Details\" Relationshi" +
-                "p=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_Model_Det" +
-                "ails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"De" +
-                "tails\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"Connection\"><K" +
-                "ey><PropertyRef Name=\"Id\" /></Key><Property Name=\"SourceId\" Type=\"Edm.Int64\" Nul" +
-                "lable=\"false\" /><Property Name=\"DestinationId\" Type=\"Edm.Int64\" Nullable=\"false\"" +
-                " /><Property Name=\"BehaviourId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Na" +
-                "me=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.Stri" +
-                "ng\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Navigat" +
-                "ionProperty Name=\"Source\" Relationship=\"Net.Appclusive.Public.Domain.Inventory.N" +
-                "et_Appclusive_Public_Domain_Inventory_Connection_Source_Net_Appclusive_Public_Do" +
-                "main_Inventory_Item_SourcePartner\" ToRole=\"Source\" FromRole=\"SourcePartner\" /><N" +
-                "avigationProperty Name=\"Destination\" Relationship=\"Net.Appclusive.Public.Domain." +
-                "Inventory.Net_Appclusive_Public_Domain_Inventory_Connection_Destination_Net_Appc" +
-                "lusive_Public_Domain_Inventory_Item_DestinationPartner\" ToRole=\"Destination\" Fro" +
-                "mRole=\"DestinationPartner\" /><NavigationProperty Name=\"Behaviour\" Relationship=\"" +
-                "Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inventory_Co" +
-                "nnection_Behaviour_Net_Appclusive_Public_Domain_Inventory_Behaviour_BehaviourPar" +
-                "tner\" ToRole=\"Behaviour\" FromRole=\"BehaviourPartner\" /><NavigationProperty Name=" +
-                "\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domai" +
-                "n_Inventory_Connection_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_" +
-                "DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><Entit" +
-                "yType Name=\"Item\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"ParentId\" " +
-                "Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"ModelId\" Type=\"Edm.Int64\" Nu" +
-                "llable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Proper" +
-                "ty Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\"" +
-                " Type=\"Edm.String\" /><NavigationProperty Name=\"Children\" Relationship=\"Net.Appcl" +
-                "usive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inventory_Item_Childr" +
-                "en_Net_Appclusive_Public_Domain_Inventory_Item_ChildrenPartner\" ToRole=\"Children" +
-                "\" FromRole=\"ChildrenPartner\" /><NavigationProperty Name=\"Attributes\" Relationshi" +
-                "p=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Inventory_Item_Attri" +
-                "butes_Net_Appclusive_Public_Types_NameValuePair_AttributesPartner\" ToRole=\"Attri" +
-                "butes\" FromRole=\"AttributesPartner\" /><NavigationProperty Name=\"Details\" Relatio" +
-                "nship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_Item_" +
-                "Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=" +
-                "\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"ItemJob\" Ba" +
-                "seType=\"Net.Appclusive.Public.Domain.Control.Job\" /><Association Name=\"Net_Appcl" +
-                "usive_Public_Domain_Inventory_Behaviour_Children_Net_Appclusive_Public_Domain_In" +
-                "ventory_Behaviour_ChildrenPartner\"><End Type=\"Net.Appclusive.Public.Domain.Inven" +
-                "tory.Behaviour\" Role=\"Children\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Pub" +
-                "lic.Domain.Inventory.Behaviour\" Role=\"ChildrenPartner\" Multiplicity=\"0..1\" /></A" +
-                "ssociation><Association Name=\"Net_Appclusive_Public_Domain_Inventory_Behaviour_P" +
-                "arents_Net_Appclusive_Public_Domain_Inventory_Behaviour_ParentsPartner\"><End Typ" +
-                "e=\"Net.Appclusive.Public.Domain.Inventory.Behaviour\" Role=\"Parents\" Multiplicity" +
-                "=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Inventory.Behaviour\" Role=\"Parent" +
-                "sPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_" +
-                "Public_Domain_Inventory_Connection_Source_Net_Appclusive_Public_Domain_Inventory" +
-                "_Item_SourcePartner\"><End Type=\"Net.Appclusive.Public.Domain.Inventory.Item\" Rol" +
-                "e=\"Source\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Invento" +
-                "ry.Connection\" Role=\"SourcePartner\" Multiplicity=\"0..1\" /></Association><Associa" +
-                "tion Name=\"Net_Appclusive_Public_Domain_Inventory_Connection_Destination_Net_App" +
-                "clusive_Public_Domain_Inventory_Item_DestinationPartner\"><End Type=\"Net.Appclusi" +
-                "ve.Public.Domain.Inventory.Item\" Role=\"Destination\" Multiplicity=\"0..1\" /><End T" +
-                "ype=\"Net.Appclusive.Public.Domain.Inventory.Connection\" Role=\"DestinationPartner" +
-                "\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_D" +
-                "omain_Inventory_Connection_Behaviour_Net_Appclusive_Public_Domain_Inventory_Beha" +
-                "viour_BehaviourPartner\"><End Type=\"Net.Appclusive.Public.Domain.Inventory.Behavi" +
-                "our\" Role=\"Behaviour\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Dom" +
-                "ain.Inventory.Connection\" Role=\"BehaviourPartner\" Multiplicity=\"0..1\" /><Referen" +
-                "tialConstraint><Principal Role=\"Behaviour\"><PropertyRef Name=\"Id\" /></Principal>" +
-                "<Dependent Role=\"BehaviourPartner\"><PropertyRef Name=\"BehaviourId\" /></Dependent" +
-                "></ReferentialConstraint></Association><Association Name=\"Net_Appclusive_Public_" +
-                "Domain_Inventory_Item_Children_Net_Appclusive_Public_Domain_Inventory_Item_Child" +
-                "renPartner\"><End Type=\"Net.Appclusive.Public.Domain.Inventory.Item\" Role=\"Childr" +
-                "en\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Inventory.Item\" R" +
-                "ole=\"ChildrenPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net" +
-                "_Appclusive_Public_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inv" +
-                "entory_Model_ModelPartner\"><End Type=\"Net.Appclusive.Public.Domain.Inventory.Mod" +
-                "el\" Role=\"Model\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.O" +
-                "rder.Blueprint\" Role=\"ModelPartner\" Multiplicity=\"0..1\" /><ReferentialConstraint" +
-                "><Principal Role=\"Model\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"M" +
-                "odelPartner\"><PropertyRef Name=\"ModelId\" /></Dependent></ReferentialConstraint><" +
-                "/Association></Schema><Schema Namespace=\"System.Collections.Generic\" xmlns=\"http" +
-                "://schemas.microsoft.com/ado/2009/11/edm\"><ComplexType Name=\"List_1OfString\"><Pr" +
-                "operty Name=\"Capacity\" Type=\"Edm.Int32\" Nullable=\"false\" /></ComplexType></Schem" +
-                "a><Schema Namespace=\"Net.Appclusive.Public.Domain.Security\" xmlns=\"http://schema" +
-                "s.microsoft.com/ado/2009/11/edm\"><EntityType Name=\"Authentication\"><Key><Propert" +
-                "yRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><" +
-                "Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart4 = "Property Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"Details" +
-                "\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Securi" +
-                "ty_Authentication_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Detai" +
-                "lsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType" +
-                " Name=\"ItemAcl\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"ParentId\" Ty" +
-                "pe=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"NoInheritance\" Type=\"Edm.Boole" +
-                "an\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><" +
-                "Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Descri" +
-                "ption\" Type=\"Edm.String\" /><NavigationProperty Name=\"Parent\" Relationship=\"Net.A" +
-                "ppclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_ItemAcl_P" +
-                "arent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartner\" ToRole=\"Paren" +
-                "t\" FromRole=\"ParentPartner\" /><NavigationProperty Name=\"Children\" Relationship=\"" +
-                "Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Item" +
-                "Acl_Children_Net_Appclusive_Public_Domain_Security_ItemAcl_ChildrenPartner\" ToRo" +
-                "le=\"Children\" FromRole=\"ChildrenPartner\" /><NavigationProperty Name=\"Aces\" Relat" +
-                "ionship=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Secu" +
-                "rity_ItemAcl_Aces_Net_Appclusive_Public_Domain_Security_ItemAce_AcesPartner\" ToR" +
-                "ole=\"Aces\" FromRole=\"AcesPartner\" /><NavigationProperty Name=\"Details\" Relations" +
-                "hip=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_ItemAcl_" +
-                "Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=" +
-                "\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"Ace\"><Key><" +
-                "PropertyRef Name=\"Id\" /></Key><Property Name=\"AclId\" Type=\"Edm.Int64\" Nullable=\"" +
-                "false\" /><Property Name=\"PermissionId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Prop" +
-                "erty Name=\"UserId\" Type=\"Edm.Int64\" /><Property Name=\"RoleId\" Type=\"Edm.Int64\" /" +
-                "><Property Name=\"Type\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Id\" " +
-                "Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Null" +
-                "able=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationPrope" +
-                "rty Name=\"Permission\" Relationship=\"Net.Appclusive.Public.Domain.Security.Net_Ap" +
-                "pclusive_Public_Domain_Security_Ace_Permission_Net_Appclusive_Public_Domain_Secu" +
-                "rity_Permission_PermissionPartner\" ToRole=\"Permission\" FromRole=\"PermissionPartn" +
-                "er\" /><NavigationProperty Name=\"User\" Relationship=\"Net.Appclusive.Public.Domain" +
-                ".Identity.Net_Appclusive_Public_Domain_Security_Ace_User_Net_Appclusive_Public_D" +
-                "omain_Identity_User_UserPartner\" ToRole=\"User\" FromRole=\"UserPartner\" /><Navigat" +
-                "ionProperty Name=\"Role\" Relationship=\"Net.Appclusive.Public.Domain.Security.Net_" +
-                "Appclusive_Public_Domain_Security_Ace_Role_Net_Appclusive_Public_Domain_Security" +
-                "_Role_RolePartner\" ToRole=\"Role\" FromRole=\"RolePartner\" /><NavigationProperty Na" +
-                "me=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Do" +
-                "main_Security_Ace_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Detai" +
-                "lsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType" +
-                " Name=\"Right\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm." +
+                "e=\"Edm.Binary\" /></ComplexType><ComplexType Name=\"PublicEntityDetails\"><Property" +
+                " Name=\"Tid\" Type=\"Edm.Guid\" Nullable=\"false\" /><Property Name=\"CreatedById\" Type" +
+                "=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"ModifiedById\" Type=\"Edm.Int64\" N" +
+                "ullable=\"false\" /><Property Name=\"Created\" Type=\"Edm.DateTimeOffset\" Nullable=\"f" +
+                "alse\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOffset\" Nullable=\"false\" /><" +
+                "Property Name=\"RowVersion\" Type=\"Edm.Binary\" /></ComplexType></Schema><Schema Na" +
+                "mespace=\"Net.Appclusive.Public.Domain.Configuration\" xmlns=\"http://schemas.micro" +
+                "soft.com/ado/2009/11/edm\"><EntityType Name=\"Example\"><Key><PropertyRef Name=\"Id\"" +
+                " /></Key><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=" +
+                "\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"E" +
+                "dm.String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.PublicE" +
+                "ntityDetails\" /></EntityType><EntityType Name=\"ManagementCredential\"><Key><Prope" +
+                "rtyRef Name=\"Id\" /></Key><Property Name=\"Username\" Type=\"Edm.String\" Nullable=\"f" +
+                "alse\" /><Property Name=\"Password\" Type=\"Edm.String\" Nullable=\"false\" /><Property" +
+                " Name=\"Type\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm." +
                 "Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"fals" +
-                "e\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"" +
-                "Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain" +
-                "_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Details" +
-                "Partner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType N" +
-                "ame=\"Role\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Type\" Type=\"Edm.S" +
-                "tring\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" " +
-                "/><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Des" +
-                "cription\" Type=\"Edm.String\" /><NavigationProperty Name=\"Users\" Relationship=\"Net" +
-                ".Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Security_Role_Us" +
-                "ers_Net_Appclusive_Public_Domain_Identity_User_UsersPartner\" ToRole=\"Users\" From" +
-                "Role=\"UsersPartner\" /><NavigationProperty Name=\"Rights\" Relationship=\"Net.Appclu" +
-                "sive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Role_Rights_Ne" +
-                "t_Appclusive_Public_Domain_Security_Right_RightsPartner\" ToRole=\"Rights\" FromRol" +
-                "e=\"RightsPartner\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclus" +
-                "ive.Public.Domain.Net_Appclusive_Public_Domain_Security_Role_Details_Net_Appclus" +
-                "ive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=" +
-                "\"DetailsPartner\" /></EntityType><EntityType Name=\"Acl\"><Key><PropertyRef Name=\"I" +
-                "d\" /></Key><Property Name=\"ParentId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Proper" +
-                "ty Name=\"NoInheritance\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"Id" +
-                "\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nu" +
-                "llable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationPro" +
-                "perty Name=\"Parent\" Relationship=\"Net.Appclusive.Public.Domain.Security.Net_Appc" +
-                "lusive_Public_Domain_Security_Acl_Parent_Net_Appclusive_Public_Domain_Security_A" +
-                "cl_ParentPartner\" ToRole=\"Parent\" FromRole=\"ParentPartner\" /><NavigationProperty" +
-                " Name=\"Children\" Relationship=\"Net.Appclusive.Public.Domain.Security.Net_Appclus" +
-                "ive_Public_Domain_Security_Acl_Children_Net_Appclusive_Public_Domain_Security_Ac" +
-                "l_ChildrenPartner\" ToRole=\"Children\" FromRole=\"ChildrenPartner\" /><NavigationPro" +
-                "perty Name=\"Aces\" Relationship=\"Net.Appclusive.Public.Domain.Security.Net_Appclu" +
-                "sive_Public_Domain_Security_Acl_Aces_Net_Appclusive_Public_Domain_Security_Ace_A" +
-                "cesPartner\" ToRole=\"Aces\" FromRole=\"AcesPartner\" /><NavigationProperty Name=\"Det" +
-                "ails\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Se" +
-                "curity_Acl_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartn" +
-                "er\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"" +
-                "ItemAce\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"ItemId\" Type=\"Edm.I" +
-                "nt64\" Nullable=\"false\" /><Property Name=\"PermissionId\" Type=\"Edm.Int64\" Nullable" +
-                "=\"false\" /><Property Name=\"RoleId\" Type=\"Edm.Int64\" /><Property Name=\"UserId\" Ty" +
-                "pe=\"Edm.Int64\" /><Property Name=\"Type\" Type=\"Edm.String\" Nullable=\"false\" /><Pro" +
-                "perty Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"" +
-                "Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" />" +
-                "<NavigationProperty Name=\"Permission\" Relationship=\"Net.Appclusive.Public.Domain" +
-                ".Security.Net_Appclusive_Public_Domain_Security_ItemAce_Permission_Net_Appclusiv" +
-                "e_Public_Domain_Security_Permission_PermissionPartner\" ToRole=\"Permission\" FromR" +
-                "ole=\"PermissionPartner\" /><NavigationProperty Name=\"Role\" Relationship=\"Net.Appc" +
-                "lusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_ItemAce_Role" +
-                "_Net_Appclusive_Public_Domain_Security_Role_RolePartner\" ToRole=\"Role\" FromRole=" +
-                "\"RolePartner\" /><NavigationProperty Name=\"User\" Relationship=\"Net.Appclusive.Pub" +
-                "lic.Domain.Identity.Net_Appclusive_Public_Domain_Security_ItemAce_User_Net_Appcl" +
-                "usive_Public_Domain_Identity_User_UserPartner\" ToRole=\"User\" FromRole=\"UserPartn" +
-                "er\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Dom" +
-                "ain.Net_Appclusive_Public_Domain_Security_ItemAce_Details_Net_Appclusive_Public_" +
-                "Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPar" +
-                "tner\" /></EntityType><EntityType Name=\"Permission\"><Key><PropertyRef Name=\"Id\" /" +
-                "></Key><Property Name=\"Type\" Type=\"Edm.String\" Nullable=\"fa";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart5 = "lse\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Na" +
+                "e\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"Details\" T" +
+                "ype=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /></EntityType><EntityTyp" +
+                "e Name=\"ManagementUri\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Value" +
+                "\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Type\" Type=\"Edm.String\" N" +
+                "ullable=\"false\" /><Property Name=\"ManagementCredentialId\" Type=\"Edm.Int64\" Nulla" +
+                "ble=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property " +
+                "Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Ty" +
+                "pe=\"Edm.String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.Pu" +
+                "blicEntityDetails\" /><NavigationProperty Name=\"ManagementCredential\" Relationshi" +
+                "p=\"Net.Appclusive.Public.Domain.Configuration.Net_Appclusive_Public_Domain_Confi" +
+                "guration_ManagementUri_ManagementCredential_Net_Appclusive_Public_Domain_Configu" +
+                "ration_ManagementCredential_ManagementCredentialPartner\" ToRole=\"ManagementCrede" +
+                "ntial\" FromRole=\"ManagementCredentialPartner\" /><NavigationProperty Name=\"Manage" +
+                "mentCredentials\" Relationship=\"Net.Appclusive.Public.Domain.Configuration.Net_Ap" +
+                "pclusive_Public_Domain_Configuration_ManagementUri_ManagementCredentials_Net_App" +
+                "clusive_Public_Domain_Configuration_ManagementCredential_ManagementCredentialsPa" +
+                "rtner\" ToRole=\"ManagementCredentials\" FromRole=\"ManagementCredentialsPartner\" />" +
+                "</EntityType><EntityType Name=\"VolatileKeyNameValue\"><Key><PropertyRef Name=\"Id\"" +
+                " /></Key><Property Name=\"Key\" Type=\"Edm.String\" Nullable=\"false\" /><Property Nam" +
+                "e=\"Value\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"ValidUntil\" Type=" +
+                "\"Edm.DateTimeOffset\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nul" +
+                "lable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Prop" +
+                "erty Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"Details\" Type=\"Net.A" +
+                "ppclusive.Public.Domain.PublicEntityDetails\" /></EntityType><EntityType Name=\"Ke" +
+                "yNameValue\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Key\" Type=\"Edm.S" +
+                "tring\" Nullable=\"false\" /><Property Name=\"Value\" Type=\"Edm.String\" Nullable=\"fal" +
+                "se\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Na" +
                 "me\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm." +
-                "String\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public" +
-                ".Domain.Net_Appclusive_Public_Domain_Security_Permission_Details_Net_Appclusive_" +
-                "Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"Det" +
-                "ailsPartner\" /></EntityType><Association Name=\"Net_Appclusive_Public_Domain_Iden" +
-                "tity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner\"><End Ty" +
-                "pe=\"Net.Appclusive.Public.Domain.Security.Role\" Role=\"Roles\" Multiplicity=\"*\" />" +
-                "<End Type=\"Net.Appclusive.Public.Domain.Identity.User\" Role=\"RolesPartner\" Multi" +
-                "plicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_S" +
-                "ecurity_ItemAcl_Parent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartn" +
-                "er\"><End Type=\"Net.Appclusive.Public.Domain.Security.ItemAcl\" Role=\"Parent\" Mult" +
-                "iplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Security.ItemAcl\" Role" +
-                "=\"ParentPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appc" +
-                "lusive_Public_Domain_Security_ItemAcl_Children_Net_Appclusive_Public_Domain_Secu" +
-                "rity_ItemAcl_ChildrenPartner\"><End Type=\"Net.Appclusive.Public.Domain.Security.I" +
-                "temAcl\" Role=\"Children\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Doma" +
-                "in.Security.ItemAcl\" Role=\"ChildrenPartner\" Multiplicity=\"0..1\" /></Association>" +
-                "<Association Name=\"Net_Appclusive_Public_Domain_Security_ItemAcl_Aces_Net_Appclu" +
-                "sive_Public_Domain_Security_ItemAce_AcesPartner\"><End Type=\"Net.Appclusive.Publi" +
-                "c.Domain.Security.ItemAce\" Role=\"Aces\" Multiplicity=\"*\" /><End Type=\"Net.Appclus" +
-                "ive.Public.Domain.Security.ItemAcl\" Role=\"AcesPartner\" Multiplicity=\"0..1\" /></A" +
-                "ssociation><Association Name=\"Net_Appclusive_Public_Domain_Security_Ace_Permissi" +
-                "on_Net_Appclusive_Public_Domain_Security_Permission_PermissionPartner\"><End Type" +
-                "=\"Net.Appclusive.Public.Domain.Security.Permission\" Role=\"Permission\" Multiplici" +
-                "ty=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Security.Ace\" Role=\"Permissi" +
-                "onPartner\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Permiss" +
-                "ion\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"PermissionPartner\"><P" +
-                "ropertyRef Name=\"PermissionId\" /></Dependent></ReferentialConstraint></Associati" +
-                "on><Association Name=\"Net_Appclusive_Public_Domain_Security_Ace_Role_Net_Appclus" +
-                "ive_Public_Domain_Security_Role_RolePartner\"><End Type=\"Net.Appclusive.Public.Do" +
-                "main.Security.Role\" Role=\"Role\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive." +
-                "Public.Domain.Security.Ace\" Role=\"RolePartner\" Multiplicity=\"0..1\" /></Associati" +
-                "on><Association Name=\"Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appc" +
-                "lusive_Public_Domain_Security_Right_RightsPartner\"><End Type=\"Net.Appclusive.Pub" +
-                "lic.Domain.Security.Right\" Role=\"Rights\" Multiplicity=\"*\" /><End Type=\"Net.Appcl" +
-                "usive.Public.Domain.Security.Role\" Role=\"RightsPartner\" Multiplicity=\"0..1\" /></" +
-                "Association><Association Name=\"Net_Appclusive_Public_Domain_Security_Acl_Parent_" +
-                "Net_Appclusive_Public_Domain_Security_Acl_ParentPartner\"><End Type=\"Net.Appclusi" +
-                "ve.Public.Domain.Security.Acl\" Role=\"Parent\" Multiplicity=\"0..1\" /><End Type=\"Ne" +
-                "t.Appclusive.Public.Domain.Security.Acl\" Role=\"ParentPartner\" Multiplicity=\"0..1" +
-                "\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Security_Acl_C" +
-                "hildren_Net_Appclusive_Public_Domain_Security_Acl_ChildrenPartner\"><End Type=\"Ne" +
-                "t.Appclusive.Public.Domain.Security.Acl\" Role=\"Children\" Multiplicity=\"*\" /><End" +
-                " Type=\"Net.Appclusive.Public.Domain.Security.Acl\" Role=\"ChildrenPartner\" Multipl" +
-                "icity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Sec" +
-                "urity_Acl_Aces_Net_Appclusive_Public_Domain_Security_Ace_AcesPartner\"><End Type=" +
-                "\"Net.Appclusive.Public.Domain.Security.Ace\" Role=\"Aces\" Multiplicity=\"*\" /><End " +
-                "Type=\"Net.Appclusive.Public.Domain.Security.Acl\" Role=\"AcesPartner\" Multiplicity" +
-                "=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Security" +
-                "_ItemAce_Permission_Net_Appclusive_Public_Domain_Security_Permission_PermissionP" +
-                "artner\"><End Type=\"Net.Appclusive.Public.Domain.Security.Permission\" Role=\"Permi" +
-                "ssion\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Security.It" +
-                "emAce\" Role=\"PermissionPartner\" Multiplicity=\"0..1\" /><ReferentialConstraint><Pr" +
-                "incipal Role=\"Permission\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"" +
-                "PermissionPartner\"><PropertyRef Name=\"PermissionId\" /></Dependent></ReferentialC" +
-                "onstraint></Association><Association Name=\"Net_Appclusive_Public_Domain_Security" +
-                "_ItemAce_Role_Net_Appclusive_Public_Domain_Security_Role_RolePartner\"><End Type=" +
-                "\"Net.Appclusive.Public.Domain.Security.Role\" Role=\"Role\" Multiplicity=\"0..1\" /><" +
-                "End Type=\"Net.Appclusive.Public.Domain.Security.ItemAce\" Role=\"RolePartner\" Mult" +
-                "iplicity=\"0..1\" /></Association></Schema><Schema Namespace=\"Net.Appclusive.Publi" +
-                "c.Domain.Identity\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityT" +
-                "ype Name=\"User\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"MappedId\" Ty" +
-                "pe=\"Edm.String\" Nullable=\"false\" /><Property Name=\"MappedType\" Type=\"Edm.String\"" +
-                " Nullable=\"false\" /><Property Name=\"Mail\" Type=\"Edm.String\" Nullable=\"false\" /><" +
-                "Property Name=\"IsHidden\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"I" +
-                "d\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" N" +
-                "ullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationPr" +
-                "operty Name=\"Roles\" Relationship=\"Net.Appclusive.Public.Domain.Security.Net_Appc" +
-                "lusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_R" +
-                "ole_RolesPartner\" ToRole=\"Roles\" FromRole=\"RolesPartner\" /><NavigationProperty N" +
-                "ame=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_D" +
-                "omain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Det" +
-                "ailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityTy" +
-                "pe Name=\"Tenant\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"E" +
-                "dm.Guid\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"fa" +
-                "lse\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"MappedId" +
-                "\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"MappedType\" Type=\"Edm.Str" +
-                "ing\" Nullable=\"false\" /><Property Name=\"ParentId\" Type=\"Edm.Guid\" Nullable=\"fals" +
-                "e\" /><Property Name=\"Namespace\" Type=\"Edm.String\" Nullable=\"false\" /><Property N" +
-                "ame=\"CustomerId\" Type=\"Edm.Int64\" Nullable=\"false\" /><NavigationProperty Name=\"D" +
-                "etails\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_" +
-                "Identity_Tenant_Details_Net_Appclusive_Public_Domain_TenantDetails_DetailsPartne" +
-                "r\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /><NavigationProperty Name=\"Parent" +
-                "\" Relationship=\"Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Doma" +
-                "in_Identity_Tenant_Parent_Net_Appclusive_Public_Domain_Identity_Tenant_ParentPar" +
-                "tner\" ToRole=\"Parent\" FromRole=\"ParentPartner\" /><NavigationProperty Name=\"Child" +
-                "ren\" Relationship=\"Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_D" +
-                "omain_Identity_Tenant_Children_Net_Appclusive_Public_Domain_Identity_Tenant_Chil" +
-                "drenPartner\" ToRole=\"Children\" FromRole=\"ChildrenPartner\" /></EntityType><Associ" +
-                "ation Name=\"Net_Appclusive_Public_Domain_Security_Ace_User_Net_Appclusive_Public" +
-                "_Domain_Identity_User_UserPartner\"><End Type=\"Net.Appclusive.Public.Domain.Ident" +
-                "ity.User\" Role=\"User\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Dom" +
-                "ain.Security.Ace\" Role=\"UserPartner\" Multiplicity=\"0..1\" />";
+                "String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.PublicEnti" +
+                "tyDetails\" /></EntityType><Association Name=\"Net_Appclusive_Public_Domain_Config" +
+                "uration_ManagementUri_ManagementCredential_Net_Appclusive_Public_Domain_Configur" +
+                "ation_ManagementCredential_ManagementCredentialPartner\"><End Type=\"Net.Appclusiv" +
+                "e.Public.Domain.Configuration.ManagementCredential\" Role=\"ManagementCredential\" " +
+                "Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Configuration.Mana" +
+                "gementUri\" Role=\"ManagementCredentialPartner\" Multiplicity=\"0..1\" /><Referential" +
+                "Constraint><Principal Role=\"ManagementCredential\"><PropertyRef Name=\"Id\" /></Pri" +
+                "ncipal><Dependent Role=\"ManagementCredentialPartner\"><PropertyRef Name=\"Manageme" +
+                "ntCredentialId\" /></Dependent></ReferentialConstraint></Association><Association" +
+                " Name=\"Net_Appclusive_Public_Domain_Configuration_ManagementUri_ManagementCreden" +
+                "tials_Net_Appclusive_Public_Domain_Configuration_ManagementCredential_Management" +
+                "CredentialsPartner\"><End Type=\"Net.Appclusive.Public.Domain.Configuration.Manage" +
+                "mentCredential\" Role=\"ManagementCredentials\" Multiplicity=\"*\" /><End Type=\"Net.A" +
+                "ppclusive.Public.Domain.Configuration.ManagementUri\" Role=\"ManagementCredentials" +
+                "Partner\" Multiplicity=\"0..1\" /></Association></Schema><Schema Namespace=\"biz.dfc" +
+                "h.CS.Commons\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><ComplexType " +
+                "Name=\"DictionaryParameters\"><Property Name=\"Keys\" Type=\"Collection(Edm.String)\" " +
+                "/></ComplexType></Schema><Schema Namespace=\"Net.Appclusive.Core.Domain\" xmlns=\"h" +
+                "ttp://schemas.microsoft.com/ado/2009/11/edm\"><ComplexType Name=\"EmptyActionParam" +
+                "eters\" /></Schema><Schema Namespace=\"Net.Appclusive.Core.Domain.Configuration\" x" +
+                "mlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><ComplexType Name=\"Altogethe" +
+                "rNowReturnType\"><Property Name=\"StringProperty\" Type=\"Edm.String\" /><Property Na" +
+                "me=\"LongProperty\" Type=\"Edm.Int64\" Nullable=\"false\" /></ComplexType><ComplexType" +
+                " Name=\"EntityActionReturningDto\"><Property Name=\"StringProperty\" Type=\"Edm.Strin" +
+                "g\" /><Property Name=\"LongProperty\" Type=\"Edm.Int64\" Nullable=\"false\" /></Complex" +
+                "Type></Schema><Schema Namespace=\"System.Collections.ObjectModel\" xmlns=\"http://s" +
+                "chemas.microsoft.com/ado/2009/11/edm\"><ComplexType Name=\"Collection_1OfString\" /" +
+                "></Schema><Schema Namespace=\"Net.Appclusive.Public.Domain.Inventory\" xmlns=\"http" +
+                "://schemas.microsoft.com/ado/2009/11/edm\"><EntityType Name=";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart6 = "</Association><Association Name=\"Net_Appclusive_Public_Domain_Security_Role_Users" +
-                "_Net_Appclusive_Public_Domain_Identity_User_UsersPartner\"><End Type=\"Net.Appclus" +
-                "ive.Public.Domain.Identity.User\" Role=\"Users\" Multiplicity=\"*\" /><End Type=\"Net." +
-                "Appclusive.Public.Domain.Security.Role\" Role=\"UsersPartner\" Multiplicity=\"0..1\" " +
-                "/></Association><Association Name=\"Net_Appclusive_Public_Domain_Security_ItemAce" +
-                "_User_Net_Appclusive_Public_Domain_Identity_User_UserPartner\"><End Type=\"Net.App" +
-                "clusive.Public.Domain.Identity.User\" Role=\"User\" Multiplicity=\"0..1\" /><End Type" +
-                "=\"Net.Appclusive.Public.Domain.Security.ItemAce\" Role=\"UserPartner\" Multiplicity" +
-                "=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Identity" +
-                "_Tenant_Parent_Net_Appclusive_Public_Domain_Identity_Tenant_ParentPartner\"><End " +
-                "Type=\"Net.Appclusive.Public.Domain.Identity.Tenant\" Role=\"Parent\" Multiplicity=\"" +
-                "0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Identity.Tenant\" Role=\"ParentPar" +
-                "tner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Publ" +
-                "ic_Domain_Identity_Tenant_Children_Net_Appclusive_Public_Domain_Identity_Tenant_" +
-                "ChildrenPartner\"><End Type=\"Net.Appclusive.Public.Domain.Identity.Tenant\" Role=\"" +
-                "Children\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Identity.Te" +
-                "nant\" Role=\"ChildrenPartner\" Multiplicity=\"0..1\" /></Association></Schema><Schem" +
-                "a Namespace=\"System.Security.Principal\" xmlns=\"http://schemas.microsoft.com/ado/" +
-                "2009/11/edm\"><ComplexType Name=\"IIdentity\" /></Schema><Schema Namespace=\"Net.App" +
-                "clusive.Core.Domain.Security\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/ed" +
-                "m\"><ComplexType Name=\"TokenResponse\"><Property Name=\"Token\" Type=\"Edm.String\" />" +
-                "</ComplexType></Schema><Schema Namespace=\"Net.Appclusive.Public.Domain.Order\" xm" +
-                "lns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityType Name=\"Order\"><Key" +
-                "><PropertyRef Name=\"Id\" /></Key><Property Name=\"JobId\" Type=\"Edm.Int64\" Nullable" +
-                "=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Nam" +
-                "e=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=" +
-                "\"Edm.String\" /><NavigationProperty Name=\"OrderItems\" Relationship=\"Net.Appclusiv" +
-                "e.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Ap" +
-                "pclusive_Public_Domain_Order_OrderItem_OrderItemsPartner\" ToRole=\"OrderItems\" Fr" +
-                "omRole=\"OrderItemsPartner\" /><NavigationProperty Name=\"Job\" Relationship=\"Net.Ap" +
-                "pclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_Order_Job_Net_" +
-                "Appclusive_Public_Domain_Control_Job_JobPartner\" ToRole=\"Job\" FromRole=\"JobPartn" +
-                "er\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Dom" +
-                "ain.Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclusive_Public_Domai" +
-                "n_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\"" +
-                " /></EntityType><EntityType Name=\"Cart\"><Key><PropertyRef Name=\"Id\" /></Key><Pro" +
-                "perty Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"" +
-                "Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" />" +
-                "<NavigationProperty Name=\"CartItems\" Relationship=\"Net.Appclusive.Public.Domain." +
-                "Order.Net_Appclusive_Public_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Do" +
-                "main_Order_CartItem_CartItemsPartner\" ToRole=\"CartItems\" FromRole=\"CartItemsPart" +
-                "ner\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Do" +
-                "main.Net_Appclusive_Public_Domain_Order_Cart_Details_Net_Appclusive_Public_Domai" +
-                "n_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\"" +
-                " /></EntityType><EntityType Name=\"OrderItem\"><Key><PropertyRef Name=\"Id\" /></Key" +
-                "><Property Name=\"OrderId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Jo" +
-                "bId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"BlueprintId\" Type=\"Edm." +
-                "Int64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" " +
-                "/><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Des" +
-                "cription\" Type=\"Edm.String\" /><NavigationProperty Name=\"Order\" Relationship=\"Net" +
-                ".Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_OrderItem_Ord" +
-                "er_Net_Appclusive_Public_Domain_Order_Order_OrderPartner\" ToRole=\"Order\" FromRol" +
-                "e=\"OrderPartner\" /><NavigationProperty Name=\"Job\" Relationship=\"Net.Appclusive.P" +
-                "ublic.Domain.Control.Net_Appclusive_Public_Domain_Order_OrderItem_Job_Net_Appclu" +
-                "sive_Public_Domain_Control_Job_JobPartner\" ToRole=\"Job\" FromRole=\"JobPartner\" />" +
-                "<NavigationProperty Name=\"Configuration\" Relationship=\"Net.Appclusive.Public.Typ" +
-                "es.Net_Appclusive_Public_Domain_Order_OrderItem_Configuration_Net_Appclusive_Pub" +
-                "lic_Types_IdValuePair_ConfigurationPartner\" ToRole=\"Configuration\" FromRole=\"Con" +
-                "figurationPartner\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclu" +
-                "sive.Public.Domain.Net_Appclusive_Public_Domain_Order_OrderItem_Details_Net_Appc" +
-                "lusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRo" +
-                "le=\"DetailsPartner\" /></EntityType><EntityType Name=\"CartItem\"><Key><PropertyRef" +
+            private const string ModelPart1 = "\"Attribute\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Value\" Type=\"Edm." +
+                "String\" /><Property Name=\"ItemId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property " +
+                "Name=\"ModelAttributeId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" " +
+                "Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Null" +
+                "able=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"" +
+                "Details\" Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /></EntityType>" +
+                "<EntityType Name=\"Behaviour\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=" +
+                "\"BehaviourDefinitionId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" " +
+                "Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Null" +
+                "able=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"" +
+                "Details\" Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /><NavigationPr" +
+                "operty Name=\"Children\" Relationship=\"Net.Appclusive.Public.Domain.Inventory.Net_" +
+                "Appclusive_Public_Domain_Inventory_Behaviour_Children_Net_Appclusive_Public_Doma" +
+                "in_Inventory_Behaviour_ChildrenPartner\" ToRole=\"Children\" FromRole=\"ChildrenPart" +
+                "ner\" /><NavigationProperty Name=\"Parents\" Relationship=\"Net.Appclusive.Public.Do" +
+                "main.Inventory.Net_Appclusive_Public_Domain_Inventory_Behaviour_Parents_Net_Appc" +
+                "lusive_Public_Domain_Inventory_Behaviour_ParentsPartner\" ToRole=\"Parents\" FromRo" +
+                "le=\"ParentsPartner\" /></EntityType><EntityType Name=\"Model\"><Key><PropertyRef Na" +
+                "me=\"Id\" /></Key><Property Name=\"ParentId\" Type=\"Edm.Int64\" Nullable=\"false\" /><P" +
+                "roperty Name=\"Behaviours\" Type=\"Collection(Net.Appclusive.Public.Types.IdNameDes" +
+                "criptionTuple)\" Nullable=\"false\" /><Property Name=\"ModelAttributes\" Type=\"Collec" +
+                "tion(Net.Appclusive.Public.Types.IdNameDescriptionTuple)\" Nullable=\"false\" /><Pr" +
+                "operty Name=\"IsActionModel\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property Name" +
+                "=\"BehaviourDefinitionForId\" Type=\"Edm.Int64\" /><Property Name=\"Id\" Type=\"Edm.Int" +
+                "64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" " +
+                "/><Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"Details\" Type" +
+                "=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /></EntityType><EntityType N" +
+                "ame=\"Connection\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"SourceId\" T" +
+                "ype=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"DestinationId\" Type=\"Edm.Int6" +
+                "4\" Nullable=\"false\" /><Property Name=\"BehaviourId\" Type=\"Edm.Int64\" Nullable=\"fa" +
+                "lse\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"N" +
+                "ame\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm" +
+                ".String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.PublicEnt" +
+                "ityDetails\" /><NavigationProperty Name=\"Source\" Relationship=\"Net.Appclusive.Pub" +
+                "lic.Domain.Inventory.Net_Appclusive_Public_Domain_Inventory_Connection_Source_Ne" +
+                "t_Appclusive_Public_Domain_Inventory_Item_SourcePartner\" ToRole=\"Source\" FromRol" +
+                "e=\"SourcePartner\" /><NavigationProperty Name=\"Destination\" Relationship=\"Net.App" +
+                "clusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inventory_Connectio" +
+                "n_Destination_Net_Appclusive_Public_Domain_Inventory_Item_DestinationPartner\" To" +
+                "Role=\"Destination\" FromRole=\"DestinationPartner\" /><NavigationProperty Name=\"Beh" +
+                "aviour\" Relationship=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Publ" +
+                "ic_Domain_Inventory_Connection_Behaviour_Net_Appclusive_Public_Domain_Inventory_" +
+                "Behaviour_BehaviourPartner\" ToRole=\"Behaviour\" FromRole=\"BehaviourPartner\" /></E" +
+                "ntityType><EntityType Name=\"Item\"><Key><PropertyRef Name=\"Id\" /></Key><Property " +
+                "Name=\"ParentId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"ModelId\" Typ" +
+                "e=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Attributes\" Type=\"Collection(Ne" +
+                "t.Appclusive.Public.Types.NameValuePair)\" Nullable=\"false\" /><Property Name=\"Id\"" +
+                " Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nul" +
+                "lable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=" +
+                "\"Details\" Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /><NavigationP" +
+                "roperty Name=\"Children\" Relationship=\"Net.Appclusive.Public.Domain.Inventory.Net" +
+                "_Appclusive_Public_Domain_Inventory_Item_Children_Net_Appclusive_Public_Domain_I" +
+                "nventory_Item_ChildrenPartner\" ToRole=\"Children\" FromRole=\"ChildrenPartner\" /></" +
+                "EntityType><EntityType Name=\"ItemJob\" BaseType=\"Net.Appclusive.Public.Domain.Con" +
+                "trol.Job\" /><Association Name=\"Net_Appclusive_Public_Domain_Inventory_Behaviour_" +
+                "Children_Net_Appclusive_Public_Domain_Inventory_Behaviour_ChildrenPartner\"><End " +
+                "Type=\"Net.Appclusive.Public.Domain.Inventory.Behaviour\" Role=\"Children\" Multipli" +
+                "city=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Inventory.Behaviour\" Role=\"Ch" +
+                "ildrenPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclu" +
+                "sive_Public_Domain_Inventory_Behaviour_Parents_Net_Appclusive_Public_Domain_Inve" +
+                "ntory_Behaviour_ParentsPartner\"><End Type=\"Net.Appclusive.Public.Domain.Inventor" +
+                "y.Behaviour\" Role=\"Parents\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public." +
+                "Domain.Inventory.Behaviour\" Role=\"ParentsPartner\" Multiplicity=\"0..1\" /></Associ" +
+                "ation><Association Name=\"Net_Appclusive_Public_Domain_Inventory_Connection_Sourc" +
+                "e_Net_Appclusive_Public_Domain_Inventory_Item_SourcePartner\"><End Type=\"Net.Appc" +
+                "lusive.Public.Domain.Inventory.Item\" Role=\"Source\" Multiplicity=\"0..1\" /><End Ty" +
+                "pe=\"Net.Appclusive.Public.Domain.Inventory.Connection\" Role=\"SourcePartner\" Mult" +
+                "iplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_" +
+                "Inventory_Connection_Destination_Net_Appclusive_Public_Domain_Inventory_Item_Des" +
+                "tinationPartner\"><End Type=\"Net.Appclusive.Public.Domain.Inventory.Item\" Role=\"D" +
+                "estination\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Invent" +
+                "ory.Connection\" Role=\"DestinationPartner\" Multiplicity=\"0..1\" /></Association><A" +
+                "ssociation Name=\"Net_Appclusive_Public_Domain_Inventory_Connection_Behaviour_Net" +
+                "_Appclusive_Public_Domain_Inventory_Behaviour_BehaviourPartner\"><End Type=\"Net.A" +
+                "ppclusive.Public.Domain.Inventory.Behaviour\" Role=\"Behaviour\" Multiplicity=\"0..1" +
+                "\" /><End Type=\"Net.Appclusive.Public.Domain.Inventory.Connection\" Role=\"Behaviou" +
+                "rPartner\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Behaviou" +
+                "r\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"BehaviourPartner\"><Prop" +
+                "ertyRef Name=\"BehaviourId\" /></Dependent></ReferentialConstraint></Association><" +
+                "Association Name=\"Net_Appclusive_Public_Domain_Inventory_Item_Children_Net_Appcl" +
+                "usive_Public_Domain_Inventory_Item_ChildrenPartner\"><End Type=\"Net.Appclusive.Pu" +
+                "blic.Domain.Inventory.Item\" Role=\"Children\" Multiplicity=\"*\" /><End Type=\"Net.Ap" +
+                "pclusive.Public.Domain.Inventory.Item\" Role=\"ChildrenPartner\" Multiplicity=\"0..1" +
+                "\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Order_Blueprin" +
+                "t_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartner\"><End Type=\"Ne" +
+                "t.Appclusive.Public.Domain.Inventory.Model\" Role=\"Model\" Multiplicity=\"0..1\" /><" +
+                "End Type=\"Net.Appclusive.Public.Domain.Order.Blueprint\" Role=\"ModelPartner\" Mult" +
+                "iplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Model\"><PropertyRef Na" +
+                "me=\"Id\" /></Principal><Dependent Role=\"ModelPartner\"><PropertyRef Name=\"ModelId\"" +
+                " /></Dependent></ReferentialConstraint></Association></Schema><Schema Namespace=" +
+                "\"System.Collections.Generic\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm" +
+                "\"><ComplexType Name=\"List_1OfString\"><Property Name=\"Capacity\" Type=\"Edm.Int32\" " +
+                "Nullable=\"false\" /></ComplexType></Schema><Schema Namespace=\"Net.Appclusive.Publ" +
+                "ic.Domain.Security\" xmlns=\"http://schemas.microsoft.com/ado";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart2 = "/2009/11/edm\"><EntityType Name=\"Authentication\"><Key><PropertyRef Name=\"Id\" /></K" +
+                "ey><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\"" +
+                " Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.Str" +
+                "ing\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.PublicEntityD" +
+                "etails\" /></EntityType><EntityType Name=\"ItemAcl\"><Key><PropertyRef Name=\"Id\" />" +
+                "</Key><Property Name=\"ParentId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Na" +
+                "me=\"NoInheritance\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"Id\" Typ" +
+                "e=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullabl" +
+                "e=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"Det" +
+                "ails\" Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /><NavigationPrope" +
+                "rty Name=\"Parent\" Relationship=\"Net.Appclusive.Public.Domain.Security.Net_Appclu" +
+                "sive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Public_Domain_Security" +
+                "_ItemAcl_ParentPartner\" ToRole=\"Parent\" FromRole=\"ParentPartner\" /><NavigationPr" +
+                "operty Name=\"Children\" Relationship=\"Net.Appclusive.Public.Domain.Security.Net_A" +
+                "ppclusive_Public_Domain_Security_ItemAcl_Children_Net_Appclusive_Public_Domain_S" +
+                "ecurity_ItemAcl_ChildrenPartner\" ToRole=\"Children\" FromRole=\"ChildrenPartner\" />" +
+                "<NavigationProperty Name=\"Aces\" Relationship=\"Net.Appclusive.Public.Domain.Secur" +
+                "ity.Net_Appclusive_Public_Domain_Security_ItemAcl_Aces_Net_Appclusive_Public_Dom" +
+                "ain_Security_ItemAce_AcesPartner\" ToRole=\"Aces\" FromRole=\"AcesPartner\" /></Entit" +
+                "yType><EntityType Name=\"Ace\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=" +
+                "\"AclId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"PermissionId\" Type=\"" +
+                "Edm.Int64\" Nullable=\"false\" /><Property Name=\"UserId\" Type=\"Edm.Int64\" /><Proper" +
+                "ty Name=\"RoleId\" Type=\"Edm.Int64\" /><Property Name=\"Type\" Type=\"Edm.String\" Null" +
+                "able=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property" +
+                " Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" T" +
+                "ype=\"Edm.String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.P" +
+                "ublicEntityDetails\" /><NavigationProperty Name=\"Permission\" Relationship=\"Net.Ap" +
+                "pclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Ace_Permis" +
+                "sion_Net_Appclusive_Public_Domain_Security_Permission_PermissionPartner\" ToRole=" +
+                "\"Permission\" FromRole=\"PermissionPartner\" /><NavigationProperty Name=\"User\" Rela" +
+                "tionship=\"Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Sec" +
+                "urity_Ace_User_Net_Appclusive_Public_Domain_Identity_User_UserPartner\" ToRole=\"U" +
+                "ser\" FromRole=\"UserPartner\" /><NavigationProperty Name=\"Role\" Relationship=\"Net." +
+                "Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Ace_Role" +
+                "_Net_Appclusive_Public_Domain_Security_Role_RolePartner\" ToRole=\"Role\" FromRole=" +
+                "\"RolePartner\" /></EntityType><EntityType Name=\"Right\"><Key><PropertyRef Name=\"Id" +
+                "\" /></Key><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name" +
+                "=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"" +
+                "Edm.String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.Public" +
+                "EntityDetails\" /></EntityType><EntityType Name=\"Role\"><Key><PropertyRef Name=\"Id" +
+                "\" /></Key><Property Name=\"Type\" Type=\"Edm.String\" Nullable=\"false\" /><Property N" +
+                "ame=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.Str" +
+                "ing\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Proper" +
+                "ty Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /><Nav" +
+                "igationProperty Name=\"Users\" Relationship=\"Net.Appclusive.Public.Domain.Identity" +
+                ".Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public_Domain_I" +
+                "dentity_User_UsersPartner\" ToRole=\"Users\" FromRole=\"UsersPartner\" /><NavigationP" +
+                "roperty Name=\"Rights\" Relationship=\"Net.Appclusive.Public.Domain.Security.Net_Ap" +
+                "pclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_Securit" +
+                "y_Right_RightsPartner\" ToRole=\"Rights\" FromRole=\"RightsPartner\" /></EntityType><" +
+                "EntityType Name=\"Acl\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Parent" +
+                "Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"NoInheritance\" Type=\"Edm" +
+                ".Boolean\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"fals" +
+                "e\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"" +
+                "Description\" Type=\"Edm.String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.P" +
+                "ublic.Domain.PublicEntityDetails\" /><NavigationProperty Name=\"Parent\" Relationsh" +
+                "ip=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_" +
+                "Acl_Parent_Net_Appclusive_Public_Domain_Security_Acl_ParentPartner\" ToRole=\"Pare" +
+                "nt\" FromRole=\"ParentPartner\" /><NavigationProperty Name=\"Children\" Relationship=" +
+                "\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Acl" +
+                "_Children_Net_Appclusive_Public_Domain_Security_Acl_ChildrenPartner\" ToRole=\"Chi" +
+                "ldren\" FromRole=\"ChildrenPartner\" /><NavigationProperty Name=\"Aces\" Relationship" +
+                "=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Ac" +
+                "l_Aces_Net_Appclusive_Public_Domain_Security_Ace_AcesPartner\" ToRole=\"Aces\" From" +
+                "Role=\"AcesPartner\" /></EntityType><EntityType Name=\"ItemAce\"><Key><PropertyRef N" +
+                "ame=\"Id\" /></Key><Property Name=\"ItemId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Pr" +
+                "operty Name=\"PermissionId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"R" +
+                "oleId\" Type=\"Edm.Int64\" /><Property Name=\"UserId\" Type=\"Edm.Int64\" /><Property N" +
+                "ame=\"Type\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.In" +
+                "t64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\"" +
+                " /><Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"Details\" Typ" +
+                "e=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /><NavigationProperty Name=" +
+                "\"Permission\" Relationship=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_" +
+                "Public_Domain_Security_ItemAce_Permission_Net_Appclusive_Public_Domain_Security_" +
+                "Permission_PermissionPartner\" ToRole=\"Permission\" FromRole=\"PermissionPartner\" /" +
+                "><NavigationProperty Name=\"Role\" Relationship=\"Net.Appclusive.Public.Domain.Secu" +
+                "rity.Net_Appclusive_Public_Domain_Security_ItemAce_Role_Net_Appclusive_Public_Do" +
+                "main_Security_Role_RolePartner\" ToRole=\"Role\" FromRole=\"RolePartner\" /><Navigati" +
+                "onProperty Name=\"User\" Relationship=\"Net.Appclusive.Public.Domain.Identity.Net_A" +
+                "ppclusive_Public_Domain_Security_ItemAce_User_Net_Appclusive_Public_Domain_Ident" +
+                "ity_User_UserPartner\" ToRole=\"User\" FromRole=\"UserPartner\" /></EntityType><Entit" +
+                "yType Name=\"Permission\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Type" +
+                "\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Null" +
+                "able=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Prope" +
+                "rty Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"Details\" Type=\"Net.Ap" +
+                "pclusive.Public.Domain.PublicEntityDetails\" /></EntityType><Association Name=\"Ne" +
+                "t_Appclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Secu" +
+                "rity_Role_RolesPartner\"><End Type=\"Net.Appclusive.Public.Domain.Security.Role\" R" +
+                "ole=\"Roles\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Identity." +
+                "User\" Role=\"RolesPartner\" Multiplicity=\"0..1\" /></Association><Association Name=" +
+                "\"Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Public_Doma" +
+                "in_Security_ItemAcl_ParentPartner\"><End Type=\"Net.Appclusive.Public.Domain.Secur" +
+                "ity.ItemAcl\" Role=\"Parent\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Publi" +
+                "c.Domain.Security.ItemAcl\" Role=\"ParentPartner\" Multiplicit";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart3 = "y=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Security" +
+                "_ItemAcl_Children_Net_Appclusive_Public_Domain_Security_ItemAcl_ChildrenPartner\"" +
+                "><End Type=\"Net.Appclusive.Public.Domain.Security.ItemAcl\" Role=\"Children\" Multi" +
+                "plicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Security.ItemAcl\" Role=\"Ch" +
+                "ildrenPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclu" +
+                "sive_Public_Domain_Security_ItemAcl_Aces_Net_Appclusive_Public_Domain_Security_I" +
+                "temAce_AcesPartner\"><End Type=\"Net.Appclusive.Public.Domain.Security.ItemAce\" Ro" +
+                "le=\"Aces\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Security.It" +
+                "emAcl\" Role=\"AcesPartner\" Multiplicity=\"0..1\" /></Association><Association Name=" +
+                "\"Net_Appclusive_Public_Domain_Security_Ace_Permission_Net_Appclusive_Public_Doma" +
+                "in_Security_Permission_PermissionPartner\"><End Type=\"Net.Appclusive.Public.Domai" +
+                "n.Security.Permission\" Role=\"Permission\" Multiplicity=\"0..1\" /><End Type=\"Net.Ap" +
+                "pclusive.Public.Domain.Security.Ace\" Role=\"PermissionPartner\" Multiplicity=\"0..1" +
+                "\" /><ReferentialConstraint><Principal Role=\"Permission\"><PropertyRef Name=\"Id\" /" +
+                "></Principal><Dependent Role=\"PermissionPartner\"><PropertyRef Name=\"PermissionId" +
+                "\" /></Dependent></ReferentialConstraint></Association><Association Name=\"Net_App" +
+                "clusive_Public_Domain_Security_Ace_Role_Net_Appclusive_Public_Domain_Security_Ro" +
+                "le_RolePartner\"><End Type=\"Net.Appclusive.Public.Domain.Security.Role\" Role=\"Rol" +
+                "e\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Security.Ace\" R" +
+                "ole=\"RolePartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_App" +
+                "clusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_Security" +
+                "_Right_RightsPartner\"><End Type=\"Net.Appclusive.Public.Domain.Security.Right\" Ro" +
+                "le=\"Rights\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Security." +
+                "Role\" Role=\"RightsPartner\" Multiplicity=\"0..1\" /></Association><Association Name" +
+                "=\"Net_Appclusive_Public_Domain_Security_Acl_Parent_Net_Appclusive_Public_Domain_" +
+                "Security_Acl_ParentPartner\"><End Type=\"Net.Appclusive.Public.Domain.Security.Acl" +
+                "\" Role=\"Parent\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Se" +
+                "curity.Acl\" Role=\"ParentPartner\" Multiplicity=\"0..1\" /></Association><Associatio" +
+                "n Name=\"Net_Appclusive_Public_Domain_Security_Acl_Children_Net_Appclusive_Public" +
+                "_Domain_Security_Acl_ChildrenPartner\"><End Type=\"Net.Appclusive.Public.Domain.Se" +
+                "curity.Acl\" Role=\"Children\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public." +
+                "Domain.Security.Acl\" Role=\"ChildrenPartner\" Multiplicity=\"0..1\" /></Association>" +
+                "<Association Name=\"Net_Appclusive_Public_Domain_Security_Acl_Aces_Net_Appclusive" +
+                "_Public_Domain_Security_Ace_AcesPartner\"><End Type=\"Net.Appclusive.Public.Domain" +
+                ".Security.Ace\" Role=\"Aces\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.D" +
+                "omain.Security.Acl\" Role=\"AcesPartner\" Multiplicity=\"0..1\" /></Association><Asso" +
+                "ciation Name=\"Net_Appclusive_Public_Domain_Security_ItemAce_Permission_Net_Appcl" +
+                "usive_Public_Domain_Security_Permission_PermissionPartner\"><End Type=\"Net.Appclu" +
+                "sive.Public.Domain.Security.Permission\" Role=\"Permission\" Multiplicity=\"0..1\" />" +
+                "<End Type=\"Net.Appclusive.Public.Domain.Security.ItemAce\" Role=\"PermissionPartne" +
+                "r\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Permission\"><Pr" +
+                "opertyRef Name=\"Id\" /></Principal><Dependent Role=\"PermissionPartner\"><PropertyR" +
+                "ef Name=\"PermissionId\" /></Dependent></ReferentialConstraint></Association><Asso" +
+                "ciation Name=\"Net_Appclusive_Public_Domain_Security_ItemAce_Role_Net_Appclusive_" +
+                "Public_Domain_Security_Role_RolePartner\"><End Type=\"Net.Appclusive.Public.Domain" +
+                ".Security.Role\" Role=\"Role\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Publ" +
+                "ic.Domain.Security.ItemAce\" Role=\"RolePartner\" Multiplicity=\"0..1\" /></Associati" +
+                "on></Schema><Schema Namespace=\"Net.Appclusive.Public.Domain.Identity\" xmlns=\"htt" +
+                "p://schemas.microsoft.com/ado/2009/11/edm\"><EntityType Name=\"User\"><Key><Propert" +
+                "yRef Name=\"Id\" /></Key><Property Name=\"MappedId\" Type=\"Edm.String\" Nullable=\"fal" +
+                "se\" /><Property Name=\"MappedType\" Type=\"Edm.String\" Nullable=\"false\" /><Property" +
+                " Name=\"Mail\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"IsHidden\" Type" +
+                "=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=" +
+                "\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property N" +
+                "ame=\"Description\" Type=\"Edm.String\" /><Property Name=\"Details\" Type=\"Net.Appclus" +
+                "ive.Public.Domain.PublicEntityDetails\" /><NavigationProperty Name=\"Roles\" Relati" +
+                "onship=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Ident" +
+                "ity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartner\" ToRole=\"" +
+                "Roles\" FromRole=\"RolesPartner\" /></EntityType><EntityType Name=\"Tenant\"><Key><Pr" +
+                "opertyRef Name=\"Id\" /></Key><Property Name=\"Id\" Type=\"Edm.Guid\" Nullable=\"false\"" +
+                " /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"De" +
+                "scription\" Type=\"Edm.String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Pub" +
+                "lic.Domain.TenantDetails\" /><Property Name=\"MappedId\" Type=\"Edm.String\" Nullable" +
+                "=\"false\" /><Property Name=\"MappedType\" Type=\"Edm.String\" Nullable=\"false\" /><Pro" +
+                "perty Name=\"ParentId\" Type=\"Edm.Guid\" Nullable=\"false\" /><Property Name=\"Namespa" +
+                "ce\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"CustomerId\" Type=\"Edm.I" +
+                "nt64\" Nullable=\"false\" /><NavigationProperty Name=\"Parent\" Relationship=\"Net.App" +
+                "clusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_Pare" +
+                "nt_Net_Appclusive_Public_Domain_Identity_Tenant_ParentPartner\" ToRole=\"Parent\" F" +
+                "romRole=\"ParentPartner\" /><NavigationProperty Name=\"Children\" Relationship=\"Net." +
+                "Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_C" +
+                "hildren_Net_Appclusive_Public_Domain_Identity_Tenant_ChildrenPartner\" ToRole=\"Ch" +
+                "ildren\" FromRole=\"ChildrenPartner\" /></EntityType><Association Name=\"Net_Appclus" +
+                "ive_Public_Domain_Security_Ace_User_Net_Appclusive_Public_Domain_Identity_User_U" +
+                "serPartner\"><End Type=\"Net.Appclusive.Public.Domain.Identity.User\" Role=\"User\" M" +
+                "ultiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Security.Ace\" Role=" +
+                "\"UserPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclus" +
+                "ive_Public_Domain_Security_Role_Users_Net_Appclusive_Public_Domain_Identity_User" +
+                "_UsersPartner\"><End Type=\"Net.Appclusive.Public.Domain.Identity.User\" Role=\"User" +
+                "s\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Security.Role\" Rol" +
+                "e=\"UsersPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appc" +
+                "lusive_Public_Domain_Security_ItemAce_User_Net_Appclusive_Public_Domain_Identity" +
+                "_User_UserPartner\"><End Type=\"Net.Appclusive.Public.Domain.Identity.User\" Role=\"" +
+                "User\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Security.Ite" +
+                "mAce\" Role=\"UserPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"" +
+                "Net_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Domain" +
+                "_Identity_Tenant_ParentPartner\"><End Type=\"Net.Appclusive.Public.Domain.Identity" +
+                ".Tenant\" Role=\"Parent\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Do" +
+                "main.Identity.Tenant\" Role=\"ParentPartner\" Multiplicity=\"0..1\" /></Association><" +
+                "Association Name=\"Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appc" +
+                "lusive_Public_Domain_Identity_Tenant_ChildrenPartner\"><End Type=\"Net.Appclusive." +
+                "Public.Domain.Identity.Tenant\" Role=\"Children\" Multiplicity=\"*\" /><End Type=\"Net" +
+                ".Appclusive.Public.Domain.Identity.Tenant\" Role=\"ChildrenPartner\" Multiplicity=\"" +
+                "0..1\" /></Association></Schema><Schema Namespace=\"System.Se";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart4 = "curity.Principal\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><ComplexTy" +
+                "pe Name=\"IIdentity\" /></Schema><Schema Namespace=\"Net.Appclusive.Core.Domain.Sec" +
+                "urity\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><ComplexType Name=\"T" +
+                "okenResponse\"><Property Name=\"Token\" Type=\"Edm.String\" /></ComplexType></Schema>" +
+                "<Schema Namespace=\"Net.Appclusive.Public.Domain.Order\" xmlns=\"http://schemas.mic" +
+                "rosoft.com/ado/2009/11/edm\"><EntityType Name=\"Order\"><Key><PropertyRef Name=\"Id\"" +
+                " /></Key><Property Name=\"JobId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Na" +
+                "me=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.Stri" +
+                "ng\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Propert" +
+                "y Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /><Navi" +
+                "gationProperty Name=\"OrderItems\" Relationship=\"Net.Appclusive.Public.Domain.Orde" +
+                "r.Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Appclusive_Public_Doma" +
+                "in_Order_OrderItem_OrderItemsPartner\" ToRole=\"OrderItems\" FromRole=\"OrderItemsPa" +
+                "rtner\" /><NavigationProperty Name=\"Job\" Relationship=\"Net.Appclusive.Public.Doma" +
+                "in.Control.Net_Appclusive_Public_Domain_Order_Order_Job_Net_Appclusive_Public_Do" +
+                "main_Control_Job_JobPartner\" ToRole=\"Job\" FromRole=\"JobPartner\" /></EntityType><" +
+                "EntityType Name=\"Cart\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Id\" T" +
+                "ype=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nulla" +
+                "ble=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"D" +
+                "etails\" Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /><NavigationPro" +
+                "perty Name=\"CartItems\" Relationship=\"Net.Appclusive.Public.Domain.Order.Net_Appc" +
+                "lusive_Public_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Domain_Order_Car" +
+                "tItem_CartItemsPartner\" ToRole=\"CartItems\" FromRole=\"CartItemsPartner\" /></Entit" +
+                "yType><EntityType Name=\"OrderItem\"><Key><PropertyRef Name=\"Id\" /></Key><Property" +
+                " Name=\"OrderId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"JobId\" Type=" +
+                "\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"BlueprintId\" Type=\"Edm.Int64\" Nul" +
+                "lable=\"false\" /><Property Name=\"Configuration\" Type=\"Collection(Net.Appclusive.P" +
+                "ublic.Types.IdValuePair)\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64" +
+                "\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" />" +
+                "<Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"Details\" Type=\"" +
+                "Net.Appclusive.Public.Domain.PublicEntityDetails\" /><NavigationProperty Name=\"Or" +
+                "der\" Relationship=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Doma" +
+                "in_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPartner\" " +
+                "ToRole=\"Order\" FromRole=\"OrderPartner\" /><NavigationProperty Name=\"Job\" Relation" +
+                "ship=\"Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_Or" +
+                "derItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner\" ToRole=\"Job\" Fr" +
+                "omRole=\"JobPartner\" /></EntityType><EntityType Name=\"CartItem\"><Key><PropertyRef" +
                 " Name=\"Id\" /></Key><Property Name=\"CartId\" Type=\"Edm.Int64\" Nullable=\"false\" /><" +
                 "Property Name=\"CatalogueItemId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Na" +
-                "me=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.Stri" +
-                "ng\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Navigat" +
-                "ionProperty Name=\"Cart\" Relationship=\"Net.Appclusive.Public.Domain.Order.Net_App" +
-                "clusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Domain_Order_Car" +
-                "t_CartPartner\" ToRole=\"Cart\" FromRole=\"CartPartner\" /><NavigationProperty Name=\"" +
-                "Configuration\" Relationship=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_D" +
-                "omain_Order_CartItem_Configuration_Net_Appclusive_Public_Types_IdValuePair_Confi" +
-                "gurationPartner\" ToRole=\"Configuration\" FromRole=\"ConfigurationPartner\" /><Navig" +
-                "ationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appc" +
-                "lusive_Public_Domain_Order_CartItem_Details_Net_Appclusive_Public_Domain_PublicE" +
-                "ntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></Enti" +
-                "tyType><EntityType Name=\"Catalogue\"><Key><PropertyRef Name=\"Id\" /></Key><Propert" +
-                "y Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm." +
-                "String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Nav" +
-                "igationProperty Name=\"CatalogueItems\" Relationship=\"Net.Appclusive.Public.Domain" +
-                ".Order.Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusiv" +
-                "e_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner\" ToRole=\"CatalogueItem" +
-                "s\" FromRole=\"CatalogueItemsPartner\" /><NavigationProperty Name=\"Details\" Relatio" +
-                "nship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_Catalogue" +
-                "_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole" +
-                "=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"CatalogueI" +
-                "tem\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"CatalogueId\" Type=\"Edm." +
-                "Int64\" Nullable=\"false\" /><Property Name=\"BlueprintId\" Type=\"Edm.Int64\" Nullable" +
-                "=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Nam" +
-                "e=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=" +
-                "\"Edm.String\" /><NavigationProperty Name=\"Catalogue\" Relationship=\"Net.Appclusive" +
-                ".Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_" +
-                "Net_Appclusive_Public_Domain_Order_Catalogue_CataloguePartner\" ToRole=\"Catalogue" +
-                "\" FromRole=\"CataloguePartner\" /><NavigationProperty Name=\"Blueprint\" Relationshi" +
-                "p=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public";
+                "me=\"Configuration\" Type=\"Collection(Net.Appclusive.Public.Types.IdValuePair)\" Nu" +
+                "llable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Proper" +
+                "ty Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\"" +
+                " Type=\"Edm.String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain" +
+                ".PublicEntityDetails\" /><NavigationProperty Name=\"Cart\" Relationship=\"Net.Appclu" +
+                "sive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_Ap" +
+                "pclusive_Public_Domain_Order_Cart_CartPartner\" ToRole=\"Cart\" FromRole=\"CartPartn" +
+                "er\" /></EntityType><EntityType Name=\"Catalogue\"><Key><PropertyRef Name=\"Id\" /></" +
+                "Key><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name" +
+                "\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.St" +
+                "ring\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.PublicEntity" +
+                "Details\" /><NavigationProperty Name=\"CatalogueItems\" Relationship=\"Net.Appclusiv" +
+                "e.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItem" +
+                "s_Net_Appclusive_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner\" ToRole" +
+                "=\"CatalogueItems\" FromRole=\"CatalogueItemsPartner\" /></EntityType><EntityType Na" +
+                "me=\"CatalogueItem\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Catalogue" +
+                "Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"BlueprintId\" Type=\"Edm.I" +
+                "nt64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /" +
+                "><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Desc" +
+                "ription\" Type=\"Edm.String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Publi" +
+                "c.Domain.PublicEntityDetails\" /><NavigationProperty Name=\"Catalogue\" Relationshi" +
+                "p=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Catalog" +
+                "ueItem_Catalogue_Net_Appclusive_Public_Domain_Order_Catalogue_CataloguePartner\" " +
+                "ToRole=\"Catalogue\" FromRole=\"CataloguePartner\" /><NavigationProperty Name=\"Bluep" +
+                "rint\" Relationship=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Dom" +
+                "ain_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_B" +
+                "lueprintPartner\" ToRole=\"Blueprint\" FromRole=\"BlueprintPartner\" /></EntityType><" +
+                "EntityType Name=\"Blueprint\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"" +
+                "ModelId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64" +
+                "\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" />" +
+                "<Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"Details\" Type=\"" +
+                "Net.Appclusive.Public.Domain.PublicEntityDetails\" /><NavigationProperty Name=\"Mo" +
+                "del\" Relationship=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_" +
+                "Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelP" +
+                "artner\" ToRole=\"Model\" FromRole=\"ModelPartner\" /></EntityType><Association Name=" +
+                "\"Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Appclusive_Public_Domai" +
+                "n_Order_OrderItem_OrderItemsPartner\"><End Type=\"Net.Appclusive.Public.Domain.Ord" +
+                "er.OrderItem\" Role=\"OrderItems\" Multiplicity=\"*\" /><End Type=\"Net.Appclusive.Pub" +
+                "lic.Domain.Order.Order\" Role=\"OrderItemsPartner\" Multiplicity=\"0..1\" /></Associa" +
+                "tion><Association Name=\"Net_Appclusive_Public_Domain_Order_Cart_CartItems_Net_Ap" +
+                "pclusive_Public_Domain_Order_CartItem_CartItemsPartner\"><End Type=\"Net.Appclusiv" +
+                "e.Public.Domain.Order.CartItem\" Role=\"CartItems\" Multiplicity=\"*\" /><End Type=\"N" +
+                "et.Appclusive.Public.Domain.Order.Cart\" Role=\"CartItemsPartner\" Multiplicity=\"0." +
+                ".1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Order_OrderI" +
+                "tem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPartner\"><End Type=\"Net." +
+                "Appclusive.Public.Domain.Order.Order\" Role=\"Order\" Multiplicity=\"0..1\" /><End Ty" +
+                "pe=\"Net.Appclusive.Public.Domain.Order.OrderItem\" Role=\"OrderPartner\" Multiplici" +
+                "ty=\"0..1\" /><ReferentialConstraint><Principal Role=\"Order\"><PropertyRef Name=\"Id" +
+                "\" /></Principal><Dependent Role=\"OrderPartner\"><PropertyRef Name=\"OrderId\" /></D" +
+                "ependent></ReferentialConstraint></Association><Association Name=\"Net_Appclusive" +
+                "_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Domain_Order_Cart_CartP" +
+                "artner\"><End Type=\"Net.Appclusive.Public.Domain.Order.Cart\" Role=\"Cart\" Multipli" +
+                "city=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Order.CartItem\" Role=\"Cart" +
+                "Partner\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Cart\"><Pr" +
+                "opertyRef Name=\"Id\" /></Principal><Dependent Role=\"CartPart";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart7 = "_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprin" +
-                "t_BlueprintPartner\" ToRole=\"Blueprint\" FromRole=\"BlueprintPartner\" /><Navigation" +
-                "Property Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusiv" +
-                "e_Public_Domain_Order_CatalogueItem_Details_Net_Appclusive_Public_Domain_PublicE" +
-                "ntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></Enti" +
-                "tyType><EntityType Name=\"Blueprint\"><Key><PropertyRef Name=\"Id\" /></Key><Propert" +
-                "y Name=\"ModelId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"E" +
-                "dm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"f" +
-                "alse\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Nam" +
-                "e=\"Model\" Relationship=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Pu" +
-                "blic_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_M" +
-                "odelPartner\" ToRole=\"Model\" FromRole=\"ModelPartner\" /><NavigationProperty Name=\"" +
-                "Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain" +
-                "_Order_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Detail" +
-                "sPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><Association" +
-                " Name=\"Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Appclusive_Public" +
-                "_Domain_Order_OrderItem_OrderItemsPartner\"><End Type=\"Net.Appclusive.Public.Doma" +
-                "in.Order.OrderItem\" Role=\"OrderItems\" Multiplicity=\"*\" /><End Type=\"Net.Appclusi" +
-                "ve.Public.Domain.Order.Order\" Role=\"OrderItemsPartner\" Multiplicity=\"0..1\" /></A" +
-                "ssociation><Association Name=\"Net_Appclusive_Public_Domain_Order_Cart_CartItems_" +
-                "Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartner\"><End Type=\"Net.App" +
-                "clusive.Public.Domain.Order.CartItem\" Role=\"CartItems\" Multiplicity=\"*\" /><End T" +
-                "ype=\"Net.Appclusive.Public.Domain.Order.Cart\" Role=\"CartItemsPartner\" Multiplici" +
-                "ty=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Public_Domain_Order_" +
-                "OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPartner\"><End Type" +
-                "=\"Net.Appclusive.Public.Domain.Order.Order\" Role=\"Order\" Multiplicity=\"0..1\" /><" +
-                "End Type=\"Net.Appclusive.Public.Domain.Order.OrderItem\" Role=\"OrderPartner\" Mult" +
-                "iplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Order\"><PropertyRef Na" +
-                "me=\"Id\" /></Principal><Dependent Role=\"OrderPartner\"><PropertyRef Name=\"OrderId\"" +
-                " /></Dependent></ReferentialConstraint></Association><Association Name=\"Net_Appc" +
-                "lusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Domain_Order_Cart" +
-                "_CartPartner\"><End Type=\"Net.Appclusive.Public.Domain.Order.Cart\" Role=\"Cart\" Mu" +
-                "ltiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Order.CartItem\" Role" +
-                "=\"CartPartner\" Multiplicity=\"0..1\" /><ReferentialConstraint><Principal Role=\"Car" +
-                "t\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"CartPartner\"><PropertyR" +
-                "ef Name=\"CartId\" /></Dependent></ReferentialConstraint></Association><Associatio" +
-                "n Name=\"Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusi" +
-                "ve_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner\"><End Type=\"Net.Appcl" +
-                "usive.Public.Domain.Order.CatalogueItem\" Role=\"CatalogueItems\" Multiplicity=\"*\" " +
-                "/><End Type=\"Net.Appclusive.Public.Domain.Order.Catalogue\" Role=\"CatalogueItemsP" +
-                "artner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Pu" +
-                "blic_Domain_Order_CatalogueItem_Catalogue_Net_Appclusive_Public_Domain_Order_Cat" +
-                "alogue_CataloguePartner\"><End Type=\"Net.Appclusive.Public.Domain.Order.Catalogue" +
-                "\" Role=\"Catalogue\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain" +
-                ".Order.CatalogueItem\" Role=\"CataloguePartner\" Multiplicity=\"0..1\" /><Referential" +
-                "Constraint><Principal Role=\"Catalogue\"><PropertyRef Name=\"Id\" /></Principal><Dep" +
-                "endent Role=\"CataloguePartner\"><PropertyRef Name=\"CatalogueId\" /></Dependent></R" +
-                "eferentialConstraint></Association><Association Name=\"Net_Appclusive_Public_Doma" +
-                "in_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_Bl" +
-                "ueprintPartner\"><End Type=\"Net.Appclusive.Public.Domain.Order.Blueprint\" Role=\"B" +
-                "lueprint\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Order.Ca" +
-                "talogueItem\" Role=\"BlueprintPartner\" Multiplicity=\"0..1\" /><ReferentialConstrain" +
-                "t><Principal Role=\"Blueprint\"><PropertyRef Name=\"Id\" /></Principal><Dependent Ro" +
-                "le=\"BlueprintPartner\"><PropertyRef Name=\"BlueprintId\" /></Dependent></Referentia" +
-                "lConstraint></Association></Schema><Schema Namespace=\"Net.Appclusive.Public.Doma" +
-                "in.Control\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityType Nam" +
-                "e=\"Job\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Status\" Type=\"Edm.St" +
-                "ring\" Nullable=\"false\" /><Property Name=\"Action\" Type=\"Edm.String\" /><Property N" +
-                "ame=\"ActionParameters\" Type=\"Edm.String\" /><Property Name=\"Id\" Type=\"Edm.Int64\" " +
-                "Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><P" +
-                "roperty Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"Details" +
-                "\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Contro" +
-                "l_Job_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" T" +
-                "oRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"Appro" +
-                "val\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Type\" Type=\"Edm.String\"" +
-                " Nullable=\"false\" /><Property Name=\"Status\" Type=\"Edm.String\" Nullable=\"false\" /" +
-                "><Property Name=\"Remark\" Type=\"Edm.String\" /><Property Name=\"RoleId\" Type=\"Edm.I" +
-                "nt64\" Nullable=\"false\" /><Property Name=\"UserId\" Type=\"Edm.Int64\" Nullable=\"fals" +
-                "e\" /><Property Name=\"InitiatorId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property " +
-                "Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.St" +
-                "ring\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Navig" +
-                "ationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appc" +
-                "lusive_Public_Domain_Control_Approval_Details_Net_Appclusive_Public_Domain_Publi" +
-                "cEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></En" +
-                "tityType><EntityType Name=\"WorkItem\"><Key><PropertyRef Name=\"Id\" /></Key><Proper" +
-                "ty Name=\"Parameters\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Id\" Ty" +
-                "pe=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullab" +
-                "le=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationPropert" +
-                "y Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Publi" +
-                "c_Domain_Control_WorkItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetai" +
-                "ls_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><As" +
-                "sociation Name=\"Net_Appclusive_Public_Domain_Order_Order_Job_Net_Appclusive_Publ" +
-                "ic_Domain_Control_Job_JobPartner\"><End Type=\"Net.Appclusive.Public.Domain.Contro" +
-                "l.Job\" Role=\"Job\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain." +
-                "Order.Order\" Role=\"JobPartner\" Multiplicity=\"0..1\" /><ReferentialConstraint><Pri" +
-                "ncipal Role=\"Job\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"JobPartn" +
-                "er\"><PropertyRef Name=\"JobId\" /></Dependent></ReferentialConstraint></Associatio" +
-                "n><Association Name=\"Net_Appclusive_Public_Domain_Order_OrderItem_Job_Net_Appclu" +
-                "sive_Public_Domain_Control_Job_JobPartner\"><End Type=\"Net.Appclusive.Public.Doma" +
-                "in.Control.Job\" Role=\"Job\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Publi" +
-                "c.Domain.Order.OrderItem\" Role=\"JobPartner\" Multiplicity=\"0..1\" /><ReferentialCo" +
-                "nstraint><Principal Role=\"Job\"><PropertyRef Name=\"Id\" /></Principal><Dependent R" +
-                "ole=\"JobPartner\"><PropertyRef Name=\"JobId\" /></Dependent></ReferentialConstraint" +
-                "></Association></Schema><Schema Namespace=\"Default\" xmlns=\"";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart8 = "http://schemas.microsoft.com/ado/2009/11/edm\"><EntityContainer Name=\"Core\" m:IsDe" +
-                "faultEntityContainer=\"true\"><EntitySet Name=\"IdNamePairs\" EntityType=\"Net.Appclu" +
-                "sive.Public.Types.IdNamePair\" /><EntitySet Name=\"IdValuePairs\" EntityType=\"Net.A" +
-                "ppclusive.Public.Types.IdValuePair\" /><EntitySet Name=\"NameValuePairs\" EntityTyp" +
-                "e=\"Net.Appclusive.Public.Types.NameValuePair\" /><EntitySet Name=\"IdNameDescripti" +
-                "onTuples\" EntityType=\"Net.Appclusive.Public.Types.IdNameDescriptionTuple\" /><Ent" +
-                "itySet Name=\"TenantDetailss\" EntityType=\"Net.Appclusive.Public.Domain.TenantDeta" +
-                "ils\" /><EntitySet Name=\"PublicEntityDetailss\" EntityType=\"Net.Appclusive.Public." +
-                "Domain.PublicEntityDetails\" /><EntitySet Name=\"Examples\" EntityType=\"Net.Appclus" +
+            private const string ModelPart5 = "ner\"><PropertyRef Name=\"CartId\" /></Dependent></ReferentialConstraint></Associati" +
+                "on><Association Name=\"Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItem" +
+                "s_Net_Appclusive_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner\"><End T" +
+                "ype=\"Net.Appclusive.Public.Domain.Order.CatalogueItem\" Role=\"CatalogueItems\" Mul" +
+                "tiplicity=\"*\" /><End Type=\"Net.Appclusive.Public.Domain.Order.Catalogue\" Role=\"C" +
+                "atalogueItemsPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net" +
+                "_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_Net_Appclusive_Public_Do" +
+                "main_Order_Catalogue_CataloguePartner\"><End Type=\"Net.Appclusive.Public.Domain.O" +
+                "rder.Catalogue\" Role=\"Catalogue\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive" +
+                ".Public.Domain.Order.CatalogueItem\" Role=\"CataloguePartner\" Multiplicity=\"0..1\" " +
+                "/><ReferentialConstraint><Principal Role=\"Catalogue\"><PropertyRef Name=\"Id\" /></" +
+                "Principal><Dependent Role=\"CataloguePartner\"><PropertyRef Name=\"CatalogueId\" /><" +
+                "/Dependent></ReferentialConstraint></Association><Association Name=\"Net_Appclusi" +
+                "ve_Public_Domain_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Orde" +
+                "r_Blueprint_BlueprintPartner\"><End Type=\"Net.Appclusive.Public.Domain.Order.Blue" +
+                "print\" Role=\"Blueprint\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.D" +
+                "omain.Order.CatalogueItem\" Role=\"BlueprintPartner\" Multiplicity=\"0..1\" /><Refere" +
+                "ntialConstraint><Principal Role=\"Blueprint\"><PropertyRef Name=\"Id\" /></Principal" +
+                "><Dependent Role=\"BlueprintPartner\"><PropertyRef Name=\"BlueprintId\" /></Dependen" +
+                "t></ReferentialConstraint></Association></Schema><Schema Namespace=\"Net.Appclusi" +
+                "ve.Public.Domain.Control\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><" +
+                "EntityType Name=\"Job\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Status" +
+                "\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Action\" Type=\"Edm.String\"" +
+                " /><Property Name=\"ActionParameters\" Type=\"Edm.String\" /><Property Name=\"Id\" Typ" +
+                "e=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullabl" +
+                "e=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Property Name=\"Det" +
+                "ails\" Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" /></EntityType><En" +
+                "tityType Name=\"Approval\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Typ" +
+                "e\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Status\" Type=\"Edm.String" +
+                "\" Nullable=\"false\" /><Property Name=\"Remark\" Type=\"Edm.String\" /><Property Name=" +
+                "\"RoleId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"UserId\" Type=\"Edm.I" +
+                "nt64\" Nullable=\"false\" /><Property Name=\"InitiatorId\" Type=\"Edm.Int64\" Nullable=" +
+                "\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name" +
+                "=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"" +
+                "Edm.String\" /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.Public" +
+                "EntityDetails\" /></EntityType><EntityType Name=\"WorkItem\"><Key><PropertyRef Name" +
+                "=\"Id\" /></Key><Property Name=\"Parameters\" Type=\"Edm.String\" Nullable=\"false\" /><" +
+                "Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Typ" +
+                "e=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\"" +
+                " /><Property Name=\"Details\" Type=\"Net.Appclusive.Public.Domain.PublicEntityDetai" +
+                "ls\" /></EntityType><Association Name=\"Net_Appclusive_Public_Domain_Order_Order_J" +
+                "ob_Net_Appclusive_Public_Domain_Control_Job_JobPartner\"><End Type=\"Net.Appclusiv" +
+                "e.Public.Domain.Control.Job\" Role=\"Job\" Multiplicity=\"0..1\" /><End Type=\"Net.App" +
+                "clusive.Public.Domain.Order.Order\" Role=\"JobPartner\" Multiplicity=\"0..1\" /><Refe" +
+                "rentialConstraint><Principal Role=\"Job\"><PropertyRef Name=\"Id\" /></Principal><De" +
+                "pendent Role=\"JobPartner\"><PropertyRef Name=\"JobId\" /></Dependent></ReferentialC" +
+                "onstraint></Association><Association Name=\"Net_Appclusive_Public_Domain_Order_Or" +
+                "derItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner\"><End Type=\"Net." +
+                "Appclusive.Public.Domain.Control.Job\" Role=\"Job\" Multiplicity=\"0..1\" /><End Type" +
+                "=\"Net.Appclusive.Public.Domain.Order.OrderItem\" Role=\"JobPartner\" Multiplicity=\"" +
+                "0..1\" /><ReferentialConstraint><Principal Role=\"Job\"><PropertyRef Name=\"Id\" /></" +
+                "Principal><Dependent Role=\"JobPartner\"><PropertyRef Name=\"JobId\" /></Dependent><" +
+                "/ReferentialConstraint></Association></Schema><Schema Namespace=\"Default\" xmlns=" +
+                "\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityContainer Name=\"Core\" m:Is" +
+                "DefaultEntityContainer=\"true\"><EntitySet Name=\"Examples\" EntityType=\"Net.Appclus" +
                 "ive.Public.Domain.Configuration.Example\" /><EntitySet Name=\"ManagementCredential" +
                 "s\" EntityType=\"Net.Appclusive.Public.Domain.Configuration.ManagementCredential\" " +
                 "/><EntitySet Name=\"ManagementUris\" EntityType=\"Net.Appclusive.Public.Domain.Conf" +
@@ -1899,55 +1510,55 @@ namespace Net.Appclusive.Api.Core
                 "mples\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collec" +
                 "tion(Net.Appclusive.Public.Domain.Configuration.Example)\" Nullable=\"false\" /></F" +
                 "unctionImport><FunctionImport Name=\"OverriddenActionNameForDoit\" ReturnType=\"Net" +
-                ".Appclusive.Public.Types.BoxedString\" IsBindable=\"true\" m:IsAlwaysBindable=\"true" +
-                "\"><Parameter Name=\"bindingParameter\" Type=\"Net.Appclusive.Public.Domain.Configur" +
-                "ation.Example\" /></FunctionImport><FunctionImport Name=\"ForReal\" ReturnType=\"Col" +
-                "lection(biz.dfch.CS.Commons.DictionaryParameters)\" IsBindable=\"true\" m:IsAlwaysB" +
-                "indable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusiv" +
-                "e.Public.Domain.Configuration.Example)\" Nullable=\"false\" /><Parameter Name=\"Requ" +
-                "iredProperty\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter" +
-                " Name=\"OptionalProperty\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /" +
-                "><Parameter Name=\"LongProperty\" Type=\"Edm.Int64\" Nullable=\"false\" /></FunctionIm" +
-                "port><FunctionImport Name=\"Silent\" ReturnType=\"Net.Appclusive.Core.Domain.EmptyA" +
-                "ctionParameters\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bi" +
-                "ndingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.Exam" +
-                "ple)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"AltogetherNow\" R" +
-                "eturnType=\"Net.Appclusive.Core.Domain.Configuration.AltogetherNowReturnType\" IsB" +
-                "indable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type" +
-                "=\"Collection(Net.Appclusive.Public.Domain.Configuration.Example)\" Nullable=\"fals" +
-                "e\" /></FunctionImport><FunctionImport Name=\"GetActionInformation\" ReturnType=\"Ne" +
-                "t.Appclusive.Public.Types.BoxedString\" IsBindable=\"true\" m:IsAlwaysBindable=\"tru" +
-                "e\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Dom" +
-                "ain.Configuration.Example)\" Nullable=\"false\" /><Parameter Name=\"Endpoint\" Type=\"" +
-                "Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter Name=\"EntityTypeNam" +
-                "e\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter Name=\"Acti" +
-                "onName\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></FunctionImport" +
-                "><FunctionImport Name=\"GetActionNames\" ReturnType=\"Collection(System.Collections" +
-                ".ObjectModel.Collection_1OfString)\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\">" +
-                "<Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain" +
-                ".Configuration.Example)\" Nullable=\"false\" /><Parameter Name=\"Endpoint\" Type=\"Edm" +
-                ".String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter Name=\"EntityTypeName\" " +
-                "Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></FunctionImport><Functi" +
-                "onImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Configuration." +
-                "ManagementCredential\" IsBindable=\"true\" EntitySet=\"ManagementCredentials\" m:IsAl" +
-                "waysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appc" +
-                "lusive.Public.Domain.Configuration.ManagementCredential)\" Nullable=\"false\" /></F" +
-                "unctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public." +
-                "Domain.Configuration.ManagementUri\" IsBindable=\"true\" EntitySet=\"ManagementUris\"" +
-                " m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(N" +
-                "et.Appclusive.Public.Domain.Configuration.ManagementUri)\" Nullable=\"false\" /></F" +
-                "unctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public." +
-                "Domain.Configuration.VolatileKeyNameValue\" IsBindable=\"true\" EntitySet=\"Volatile" +
-                "KeyNameValues\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type" +
-                "=\"Collection(Net.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue)\" N" +
-                "ullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"N" +
-                "et.Appclusive.Public.Domain.Configuration.KeyNameValue\" IsBindable=\"true\" Entity" +
-                "Set=\"KeyNameValues\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\"" +
-                " Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.KeyNameValue)\" Null" +
-                "able=\"false\" /></FunctionImport><FunctionImport Name=\"EntitySetActionReturningSt" +
-                "ring\" ReturnType=\"Net.Appclusive.Public.Types.BoxedString\" ";
+                ".Appclusive.Public.Types.BoxedString\" IsBindable=\"true\" m:I";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart9 = "IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Ty" +
+            private const string ModelPart6 = "sAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Net.Appclusive.Pu" +
+                "blic.Domain.Configuration.Example\" /></FunctionImport><FunctionImport Name=\"ForR" +
+                "eal\" ReturnType=\"Collection(biz.dfch.CS.Commons.DictionaryParameters)\" IsBindabl" +
+                "e=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Coll" +
+                "ection(Net.Appclusive.Public.Domain.Configuration.Example)\" Nullable=\"false\" /><" +
+                "Parameter Name=\"RequiredProperty\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=" +
+                "\"false\" /><Parameter Name=\"OptionalProperty\" Type=\"Edm.String\" FixedLength=\"fals" +
+                "e\" Unicode=\"false\" /><Parameter Name=\"LongProperty\" Type=\"Edm.Int64\" Nullable=\"f" +
+                "alse\" /></FunctionImport><FunctionImport Name=\"Silent\" ReturnType=\"Net.Appclusiv" +
+                "e.Core.Domain.EmptyActionParameters\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"" +
+                "><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domai" +
+                "n.Configuration.Example)\" Nullable=\"false\" /></FunctionImport><FunctionImport Na" +
+                "me=\"AltogetherNow\" ReturnType=\"Net.Appclusive.Core.Domain.Configuration.Altogeth" +
+                "erNowReturnType\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bi" +
+                "ndingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.Exam" +
+                "ple)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"GetActionInforma" +
+                "tion\" ReturnType=\"Net.Appclusive.Public.Types.BoxedString\" IsBindable=\"true\" m:I" +
+                "sAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.A" +
+                "ppclusive.Public.Domain.Configuration.Example)\" Nullable=\"false\" /><Parameter Na" +
+                "me=\"Endpoint\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter" +
+                " Name=\"EntityTypeName\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><" +
+                "Parameter Name=\"ActionName\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false" +
+                "\" /></FunctionImport><FunctionImport Name=\"GetActionNames\" ReturnType=\"Collectio" +
+                "n(System.Collections.ObjectModel.Collection_1OfString)\" IsBindable=\"true\" m:IsAl" +
+                "waysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appc" +
+                "lusive.Public.Domain.Configuration.Example)\" Nullable=\"false\" /><Parameter Name=" +
+                "\"Endpoint\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /><Parameter Na" +
+                "me=\"EntityTypeName\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></Fu" +
+                "nctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.D" +
+                "omain.Configuration.ManagementCredential\" IsBindable=\"true\" EntitySet=\"Managemen" +
+                "tCredentials\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=" +
+                "\"Collection(Net.Appclusive.Public.Domain.Configuration.ManagementCredential)\" Nu" +
+                "llable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Ne" +
+                "t.Appclusive.Public.Domain.Configuration.ManagementUri\" IsBindable=\"true\" Entity" +
+                "Set=\"ManagementUris\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter" +
+                "\" Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.ManagementUri)\" Nu" +
+                "llable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Ne" +
+                "t.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue\" IsBindable=\"true\"" +
+                " EntitySet=\"VolatileKeyNameValues\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bi" +
+                "ndingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configuration.Vola" +
+                "tileKeyNameValue)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Tem" +
+                "plate\" ReturnType=\"Net.Appclusive.Public.Domain.Configuration.KeyNameValue\" IsBi" +
+                "ndable=\"true\" EntitySet=\"KeyNameValues\" m:IsAlwaysBindable=\"true\"><Parameter Nam" +
+                "e=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Configuration" +
+                ".KeyNameValue)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Entity" +
+                "SetActionReturningString\" ReturnType=\"Net.Appclusive.Public.Types.BoxedString\" I" +
+                "sBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Ty" +
                 "pe=\"Collection(Net.Appclusive.Public.Domain.Configuration.KeyNameValue)\" Nullabl" +
                 "e=\"false\" /></FunctionImport><FunctionImport Name=\"EntityActionReturningBool\" Re" +
                 "turnType=\"Net.Appclusive.Public.Types.BoxedBool\" IsBindable=\"true\" m:IsAlwaysBin" +
@@ -1994,55 +1605,55 @@ namespace Net.Appclusive.Api.Core
                 " Type=\"Collection(Net.Appclusive.Public.Domain.Inventory.Item)\" Nullable=\"false\"" +
                 " /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.P" +
                 "ublic.Domain.Security.Authentication\" IsBindable=\"true\" EntitySet=\"Authenticatio" +
-                "ns\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collectio" +
-                "n(Net.Appclusive.Public.Domain.Security.Authentication)\" Nullable=\"false\" /></Fu" +
-                "nctionImport><FunctionImport Name=\"BasicLogin\" ReturnType=\"Net.Appclusive.Public" +
-                ".Domain.Identity.User\" IsBindable=\"true\" EntitySet=\"Users\" m:IsAlwaysBindable=\"t" +
-                "rue\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.D" +
-                "omain.Security.Authentication)\" Nullable=\"false\" /><Parameter Name=\"Headers\" Typ" +
-                "e=\"biz.dfch.CS.Commons.DictionaryParameters\" /><Parameter Name=\"Identity\" Type=\"" +
-                "System.Security.Principal.IIdentity\" /></FunctionImport><FunctionImport Name=\"Ne" +
-                "gotiateLogin\" ReturnType=\"Net.Appclusive.Public.Domain.Identity.User\" IsBindable" +
-                "=\"true\" EntitySet=\"Users\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPara" +
+                "ns\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParam";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart7 = "eter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Authentication)\" Nul" +
+                "lable=\"false\" /></FunctionImport><FunctionImport Name=\"BasicLogin\" ReturnType=\"N" +
+                "et.Appclusive.Public.Domain.Identity.User\" IsBindable=\"true\" EntitySet=\"Users\" m" +
+                ":IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net" +
+                ".Appclusive.Public.Domain.Security.Authentication)\" Nullable=\"false\" /><Paramete" +
+                "r Name=\"Headers\" Type=\"biz.dfch.CS.Commons.DictionaryParameters\" /><Parameter Na" +
+                "me=\"Identity\" Type=\"System.Security.Principal.IIdentity\" /></FunctionImport><Fun" +
+                "ctionImport Name=\"NegotiateLogin\" ReturnType=\"Net.Appclusive.Public.Domain.Ident" +
+                "ity.User\" IsBindable=\"true\" EntitySet=\"Users\" m:IsAlwaysBindable=\"true\"><Paramet" +
+                "er Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Securit" +
+                "y.Authentication)\" Nullable=\"false\" /><Parameter Name=\"Headers\" Type=\"biz.dfch.C" +
+                "S.Commons.DictionaryParameters\" /><Parameter Name=\"Identity\" Type=\"System.Securi" +
+                "ty.Principal.IIdentity\" /></FunctionImport><FunctionImport Name=\"BearerLogin\" Re" +
+                "turnType=\"Net.Appclusive.Public.Domain.Identity.User\" IsBindable=\"true\" EntitySe" +
+                "t=\"Users\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Col" +
+                "lection(Net.Appclusive.Public.Domain.Security.Authentication)\" Nullable=\"false\" " +
+                "/><Parameter Name=\"Headers\" Type=\"biz.dfch.CS.Commons.DictionaryParameters\" /><P" +
+                "arameter Name=\"Identity\" Type=\"System.Security.Principal.IIdentity\" /></Function" +
+                "Import><FunctionImport Name=\"Logout\" ReturnType=\"Net.Appclusive.Public.Types.Box" +
+                "edBool\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPara" +
                 "meter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Authentication)\" N" +
                 "ullable=\"false\" /><Parameter Name=\"Headers\" Type=\"biz.dfch.CS.Commons.Dictionary" +
                 "Parameters\" /><Parameter Name=\"Identity\" Type=\"System.Security.Principal.IIdenti" +
-                "ty\" /></FunctionImport><FunctionImport Name=\"BearerLogin\" ReturnType=\"Net.Appclu" +
-                "sive.Public.Domain.Identity.User\" IsBindable=\"true\" EntitySet=\"Users\" m:IsAlways" +
-                "Bindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusi" +
-                "ve.Public.Domain.Security.Authentication)\" Nullable=\"false\" /><Parameter Name=\"H" +
-                "eaders\" Type=\"biz.dfch.CS.Commons.DictionaryParameters\" /><Parameter Name=\"Ident" +
-                "ity\" Type=\"System.Security.Principal.IIdentity\" /></FunctionImport><FunctionImpo" +
-                "rt Name=\"Logout\" ReturnType=\"Net.Appclusive.Public.Types.BoxedBool\" IsBindable=\"" +
-                "true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collect" +
-                "ion(Net.Appclusive.Public.Domain.Security.Authentication)\" Nullable=\"false\" /><P" +
-                "arameter Name=\"Headers\" Type=\"biz.dfch.CS.Commons.DictionaryParameters\" /><Param" +
-                "eter Name=\"Identity\" Type=\"System.Security.Principal.IIdentity\" /></FunctionImpo" +
-                "rt><FunctionImport Name=\"Impersonate\" ReturnType=\"Net.Appclusive.Core.Domain.Sec" +
-                "urity.TokenResponse\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name" +
-                "=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Authe" +
-                "ntication)\" Nullable=\"false\" /><Parameter Name=\"UserId\" Type=\"Edm.Int64\" Nullabl" +
-                "e=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.App" +
-                "clusive.Public.Domain.Security.ItemAcl\" IsBindable=\"true\" EntitySet=\"ItemAcls\" m" +
-                ":IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net" +
-                ".Appclusive.Public.Domain.Security.ItemAcl)\" Nullable=\"false\" /></FunctionImport" +
-                "><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Securi" +
-                "ty.Ace\" IsBindable=\"true\" EntitySet=\"Aces\" m:IsAlwaysBindable=\"true\"><Parameter " +
-                "Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.A" +
-                "ce)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnT" +
-                "ype=\"Net.Appclusive.Public.Domain.Security.Right\" IsBindable=\"true\" EntitySet=\"R" +
-                "ights\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collec" +
-                "tion(Net.Appclusive.Public.Domain.Security.Right)\" Nullable=\"false\" /></Function" +
-                "Import><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain." +
-                "Security.Role\" IsBindable=\"true\" EntitySet=\"Roles\" m:IsAlwaysBindable=\"true\"><Pa" +
-                "rameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Se" +
-                "curity.Role)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template" +
-                "\" ReturnType=\"Net.Appclusive.Public.Domain.Security.Acl\" IsBindable=\"true\" Entit" +
-                "ySet=\"Acls\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"C" +
-                "ollection(Net.Appclusive.Public.Domain.Security.Acl)\" Nullable=\"false\" /></Funct" +
-                "ionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.A";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart10 = "ppclusive.Public.Domain.Security.ItemAce\" IsBindable=\"true\" EntitySet=\"ItemAces\" " +
+                "ty\" /></FunctionImport><FunctionImport Name=\"Impersonate\" ReturnType=\"Net.Appclu" +
+                "sive.Core.Domain.Security.TokenResponse\" IsBindable=\"true\" m:IsAlwaysBindable=\"t" +
+                "rue\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.D" +
+                "omain.Security.Authentication)\" Nullable=\"false\" /><Parameter Name=\"UserId\" Type" +
+                "=\"Edm.Int64\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\"" +
+                " ReturnType=\"Net.Appclusive.Public.Domain.Security.ItemAcl\" IsBindable=\"true\" En" +
+                "titySet=\"ItemAcls\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" " +
+                "Type=\"Collection(Net.Appclusive.Public.Domain.Security.ItemAcl)\" Nullable=\"false" +
+                "\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive." +
+                "Public.Domain.Security.Ace\" IsBindable=\"true\" EntitySet=\"Aces\" m:IsAlwaysBindabl" +
+                "e=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Publ" +
+                "ic.Domain.Security.Ace)\" Nullable=\"false\" /></FunctionImport><FunctionImport Nam" +
+                "e=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Security.Right\" IsBindable" +
+                "=\"true\" EntitySet=\"Rights\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPar" +
+                "ameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Right)\" Nullable=" +
+                "\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appcl" +
+                "usive.Public.Domain.Security.Role\" IsBindable=\"true\" EntitySet=\"Roles\" m:IsAlway" +
+                "sBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclus" +
+                "ive.Public.Domain.Security.Role)\" Nullable=\"false\" /></FunctionImport><FunctionI" +
+                "mport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Security.Acl\" IsB" +
+                "indable=\"true\" EntitySet=\"Acls\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindi" +
+                "ngParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Security.Acl)\" Nullab" +
+                "le=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Ap" +
+                "pclusive.Public.Domain.Security.ItemAce\" IsBindable=\"true\" EntitySet=\"ItemAces\" " +
                 "m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Ne" +
                 "t.Appclusive.Public.Domain.Security.ItemAce)\" Nullable=\"false\" /></FunctionImpor" +
                 "t><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Secur" +
@@ -2089,352 +1700,187 @@ namespace Net.Appclusive.Api.Core
                 "sAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.A" +
                 "ppclusive.Public.Domain.Identity.Tenant)\" Nullable=\"false\" /></FunctionImport><F" +
                 "unctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Identity." +
-                "User\" IsBindable=\"true\" EntitySet=\"Users\" m:IsAlwaysBindable=\"true\"><Parameter N" +
-                "ame=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Identity.Us" +
-                "er)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnT" +
-                "ype=\"Net.Appclusive.Public.Domain.Control.Approval\" IsBindable=\"true\" EntitySet=" +
-                "\"Approvals\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"C" +
-                "ollection(Net.Appclusive.Public.Domain.Control.Approval)\" Nullable=\"false\" /></F" +
-                "unctionImport><FunctionImport Name=\"Approve\" ReturnType=\"Net.Appclusive.Public.T" +
-                "ypes.BoxedBool\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bin" +
-                "dingParameter\" Type=\"Net.Appclusive.Public.Domain.Control.Approval\" /><Parameter" +
-                " Name=\"Remark\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></Functio" +
-                "nImport><FunctionImport Name=\"Decline\" ReturnType=\"Net.Appclusive.Public.Types.B" +
-                "oxedBool\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingPa" +
-                "rameter\" Type=\"Net.Appclusive.Public.Domain.Control.Approval\" /><Parameter Name=" +
-                "\"Remark\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"false\" /></FunctionImpor" +
-                "t><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Contr" +
-                "ol.WorkItem\" IsBindable=\"true\" EntitySet=\"WorkItems\" m:IsAlwaysBindable=\"true\"><" +
-                "Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain." +
-                "Control.WorkItem)\" Nullable=\"false\" /></FunctionImport><FunctionImport Name=\"Tem" +
-                "plate\" ReturnType=\"Net.Appclusive.Public.Domain.Control.Job\" IsBindable=\"true\" E" +
-                "ntitySet=\"Jobs\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Typ" +
-                "e=\"Collection(Net.Appclusive.Public.Domain.Control.Job)\" Nullable=\"false\" /></Fu" +
-                "nctionImport><AssociationSet Name=\"Net_Appclusive_Public_Domain_Configuration_Ex" +
-                "ample_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet" +
-                "\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Configu" +
-                "ration_Example_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsP" +
-                "artner\"><End Role=\"DetailsPartner\" EntitySet=\"Examples\" /><End Role=\"Details\" En" +
-                "titySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appc" +
-                "lusive_Public_Domain_Configuration_ManagementCredential_Details_Net_Appclusive_P" +
-                "ublic_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive." +
-                "Public.Domain.Net_Appclusive_Public_Domain_Configuration_ManagementCredential_De" +
-                "tails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role" +
-                "=\"DetailsPartner\" EntitySet=\"ManagementCredentials\" /><End Role=\"Details\" Entity" +
-                "Set=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusi" +
-                "ve_Public_Domain_Configuration_ManagementUri_ManagementCredential_Net_Appclusive" +
-                "_Public_Domain_Configuration_ManagementCredential_ManagementCredentialPartnerSet" +
-                "\" Association=\"Net.Appclusive.Public.Domain.Configuration.Net_Appclusive_Public_" +
-                "Domain_Configuration_ManagementUri_ManagementCredential_Net_Appclusive_Public_Do" +
-                "main_Configuration_ManagementCredential_ManagementCredentialPartner\"><End Role=\"" +
-                "ManagementCredentialPartner\" EntitySet=\"ManagementUris\" /><End Role=\"ManagementC" +
-                "redential\" EntitySet=\"ManagementCredentials\" /></AssociationSet><AssociationSet " +
-                "Name=\"Net_Appclusive_Public_Domain_Configuration_ManagementUri_ManagementCredent" +
-                "ials_Net_Appclusive_Public_Domain_Configuration_ManagementCredential_ManagementC" +
-                "redentialsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Configuration.Ne" +
-                "t_Appclusive_Public_Domain_Configuration_ManagementUri_ManagementCredentials_Net" +
-                "_Appclusive_Public_Domain_Configuration_ManagementCredential_ManagementCredentia" +
-                "lsPartner\"><End Role=\"ManagementCredentialsPartner\" EntitySet=\"ManagementUris\" /" +
-                "><End Role=\"ManagementCredentials\" EntitySet=\"ManagementCre";
+                "User\" IsBindable=\"true\" EntitySet=\"Users\" m:IsAlwaysBindabl";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart11 = "dentials\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_C" +
-                "onfiguration_ManagementUri_Details_Net_Appclusive_Public_Domain_PublicEntityDeta" +
-                "ils_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_" +
-                "Public_Domain_Configuration_ManagementUri_Details_Net_Appclusive_Public_Domain_P" +
-                "ublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Managem" +
-                "entUris\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationS" +
-                "et><AssociationSet Name=\"Net_Appclusive_Public_Domain_Configuration_VolatileKeyN" +
-                "ameValue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" +
-                "Set\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Conf" +
-                "iguration_VolatileKeyNameValue_Details_Net_Appclusive_Public_Domain_PublicEntity" +
-                "Details_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"VolatileKeyNameVal" +
-                "ues\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><" +
-                "AssociationSet Name=\"Net_Appclusive_Public_Domain_Configuration_KeyNameValue_Det" +
-                "ails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Associa" +
-                "tion=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Configuration_Ke" +
-                "yNameValue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartn" +
-                "er\"><End Role=\"DetailsPartner\" EntitySet=\"KeyNameValues\" /><End Role=\"Details\" E" +
-                "ntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_App" +
-                "clusive_Public_Domain_Inventory_Attribute_Details_Net_Appclusive_Public_Domain_P" +
-                "ublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain." +
-                "Net_Appclusive_Public_Domain_Inventory_Attribute_Details_Net_Appclusive_Public_D" +
-                "omain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"" +
-                "Attributes\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></Associati" +
-                "onSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Behaviour_Chi" +
-                "ldren_Net_Appclusive_Public_Domain_Inventory_Behaviour_ChildrenPartnerSet\" Assoc" +
-                "iation=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inve" +
-                "ntory_Behaviour_Children_Net_Appclusive_Public_Domain_Inventory_Behaviour_Childr" +
-                "enPartner\"><End Role=\"ChildrenPartner\" EntitySet=\"Behaviours\" /><End Role=\"Child" +
-                "ren\" EntitySet=\"Behaviours\" /></AssociationSet><AssociationSet Name=\"Net_Appclus" +
-                "ive_Public_Domain_Inventory_Behaviour_Parents_Net_Appclusive_Public_Domain_Inven" +
-                "tory_Behaviour_ParentsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Inve" +
-                "ntory.Net_Appclusive_Public_Domain_Inventory_Behaviour_Parents_Net_Appclusive_Pu" +
-                "blic_Domain_Inventory_Behaviour_ParentsPartner\"><End Role=\"ParentsPartner\" Entit" +
-                "ySet=\"Behaviours\" /><End Role=\"Parents\" EntitySet=\"Behaviours\" /></AssociationSe" +
-                "t><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Behaviour_Details" +
-                "_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association" +
-                "=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_Behaviour_" +
-                "Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Ro" +
-                "le=\"DetailsPartner\" EntitySet=\"Behaviours\" /><End Role=\"Details\" EntitySet=\"Publ" +
-                "icEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public" +
-                "_Domain_Inventory_Model_Behaviours_Net_Appclusive_Public_Types_IdNameDescription" +
-                "Tuple_BehavioursPartnerSet\" Association=\"Net.Appclusive.Public.Types.Net_Appclus" +
-                "ive_Public_Domain_Inventory_Model_Behaviours_Net_Appclusive_Public_Types_IdNameD" +
-                "escriptionTuple_BehavioursPartner\"><End Role=\"BehavioursPartner\" EntitySet=\"Mode" +
-                "ls\" /><End Role=\"Behaviours\" EntitySet=\"IdNameDescriptionTuples\" /></Association" +
-                "Set><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Model_ModelAttr" +
-                "ibutes_Net_Appclusive_Public_Types_IdNameDescriptionTuple_ModelAttributesPartner" +
-                "Set\" Association=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Inven" +
-                "tory_Model_ModelAttributes_Net_Appclusive_Public_Types_IdNameDescriptionTuple_Mo" +
-                "delAttributesPartner\"><End Role=\"ModelAttributesPartner\" EntitySet=\"Models\" /><E" +
-                "nd Role=\"ModelAttributes\" EntitySet=\"IdNameDescriptionTuples\" /></AssociationSet" +
-                "><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Model_Details_Net_" +
-                "Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net" +
-                ".Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Inventory_Model_Details_N" +
-                "et_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"Detai" +
-                "lsPartner\" EntitySet=\"Models\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetai" +
-                "lss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inven" +
-                "tory_Connection_Source_Net_Appclusive_Public_Domain_Inventory_Item_SourcePartner" +
-                "Set\" Association=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_D" +
-                "omain_Inventory_Connection_Source_Net_Appclusive_Public_Domain_Inventory_Item_So" +
-                "urcePartner\"><End Role=\"SourcePartner\" EntitySet=\"Connections\" /><End Role=\"Sour" +
-                "ce\" EntitySet=\"Items\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Pu" +
-                "blic_Domain_Inventory_Connection_Destination_Net_Appclusive_Public_Domain_Invent" +
-                "ory_Item_DestinationPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Invent" +
-                "ory.Net_Appclusive_Public_Domain_Inventory_Connection_Destination_Net_Appclusive" +
-                "_Public_Domain_Inventory_Item_DestinationPartner\"><End Role=\"DestinationPartner\"" +
-                " EntitySet=\"Connections\" /><End Role=\"Destination\" EntitySet=\"Items\" /></Associa" +
+            private const string ModelPart8 = "e=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Publi" +
+                "c.Domain.Identity.User)\" Nullable=\"false\" /></FunctionImport><FunctionImport Nam" +
+                "e=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Control.Approval\" IsBindab" +
+                "le=\"true\" EntitySet=\"Approvals\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"bindi" +
+                "ngParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Control.Approval)\" Nu" +
+                "llable=\"false\" /></FunctionImport><FunctionImport Name=\"Approve\" ReturnType=\"Net" +
+                ".Appclusive.Public.Types.BoxedBool\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\">" +
+                "<Parameter Name=\"bindingParameter\" Type=\"Net.Appclusive.Public.Domain.Control.Ap" +
+                "proval\" /><Parameter Name=\"Remark\" Type=\"Edm.String\" FixedLength=\"false\" Unicode" +
+                "=\"false\" /></FunctionImport><FunctionImport Name=\"Decline\" ReturnType=\"Net.Appcl" +
+                "usive.Public.Types.BoxedBool\" IsBindable=\"true\" m:IsAlwaysBindable=\"true\"><Param" +
+                "eter Name=\"bindingParameter\" Type=\"Net.Appclusive.Public.Domain.Control.Approval" +
+                "\" /><Parameter Name=\"Remark\" Type=\"Edm.String\" FixedLength=\"false\" Unicode=\"fals" +
+                "e\" /></FunctionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive" +
+                ".Public.Domain.Control.WorkItem\" IsBindable=\"true\" EntitySet=\"WorkItems\" m:IsAlw" +
+                "aysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appcl" +
+                "usive.Public.Domain.Control.WorkItem)\" Nullable=\"false\" /></FunctionImport><Func" +
+                "tionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Control.Job\"" +
+                " IsBindable=\"true\" EntitySet=\"Jobs\" m:IsAlwaysBindable=\"true\"><Parameter Name=\"b" +
+                "indingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Control.Job)\" Nul" +
+                "lable=\"false\" /></FunctionImport><AssociationSet Name=\"Net_Appclusive_Public_Dom" +
+                "ain_Configuration_ManagementUri_ManagementCredential_Net_Appclusive_Public_Domai" +
+                "n_Configuration_ManagementCredential_ManagementCredentialPartnerSet\" Association" +
+                "=\"Net.Appclusive.Public.Domain.Configuration.Net_Appclusive_Public_Domain_Config" +
+                "uration_ManagementUri_ManagementCredential_Net_Appclusive_Public_Domain_Configur" +
+                "ation_ManagementCredential_ManagementCredentialPartner\"><End Role=\"ManagementCre" +
+                "dentialPartner\" EntitySet=\"ManagementUris\" /><End Role=\"ManagementCredential\" En" +
+                "titySet=\"ManagementCredentials\" /></AssociationSet><AssociationSet Name=\"Net_App" +
+                "clusive_Public_Domain_Configuration_ManagementUri_ManagementCredentials_Net_Appc" +
+                "lusive_Public_Domain_Configuration_ManagementCredential_ManagementCredentialsPar" +
+                "tnerSet\" Association=\"Net.Appclusive.Public.Domain.Configuration.Net_Appclusive_" +
+                "Public_Domain_Configuration_ManagementUri_ManagementCredentials_Net_Appclusive_P" +
+                "ublic_Domain_Configuration_ManagementCredential_ManagementCredentialsPartner\"><E" +
+                "nd Role=\"ManagementCredentialsPartner\" EntitySet=\"ManagementUris\" /><End Role=\"M" +
+                "anagementCredentials\" EntitySet=\"ManagementCredentials\" /></AssociationSet><Asso" +
+                "ciationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Behaviour_Children_Net_A" +
+                "ppclusive_Public_Domain_Inventory_Behaviour_ChildrenPartnerSet\" Association=\"Net" +
+                ".Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inventory_Behav" +
+                "iour_Children_Net_Appclusive_Public_Domain_Inventory_Behaviour_ChildrenPartner\">" +
+                "<End Role=\"ChildrenPartner\" EntitySet=\"Behaviours\" /><End Role=\"Children\" Entity" +
+                "Set=\"Behaviours\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_" +
+                "Domain_Inventory_Behaviour_Parents_Net_Appclusive_Public_Domain_Inventory_Behavi" +
+                "our_ParentsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Inventory.Net_A" +
+                "ppclusive_Public_Domain_Inventory_Behaviour_Parents_Net_Appclusive_Public_Domain" +
+                "_Inventory_Behaviour_ParentsPartner\"><End Role=\"ParentsPartner\" EntitySet=\"Behav" +
+                "iours\" /><End Role=\"Parents\" EntitySet=\"Behaviours\" /></AssociationSet><Associat" +
+                "ionSet Name=\"Net_Appclusive_Public_Domain_Inventory_Connection_Source_Net_Appclu" +
+                "sive_Public_Domain_Inventory_Item_SourcePartnerSet\" Association=\"Net.Appclusive." +
+                "Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inventory_Connection_Source" +
+                "_Net_Appclusive_Public_Domain_Inventory_Item_SourcePartner\"><End Role=\"SourcePar" +
+                "tner\" EntitySet=\"Connections\" /><End Role=\"Source\" EntitySet=\"Items\" /></Associa" +
                 "tionSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Connection_" +
-                "Behaviour_Net_Appclusive_Public_Domain_Inventory_Behaviour_BehaviourPartnerSet\" " +
-                "Association=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain" +
-                "_Inventory_Connection_Behaviour_Net_Appclusive_Public_Domain_Inventory_Behaviour" +
-                "_BehaviourPartner\"><End Role=\"BehaviourPartner\" EntitySet=\"Connections\" /><End R" +
-                "ole=\"Behaviour\" EntitySet=\"Behaviours\" /></AssociationSet><AssociationSet Name=\"" +
-                "Net_Appclusive_Public_Domain_Inventory_Connection_Details_Net_Appclusive_Public_" +
-                "Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public" +
-                ".Domain.Net_Appclusive_Public_Domain_Inventory_Connection_Details_Net_Appclusive" +
-                "_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" En" +
-                "titySet=\"Connections\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /><" +
-                "/AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inventory_Ite" +
-                "m_Children_Net_Appclusive_Public_Domain_Inventory_Item_ChildrenPartnerSet\" Assoc" +
-                "iation=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Inve" +
-                "ntory_Item_Children_Net_Appclusive_Public_Domain_Inventory_Item_ChildrenPartner\"" +
-                "><End Role=\"ChildrenPartner\" EntitySet=\"Items\" /><End Role=\"Children\" EntitySet=" +
-                "\"Items\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_In" +
-                "ventory_Item_Attributes_Net_Appclusive_Public_Types_NameValuePair_AttributesPart" +
-                "nerSet\" Association=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_In" +
-                "ventory_Item_Attributes_Net_Appclusive_Public_Types_NameValuePair_AttributesPart" +
-                "ner\"><End Role=\"AttributesPartner\" EntitySet=\"Items\" /><End Role=\"Attributes\" En" +
-                "titySet=\"NameValuePairs\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive" +
-                "_Public_Domain_Inventory_Item_Details_Net_Appclusive_Public_Domain_PublicEntityD" +
-                "etails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusi" +
-                "ve_Public_Domain_Inventory_Item_Details_Net_Appclusive_Public_Domain_PublicEntit" +
-                "yDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Items\" /><End Rol" +
-                "e=\"Details\" EntitySet=\"PublicEntityDetailss\" /></Associatio";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart12 = "nSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Authentication_D" +
-                "etails_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Assoc" +
-                "iation=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_Authe" +
-                "ntication_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartne" +
-                "r\"><End Role=\"DetailsPartner\" EntitySet=\"Authentications\" /><End Role=\"Details\" " +
-                "EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Ap" +
-                "pclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security" +
-                "_Role_RolesPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Ap" +
-                "pclusive_Public_Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security" +
-                "_Role_RolesPartner\"><End Role=\"RolesPartner\" EntitySet=\"Users\" /><End Role=\"Role" +
-                "s\" EntitySet=\"Roles\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Pub" +
-                "lic_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetail" +
-                "s_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Pu" +
-                "blic_Domain_Identity_User_Details_Net_Appclusive_Public_Domain_PublicEntityDetai" +
-                "ls_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Users\" /><End Role=\"Det" +
-                "ails\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"" +
-                "Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Public_Domai" +
-                "n_Security_ItemAcl_ParentPartnerSet\" Association=\"Net.Appclusive.Public.Domain.S" +
-                "ecurity.Net_Appclusive_Public_Domain_Security_ItemAcl_Parent_Net_Appclusive_Publ" +
-                "ic_Domain_Security_ItemAcl_ParentPartner\"><End Role=\"ParentPartner\" EntitySet=\"I" +
-                "temAcls\" /><End Role=\"Parent\" EntitySet=\"ItemAcls\" /></AssociationSet><Associati" +
-                "onSet Name=\"Net_Appclusive_Public_Domain_Security_ItemAcl_Children_Net_Appclusiv" +
-                "e_Public_Domain_Security_ItemAcl_ChildrenPartnerSet\" Association=\"Net.Appclusive" +
-                ".Public.Domain.Security.Net_Appclusive_Public_Domain_Security_ItemAcl_Children_N" +
-                "et_Appclusive_Public_Domain_Security_ItemAcl_ChildrenPartner\"><End Role=\"Childre" +
-                "nPartner\" EntitySet=\"ItemAcls\" /><End Role=\"Children\" EntitySet=\"ItemAcls\" /></A" +
-                "ssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_ItemAc" +
-                "l_Aces_Net_Appclusive_Public_Domain_Security_ItemAce_AcesPartnerSet\" Association" +
-                "=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_It" +
-                "emAcl_Aces_Net_Appclusive_Public_Domain_Security_ItemAce_AcesPartner\"><End Role=" +
-                "\"AcesPartner\" EntitySet=\"ItemAcls\" /><End Role=\"Aces\" EntitySet=\"ItemAces\" /></A" +
-                "ssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_ItemAc" +
-                "l_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" As" +
-                "sociation=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security_It" +
-                "emAcl_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><" +
-                "End Role=\"DetailsPartner\" EntitySet=\"ItemAcls\" /><End Role=\"Details\" EntitySet=\"" +
-                "PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Pu" +
-                "blic_Domain_Security_Ace_Permission_Net_Appclusive_Public_Domain_Security_Permis" +
-                "sion_PermissionPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Ne" +
-                "t_Appclusive_Public_Domain_Security_Ace_Permission_Net_Appclusive_Public_Domain_" +
-                "Security_Permission_PermissionPartner\"><End Role=\"PermissionPartner\" EntitySet=\"" +
-                "Aces\" /><End Role=\"Permission\" EntitySet=\"Permissions\" /></AssociationSet><Assoc" +
-                "iationSet Name=\"Net_Appclusive_Public_Domain_Security_Ace_User_Net_Appclusive_Pu" +
-                "blic_Domain_Identity_User_UserPartnerSet\" Association=\"Net.Appclusive.Public.Dom" +
-                "ain.Identity.Net_Appclusive_Public_Domain_Security_Ace_User_Net_Appclusive_Publi" +
-                "c_Domain_Identity_User_UserPartner\"><End Role=\"UserPartner\" EntitySet=\"Aces\" /><" +
-                "End Role=\"User\" EntitySet=\"Users\" /></AssociationSet><AssociationSet Name=\"Net_A" +
-                "ppclusive_Public_Domain_Security_Ace_Role_Net_Appclusive_Public_Domain_Security_" +
-                "Role_RolePartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appc" +
-                "lusive_Public_Domain_Security_Ace_Role_Net_Appclusive_Public_Domain_Security_Rol" +
-                "e_RolePartner\"><End Role=\"RolePartner\" EntitySet=\"Aces\" /><End Role=\"Role\" Entit" +
-                "ySet=\"Roles\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Doma" +
-                "in_Security_Ace_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Details" +
-                "PartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Doma" +
-                "in_Security_Ace_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Details" +
-                "Partner\"><End Role=\"DetailsPartner\" EntitySet=\"Aces\" /><End Role=\"Details\" Entit" +
-                "ySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclus" +
-                "ive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEnti" +
-                "tyDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appcl" +
-                "usive_Public_Domain_Security_Right_Details_Net_Appclusive_Public_Domain_PublicEn" +
-                "tityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Rights\" /><End" +
-                " Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Association" +
-                "Set Name=\"Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public" +
-                "_Domain_Identity_User_UsersPartnerSet\" Association=\"Net.Appclusive.Public.Domain" +
-                ".Identity.Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Public" +
-                "_Domain_Identity_User_UsersPartner\"><End Role=\"UsersPartner\" EntitySet=\"Roles\" /" +
-                "><End Role=\"Users\" EntitySet=\"Users\" /></AssociationSet><AssociationSet Name=\"Ne" +
-                "t_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_Sec" +
-                "urity_Right_RightsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security" +
-                ".Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_" +
-                "Security_Right_RightsPartner\"><End Role=\"RightsPartner\" EntitySet=\"Roles\" /><End" +
-                " Role=\"Rights\" EntitySet=\"Rights\" /></AssociationSet><AssociationSet Name=\"Net_A" +
-                "ppclusive_Public_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_Publi" +
-                "cEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_" +
-                "Appclusive_Public_Domain_Security_Role_Details_Net_Appclusive_Public_Domain_Publ" +
-                "icEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Roles\" /><" +
-                "End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Associat" +
-                "ionSet Name=\"Net_Appclusive_Public_Domain_Security_Acl_Parent_Net_Appclusive_Pub" +
-                "lic_Domain_Security_Acl_ParentPartnerSet\" Association=\"Net.Appclusive.Public.Dom" +
-                "ain.Security.Net_Appclusive_Public_Domain_Security_Acl_Parent_Net_Appclusive_Pub" +
-                "lic_Domain_Security_Acl_ParentPartner\"><End Role=\"ParentPartner\" EntitySet=\"Acls" +
-                "\" /><End Role=\"Parent\" EntitySet=\"Acls\" /></AssociationSet><AssociationSet Name=" +
-                "\"Net_Appclusive_Public_Domain_Security_Acl_Children_Net_Appclusive_Public_Domain" +
-                "_Security_Acl_ChildrenPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Secu" +
-                "rity.Net_Appclusive_Public_Domain_Security_Acl_Children_Net_Appclusive_Public_Do" +
-                "main_Security_Acl_ChildrenPartner\"><End Role=\"ChildrenPartner\" EntitySet=\"Acls\" " +
-                "/><End Role=\"Children\" EntitySet=\"Acls\" /></AssociationSet><AssociationSet Name=" +
-                "\"Net_Appclusive_Public_Domain_Security_Acl_Aces_Net_Appclusive_Public_Domain_Sec" +
-                "urity_Ace_AcesPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net" +
-                "_Appclusive_Public_Domain_Security_Acl_Aces_Net_Appclusive_Public_Domain_Securit" +
-                "y_Ace_AcesPartner\"><End Role=\"AcesPartner\" EntitySet=\"Acls\" /><End Role=\"Aces\" E" +
-                "ntitySet=\"Aces\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_D" +
-                "omain_Security_Acl_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Deta" +
-                "ilsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Ne";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart13 = "t_Appclusive_Public_Domain_Security_Acl_Details_Net_Appclusive_Public_Domain_Publ" +
-                "icEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Acls\" /><E" +
-                "nd Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Associati" +
-                "onSet Name=\"Net_Appclusive_Public_Domain_Security_ItemAce_Permission_Net_Appclus" +
-                "ive_Public_Domain_Security_Permission_PermissionPartnerSet\" Association=\"Net.App" +
-                "clusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_ItemAce_Per" +
-                "mission_Net_Appclusive_Public_Domain_Security_Permission_PermissionPartner\"><End" +
-                " Role=\"PermissionPartner\" EntitySet=\"ItemAces\" /><End Role=\"Permission\" EntitySe" +
-                "t=\"Permissions\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_D" +
-                "omain_Security_ItemAce_Role_Net_Appclusive_Public_Domain_Security_Role_RolePartn" +
+                "Destination_Net_Appclusive_Public_Domain_Inventory_Item_DestinationPartnerSet\" A" +
+                "ssociation=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_" +
+                "Inventory_Connection_Destination_Net_Appclusive_Public_Domain_Inventory_Item_Des" +
+                "tinationPartner\"><End Role=\"DestinationPartner\" EntitySet=\"Connections\" /><End R" +
+                "ole=\"Destination\" EntitySet=\"Items\" /></AssociationSet><AssociationSet Name=\"Net" +
+                "_Appclusive_Public_Domain_Inventory_Connection_Behaviour_Net_Appclusive_Public_D" +
+                "omain_Inventory_Behaviour_BehaviourPartnerSet\" Association=\"Net.Appclusive.Publi" +
+                "c.Domain.Inventory.Net_Appclusive_Public_Domain_Inventory_Connection_Behaviour_N" +
+                "et_Appclusive_Public_Domain_Inventory_Behaviour_BehaviourPartner\"><End Role=\"Beh" +
+                "aviourPartner\" EntitySet=\"Connections\" /><End Role=\"Behaviour\" EntitySet=\"Behavi" +
+                "ours\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Inve" +
+                "ntory_Item_Children_Net_Appclusive_Public_Domain_Inventory_Item_ChildrenPartnerS" +
+                "et\" Association=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Do" +
+                "main_Inventory_Item_Children_Net_Appclusive_Public_Domain_Inventory_Item_Childre" +
+                "nPartner\"><End Role=\"ChildrenPartner\" EntitySet=\"Items\" /><End Role=\"Children\" E" +
+                "ntitySet=\"Items\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_" +
+                "Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartn" +
                 "erSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_" +
-                "Domain_Security_ItemAce_Role_Net_Appclusive_Public_Domain_Security_Role_RolePart" +
-                "ner\"><End Role=\"RolePartner\" EntitySet=\"ItemAces\" /><End Role=\"Role\" EntitySet=\"" +
-                "Roles\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Sec" +
-                "urity_ItemAce_User_Net_Appclusive_Public_Domain_Identity_User_UserPartnerSet\" As" +
-                "sociation=\"Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Se" +
-                "curity_ItemAce_User_Net_Appclusive_Public_Domain_Identity_User_UserPartner\"><End" +
-                " Role=\"UserPartner\" EntitySet=\"ItemAces\" /><End Role=\"User\" EntitySet=\"Users\" />" +
-                "</AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Ite" +
-                "mAce_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\"" +
-                " Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Security" +
-                "_ItemAce_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" +
-                "\"><End Role=\"DetailsPartner\" EntitySet=\"ItemAces\" /><End Role=\"Details\" EntitySe" +
-                "t=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive" +
-                "_Public_Domain_Security_Permission_Details_Net_Appclusive_Public_Domain_PublicEn" +
-                "tityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_App" +
-                "clusive_Public_Domain_Security_Permission_Details_Net_Appclusive_Public_Domain_P" +
-                "ublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Permiss" +
-                "ions\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet>" +
-                "<AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Order_OrderItems_Net_Ap" +
-                "pclusive_Public_Domain_Order_OrderItem_OrderItemsPartnerSet\" Association=\"Net.Ap" +
-                "pclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Order_OrderItems" +
-                "_Net_Appclusive_Public_Domain_Order_OrderItem_OrderItemsPartner\"><End Role=\"Orde" +
-                "rItemsPartner\" EntitySet=\"Orders\" /><End Role=\"OrderItems\" EntitySet=\"OrderItems" +
-                "\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Or" +
-                "der_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartnerSet\" Association=\"Net" +
-                ".Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_Order_Job_N" +
-                "et_Appclusive_Public_Domain_Control_Job_JobPartner\"><End Role=\"JobPartner\" Entit" +
-                "ySet=\"Orders\" /><End Role=\"Job\" EntitySet=\"Jobs\" /></AssociationSet><Association" +
-                "Set Name=\"Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclusive_Public" +
-                "_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Publi" +
-                "c.Domain.Net_Appclusive_Public_Domain_Order_Order_Details_Net_Appclusive_Public_" +
-                "Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=" +
-                "\"Orders\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationS" +
-                "et><AssociationSet Name=\"Net_Appclusive_Public_Domain_Control_Job_Details_Net_Ap" +
-                "pclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.A" +
-                "ppclusive.Public.Domain.Net_Appclusive_Public_Domain_Control_Job_Details_Net_App" +
-                "clusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPart" +
-                "ner\" EntitySet=\"Jobs\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /><" +
-                "/AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Cart_Ca" +
-                "rtItems_Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartnerSet\" Associa" +
-                "tion=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Cart" +
-                "_CartItems_Net_Appclusive_Public_Domain_Order_CartItem_CartItemsPartner\"><End Ro" +
-                "le=\"CartItemsPartner\" EntitySet=\"Carts\" /><End Role=\"CartItems\" EntitySet=\"CartI" +
-                "tems\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Orde" +
-                "r_Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSe" +
-                "t\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_" +
-                "Cart_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><E" +
-                "nd Role=\"DetailsPartner\" EntitySet=\"Carts\" /><End Role=\"Details\" EntitySet=\"Publ" +
-                "icEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public" +
-                "_Domain_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPart" +
-                "nerSet\" Association=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Do" +
-                "main_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_OrderPartner" +
-                "\"><End Role=\"OrderPartner\" EntitySet=\"OrderItems\" /><End Role=\"Order\" EntitySet=" +
-                "\"Orders\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_O" +
-                "rder_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartnerSet\" Assoc" +
-                "iation=\"Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain_Order_" +
-                "OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner\"><End Role=\"Jo" +
-                "bPartner\" EntitySet=\"OrderItems\" /><End Role=\"Job\" EntitySet=\"Jobs\" /></Associat" +
-                "ionSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_OrderItem_Config" +
-                "uration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartnerSet\" Associa" +
-                "tion=\"Net.Appclusive.Public.Types.Net_Appclusive_Public_Domain_Order_OrderItem_C" +
-                "onfiguration_Net_Appclusive_Public_Types_IdValuePair_ConfigurationPartner\"><End " +
-                "Role=\"ConfigurationPartner\" EntitySet=\"OrderItems\" /><End Role=\"Configuration\" E" +
-                "ntitySet=\"IdValuePairs\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_" +
-                "Public_Domain_Order_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEntityD" +
-                "etails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusi" +
-                "ve_Public_Domain_Order_OrderItem_Details_Net_Appclusive_Public_Domain_PublicEnti" +
-                "tyDetails_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"OrderItems\" /><E" +
-                "nd Role=\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><Associati" +
-                "onSet Name=\"Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Publ" +
-                "ic_Domain_Order_Cart_CartPartnerSet\" Association=\"Net.Appclusive.Public.Domain.O" +
-                "rder.Net_Appclusive_Public_Domain_Order_CartItem_Cart_Net_Appclusive_Public_Doma" +
-                "in_Order_Cart_CartPartner\"><End Role=\"CartPartner\" EntitySet=\"CartItems\" /><End " +
-                "Role=\"Cart\" EntitySet=\"Carts\" /></AssociationSet><AssociationSet Name=\"Net_Appcl" +
-                "usive_Public_Domain_Order_CartItem_Configuration_Net_Appclusive_Public_Types_IdV" +
-                "aluePair_ConfigurationPartnerSet\" Association=\"Net.Appclusive.Public.Types.Net_A" +
-                "ppclusive_Public_Domain_Order_CartItem_Configuration_Net_Appclusive_Public_Types" +
-                "_IdValuePair_ConfigurationPartner\"><End Role=\"ConfigurationPartner\" EntitySet=\"C" +
-                "artItems\" /><End Role=\"Configuration\" EntitySet=\"IdValuePairs\" /></AssociationSe" +
-                "t><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_CartItem_Details_Net_" +
-                "Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net" +
-                ".Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Order_CartItem_Details_Ne" +
-                "t_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartn";
+                "Domain_Identity_User_Roles_Net_Appclusive_Public_Domain_Security_Role_RolesPartn" +
+                "er\"><End Role=\"RolesPartner\" EntitySet=\"Users\" /><End Role=\"Roles\" EntitySet=\"Ro" +
+                "les\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Secur" +
+                "ity_ItemAcl_Parent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentPartnerSe" +
+                "t\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Public_Doma" +
+                "in_Security_ItemAcl_Parent_Net_Appclusive_Public_Domain_Security_ItemAcl_ParentP" +
+                "artner\"><End Role=\"ParentPartner\" EntitySet=\"ItemAcls\" /><End Role=\"Parent\" Enti" +
+                "tySet=\"ItemAcls\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_" +
+                "Domain_Security_ItemAcl_Children_Net_Appclusive_Public_Domain_Security_ItemAcl_C" +
+                "hildrenPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appclu" +
+                "sive_Public_Domain_Security_ItemAcl_Children_Net_Appclusive_Public_Domain_Securi" +
+                "ty_ItemAcl_ChildrenPartner\"><End Role=\"ChildrenPartner\" EntitySet=\"ItemAcls\" /><" +
+                "End Role=\"Children\" EntitySet=\"ItemAcls\" /></AssociationSet><AssociationSet Name" +
+                "=\"Net_Appclusive_Public_Domain_Security_ItemAcl_Aces_Net_Appclusive_Public_Domai" +
+                "n_Security_ItemAce_AcesPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Sec" +
+                "urity.Net_Appclusive_Public_Domain_Security_ItemAcl_Aces_Net_Appclusive_Public_D" +
+                "omain_Security_ItemAce_AcesPartner\"><End Role=\"AcesPartner\" EntitySet=\"ItemAcls\"" +
+                " /><End Role=\"Aces\" EntitySet=\"ItemAces\" /></AssociationSet><AssociationSet Name" +
+                "=\"Net_Appclusive_Public_Domain_Security_Ace_Permission_Net_Appclusive_Public_Dom" +
+                "ain_Security_Permission_PermissionPartnerSet\" Association=\"Net.Appclusive.Public" +
+                ".Domain.Security.Net_Appclusive_Public_Domain_Security_Ace_Permission_Net_Appclu" +
+                "sive_Public_Domain_Security_Permission_PermissionPartner\"><End Role=\"PermissionP" +
+                "artner\" EntitySet=\"Aces\" /><End Role=\"Permission\" EntitySet=\"Permissions\" /></As" +
+                "sociationSet><AssociationSet Name=\"Net_Appclusive_Public_Do";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart14 = "er\"><End Role=\"DetailsPartner\" EntitySet=\"CartItems\" /><End Role=\"Details\" Entity" +
-                "Set=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusi" +
-                "ve_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appclusive_Public_Domain_Ord" +
-                "er_CatalogueItem_CatalogueItemsPartnerSet\" Association=\"Net.Appclusive.Public.Do" +
-                "main.Order.Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_Appcl" +
-                "usive_Public_Domain_Order_CatalogueItem_CatalogueItemsPartner\"><End Role=\"Catalo" +
-                "gueItemsPartner\" EntitySet=\"Catalogues\" /><End Role=\"CatalogueItems\" EntitySet=\"" +
-                "CatalogueItems\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_D" +
-                "omain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_D" +
-                "etailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Publi" +
-                "c_Domain_Order_Catalogue_Details_Net_Appclusive_Public_Domain_PublicEntityDetail" +
-                "s_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Catalogues\" /><End Role=" +
-                "\"Details\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Na" +
+            private const string ModelPart9 = "main_Security_Ace_User_Net_Appclusive_Public_Domain_Identity_User_UserPartnerSet\"" +
+                " Association=\"Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain" +
+                "_Security_Ace_User_Net_Appclusive_Public_Domain_Identity_User_UserPartner\"><End " +
+                "Role=\"UserPartner\" EntitySet=\"Aces\" /><End Role=\"User\" EntitySet=\"Users\" /></Ass" +
+                "ociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_Ace_Role" +
+                "_Net_Appclusive_Public_Domain_Security_Role_RolePartnerSet\" Association=\"Net.App" +
+                "clusive.Public.Domain.Security.Net_Appclusive_Public_Domain_Security_Ace_Role_Ne" +
+                "t_Appclusive_Public_Domain_Security_Role_RolePartner\"><End Role=\"RolePartner\" En" +
+                "titySet=\"Aces\" /><End Role=\"Role\" EntitySet=\"Roles\" /></AssociationSet><Associat" +
+                "ionSet Name=\"Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Pub" +
+                "lic_Domain_Identity_User_UsersPartnerSet\" Association=\"Net.Appclusive.Public.Dom" +
+                "ain.Identity.Net_Appclusive_Public_Domain_Security_Role_Users_Net_Appclusive_Pub" +
+                "lic_Domain_Identity_User_UsersPartner\"><End Role=\"UsersPartner\" EntitySet=\"Roles" +
+                "\" /><End Role=\"Users\" EntitySet=\"Users\" /></AssociationSet><AssociationSet Name=" +
+                "\"Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Domain_" +
+                "Security_Right_RightsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Secur" +
+                "ity.Net_Appclusive_Public_Domain_Security_Role_Rights_Net_Appclusive_Public_Doma" +
+                "in_Security_Right_RightsPartner\"><End Role=\"RightsPartner\" EntitySet=\"Roles\" /><" +
+                "End Role=\"Rights\" EntitySet=\"Rights\" /></AssociationSet><AssociationSet Name=\"Ne" +
+                "t_Appclusive_Public_Domain_Security_Acl_Parent_Net_Appclusive_Public_Domain_Secu" +
+                "rity_Acl_ParentPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Ne" +
+                "t_Appclusive_Public_Domain_Security_Acl_Parent_Net_Appclusive_Public_Domain_Secu" +
+                "rity_Acl_ParentPartner\"><End Role=\"ParentPartner\" EntitySet=\"Acls\" /><End Role=\"" +
+                "Parent\" EntitySet=\"Acls\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive" +
+                "_Public_Domain_Security_Acl_Children_Net_Appclusive_Public_Domain_Security_Acl_C" +
+                "hildrenPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appclu" +
+                "sive_Public_Domain_Security_Acl_Children_Net_Appclusive_Public_Domain_Security_A" +
+                "cl_ChildrenPartner\"><End Role=\"ChildrenPartner\" EntitySet=\"Acls\" /><End Role=\"Ch" +
+                "ildren\" EntitySet=\"Acls\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive" +
+                "_Public_Domain_Security_Acl_Aces_Net_Appclusive_Public_Domain_Security_Ace_AcesP" +
+                "artnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Pub" +
+                "lic_Domain_Security_Acl_Aces_Net_Appclusive_Public_Domain_Security_Ace_AcesPartn" +
+                "er\"><End Role=\"AcesPartner\" EntitySet=\"Acls\" /><End Role=\"Aces\" EntitySet=\"Aces\"" +
+                " /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Security_" +
+                "ItemAce_Permission_Net_Appclusive_Public_Domain_Security_Permission_PermissionPa" +
+                "rtnerSet\" Association=\"Net.Appclusive.Public.Domain.Security.Net_Appclusive_Publ" +
+                "ic_Domain_Security_ItemAce_Permission_Net_Appclusive_Public_Domain_Security_Perm" +
+                "ission_PermissionPartner\"><End Role=\"PermissionPartner\" EntitySet=\"ItemAces\" /><" +
+                "End Role=\"Permission\" EntitySet=\"Permissions\" /></AssociationSet><AssociationSet" +
+                " Name=\"Net_Appclusive_Public_Domain_Security_ItemAce_Role_Net_Appclusive_Public_" +
+                "Domain_Security_Role_RolePartnerSet\" Association=\"Net.Appclusive.Public.Domain.S" +
+                "ecurity.Net_Appclusive_Public_Domain_Security_ItemAce_Role_Net_Appclusive_Public" +
+                "_Domain_Security_Role_RolePartner\"><End Role=\"RolePartner\" EntitySet=\"ItemAces\" " +
+                "/><End Role=\"Role\" EntitySet=\"Roles\" /></AssociationSet><AssociationSet Name=\"Ne" +
+                "t_Appclusive_Public_Domain_Security_ItemAce_User_Net_Appclusive_Public_Domain_Id" +
+                "entity_User_UserPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Identity.N" +
+                "et_Appclusive_Public_Domain_Security_ItemAce_User_Net_Appclusive_Public_Domain_I" +
+                "dentity_User_UserPartner\"><End Role=\"UserPartner\" EntitySet=\"ItemAces\" /><End Ro" +
+                "le=\"User\" EntitySet=\"Users\" /></AssociationSet><AssociationSet Name=\"Net_Appclus" +
+                "ive_Public_Domain_Order_Order_OrderItems_Net_Appclusive_Public_Domain_Order_Orde" +
+                "rItem_OrderItemsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Order.Net_" +
+                "Appclusive_Public_Domain_Order_Order_OrderItems_Net_Appclusive_Public_Domain_Ord" +
+                "er_OrderItem_OrderItemsPartner\"><End Role=\"OrderItemsPartner\" EntitySet=\"Orders\"" +
+                " /><End Role=\"OrderItems\" EntitySet=\"OrderItems\" /></AssociationSet><Association" +
+                "Set Name=\"Net_Appclusive_Public_Domain_Order_Order_Job_Net_Appclusive_Public_Dom" +
+                "ain_Control_Job_JobPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Control" +
+                ".Net_Appclusive_Public_Domain_Order_Order_Job_Net_Appclusive_Public_Domain_Contr" +
+                "ol_Job_JobPartner\"><End Role=\"JobPartner\" EntitySet=\"Orders\" /><End Role=\"Job\" E" +
+                "ntitySet=\"Jobs\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_D" +
+                "omain_Order_Cart_CartItems_Net_Appclusive_Public_Domain_Order_CartItem_CartItems" +
+                "PartnerSet\" Association=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Publi" +
+                "c_Domain_Order_Cart_CartItems_Net_Appclusive_Public_Domain_Order_CartItem_CartIt" +
+                "emsPartner\"><End Role=\"CartItemsPartner\" EntitySet=\"Carts\" /><End Role=\"CartItem" +
+                "s\" EntitySet=\"CartItems\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive" +
+                "_Public_Domain_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_Or" +
+                "derPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Pu" +
+                "blic_Domain_Order_OrderItem_Order_Net_Appclusive_Public_Domain_Order_Order_Order" +
+                "Partner\"><End Role=\"OrderPartner\" EntitySet=\"OrderItems\" /><End Role=\"Order\" Ent" +
+                "itySet=\"Orders\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_D" +
+                "omain_Order_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartnerSet" +
+                "\" Association=\"Net.Appclusive.Public.Domain.Control.Net_Appclusive_Public_Domain" +
+                "_Order_OrderItem_Job_Net_Appclusive_Public_Domain_Control_Job_JobPartner\"><End R" +
+                "ole=\"JobPartner\" EntitySet=\"OrderItems\" /><End Role=\"Job\" EntitySet=\"Jobs\" /></A" +
+                "ssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_CartItem_" +
+                "Cart_Net_Appclusive_Public_Domain_Order_Cart_CartPartnerSet\" Association=\"Net.Ap" +
+                "pclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_CartItem_Cart_Ne" +
+                "t_Appclusive_Public_Domain_Order_Cart_CartPartner\"><End Role=\"CartPartner\" Entit" +
+                "ySet=\"CartItems\" /><End Role=\"Cart\" EntitySet=\"Carts\" /></AssociationSet><Associ" +
+                "ationSet Name=\"Net_Appclusive_Public_Domain_Order_Catalogue_CatalogueItems_Net_A" +
+                "ppclusive_Public_Domain_Order_CatalogueItem_CatalogueItemsPartnerSet\" Associatio" +
+                "n=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Domain_Order_Catalog" +
+                "ue_CatalogueItems_Net_Appclusive_Public_Domain_Order_CatalogueItem_CatalogueItem" +
+                "sPartner\"><End Role=\"CatalogueItemsPartner\" EntitySet=\"Catalogues\" /><End Role=\"" +
+                "CatalogueItems\" EntitySet=\"CatalogueItems\" /></AssociationSet><AssociationSet Na" +
                 "me=\"Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_Net_Appclusive_Pu" +
                 "blic_Domain_Order_Catalogue_CataloguePartnerSet\" Association=\"Net.Appclusive.Pub" +
                 "lic.Domain.Order.Net_Appclusive_Public_Domain_Order_CatalogueItem_Catalogue_Net_" +
@@ -2444,55 +1890,13 @@ namespace Net.Appclusive.Api.Core
                 "talogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_BlueprintPart" +
                 "nerSet\" Association=\"Net.Appclusive.Public.Domain.Order.Net_Appclusive_Public_Do" +
                 "main_Order_CatalogueItem_Blueprint_Net_Appclusive_Public_Domain_Order_Blueprint_" +
-                "BlueprintPartner\"><End Role=\"BlueprintPartner\" EntitySet=\"CatalogueItems\" /><End" +
-                " Role=\"Blueprint\" EntitySet=\"Blueprints\" /></AssociationSet><AssociationSet Name" +
-                "=\"Net_Appclusive_Public_Domain_Order_CatalogueItem_Details_Net_Appclusive_Public" +
-                "_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Publi" +
-                "c.Domain.Net_Appclusive_Public_Domain_Order_CatalogueItem_Details_Net_Appclusive" +
-                "_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" En" +
-                "titySet=\"CatalogueItems\" /><End Role=\"Details\" EntitySet=\"PublicEntityDetailss\" " +
-                "/></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_Blue" +
-                "print_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartnerSet\" Associ" +
-                "ation=\"Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Order" +
-                "_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartner\"><End" +
-                " Role=\"ModelPartner\" EntitySet=\"Blueprints\" /><End Role=\"Model\" EntitySet=\"Model" +
-                "s\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Order_B" +
-                "lueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner" +
-                "Set\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Orde" +
-                "r_Blueprint_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPart" +
-                "ner\"><End Role=\"DetailsPartner\" EntitySet=\"Blueprints\" /><End Role=\"Details\" Ent" +
-                "itySet=\"PublicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appcl" +
-                "usive_Public_Domain_Identity_Tenant_Details_Net_Appclusive_Public_Domain_TenantD" +
-                "etails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusi" +
-                "ve_Public_Domain_Identity_Tenant_Details_Net_Appclusive_Public_Domain_TenantDeta" +
-                "ils_DetailsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"Tenants\" /><End Role=\"" +
-                "Details\" EntitySet=\"TenantDetailss\" /></AssociationSet><AssociationSet Name=\"Net" +
-                "_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Domain_Id" +
-                "entity_Tenant_ParentPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Identi" +
-                "ty.Net_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Dom" +
-                "ain_Identity_Tenant_ParentPartner\"><End Role=\"ParentPartner\" EntitySet=\"Tenants\"" +
-                " /><End Role=\"Parent\" EntitySet=\"Tenants\" /></AssociationSet><AssociationSet Nam" +
-                "e=\"Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appclusive_Public_D" +
-                "omain_Identity_Tenant_ChildrenPartnerSet\" Association=\"Net.Appclusive.Public.Dom" +
-                "ain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appclusiv" +
-                "e_Public_Domain_Identity_Tenant_ChildrenPartner\"><End Role=\"ChildrenPartner\" Ent" +
-                "itySet=\"Tenants\" /><End Role=\"Children\" EntitySet=\"Tenants\" /></AssociationSet><" +
-                "AssociationSet Name=\"Net_Appclusive_Public_Domain_Control_Approval_Details_Net_A" +
-                "ppclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association=\"Net." +
-                "Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Control_Approval_Details_N" +
-                "et_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"Detai" +
-                "lsPartner\" EntitySet=\"Approvals\" /><End Role=\"Details\" EntitySet=\"PublicEntityDe" +
-                "tailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Public_Domain_Co" +
-                "ntrol_WorkItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsP" +
-                "artnerSet\" Association=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domai" +
-                "n_Control_WorkItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Deta" +
-                "ilsPartner\"><End Role=\"DetailsPartner\" EntitySet=\"WorkItems\" /><End Role=\"Detail" +
-                "s\" EntitySet=\"PublicEntityDetailss\" /></AssociationSet></EntityContainer></Schem" +
-                "a></edmx:DataServices></edmx:Edmx>";
+                "BlueprintPartner\"><End Role=\"BlueprintPartner\" EntitySet=\"C";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart10 = @"atalogueItems"" /><End Role=""Blueprint"" EntitySet=""Blueprints"" /></AssociationSet><AssociationSet Name=""Net_Appclusive_Public_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartnerSet"" Association=""Net.Appclusive.Public.Domain.Inventory.Net_Appclusive_Public_Domain_Order_Blueprint_Model_Net_Appclusive_Public_Domain_Inventory_Model_ModelPartner""><End Role=""ModelPartner"" EntitySet=""Blueprints"" /><End Role=""Model"" EntitySet=""Models"" /></AssociationSet><AssociationSet Name=""Net_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Domain_Identity_Tenant_ParentPartnerSet"" Association=""Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_Parent_Net_Appclusive_Public_Domain_Identity_Tenant_ParentPartner""><End Role=""ParentPartner"" EntitySet=""Tenants"" /><End Role=""Parent"" EntitySet=""Tenants"" /></AssociationSet><AssociationSet Name=""Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appclusive_Public_Domain_Identity_Tenant_ChildrenPartnerSet"" Association=""Net.Appclusive.Public.Domain.Identity.Net_Appclusive_Public_Domain_Identity_Tenant_Children_Net_Appclusive_Public_Domain_Identity_Tenant_ChildrenPartner""><End Role=""ChildrenPartner"" EntitySet=""Tenants"" /><End Role=""Children"" EntitySet=""Tenants"" /></AssociationSet></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
-                return string.Concat(ModelPart0, ModelPart1, ModelPart2, ModelPart3, ModelPart4, ModelPart5, ModelPart6, ModelPart7, ModelPart8, ModelPart9, ModelPart10, ModelPart11, ModelPart12, ModelPart13, ModelPart14);
+                return string.Concat(ModelPart0, ModelPart1, ModelPart2, ModelPart3, ModelPart4, ModelPart5, ModelPart6, ModelPart7, ModelPart8, ModelPart9, ModelPart10);
             }
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             public static global::Microsoft.Data.Edm.IEdmModel GetInstance()
@@ -2521,13 +1925,969 @@ namespace Net.Appclusive.Api.Core
         }
     }
     /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Types.IdNamePair in the schema.
+    /// There are no comments for Net.Appclusive.Public.Domain.Configuration.Example in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("IdNamePairs")]
+    [global::System.Data.Services.Common.EntitySetAttribute("Examples")]
     [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Example : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Example object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Example CreateExample(long ID, string name)
+        {
+            Example example = new Example();
+            example.Id = ID;
+            example.Name = name;
+            return example;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Configuration.ManagementCredential in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("ManagementCredentials")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class ManagementCredential : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new ManagementCredential object.
+        /// </summary>
+        /// <param name="username">Initial value of Username.</param>
+        /// <param name="password">Initial value of Password.</param>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static ManagementCredential CreateManagementCredential(string username, string password, string type, long ID, string name)
+        {
+            ManagementCredential managementCredential = new ManagementCredential();
+            managementCredential.Username = username;
+            managementCredential.Password = password;
+            managementCredential.Type = type;
+            managementCredential.Id = ID;
+            managementCredential.Name = name;
+            return managementCredential;
+        }
+        /// <summary>
+        /// There are no comments for Property Username in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Username
+        {
+            get
+            {
+                return this._Username;
+            }
+            set
+            {
+                this.OnUsernameChanging(value);
+                this._Username = value;
+                this.OnUsernameChanged();
+                this.OnPropertyChanged("Username");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Username;
+        partial void OnUsernameChanging(string value);
+        partial void OnUsernameChanged();
+        /// <summary>
+        /// There are no comments for Property Password in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Password
+        {
+            get
+            {
+                return this._Password;
+            }
+            set
+            {
+                this.OnPasswordChanging(value);
+                this._Password = value;
+                this.OnPasswordChanged();
+                this.OnPropertyChanged("Password");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Password;
+        partial void OnPasswordChanging(string value);
+        partial void OnPasswordChanged();
+        /// <summary>
+        /// There are no comments for Property Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Type
+        {
+            get
+            {
+                return this._Type;
+            }
+            set
+            {
+                this.OnTypeChanging(value);
+                this._Type = value;
+                this.OnTypeChanged();
+                this.OnPropertyChanged("Type");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Type;
+        partial void OnTypeChanging(string value);
+        partial void OnTypeChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Configuration.ManagementUri in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("ManagementUris")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class ManagementUri : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new ManagementUri object.
+        /// </summary>
+        /// <param name="value">Initial value of Value.</param>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="managementCredentialId">Initial value of ManagementCredentialId.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static ManagementUri CreateManagementUri(string value, string type, long managementCredentialId, long ID, string name)
+        {
+            ManagementUri managementUri = new ManagementUri();
+            managementUri.Value = value;
+            managementUri.Type = type;
+            managementUri.ManagementCredentialId = managementCredentialId;
+            managementUri.Id = ID;
+            managementUri.Name = name;
+            return managementUri;
+        }
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                this._Value = value;
+                this.OnValueChanged();
+                this.OnPropertyChanged("Value");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Value;
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
+        /// <summary>
+        /// There are no comments for Property Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Type
+        {
+            get
+            {
+                return this._Type;
+            }
+            set
+            {
+                this.OnTypeChanging(value);
+                this._Type = value;
+                this.OnTypeChanged();
+                this.OnPropertyChanged("Type");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Type;
+        partial void OnTypeChanging(string value);
+        partial void OnTypeChanged();
+        /// <summary>
+        /// There are no comments for Property ManagementCredentialId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long ManagementCredentialId
+        {
+            get
+            {
+                return this._ManagementCredentialId;
+            }
+            set
+            {
+                this.OnManagementCredentialIdChanging(value);
+                this._ManagementCredentialId = value;
+                this.OnManagementCredentialIdChanged();
+                this.OnPropertyChanged("ManagementCredentialId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _ManagementCredentialId;
+        partial void OnManagementCredentialIdChanging(long value);
+        partial void OnManagementCredentialIdChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for ManagementCredential in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public ManagementCredential ManagementCredential
+        {
+            get
+            {
+                return this._ManagementCredential;
+            }
+            set
+            {
+                this._ManagementCredential = value;
+                this.OnPropertyChanged("ManagementCredential");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private ManagementCredential _ManagementCredential;
+        /// <summary>
+        /// There are no comments for ManagementCredentials in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<ManagementCredential> ManagementCredentials
+        {
+            get
+            {
+                return this._ManagementCredentials;
+            }
+            set
+            {
+                this._ManagementCredentials = value;
+                this.OnPropertyChanged("ManagementCredentials");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ManagementCredential> _ManagementCredentials = new global::System.Data.Services.Client.DataServiceCollection<ManagementCredential>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("VolatileKeyNameValues")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class VolatileKeyNameValue : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new VolatileKeyNameValue object.
+        /// </summary>
+        /// <param name="key">Initial value of Key.</param>
+        /// <param name="value">Initial value of Value.</param>
+        /// <param name="validUntil">Initial value of ValidUntil.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static VolatileKeyNameValue CreateVolatileKeyNameValue(string key, string value, global::System.DateTimeOffset validUntil, long ID, string name)
+        {
+            VolatileKeyNameValue volatileKeyNameValue = new VolatileKeyNameValue();
+            volatileKeyNameValue.Key = key;
+            volatileKeyNameValue.Value = value;
+            volatileKeyNameValue.ValidUntil = validUntil;
+            volatileKeyNameValue.Id = ID;
+            volatileKeyNameValue.Name = name;
+            return volatileKeyNameValue;
+        }
+        /// <summary>
+        /// There are no comments for Property Key in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Key
+        {
+            get
+            {
+                return this._Key;
+            }
+            set
+            {
+                this.OnKeyChanging(value);
+                this._Key = value;
+                this.OnKeyChanged();
+                this.OnPropertyChanged("Key");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Key;
+        partial void OnKeyChanging(string value);
+        partial void OnKeyChanged();
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                this._Value = value;
+                this.OnValueChanged();
+                this.OnPropertyChanged("Value");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Value;
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
+        /// <summary>
+        /// There are no comments for Property ValidUntil in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.DateTimeOffset ValidUntil
+        {
+            get
+            {
+                return this._ValidUntil;
+            }
+            set
+            {
+                this.OnValidUntilChanging(value);
+                this._ValidUntil = value;
+                this.OnValidUntilChanged();
+                this.OnPropertyChanged("ValidUntil");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.DateTimeOffset _ValidUntil;
+        partial void OnValidUntilChanging(global::System.DateTimeOffset value);
+        partial void OnValidUntilChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Configuration.KeyNameValue in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("KeyNameValues")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class KeyNameValue : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new KeyNameValue object.
+        /// </summary>
+        /// <param name="key">Initial value of Key.</param>
+        /// <param name="value">Initial value of Value.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static KeyNameValue CreateKeyNameValue(string key, string value, long ID, string name)
+        {
+            KeyNameValue keyNameValue = new KeyNameValue();
+            keyNameValue.Key = key;
+            keyNameValue.Value = value;
+            keyNameValue.Id = ID;
+            keyNameValue.Name = name;
+            return keyNameValue;
+        }
+        /// <summary>
+        /// There are no comments for Property Key in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Key
+        {
+            get
+            {
+                return this._Key;
+            }
+            set
+            {
+                this.OnKeyChanging(value);
+                this._Key = value;
+                this.OnKeyChanged();
+                this.OnPropertyChanged("Key");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Key;
+        partial void OnKeyChanging(string value);
+        partial void OnKeyChanged();
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                this._Value = value;
+                this.OnValueChanged();
+                this.OnPropertyChanged("Value");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Value;
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+}
+// Original file name:
+// Generation date: 5/3/2017 10:33:41 AM
+namespace Net.Appclusive.Public.Types
+{
+    
+    /// <summary>
+    /// There are no comments for ComplexType Net.Appclusive.Public.Types.IdNamePair in the schema.
+    /// </summary>
     public partial class IdNamePair : global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
@@ -2597,13 +2957,8 @@ namespace Net.Appclusive.Api.Core
         }
     }
     /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Types.IdValuePair in the schema.
+    /// There are no comments for ComplexType Net.Appclusive.Public.Types.IdValuePair in the schema.
     /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("IdValuePairs")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
     public partial class IdValuePair : global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
@@ -2673,26 +3028,10 @@ namespace Net.Appclusive.Api.Core
         }
     }
     /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Types.NameValuePair in the schema.
+    /// There are no comments for ComplexType Net.Appclusive.Public.Types.NameValuePair in the schema.
     /// </summary>
-    /// <KeyProperties>
-    /// Name
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("NameValuePairs")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Name")]
     public partial class NameValuePair : global::System.ComponentModel.INotifyPropertyChanged
     {
-        /// <summary>
-        /// Create a new NameValuePair object.
-        /// </summary>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static NameValuePair CreateNameValuePair(string name)
-        {
-            NameValuePair nameValuePair = new NameValuePair();
-            nameValuePair.Name = name;
-            return nameValuePair;
-        }
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
@@ -2749,13 +3088,8 @@ namespace Net.Appclusive.Api.Core
         }
     }
     /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Types.IdNameDescriptionTuple in the schema.
+    /// There are no comments for ComplexType Net.Appclusive.Public.Types.IdNameDescriptionTuple in the schema.
     /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("IdNameDescriptionTuples")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
     public partial class IdNameDescriptionTuple : global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
@@ -2935,223 +3269,149 @@ namespace Net.Appclusive.Api.Core
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
-namespace Net.Appclusive.Public.Domain.Inventory
+// Generation date: 5/3/2017 10:33:41 AM
+namespace Net.Appclusive.Public.Domain
 {
     
     /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Inventory.Model in the schema.
+    /// There are no comments for ComplexType Net.Appclusive.Public.Domain.TenantDetails in the schema.
     /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Models")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Model : global::System.ComponentModel.INotifyPropertyChanged
+    public partial class TenantDetails : global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a new Model object.
+        /// Create a new TenantDetails object.
         /// </summary>
-        /// <param name="parentId">Initial value of ParentId.</param>
-        /// <param name="isActionModel">Initial value of IsActionModel.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
+        /// <param name="createdById">Initial value of CreatedById.</param>
+        /// <param name="modifiedById">Initial value of ModifiedById.</param>
+        /// <param name="created">Initial value of Created.</param>
+        /// <param name="modified">Initial value of Modified.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Model CreateModel(long parentId, bool isActionModel, long ID, string name)
+        public static TenantDetails CreateTenantDetails(long createdById, long modifiedById, global::System.DateTimeOffset created, global::System.DateTimeOffset modified)
         {
-            Model model = new Model();
-            model.ParentId = parentId;
-            model.IsActionModel = isActionModel;
-            model.Id = ID;
-            model.Name = name;
-            return model;
+            TenantDetails tenantDetails = new TenantDetails();
+            tenantDetails.CreatedById = createdById;
+            tenantDetails.ModifiedById = modifiedById;
+            tenantDetails.Created = created;
+            tenantDetails.Modified = modified;
+            return tenantDetails;
         }
         /// <summary>
-        /// There are no comments for Property ParentId in the schema.
+        /// There are no comments for Property CreatedById in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long ParentId
+        public long CreatedById
         {
             get
             {
-                return this._ParentId;
+                return this._CreatedById;
             }
             set
             {
-                this.OnParentIdChanging(value);
-                this._ParentId = value;
-                this.OnParentIdChanged();
-                this.OnPropertyChanged("ParentId");
+                this.OnCreatedByIdChanging(value);
+                this._CreatedById = value;
+                this.OnCreatedByIdChanged();
+                this.OnPropertyChanged("CreatedById");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _ParentId;
-        partial void OnParentIdChanging(long value);
-        partial void OnParentIdChanged();
+        private long _CreatedById;
+        partial void OnCreatedByIdChanging(long value);
+        partial void OnCreatedByIdChanged();
         /// <summary>
-        /// There are no comments for Property IsActionModel in the schema.
+        /// There are no comments for Property ModifiedById in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public bool IsActionModel
+        public long ModifiedById
         {
             get
             {
-                return this._IsActionModel;
+                return this._ModifiedById;
             }
             set
             {
-                this.OnIsActionModelChanging(value);
-                this._IsActionModel = value;
-                this.OnIsActionModelChanged();
-                this.OnPropertyChanged("IsActionModel");
+                this.OnModifiedByIdChanging(value);
+                this._ModifiedById = value;
+                this.OnModifiedByIdChanged();
+                this.OnPropertyChanged("ModifiedById");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private bool _IsActionModel;
-        partial void OnIsActionModelChanging(bool value);
-        partial void OnIsActionModelChanged();
+        private long _ModifiedById;
+        partial void OnModifiedByIdChanging(long value);
+        partial void OnModifiedByIdChanged();
         /// <summary>
-        /// There are no comments for Property BehaviourDefinitionForId in the schema.
+        /// There are no comments for Property Created in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<long> BehaviourDefinitionForId
+        public global::System.DateTimeOffset Created
         {
             get
             {
-                return this._BehaviourDefinitionForId;
+                return this._Created;
             }
             set
             {
-                this.OnBehaviourDefinitionForIdChanging(value);
-                this._BehaviourDefinitionForId = value;
-                this.OnBehaviourDefinitionForIdChanged();
-                this.OnPropertyChanged("BehaviourDefinitionForId");
+                this.OnCreatedChanging(value);
+                this._Created = value;
+                this.OnCreatedChanged();
+                this.OnPropertyChanged("Created");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<long> _BehaviourDefinitionForId;
-        partial void OnBehaviourDefinitionForIdChanging(global::System.Nullable<long> value);
-        partial void OnBehaviourDefinitionForIdChanged();
+        private global::System.DateTimeOffset _Created;
+        partial void OnCreatedChanging(global::System.DateTimeOffset value);
+        partial void OnCreatedChanged();
         /// <summary>
-        /// There are no comments for Property Id in the schema.
+        /// There are no comments for Property Modified in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
+        public global::System.DateTimeOffset Modified
         {
             get
             {
-                return this._Id;
+                return this._Modified;
             }
             set
             {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
+                this.OnModifiedChanging(value);
+                this._Modified = value;
+                this.OnModifiedChanged();
+                this.OnPropertyChanged("Modified");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
+        private global::System.DateTimeOffset _Modified;
+        partial void OnModifiedChanging(global::System.DateTimeOffset value);
+        partial void OnModifiedChanged();
         /// <summary>
-        /// There are no comments for Property Name in the schema.
+        /// There are no comments for Property RowVersion in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
+        public byte[] RowVersion
         {
             get
             {
-                return this._Name;
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
             }
             set
             {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
+                this.OnRowVersionChanging(value);
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Behaviours in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdNameDescriptionTuple> Behaviours
-        {
-            get
-            {
-                return this._Behaviours;
-            }
-            set
-            {
-                this._Behaviours = value;
-                this.OnPropertyChanged("Behaviours");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdNameDescriptionTuple> _Behaviours = new global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdNameDescriptionTuple>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for ModelAttributes in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdNameDescriptionTuple> ModelAttributes
-        {
-            get
-            {
-                return this._ModelAttributes;
-            }
-            set
-            {
-                this._ModelAttributes = value;
-                this.OnPropertyChanged("ModelAttributes");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdNameDescriptionTuple> _ModelAttributes = new global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdNameDescriptionTuple>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -3164,196 +3424,168 @@ namespace Net.Appclusive.Public.Domain.Inventory
         }
     }
     /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Inventory.Item in the schema.
+    /// There are no comments for ComplexType Net.Appclusive.Public.Domain.PublicEntityDetails in the schema.
     /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Items")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Item : global::System.ComponentModel.INotifyPropertyChanged
+    public partial class PublicEntityDetails : global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a new Item object.
+        /// Create a new PublicEntityDetails object.
         /// </summary>
-        /// <param name="parentId">Initial value of ParentId.</param>
-        /// <param name="modelId">Initial value of ModelId.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
+        /// <param name="tid">Initial value of Tid.</param>
+        /// <param name="createdById">Initial value of CreatedById.</param>
+        /// <param name="modifiedById">Initial value of ModifiedById.</param>
+        /// <param name="created">Initial value of Created.</param>
+        /// <param name="modified">Initial value of Modified.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Item CreateItem(long parentId, long modelId, long ID, string name)
+        public static PublicEntityDetails CreatePublicEntityDetails(global::System.Guid tid, long createdById, long modifiedById, global::System.DateTimeOffset created, global::System.DateTimeOffset modified)
         {
-            Item item = new Item();
-            item.ParentId = parentId;
-            item.ModelId = modelId;
-            item.Id = ID;
-            item.Name = name;
-            return item;
+            PublicEntityDetails publicEntityDetails = new PublicEntityDetails();
+            publicEntityDetails.Tid = tid;
+            publicEntityDetails.CreatedById = createdById;
+            publicEntityDetails.ModifiedById = modifiedById;
+            publicEntityDetails.Created = created;
+            publicEntityDetails.Modified = modified;
+            return publicEntityDetails;
         }
         /// <summary>
-        /// There are no comments for Property ParentId in the schema.
+        /// There are no comments for Property Tid in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long ParentId
+        public global::System.Guid Tid
         {
             get
             {
-                return this._ParentId;
+                return this._Tid;
             }
             set
             {
-                this.OnParentIdChanging(value);
-                this._ParentId = value;
-                this.OnParentIdChanged();
-                this.OnPropertyChanged("ParentId");
+                this.OnTidChanging(value);
+                this._Tid = value;
+                this.OnTidChanged();
+                this.OnPropertyChanged("Tid");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _ParentId;
-        partial void OnParentIdChanging(long value);
-        partial void OnParentIdChanged();
+        private global::System.Guid _Tid;
+        partial void OnTidChanging(global::System.Guid value);
+        partial void OnTidChanged();
         /// <summary>
-        /// There are no comments for Property ModelId in the schema.
+        /// There are no comments for Property CreatedById in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long ModelId
+        public long CreatedById
         {
             get
             {
-                return this._ModelId;
+                return this._CreatedById;
             }
             set
             {
-                this.OnModelIdChanging(value);
-                this._ModelId = value;
-                this.OnModelIdChanged();
-                this.OnPropertyChanged("ModelId");
+                this.OnCreatedByIdChanging(value);
+                this._CreatedById = value;
+                this.OnCreatedByIdChanged();
+                this.OnPropertyChanged("CreatedById");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _ModelId;
-        partial void OnModelIdChanging(long value);
-        partial void OnModelIdChanged();
+        private long _CreatedById;
+        partial void OnCreatedByIdChanging(long value);
+        partial void OnCreatedByIdChanged();
         /// <summary>
-        /// There are no comments for Property Id in the schema.
+        /// There are no comments for Property ModifiedById in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
+        public long ModifiedById
         {
             get
             {
-                return this._Id;
+                return this._ModifiedById;
             }
             set
             {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
+                this.OnModifiedByIdChanging(value);
+                this._ModifiedById = value;
+                this.OnModifiedByIdChanged();
+                this.OnPropertyChanged("ModifiedById");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
+        private long _ModifiedById;
+        partial void OnModifiedByIdChanging(long value);
+        partial void OnModifiedByIdChanged();
         /// <summary>
-        /// There are no comments for Property Name in the schema.
+        /// There are no comments for Property Created in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
+        public global::System.DateTimeOffset Created
         {
             get
             {
-                return this._Name;
+                return this._Created;
             }
             set
             {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
+                this.OnCreatedChanging(value);
+                this._Created = value;
+                this.OnCreatedChanged();
+                this.OnPropertyChanged("Created");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
+        private global::System.DateTimeOffset _Created;
+        partial void OnCreatedChanging(global::System.DateTimeOffset value);
+        partial void OnCreatedChanged();
         /// <summary>
-        /// There are no comments for Property Description in the schema.
+        /// There are no comments for Property Modified in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
+        public global::System.DateTimeOffset Modified
         {
             get
             {
-                return this._Description;
+                return this._Modified;
             }
             set
             {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
+                this.OnModifiedChanging(value);
+                this._Modified = value;
+                this.OnModifiedChanged();
+                this.OnPropertyChanged("Modified");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
+        private global::System.DateTimeOffset _Modified;
+        partial void OnModifiedChanging(global::System.DateTimeOffset value);
+        partial void OnModifiedChanged();
         /// <summary>
-        /// There are no comments for Children in the schema.
+        /// There are no comments for Property RowVersion in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Item> Children
+        public byte[] RowVersion
         {
             get
             {
-                return this._Children;
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
             }
             set
             {
-                this._Children = value;
-                this.OnPropertyChanged("Children");
+                this.OnRowVersionChanging(value);
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Item> _Children = new global::System.Data.Services.Client.DataServiceCollection<Item>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Attributes in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.NameValuePair> Attributes
-        {
-            get
-            {
-                return this._Attributes;
-            }
-            set
-            {
-                this._Attributes = value;
-                this.OnPropertyChanged("Attributes");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.NameValuePair> _Attributes = new global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.NameValuePair>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -3365,6 +3597,248 @@ namespace Net.Appclusive.Public.Domain.Inventory
             }
         }
     }
+}
+// Original file name:
+// Generation date: 5/3/2017 10:33:41 AM
+namespace Net.Appclusive.Api.Core.biz.dfch.CS.Commons
+{
+    
+    /// <summary>
+    /// There are no comments for ComplexType biz.dfch.CS.Commons.DictionaryParameters in the schema.
+    /// </summary>
+    public partial class DictionaryParameters : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// There are no comments for Property Keys in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Collections.ObjectModel.ObservableCollection<string> Keys
+        {
+            get
+            {
+                return this._Keys;
+            }
+            set
+            {
+                this.OnKeysChanging(value);
+                this._Keys = value;
+                this.OnKeysChanged();
+                this.OnPropertyChanged("Keys");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<string> _Keys = new global::System.Collections.ObjectModel.ObservableCollection<string>();
+        partial void OnKeysChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
+        partial void OnKeysChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+}
+// Original file name:
+// Generation date: 5/3/2017 10:33:41 AM
+namespace Net.Appclusive.Core.Domain
+{
+    
+    /// <summary>
+    /// There are no comments for ComplexType Net.Appclusive.Core.Domain.EmptyActionParameters in the schema.
+    /// </summary>
+    public partial class EmptyActionParameters : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+}
+// Original file name:
+// Generation date: 5/3/2017 10:33:41 AM
+namespace Net.Appclusive.Core.Domain.Configuration
+{
+    
+    /// <summary>
+    /// There are no comments for ComplexType Net.Appclusive.Core.Domain.Configuration.AltogetherNowReturnType in the schema.
+    /// </summary>
+    public partial class AltogetherNowReturnType : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new AltogetherNowReturnType object.
+        /// </summary>
+        /// <param name="longProperty">Initial value of LongProperty.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static AltogetherNowReturnType CreateAltogetherNowReturnType(long longProperty)
+        {
+            AltogetherNowReturnType altogetherNowReturnType = new AltogetherNowReturnType();
+            altogetherNowReturnType.LongProperty = longProperty;
+            return altogetherNowReturnType;
+        }
+        /// <summary>
+        /// There are no comments for Property StringProperty in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string StringProperty
+        {
+            get
+            {
+                return this._StringProperty;
+            }
+            set
+            {
+                this.OnStringPropertyChanging(value);
+                this._StringProperty = value;
+                this.OnStringPropertyChanged();
+                this.OnPropertyChanged("StringProperty");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _StringProperty;
+        partial void OnStringPropertyChanging(string value);
+        partial void OnStringPropertyChanged();
+        /// <summary>
+        /// There are no comments for Property LongProperty in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long LongProperty
+        {
+            get
+            {
+                return this._LongProperty;
+            }
+            set
+            {
+                this.OnLongPropertyChanging(value);
+                this._LongProperty = value;
+                this.OnLongPropertyChanged();
+                this.OnPropertyChanged("LongProperty");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _LongProperty;
+        partial void OnLongPropertyChanging(long value);
+        partial void OnLongPropertyChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for ComplexType Net.Appclusive.Core.Domain.Configuration.EntityActionReturningDto in the schema.
+    /// </summary>
+    public partial class EntityActionReturningDto : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new EntityActionReturningDto object.
+        /// </summary>
+        /// <param name="longProperty">Initial value of LongProperty.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static EntityActionReturningDto CreateEntityActionReturningDto(long longProperty)
+        {
+            EntityActionReturningDto entityActionReturningDto = new EntityActionReturningDto();
+            entityActionReturningDto.LongProperty = longProperty;
+            return entityActionReturningDto;
+        }
+        /// <summary>
+        /// There are no comments for Property StringProperty in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string StringProperty
+        {
+            get
+            {
+                return this._StringProperty;
+            }
+            set
+            {
+                this.OnStringPropertyChanging(value);
+                this._StringProperty = value;
+                this.OnStringPropertyChanged();
+                this.OnPropertyChanged("StringProperty");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _StringProperty;
+        partial void OnStringPropertyChanging(string value);
+        partial void OnStringPropertyChanged();
+        /// <summary>
+        /// There are no comments for Property LongProperty in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long LongProperty
+        {
+            get
+            {
+                return this._LongProperty;
+            }
+            set
+            {
+                this.OnLongPropertyChanging(value);
+                this._LongProperty = value;
+                this.OnLongPropertyChanged();
+                this.OnPropertyChanged("LongProperty");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _LongProperty;
+        partial void OnLongPropertyChanging(long value);
+        partial void OnLongPropertyChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+}
+// Original file name:
+// Generation date: 5/3/2017 10:33:41 AM
+namespace Net.Appclusive.Api.Core.System.Collections.ObjectModel
+{
+    
+    /// <summary>
+    /// There are no comments for ComplexType System.Collections.ObjectModel.Collection_1OfString in the schema.
+    /// </summary>
+    public partial class Collection_1OfString : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+}
+// Original file name:
+// Generation date: 5/3/2017 10:33:41 AM
+namespace Net.Appclusive.Public.Domain.Inventory
+{
+    
     /// <summary>
     /// There are no comments for Net.Appclusive.Public.Domain.Inventory.Attribute in the schema.
     /// </summary>
@@ -3525,23 +3999,36 @@ namespace Net.Appclusive.Public.Domain.Inventory
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
         /// <summary>
-        /// There are no comments for Details in the schema.
+        /// There are no comments for Property Details in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Net.Appclusive.Public.Domain.PublicEntityDetails Details
         {
             get
             {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
                 return this._Details;
             }
             set
             {
+                this.OnDetailsChanging(value);
                 this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
                 this.OnPropertyChanged("Details");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -3667,6 +4154,37 @@ namespace Net.Appclusive.Public.Domain.Inventory
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
         /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
         /// There are no comments for Children in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -3702,24 +4220,263 @@ namespace Net.Appclusive.Public.Domain.Inventory
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<Behaviour> _Parents = new global::System.Data.Services.Client.DataServiceCollection<Behaviour>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Inventory.Model in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Models")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Model : global::System.ComponentModel.INotifyPropertyChanged
+    {
         /// <summary>
-        /// There are no comments for Details in the schema.
+        /// Create a new Model object.
+        /// </summary>
+        /// <param name="parentId">Initial value of ParentId.</param>
+        /// <param name="behaviours">Initial value of Behaviours.</param>
+        /// <param name="modelAttributes">Initial value of ModelAttributes.</param>
+        /// <param name="isActionModel">Initial value of IsActionModel.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Model CreateModel(long parentId, global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdNameDescriptionTuple> behaviours, global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdNameDescriptionTuple> modelAttributes, bool isActionModel, long ID, string name)
+        {
+            Model model = new Model();
+            model.ParentId = parentId;
+            if ((behaviours == null))
+            {
+                throw new global::System.ArgumentNullException("behaviours");
+            }
+            model.Behaviours = behaviours;
+            if ((modelAttributes == null))
+            {
+                throw new global::System.ArgumentNullException("modelAttributes");
+            }
+            model.ModelAttributes = modelAttributes;
+            model.IsActionModel = isActionModel;
+            model.Id = ID;
+            model.Name = name;
+            return model;
+        }
+        /// <summary>
+        /// There are no comments for Property ParentId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long ParentId
+        {
+            get
+            {
+                return this._ParentId;
+            }
+            set
+            {
+                this.OnParentIdChanging(value);
+                this._ParentId = value;
+                this.OnParentIdChanged();
+                this.OnPropertyChanged("ParentId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _ParentId;
+        partial void OnParentIdChanging(long value);
+        partial void OnParentIdChanged();
+        /// <summary>
+        /// There are no comments for Property Behaviours in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdNameDescriptionTuple> Behaviours
+        {
+            get
+            {
+                return this._Behaviours;
+            }
+            set
+            {
+                this.OnBehavioursChanging(value);
+                this._Behaviours = value;
+                this.OnBehavioursChanged();
+                this.OnPropertyChanged("Behaviours");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdNameDescriptionTuple> _Behaviours = new global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdNameDescriptionTuple>();
+        partial void OnBehavioursChanging(global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdNameDescriptionTuple> value);
+        partial void OnBehavioursChanged();
+        /// <summary>
+        /// There are no comments for Property ModelAttributes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdNameDescriptionTuple> ModelAttributes
+        {
+            get
+            {
+                return this._ModelAttributes;
+            }
+            set
+            {
+                this.OnModelAttributesChanging(value);
+                this._ModelAttributes = value;
+                this.OnModelAttributesChanged();
+                this.OnPropertyChanged("ModelAttributes");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdNameDescriptionTuple> _ModelAttributes = new global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdNameDescriptionTuple>();
+        partial void OnModelAttributesChanging(global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdNameDescriptionTuple> value);
+        partial void OnModelAttributesChanged();
+        /// <summary>
+        /// There are no comments for Property IsActionModel in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool IsActionModel
+        {
+            get
+            {
+                return this._IsActionModel;
+            }
+            set
+            {
+                this.OnIsActionModelChanging(value);
+                this._IsActionModel = value;
+                this.OnIsActionModelChanged();
+                this.OnPropertyChanged("IsActionModel");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _IsActionModel;
+        partial void OnIsActionModelChanging(bool value);
+        partial void OnIsActionModelChanged();
+        /// <summary>
+        /// There are no comments for Property BehaviourDefinitionForId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<long> BehaviourDefinitionForId
+        {
+            get
+            {
+                return this._BehaviourDefinitionForId;
+            }
+            set
+            {
+                this.OnBehaviourDefinitionForIdChanging(value);
+                this._BehaviourDefinitionForId = value;
+                this.OnBehaviourDefinitionForIdChanged();
+                this.OnPropertyChanged("BehaviourDefinitionForId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<long> _BehaviourDefinitionForId;
+        partial void OnBehaviourDefinitionForIdChanging(global::System.Nullable<long> value);
+        partial void OnBehaviourDefinitionForIdChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Net.Appclusive.Public.Domain.PublicEntityDetails Details
         {
             get
             {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
                 return this._Details;
             }
             set
             {
+                this.OnDetailsChanging(value);
                 this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
                 this.OnPropertyChanged("Details");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -3893,6 +4650,37 @@ namespace Net.Appclusive.Public.Domain.Inventory
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
         /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
         /// There are no comments for Source in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -3946,24 +4734,231 @@ namespace Net.Appclusive.Public.Domain.Inventory
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Behaviour _Behaviour;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Inventory.Item in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Items")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Item : global::System.ComponentModel.INotifyPropertyChanged
+    {
         /// <summary>
-        /// There are no comments for Details in the schema.
+        /// Create a new Item object.
+        /// </summary>
+        /// <param name="parentId">Initial value of ParentId.</param>
+        /// <param name="modelId">Initial value of ModelId.</param>
+        /// <param name="attributes">Initial value of Attributes.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Item CreateItem(long parentId, long modelId, global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.NameValuePair> attributes, long ID, string name)
+        {
+            Item item = new Item();
+            item.ParentId = parentId;
+            item.ModelId = modelId;
+            if ((attributes == null))
+            {
+                throw new global::System.ArgumentNullException("attributes");
+            }
+            item.Attributes = attributes;
+            item.Id = ID;
+            item.Name = name;
+            return item;
+        }
+        /// <summary>
+        /// There are no comments for Property ParentId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long ParentId
+        {
+            get
+            {
+                return this._ParentId;
+            }
+            set
+            {
+                this.OnParentIdChanging(value);
+                this._ParentId = value;
+                this.OnParentIdChanged();
+                this.OnPropertyChanged("ParentId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _ParentId;
+        partial void OnParentIdChanging(long value);
+        partial void OnParentIdChanged();
+        /// <summary>
+        /// There are no comments for Property ModelId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long ModelId
+        {
+            get
+            {
+                return this._ModelId;
+            }
+            set
+            {
+                this.OnModelIdChanging(value);
+                this._ModelId = value;
+                this.OnModelIdChanged();
+                this.OnPropertyChanged("ModelId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _ModelId;
+        partial void OnModelIdChanging(long value);
+        partial void OnModelIdChanged();
+        /// <summary>
+        /// There are no comments for Property Attributes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.NameValuePair> Attributes
+        {
+            get
+            {
+                return this._Attributes;
+            }
+            set
+            {
+                this.OnAttributesChanging(value);
+                this._Attributes = value;
+                this.OnAttributesChanged();
+                this.OnPropertyChanged("Attributes");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.NameValuePair> _Attributes = new global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.NameValuePair>();
+        partial void OnAttributesChanging(global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.NameValuePair> value);
+        partial void OnAttributesChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Net.Appclusive.Public.Domain.PublicEntityDetails Details
         {
             get
             {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
                 return this._Details;
             }
             set
             {
+                this.OnDetailsChanging(value);
                 this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
                 this.OnPropertyChanged("Details");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Children in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<Item> Children
+        {
+            get
+            {
+                return this._Children;
+            }
+            set
+            {
+                this._Children = value;
+                this.OnPropertyChanged("Children");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Item> _Children = new global::System.Data.Services.Client.DataServiceCollection<Item>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -4002,4601 +4997,7 @@ namespace Net.Appclusive.Public.Domain.Inventory
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
-namespace Net.Appclusive.Public.Domain.Order
-{
-    
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Order.OrderItem in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("OrderItems")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class OrderItem : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new OrderItem object.
-        /// </summary>
-        /// <param name="orderId">Initial value of OrderId.</param>
-        /// <param name="jobId">Initial value of JobId.</param>
-        /// <param name="blueprintId">Initial value of BlueprintId.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static OrderItem CreateOrderItem(long orderId, long jobId, long blueprintId, long ID, string name)
-        {
-            OrderItem orderItem = new OrderItem();
-            orderItem.OrderId = orderId;
-            orderItem.JobId = jobId;
-            orderItem.BlueprintId = blueprintId;
-            orderItem.Id = ID;
-            orderItem.Name = name;
-            return orderItem;
-        }
-        /// <summary>
-        /// There are no comments for Property OrderId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long OrderId
-        {
-            get
-            {
-                return this._OrderId;
-            }
-            set
-            {
-                this.OnOrderIdChanging(value);
-                this._OrderId = value;
-                this.OnOrderIdChanged();
-                this.OnPropertyChanged("OrderId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _OrderId;
-        partial void OnOrderIdChanging(long value);
-        partial void OnOrderIdChanged();
-        /// <summary>
-        /// There are no comments for Property JobId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long JobId
-        {
-            get
-            {
-                return this._JobId;
-            }
-            set
-            {
-                this.OnJobIdChanging(value);
-                this._JobId = value;
-                this.OnJobIdChanged();
-                this.OnPropertyChanged("JobId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _JobId;
-        partial void OnJobIdChanging(long value);
-        partial void OnJobIdChanged();
-        /// <summary>
-        /// There are no comments for Property BlueprintId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long BlueprintId
-        {
-            get
-            {
-                return this._BlueprintId;
-            }
-            set
-            {
-                this.OnBlueprintIdChanging(value);
-                this._BlueprintId = value;
-                this.OnBlueprintIdChanged();
-                this.OnPropertyChanged("BlueprintId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _BlueprintId;
-        partial void OnBlueprintIdChanging(long value);
-        partial void OnBlueprintIdChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Order in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Order Order
-        {
-            get
-            {
-                return this._Order;
-            }
-            set
-            {
-                this._Order = value;
-                this.OnPropertyChanged("Order");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Order _Order;
-        /// <summary>
-        /// There are no comments for Job in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.Control.Job Job
-        {
-            get
-            {
-                return this._Job;
-            }
-            set
-            {
-                this._Job = value;
-                this.OnPropertyChanged("Job");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.Control.Job _Job;
-        /// <summary>
-        /// There are no comments for Configuration in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdValuePair> Configuration
-        {
-            get
-            {
-                return this._Configuration;
-            }
-            set
-            {
-                this._Configuration = value;
-                this.OnPropertyChanged("Configuration");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdValuePair> _Configuration = new global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdValuePair>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Order.CartItem in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("CartItems")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class CartItem : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new CartItem object.
-        /// </summary>
-        /// <param name="cartId">Initial value of CartId.</param>
-        /// <param name="catalogueItemId">Initial value of CatalogueItemId.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static CartItem CreateCartItem(long cartId, long catalogueItemId, long ID, string name)
-        {
-            CartItem cartItem = new CartItem();
-            cartItem.CartId = cartId;
-            cartItem.CatalogueItemId = catalogueItemId;
-            cartItem.Id = ID;
-            cartItem.Name = name;
-            return cartItem;
-        }
-        /// <summary>
-        /// There are no comments for Property CartId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long CartId
-        {
-            get
-            {
-                return this._CartId;
-            }
-            set
-            {
-                this.OnCartIdChanging(value);
-                this._CartId = value;
-                this.OnCartIdChanged();
-                this.OnPropertyChanged("CartId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _CartId;
-        partial void OnCartIdChanging(long value);
-        partial void OnCartIdChanged();
-        /// <summary>
-        /// There are no comments for Property CatalogueItemId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long CatalogueItemId
-        {
-            get
-            {
-                return this._CatalogueItemId;
-            }
-            set
-            {
-                this.OnCatalogueItemIdChanging(value);
-                this._CatalogueItemId = value;
-                this.OnCatalogueItemIdChanged();
-                this.OnPropertyChanged("CatalogueItemId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _CatalogueItemId;
-        partial void OnCatalogueItemIdChanging(long value);
-        partial void OnCatalogueItemIdChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Cart in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Cart Cart
-        {
-            get
-            {
-                return this._Cart;
-            }
-            set
-            {
-                this._Cart = value;
-                this.OnPropertyChanged("Cart");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Cart _Cart;
-        /// <summary>
-        /// There are no comments for Configuration in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdValuePair> Configuration
-        {
-            get
-            {
-                return this._Configuration;
-            }
-            set
-            {
-                this._Configuration = value;
-                this.OnPropertyChanged("Configuration");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdValuePair> _Configuration = new global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Api.Core.IdValuePair>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Order.Order in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Orders")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Order : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Order object.
-        /// </summary>
-        /// <param name="jobId">Initial value of JobId.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Order CreateOrder(long jobId, long ID, string name)
-        {
-            Order order = new Order();
-            order.JobId = jobId;
-            order.Id = ID;
-            order.Name = name;
-            return order;
-        }
-        /// <summary>
-        /// There are no comments for Property JobId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long JobId
-        {
-            get
-            {
-                return this._JobId;
-            }
-            set
-            {
-                this.OnJobIdChanging(value);
-                this._JobId = value;
-                this.OnJobIdChanged();
-                this.OnPropertyChanged("JobId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _JobId;
-        partial void OnJobIdChanging(long value);
-        partial void OnJobIdChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for OrderItems in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<OrderItem> OrderItems
-        {
-            get
-            {
-                return this._OrderItems;
-            }
-            set
-            {
-                this._OrderItems = value;
-                this.OnPropertyChanged("OrderItems");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<OrderItem> _OrderItems = new global::System.Data.Services.Client.DataServiceCollection<OrderItem>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Job in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.Control.Job Job
-        {
-            get
-            {
-                return this._Job;
-            }
-            set
-            {
-                this._Job = value;
-                this.OnPropertyChanged("Job");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.Control.Job _Job;
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Order.Cart in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Carts")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Cart : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Cart object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Cart CreateCart(long ID, string name)
-        {
-            Cart cart = new Cart();
-            cart.Id = ID;
-            cart.Name = name;
-            return cart;
-        }
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for CartItems in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<CartItem> CartItems
-        {
-            get
-            {
-                return this._CartItems;
-            }
-            set
-            {
-                this._CartItems = value;
-                this.OnPropertyChanged("CartItems");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<CartItem> _CartItems = new global::System.Data.Services.Client.DataServiceCollection<CartItem>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Order.Catalogue in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Catalogues")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Catalogue : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Catalogue object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Catalogue CreateCatalogue(long ID, string name)
-        {
-            Catalogue catalogue = new Catalogue();
-            catalogue.Id = ID;
-            catalogue.Name = name;
-            return catalogue;
-        }
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for CatalogueItems in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<CatalogueItem> CatalogueItems
-        {
-            get
-            {
-                return this._CatalogueItems;
-            }
-            set
-            {
-                this._CatalogueItems = value;
-                this.OnPropertyChanged("CatalogueItems");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<CatalogueItem> _CatalogueItems = new global::System.Data.Services.Client.DataServiceCollection<CatalogueItem>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Order.CatalogueItem in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("CatalogueItems")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class CatalogueItem : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new CatalogueItem object.
-        /// </summary>
-        /// <param name="catalogueId">Initial value of CatalogueId.</param>
-        /// <param name="blueprintId">Initial value of BlueprintId.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static CatalogueItem CreateCatalogueItem(long catalogueId, long blueprintId, long ID, string name)
-        {
-            CatalogueItem catalogueItem = new CatalogueItem();
-            catalogueItem.CatalogueId = catalogueId;
-            catalogueItem.BlueprintId = blueprintId;
-            catalogueItem.Id = ID;
-            catalogueItem.Name = name;
-            return catalogueItem;
-        }
-        /// <summary>
-        /// There are no comments for Property CatalogueId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long CatalogueId
-        {
-            get
-            {
-                return this._CatalogueId;
-            }
-            set
-            {
-                this.OnCatalogueIdChanging(value);
-                this._CatalogueId = value;
-                this.OnCatalogueIdChanged();
-                this.OnPropertyChanged("CatalogueId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _CatalogueId;
-        partial void OnCatalogueIdChanging(long value);
-        partial void OnCatalogueIdChanged();
-        /// <summary>
-        /// There are no comments for Property BlueprintId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long BlueprintId
-        {
-            get
-            {
-                return this._BlueprintId;
-            }
-            set
-            {
-                this.OnBlueprintIdChanging(value);
-                this._BlueprintId = value;
-                this.OnBlueprintIdChanged();
-                this.OnPropertyChanged("BlueprintId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _BlueprintId;
-        partial void OnBlueprintIdChanging(long value);
-        partial void OnBlueprintIdChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Catalogue in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Catalogue Catalogue
-        {
-            get
-            {
-                return this._Catalogue;
-            }
-            set
-            {
-                this._Catalogue = value;
-                this.OnPropertyChanged("Catalogue");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Catalogue _Catalogue;
-        /// <summary>
-        /// There are no comments for Blueprint in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Blueprint Blueprint
-        {
-            get
-            {
-                return this._Blueprint;
-            }
-            set
-            {
-                this._Blueprint = value;
-                this.OnPropertyChanged("Blueprint");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Blueprint _Blueprint;
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Order.Blueprint in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Blueprints")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Blueprint : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Blueprint object.
-        /// </summary>
-        /// <param name="modelId">Initial value of ModelId.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Blueprint CreateBlueprint(long modelId, long ID, string name)
-        {
-            Blueprint blueprint = new Blueprint();
-            blueprint.ModelId = modelId;
-            blueprint.Id = ID;
-            blueprint.Name = name;
-            return blueprint;
-        }
-        /// <summary>
-        /// There are no comments for Property ModelId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long ModelId
-        {
-            get
-            {
-                return this._ModelId;
-            }
-            set
-            {
-                this.OnModelIdChanging(value);
-                this._ModelId = value;
-                this.OnModelIdChanged();
-                this.OnPropertyChanged("ModelId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _ModelId;
-        partial void OnModelIdChanging(long value);
-        partial void OnModelIdChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Model in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.Inventory.Model Model
-        {
-            get
-            {
-                return this._Model;
-            }
-            set
-            {
-                this._Model = value;
-                this.OnPropertyChanged("Model");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.Inventory.Model _Model;
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-}
-// Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
-namespace Net.Appclusive.Public.Domain
-{
-    
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.TenantDetails in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// RowVersion
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("TenantDetailss")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("RowVersion")]
-    public partial class TenantDetails : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new TenantDetails object.
-        /// </summary>
-        /// <param name="createdById">Initial value of CreatedById.</param>
-        /// <param name="modifiedById">Initial value of ModifiedById.</param>
-        /// <param name="created">Initial value of Created.</param>
-        /// <param name="modified">Initial value of Modified.</param>
-        /// <param name="rowVersion">Initial value of RowVersion.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static TenantDetails CreateTenantDetails(long createdById, long modifiedById, global::System.DateTimeOffset created, global::System.DateTimeOffset modified, byte[] rowVersion)
-        {
-            TenantDetails tenantDetails = new TenantDetails();
-            tenantDetails.CreatedById = createdById;
-            tenantDetails.ModifiedById = modifiedById;
-            tenantDetails.Created = created;
-            tenantDetails.Modified = modified;
-            tenantDetails.RowVersion = rowVersion;
-            return tenantDetails;
-        }
-        /// <summary>
-        /// There are no comments for Property CreatedById in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long CreatedById
-        {
-            get
-            {
-                return this._CreatedById;
-            }
-            set
-            {
-                this.OnCreatedByIdChanging(value);
-                this._CreatedById = value;
-                this.OnCreatedByIdChanged();
-                this.OnPropertyChanged("CreatedById");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _CreatedById;
-        partial void OnCreatedByIdChanging(long value);
-        partial void OnCreatedByIdChanged();
-        /// <summary>
-        /// There are no comments for Property ModifiedById in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long ModifiedById
-        {
-            get
-            {
-                return this._ModifiedById;
-            }
-            set
-            {
-                this.OnModifiedByIdChanging(value);
-                this._ModifiedById = value;
-                this.OnModifiedByIdChanged();
-                this.OnPropertyChanged("ModifiedById");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _ModifiedById;
-        partial void OnModifiedByIdChanging(long value);
-        partial void OnModifiedByIdChanged();
-        /// <summary>
-        /// There are no comments for Property Created in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.DateTimeOffset Created
-        {
-            get
-            {
-                return this._Created;
-            }
-            set
-            {
-                this.OnCreatedChanging(value);
-                this._Created = value;
-                this.OnCreatedChanged();
-                this.OnPropertyChanged("Created");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.DateTimeOffset _Created;
-        partial void OnCreatedChanging(global::System.DateTimeOffset value);
-        partial void OnCreatedChanged();
-        /// <summary>
-        /// There are no comments for Property Modified in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.DateTimeOffset Modified
-        {
-            get
-            {
-                return this._Modified;
-            }
-            set
-            {
-                this.OnModifiedChanging(value);
-                this._Modified = value;
-                this.OnModifiedChanged();
-                this.OnPropertyChanged("Modified");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.DateTimeOffset _Modified;
-        partial void OnModifiedChanging(global::System.DateTimeOffset value);
-        partial void OnModifiedChanged();
-        /// <summary>
-        /// There are no comments for Property RowVersion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public byte[] RowVersion
-        {
-            get
-            {
-                if ((this._RowVersion != null))
-                {
-                    return ((byte[])(this._RowVersion.Clone()));
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                this.OnRowVersionChanging(value);
-                this._RowVersion = value;
-                this.OnRowVersionChanged();
-                this.OnPropertyChanged("RowVersion");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private byte[] _RowVersion;
-        partial void OnRowVersionChanging(byte[] value);
-        partial void OnRowVersionChanged();
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.PublicEntityDetails in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// RowVersion
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("PublicEntityDetailss")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("RowVersion")]
-    public partial class PublicEntityDetails : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new PublicEntityDetails object.
-        /// </summary>
-        /// <param name="tid">Initial value of Tid.</param>
-        /// <param name="createdById">Initial value of CreatedById.</param>
-        /// <param name="modifiedById">Initial value of ModifiedById.</param>
-        /// <param name="created">Initial value of Created.</param>
-        /// <param name="modified">Initial value of Modified.</param>
-        /// <param name="rowVersion">Initial value of RowVersion.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static PublicEntityDetails CreatePublicEntityDetails(global::System.Guid tid, long createdById, long modifiedById, global::System.DateTimeOffset created, global::System.DateTimeOffset modified, byte[] rowVersion)
-        {
-            PublicEntityDetails publicEntityDetails = new PublicEntityDetails();
-            publicEntityDetails.Tid = tid;
-            publicEntityDetails.CreatedById = createdById;
-            publicEntityDetails.ModifiedById = modifiedById;
-            publicEntityDetails.Created = created;
-            publicEntityDetails.Modified = modified;
-            publicEntityDetails.RowVersion = rowVersion;
-            return publicEntityDetails;
-        }
-        /// <summary>
-        /// There are no comments for Property Tid in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Guid Tid
-        {
-            get
-            {
-                return this._Tid;
-            }
-            set
-            {
-                this.OnTidChanging(value);
-                this._Tid = value;
-                this.OnTidChanged();
-                this.OnPropertyChanged("Tid");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Guid _Tid;
-        partial void OnTidChanging(global::System.Guid value);
-        partial void OnTidChanged();
-        /// <summary>
-        /// There are no comments for Property CreatedById in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long CreatedById
-        {
-            get
-            {
-                return this._CreatedById;
-            }
-            set
-            {
-                this.OnCreatedByIdChanging(value);
-                this._CreatedById = value;
-                this.OnCreatedByIdChanged();
-                this.OnPropertyChanged("CreatedById");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _CreatedById;
-        partial void OnCreatedByIdChanging(long value);
-        partial void OnCreatedByIdChanged();
-        /// <summary>
-        /// There are no comments for Property ModifiedById in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long ModifiedById
-        {
-            get
-            {
-                return this._ModifiedById;
-            }
-            set
-            {
-                this.OnModifiedByIdChanging(value);
-                this._ModifiedById = value;
-                this.OnModifiedByIdChanged();
-                this.OnPropertyChanged("ModifiedById");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _ModifiedById;
-        partial void OnModifiedByIdChanging(long value);
-        partial void OnModifiedByIdChanged();
-        /// <summary>
-        /// There are no comments for Property Created in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.DateTimeOffset Created
-        {
-            get
-            {
-                return this._Created;
-            }
-            set
-            {
-                this.OnCreatedChanging(value);
-                this._Created = value;
-                this.OnCreatedChanged();
-                this.OnPropertyChanged("Created");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.DateTimeOffset _Created;
-        partial void OnCreatedChanging(global::System.DateTimeOffset value);
-        partial void OnCreatedChanged();
-        /// <summary>
-        /// There are no comments for Property Modified in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.DateTimeOffset Modified
-        {
-            get
-            {
-                return this._Modified;
-            }
-            set
-            {
-                this.OnModifiedChanging(value);
-                this._Modified = value;
-                this.OnModifiedChanged();
-                this.OnPropertyChanged("Modified");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.DateTimeOffset _Modified;
-        partial void OnModifiedChanging(global::System.DateTimeOffset value);
-        partial void OnModifiedChanged();
-        /// <summary>
-        /// There are no comments for Property RowVersion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public byte[] RowVersion
-        {
-            get
-            {
-                if ((this._RowVersion != null))
-                {
-                    return ((byte[])(this._RowVersion.Clone()));
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                this.OnRowVersionChanging(value);
-                this._RowVersion = value;
-                this.OnRowVersionChanged();
-                this.OnPropertyChanged("RowVersion");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private byte[] _RowVersion;
-        partial void OnRowVersionChanging(byte[] value);
-        partial void OnRowVersionChanged();
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-}
-// Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
-namespace Net.Appclusive.Public.Domain.Configuration
-{
-    
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Configuration.Example in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Examples")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Example : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Example object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Example CreateExample(long ID, string name)
-        {
-            Example example = new Example();
-            example.Id = ID;
-            example.Name = name;
-            return example;
-        }
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Configuration.ManagementCredential in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("ManagementCredentials")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class ManagementCredential : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new ManagementCredential object.
-        /// </summary>
-        /// <param name="username">Initial value of Username.</param>
-        /// <param name="password">Initial value of Password.</param>
-        /// <param name="type">Initial value of Type.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static ManagementCredential CreateManagementCredential(string username, string password, string type, long ID, string name)
-        {
-            ManagementCredential managementCredential = new ManagementCredential();
-            managementCredential.Username = username;
-            managementCredential.Password = password;
-            managementCredential.Type = type;
-            managementCredential.Id = ID;
-            managementCredential.Name = name;
-            return managementCredential;
-        }
-        /// <summary>
-        /// There are no comments for Property Username in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Username
-        {
-            get
-            {
-                return this._Username;
-            }
-            set
-            {
-                this.OnUsernameChanging(value);
-                this._Username = value;
-                this.OnUsernameChanged();
-                this.OnPropertyChanged("Username");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Username;
-        partial void OnUsernameChanging(string value);
-        partial void OnUsernameChanged();
-        /// <summary>
-        /// There are no comments for Property Password in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Password
-        {
-            get
-            {
-                return this._Password;
-            }
-            set
-            {
-                this.OnPasswordChanging(value);
-                this._Password = value;
-                this.OnPasswordChanged();
-                this.OnPropertyChanged("Password");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Password;
-        partial void OnPasswordChanging(string value);
-        partial void OnPasswordChanged();
-        /// <summary>
-        /// There are no comments for Property Type in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Type
-        {
-            get
-            {
-                return this._Type;
-            }
-            set
-            {
-                this.OnTypeChanging(value);
-                this._Type = value;
-                this.OnTypeChanged();
-                this.OnPropertyChanged("Type");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Type;
-        partial void OnTypeChanging(string value);
-        partial void OnTypeChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Configuration.ManagementUri in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("ManagementUris")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class ManagementUri : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new ManagementUri object.
-        /// </summary>
-        /// <param name="value">Initial value of Value.</param>
-        /// <param name="type">Initial value of Type.</param>
-        /// <param name="managementCredentialId">Initial value of ManagementCredentialId.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static ManagementUri CreateManagementUri(string value, string type, long managementCredentialId, long ID, string name)
-        {
-            ManagementUri managementUri = new ManagementUri();
-            managementUri.Value = value;
-            managementUri.Type = type;
-            managementUri.ManagementCredentialId = managementCredentialId;
-            managementUri.Id = ID;
-            managementUri.Name = name;
-            return managementUri;
-        }
-        /// <summary>
-        /// There are no comments for Property Value in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Value
-        {
-            get
-            {
-                return this._Value;
-            }
-            set
-            {
-                this.OnValueChanging(value);
-                this._Value = value;
-                this.OnValueChanged();
-                this.OnPropertyChanged("Value");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Value;
-        partial void OnValueChanging(string value);
-        partial void OnValueChanged();
-        /// <summary>
-        /// There are no comments for Property Type in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Type
-        {
-            get
-            {
-                return this._Type;
-            }
-            set
-            {
-                this.OnTypeChanging(value);
-                this._Type = value;
-                this.OnTypeChanged();
-                this.OnPropertyChanged("Type");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Type;
-        partial void OnTypeChanging(string value);
-        partial void OnTypeChanged();
-        /// <summary>
-        /// There are no comments for Property ManagementCredentialId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long ManagementCredentialId
-        {
-            get
-            {
-                return this._ManagementCredentialId;
-            }
-            set
-            {
-                this.OnManagementCredentialIdChanging(value);
-                this._ManagementCredentialId = value;
-                this.OnManagementCredentialIdChanged();
-                this.OnPropertyChanged("ManagementCredentialId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _ManagementCredentialId;
-        partial void OnManagementCredentialIdChanging(long value);
-        partial void OnManagementCredentialIdChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for ManagementCredential in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public ManagementCredential ManagementCredential
-        {
-            get
-            {
-                return this._ManagementCredential;
-            }
-            set
-            {
-                this._ManagementCredential = value;
-                this.OnPropertyChanged("ManagementCredential");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private ManagementCredential _ManagementCredential;
-        /// <summary>
-        /// There are no comments for ManagementCredentials in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<ManagementCredential> ManagementCredentials
-        {
-            get
-            {
-                return this._ManagementCredentials;
-            }
-            set
-            {
-                this._ManagementCredentials = value;
-                this.OnPropertyChanged("ManagementCredentials");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<ManagementCredential> _ManagementCredentials = new global::System.Data.Services.Client.DataServiceCollection<ManagementCredential>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Configuration.VolatileKeyNameValue in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("VolatileKeyNameValues")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class VolatileKeyNameValue : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new VolatileKeyNameValue object.
-        /// </summary>
-        /// <param name="key">Initial value of Key.</param>
-        /// <param name="value">Initial value of Value.</param>
-        /// <param name="validUntil">Initial value of ValidUntil.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static VolatileKeyNameValue CreateVolatileKeyNameValue(string key, string value, global::System.DateTimeOffset validUntil, long ID, string name)
-        {
-            VolatileKeyNameValue volatileKeyNameValue = new VolatileKeyNameValue();
-            volatileKeyNameValue.Key = key;
-            volatileKeyNameValue.Value = value;
-            volatileKeyNameValue.ValidUntil = validUntil;
-            volatileKeyNameValue.Id = ID;
-            volatileKeyNameValue.Name = name;
-            return volatileKeyNameValue;
-        }
-        /// <summary>
-        /// There are no comments for Property Key in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Key
-        {
-            get
-            {
-                return this._Key;
-            }
-            set
-            {
-                this.OnKeyChanging(value);
-                this._Key = value;
-                this.OnKeyChanged();
-                this.OnPropertyChanged("Key");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Key;
-        partial void OnKeyChanging(string value);
-        partial void OnKeyChanged();
-        /// <summary>
-        /// There are no comments for Property Value in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Value
-        {
-            get
-            {
-                return this._Value;
-            }
-            set
-            {
-                this.OnValueChanging(value);
-                this._Value = value;
-                this.OnValueChanged();
-                this.OnPropertyChanged("Value");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Value;
-        partial void OnValueChanging(string value);
-        partial void OnValueChanged();
-        /// <summary>
-        /// There are no comments for Property ValidUntil in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.DateTimeOffset ValidUntil
-        {
-            get
-            {
-                return this._ValidUntil;
-            }
-            set
-            {
-                this.OnValidUntilChanging(value);
-                this._ValidUntil = value;
-                this.OnValidUntilChanged();
-                this.OnPropertyChanged("ValidUntil");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.DateTimeOffset _ValidUntil;
-        partial void OnValidUntilChanging(global::System.DateTimeOffset value);
-        partial void OnValidUntilChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Configuration.KeyNameValue in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("KeyNameValues")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class KeyNameValue : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new KeyNameValue object.
-        /// </summary>
-        /// <param name="key">Initial value of Key.</param>
-        /// <param name="value">Initial value of Value.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static KeyNameValue CreateKeyNameValue(string key, string value, long ID, string name)
-        {
-            KeyNameValue keyNameValue = new KeyNameValue();
-            keyNameValue.Key = key;
-            keyNameValue.Value = value;
-            keyNameValue.Id = ID;
-            keyNameValue.Name = name;
-            return keyNameValue;
-        }
-        /// <summary>
-        /// There are no comments for Property Key in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Key
-        {
-            get
-            {
-                return this._Key;
-            }
-            set
-            {
-                this.OnKeyChanging(value);
-                this._Key = value;
-                this.OnKeyChanged();
-                this.OnPropertyChanged("Key");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Key;
-        partial void OnKeyChanging(string value);
-        partial void OnKeyChanged();
-        /// <summary>
-        /// There are no comments for Property Value in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Value
-        {
-            get
-            {
-                return this._Value;
-            }
-            set
-            {
-                this.OnValueChanging(value);
-                this._Value = value;
-                this.OnValueChanged();
-                this.OnPropertyChanged("Value");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Value;
-        partial void OnValueChanging(string value);
-        partial void OnValueChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-}
-// Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
-namespace Net.Appclusive.Public.Domain.Security
-{
-    
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Security.Authentication in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Authentications")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Authentication : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Authentication object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Authentication CreateAuthentication(long ID, string name)
-        {
-            Authentication authentication = new Authentication();
-            authentication.Id = ID;
-            authentication.Name = name;
-            return authentication;
-        }
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Security.ItemAcl in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("ItemAcls")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class ItemAcl : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new ItemAcl object.
-        /// </summary>
-        /// <param name="parentId">Initial value of ParentId.</param>
-        /// <param name="noInheritance">Initial value of NoInheritance.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static ItemAcl CreateItemAcl(long parentId, bool noInheritance, long ID, string name)
-        {
-            ItemAcl itemAcl = new ItemAcl();
-            itemAcl.ParentId = parentId;
-            itemAcl.NoInheritance = noInheritance;
-            itemAcl.Id = ID;
-            itemAcl.Name = name;
-            return itemAcl;
-        }
-        /// <summary>
-        /// There are no comments for Property ParentId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long ParentId
-        {
-            get
-            {
-                return this._ParentId;
-            }
-            set
-            {
-                this.OnParentIdChanging(value);
-                this._ParentId = value;
-                this.OnParentIdChanged();
-                this.OnPropertyChanged("ParentId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _ParentId;
-        partial void OnParentIdChanging(long value);
-        partial void OnParentIdChanged();
-        /// <summary>
-        /// There are no comments for Property NoInheritance in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public bool NoInheritance
-        {
-            get
-            {
-                return this._NoInheritance;
-            }
-            set
-            {
-                this.OnNoInheritanceChanging(value);
-                this._NoInheritance = value;
-                this.OnNoInheritanceChanged();
-                this.OnPropertyChanged("NoInheritance");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private bool _NoInheritance;
-        partial void OnNoInheritanceChanging(bool value);
-        partial void OnNoInheritanceChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Parent in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public ItemAcl Parent
-        {
-            get
-            {
-                return this._Parent;
-            }
-            set
-            {
-                this._Parent = value;
-                this.OnPropertyChanged("Parent");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private ItemAcl _Parent;
-        /// <summary>
-        /// There are no comments for Children in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<ItemAcl> Children
-        {
-            get
-            {
-                return this._Children;
-            }
-            set
-            {
-                this._Children = value;
-                this.OnPropertyChanged("Children");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<ItemAcl> _Children = new global::System.Data.Services.Client.DataServiceCollection<ItemAcl>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Aces in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<ItemAce> Aces
-        {
-            get
-            {
-                return this._Aces;
-            }
-            set
-            {
-                this._Aces = value;
-                this.OnPropertyChanged("Aces");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<ItemAce> _Aces = new global::System.Data.Services.Client.DataServiceCollection<ItemAce>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Security.Ace in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Aces")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Ace : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Ace object.
-        /// </summary>
-        /// <param name="aclId">Initial value of AclId.</param>
-        /// <param name="permissionId">Initial value of PermissionId.</param>
-        /// <param name="type">Initial value of Type.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Ace CreateAce(long aclId, long permissionId, string type, long ID, string name)
-        {
-            Ace ace = new Ace();
-            ace.AclId = aclId;
-            ace.PermissionId = permissionId;
-            ace.Type = type;
-            ace.Id = ID;
-            ace.Name = name;
-            return ace;
-        }
-        /// <summary>
-        /// There are no comments for Property AclId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long AclId
-        {
-            get
-            {
-                return this._AclId;
-            }
-            set
-            {
-                this.OnAclIdChanging(value);
-                this._AclId = value;
-                this.OnAclIdChanged();
-                this.OnPropertyChanged("AclId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _AclId;
-        partial void OnAclIdChanging(long value);
-        partial void OnAclIdChanged();
-        /// <summary>
-        /// There are no comments for Property PermissionId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long PermissionId
-        {
-            get
-            {
-                return this._PermissionId;
-            }
-            set
-            {
-                this.OnPermissionIdChanging(value);
-                this._PermissionId = value;
-                this.OnPermissionIdChanged();
-                this.OnPropertyChanged("PermissionId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _PermissionId;
-        partial void OnPermissionIdChanging(long value);
-        partial void OnPermissionIdChanged();
-        /// <summary>
-        /// There are no comments for Property UserId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<long> UserId
-        {
-            get
-            {
-                return this._UserId;
-            }
-            set
-            {
-                this.OnUserIdChanging(value);
-                this._UserId = value;
-                this.OnUserIdChanged();
-                this.OnPropertyChanged("UserId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<long> _UserId;
-        partial void OnUserIdChanging(global::System.Nullable<long> value);
-        partial void OnUserIdChanged();
-        /// <summary>
-        /// There are no comments for Property RoleId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<long> RoleId
-        {
-            get
-            {
-                return this._RoleId;
-            }
-            set
-            {
-                this.OnRoleIdChanging(value);
-                this._RoleId = value;
-                this.OnRoleIdChanged();
-                this.OnPropertyChanged("RoleId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<long> _RoleId;
-        partial void OnRoleIdChanging(global::System.Nullable<long> value);
-        partial void OnRoleIdChanged();
-        /// <summary>
-        /// There are no comments for Property Type in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Type
-        {
-            get
-            {
-                return this._Type;
-            }
-            set
-            {
-                this.OnTypeChanging(value);
-                this._Type = value;
-                this.OnTypeChanged();
-                this.OnPropertyChanged("Type");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Type;
-        partial void OnTypeChanging(string value);
-        partial void OnTypeChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Permission in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Permission Permission
-        {
-            get
-            {
-                return this._Permission;
-            }
-            set
-            {
-                this._Permission = value;
-                this.OnPropertyChanged("Permission");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Permission _Permission;
-        /// <summary>
-        /// There are no comments for User in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.Identity.User User
-        {
-            get
-            {
-                return this._User;
-            }
-            set
-            {
-                this._User = value;
-                this.OnPropertyChanged("User");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.Identity.User _User;
-        /// <summary>
-        /// There are no comments for Role in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Role Role
-        {
-            get
-            {
-                return this._Role;
-            }
-            set
-            {
-                this._Role = value;
-                this.OnPropertyChanged("Role");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Role _Role;
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Security.Right in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Rights")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Right : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Right object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Right CreateRight(long ID, string name)
-        {
-            Right right = new Right();
-            right.Id = ID;
-            right.Name = name;
-            return right;
-        }
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Security.Role in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Roles")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Role : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Role object.
-        /// </summary>
-        /// <param name="type">Initial value of Type.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Role CreateRole(string type, long ID, string name)
-        {
-            Role role = new Role();
-            role.Type = type;
-            role.Id = ID;
-            role.Name = name;
-            return role;
-        }
-        /// <summary>
-        /// There are no comments for Property Type in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Type
-        {
-            get
-            {
-                return this._Type;
-            }
-            set
-            {
-                this.OnTypeChanging(value);
-                this._Type = value;
-                this.OnTypeChanged();
-                this.OnPropertyChanged("Type");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Type;
-        partial void OnTypeChanging(string value);
-        partial void OnTypeChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Users in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Identity.User> Users
-        {
-            get
-            {
-                return this._Users;
-            }
-            set
-            {
-                this._Users = value;
-                this.OnPropertyChanged("Users");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Identity.User> _Users = new global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Identity.User>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Rights in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Right> Rights
-        {
-            get
-            {
-                return this._Rights;
-            }
-            set
-            {
-                this._Rights = value;
-                this.OnPropertyChanged("Rights");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Right> _Rights = new global::System.Data.Services.Client.DataServiceCollection<Right>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Security.Acl in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Acls")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Acl : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Acl object.
-        /// </summary>
-        /// <param name="parentId">Initial value of ParentId.</param>
-        /// <param name="noInheritance">Initial value of NoInheritance.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Acl CreateAcl(long parentId, bool noInheritance, long ID, string name)
-        {
-            Acl acl = new Acl();
-            acl.ParentId = parentId;
-            acl.NoInheritance = noInheritance;
-            acl.Id = ID;
-            acl.Name = name;
-            return acl;
-        }
-        /// <summary>
-        /// There are no comments for Property ParentId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long ParentId
-        {
-            get
-            {
-                return this._ParentId;
-            }
-            set
-            {
-                this.OnParentIdChanging(value);
-                this._ParentId = value;
-                this.OnParentIdChanged();
-                this.OnPropertyChanged("ParentId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _ParentId;
-        partial void OnParentIdChanging(long value);
-        partial void OnParentIdChanged();
-        /// <summary>
-        /// There are no comments for Property NoInheritance in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public bool NoInheritance
-        {
-            get
-            {
-                return this._NoInheritance;
-            }
-            set
-            {
-                this.OnNoInheritanceChanging(value);
-                this._NoInheritance = value;
-                this.OnNoInheritanceChanged();
-                this.OnPropertyChanged("NoInheritance");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private bool _NoInheritance;
-        partial void OnNoInheritanceChanging(bool value);
-        partial void OnNoInheritanceChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Parent in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Acl Parent
-        {
-            get
-            {
-                return this._Parent;
-            }
-            set
-            {
-                this._Parent = value;
-                this.OnPropertyChanged("Parent");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Acl _Parent;
-        /// <summary>
-        /// There are no comments for Children in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Acl> Children
-        {
-            get
-            {
-                return this._Children;
-            }
-            set
-            {
-                this._Children = value;
-                this.OnPropertyChanged("Children");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Acl> _Children = new global::System.Data.Services.Client.DataServiceCollection<Acl>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Aces in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Ace> Aces
-        {
-            get
-            {
-                return this._Aces;
-            }
-            set
-            {
-                this._Aces = value;
-                this.OnPropertyChanged("Aces");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Ace> _Aces = new global::System.Data.Services.Client.DataServiceCollection<Ace>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Security.ItemAce in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("ItemAces")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class ItemAce : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new ItemAce object.
-        /// </summary>
-        /// <param name="itemId">Initial value of ItemId.</param>
-        /// <param name="permissionId">Initial value of PermissionId.</param>
-        /// <param name="type">Initial value of Type.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static ItemAce CreateItemAce(long itemId, long permissionId, string type, long ID, string name)
-        {
-            ItemAce itemAce = new ItemAce();
-            itemAce.ItemId = itemId;
-            itemAce.PermissionId = permissionId;
-            itemAce.Type = type;
-            itemAce.Id = ID;
-            itemAce.Name = name;
-            return itemAce;
-        }
-        /// <summary>
-        /// There are no comments for Property ItemId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long ItemId
-        {
-            get
-            {
-                return this._ItemId;
-            }
-            set
-            {
-                this.OnItemIdChanging(value);
-                this._ItemId = value;
-                this.OnItemIdChanged();
-                this.OnPropertyChanged("ItemId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _ItemId;
-        partial void OnItemIdChanging(long value);
-        partial void OnItemIdChanged();
-        /// <summary>
-        /// There are no comments for Property PermissionId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long PermissionId
-        {
-            get
-            {
-                return this._PermissionId;
-            }
-            set
-            {
-                this.OnPermissionIdChanging(value);
-                this._PermissionId = value;
-                this.OnPermissionIdChanged();
-                this.OnPropertyChanged("PermissionId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _PermissionId;
-        partial void OnPermissionIdChanging(long value);
-        partial void OnPermissionIdChanged();
-        /// <summary>
-        /// There are no comments for Property RoleId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<long> RoleId
-        {
-            get
-            {
-                return this._RoleId;
-            }
-            set
-            {
-                this.OnRoleIdChanging(value);
-                this._RoleId = value;
-                this.OnRoleIdChanged();
-                this.OnPropertyChanged("RoleId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<long> _RoleId;
-        partial void OnRoleIdChanging(global::System.Nullable<long> value);
-        partial void OnRoleIdChanged();
-        /// <summary>
-        /// There are no comments for Property UserId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<long> UserId
-        {
-            get
-            {
-                return this._UserId;
-            }
-            set
-            {
-                this.OnUserIdChanging(value);
-                this._UserId = value;
-                this.OnUserIdChanged();
-                this.OnPropertyChanged("UserId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<long> _UserId;
-        partial void OnUserIdChanging(global::System.Nullable<long> value);
-        partial void OnUserIdChanged();
-        /// <summary>
-        /// There are no comments for Property Type in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Type
-        {
-            get
-            {
-                return this._Type;
-            }
-            set
-            {
-                this.OnTypeChanging(value);
-                this._Type = value;
-                this.OnTypeChanged();
-                this.OnPropertyChanged("Type");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Type;
-        partial void OnTypeChanging(string value);
-        partial void OnTypeChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Permission in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Permission Permission
-        {
-            get
-            {
-                return this._Permission;
-            }
-            set
-            {
-                this._Permission = value;
-                this.OnPropertyChanged("Permission");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Permission _Permission;
-        /// <summary>
-        /// There are no comments for Role in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Role Role
-        {
-            get
-            {
-                return this._Role;
-            }
-            set
-            {
-                this._Role = value;
-                this.OnPropertyChanged("Role");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Role _Role;
-        /// <summary>
-        /// There are no comments for User in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.Identity.User User
-        {
-            get
-            {
-                return this._User;
-            }
-            set
-            {
-                this._User = value;
-                this.OnPropertyChanged("User");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.Identity.User _User;
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Security.Permission in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Permissions")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Permission : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Permission object.
-        /// </summary>
-        /// <param name="type">Initial value of Type.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Permission CreatePermission(string type, long ID, string name)
-        {
-            Permission permission = new Permission();
-            permission.Type = type;
-            permission.Id = ID;
-            permission.Name = name;
-            return permission;
-        }
-        /// <summary>
-        /// There are no comments for Property Type in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Type
-        {
-            get
-            {
-                return this._Type;
-            }
-            set
-            {
-                this.OnTypeChanging(value);
-                this._Type = value;
-                this.OnTypeChanged();
-                this.OnPropertyChanged("Type");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Type;
-        partial void OnTypeChanging(string value);
-        partial void OnTypeChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-}
-// Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
-namespace Net.Appclusive.Public.Domain.Identity
-{
-    
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Identity.User in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Users")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class User : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new User object.
-        /// </summary>
-        /// <param name="mappedId">Initial value of MappedId.</param>
-        /// <param name="mappedType">Initial value of MappedType.</param>
-        /// <param name="mail">Initial value of Mail.</param>
-        /// <param name="isHidden">Initial value of IsHidden.</param>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static User CreateUser(string mappedId, string mappedType, string mail, bool isHidden, long ID, string name)
-        {
-            User user = new User();
-            user.MappedId = mappedId;
-            user.MappedType = mappedType;
-            user.Mail = mail;
-            user.IsHidden = isHidden;
-            user.Id = ID;
-            user.Name = name;
-            return user;
-        }
-        /// <summary>
-        /// There are no comments for Property MappedId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string MappedId
-        {
-            get
-            {
-                return this._MappedId;
-            }
-            set
-            {
-                this.OnMappedIdChanging(value);
-                this._MappedId = value;
-                this.OnMappedIdChanged();
-                this.OnPropertyChanged("MappedId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _MappedId;
-        partial void OnMappedIdChanging(string value);
-        partial void OnMappedIdChanged();
-        /// <summary>
-        /// There are no comments for Property MappedType in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string MappedType
-        {
-            get
-            {
-                return this._MappedType;
-            }
-            set
-            {
-                this.OnMappedTypeChanging(value);
-                this._MappedType = value;
-                this.OnMappedTypeChanged();
-                this.OnPropertyChanged("MappedType");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _MappedType;
-        partial void OnMappedTypeChanging(string value);
-        partial void OnMappedTypeChanged();
-        /// <summary>
-        /// There are no comments for Property Mail in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Mail
-        {
-            get
-            {
-                return this._Mail;
-            }
-            set
-            {
-                this.OnMailChanging(value);
-                this._Mail = value;
-                this.OnMailChanged();
-                this.OnPropertyChanged("Mail");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Mail;
-        partial void OnMailChanging(string value);
-        partial void OnMailChanged();
-        /// <summary>
-        /// There are no comments for Property IsHidden in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public bool IsHidden
-        {
-            get
-            {
-                return this._IsHidden;
-            }
-            set
-            {
-                this.OnIsHiddenChanging(value);
-                this._IsHidden = value;
-                this.OnIsHiddenChanged();
-                this.OnPropertyChanged("IsHidden");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private bool _IsHidden;
-        partial void OnIsHiddenChanging(bool value);
-        partial void OnIsHiddenChanged();
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Roles in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Security.Role> Roles
-        {
-            get
-            {
-                return this._Roles;
-            }
-            set
-            {
-                this._Roles = value;
-                this.OnPropertyChanged("Roles");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Security.Role> _Roles = new global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Security.Role>(null, global::System.Data.Services.Client.TrackingMode.None);
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Net.Appclusive.Public.Domain.Identity.Tenant in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("Tenants")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
-    public partial class Tenant : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Tenant object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="name">Initial value of Name.</param>
-        /// <param name="mappedId">Initial value of MappedId.</param>
-        /// <param name="mappedType">Initial value of MappedType.</param>
-        /// <param name="parentId">Initial value of ParentId.</param>
-        /// <param name="namespace">Initial value of Namespace.</param>
-        /// <param name="customerId">Initial value of CustomerId.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Tenant CreateTenant(global::System.Guid ID, string name, string mappedId, string mappedType, global::System.Guid parentId, string @namespace, long customerId)
-        {
-            Tenant tenant = new Tenant();
-            tenant.Id = ID;
-            tenant.Name = name;
-            tenant.MappedId = mappedId;
-            tenant.MappedType = mappedType;
-            tenant.ParentId = parentId;
-            tenant.Namespace = @namespace;
-            tenant.CustomerId = customerId;
-            return tenant;
-        }
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Guid Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Guid _Id;
-        partial void OnIdChanging(global::System.Guid value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property Description in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
-        {
-            get
-            {
-                return this._Description;
-            }
-            set
-            {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Property MappedId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string MappedId
-        {
-            get
-            {
-                return this._MappedId;
-            }
-            set
-            {
-                this.OnMappedIdChanging(value);
-                this._MappedId = value;
-                this.OnMappedIdChanged();
-                this.OnPropertyChanged("MappedId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _MappedId;
-        partial void OnMappedIdChanging(string value);
-        partial void OnMappedIdChanged();
-        /// <summary>
-        /// There are no comments for Property MappedType in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string MappedType
-        {
-            get
-            {
-                return this._MappedType;
-            }
-            set
-            {
-                this.OnMappedTypeChanging(value);
-                this._MappedType = value;
-                this.OnMappedTypeChanged();
-                this.OnPropertyChanged("MappedType");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _MappedType;
-        partial void OnMappedTypeChanging(string value);
-        partial void OnMappedTypeChanged();
-        /// <summary>
-        /// There are no comments for Property ParentId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Guid ParentId
-        {
-            get
-            {
-                return this._ParentId;
-            }
-            set
-            {
-                this.OnParentIdChanging(value);
-                this._ParentId = value;
-                this.OnParentIdChanged();
-                this.OnPropertyChanged("ParentId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Guid _ParentId;
-        partial void OnParentIdChanging(global::System.Guid value);
-        partial void OnParentIdChanged();
-        /// <summary>
-        /// There are no comments for Property Namespace in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Namespace
-        {
-            get
-            {
-                return this._Namespace;
-            }
-            set
-            {
-                this.OnNamespaceChanging(value);
-                this._Namespace = value;
-                this.OnNamespaceChanged();
-                this.OnPropertyChanged("Namespace");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Namespace;
-        partial void OnNamespaceChanging(string value);
-        partial void OnNamespaceChanged();
-        /// <summary>
-        /// There are no comments for Property CustomerId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long CustomerId
-        {
-            get
-            {
-                return this._CustomerId;
-            }
-            set
-            {
-                this.OnCustomerIdChanging(value);
-                this._CustomerId = value;
-                this.OnCustomerIdChanged();
-                this.OnPropertyChanged("CustomerId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _CustomerId;
-        partial void OnCustomerIdChanging(long value);
-        partial void OnCustomerIdChanged();
-        /// <summary>
-        /// There are no comments for Details in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.TenantDetails Details
-        {
-            get
-            {
-                return this._Details;
-            }
-            set
-            {
-                this._Details = value;
-                this.OnPropertyChanged("Details");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.TenantDetails _Details;
-        /// <summary>
-        /// There are no comments for Parent in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Tenant Parent
-        {
-            get
-            {
-                return this._Parent;
-            }
-            set
-            {
-                this._Parent = value;
-                this.OnPropertyChanged("Parent");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Tenant _Parent;
-        /// <summary>
-        /// There are no comments for Children in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceCollection<Tenant> Children
-        {
-            get
-            {
-                return this._Children;
-            }
-            set
-            {
-                this._Children = value;
-                this.OnPropertyChanged("Children");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Tenant> _Children = new global::System.Data.Services.Client.DataServiceCollection<Tenant>(null, global::System.Data.Services.Client.TrackingMode.None);
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-}
-// Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
+// Generation date: 5/3/2017 10:33:41 AM
 namespace Net.Appclusive.Public.Domain.Control
 {
     
@@ -8758,23 +5159,36 @@ namespace Net.Appclusive.Public.Domain.Control
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
         /// <summary>
-        /// There are no comments for Details in the schema.
+        /// There are no comments for Property Details in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Net.Appclusive.Public.Domain.PublicEntityDetails Details
         {
             get
             {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
                 return this._Details;
             }
             set
             {
+                this.OnDetailsChanging(value);
                 this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
                 this.OnPropertyChanged("Details");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -9018,23 +5432,36 @@ namespace Net.Appclusive.Public.Domain.Control
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
         /// <summary>
-        /// There are no comments for Details in the schema.
+        /// There are no comments for Property Details in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Net.Appclusive.Public.Domain.PublicEntityDetails Details
         {
             get
             {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
                 return this._Details;
             }
             set
             {
+                this.OnDetailsChanging(value);
                 this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
                 this.OnPropertyChanged("Details");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -9160,24 +5587,37 @@ namespace Net.Appclusive.Public.Domain.Control
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
         /// <summary>
-        /// There are no comments for Details in the schema.
+        /// There are no comments for Property Details in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Net.Appclusive.Public.Domain.PublicEntityDetails Details
         {
             get
             {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
                 return this._Details;
             }
             set
             {
+                this.OnDetailsChanging(value);
                 this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
                 this.OnPropertyChanged("Details");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
@@ -9190,37 +5630,1368 @@ namespace Net.Appclusive.Public.Domain.Control
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
-namespace Net.Appclusive.Api.Core.biz.dfch.CS.Commons
+// Generation date: 5/3/2017 10:33:41 AM
+namespace Net.Appclusive.Public.Domain.Order
 {
     
     /// <summary>
-    /// There are no comments for ComplexType biz.dfch.CS.Commons.DictionaryParameters in the schema.
+    /// There are no comments for Net.Appclusive.Public.Domain.Order.Blueprint in the schema.
     /// </summary>
-    public partial class DictionaryParameters : global::System.ComponentModel.INotifyPropertyChanged
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Blueprints")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Blueprint : global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// There are no comments for Property Keys in the schema.
+        /// Create a new Blueprint object.
+        /// </summary>
+        /// <param name="modelId">Initial value of ModelId.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Blueprint CreateBlueprint(long modelId, long ID, string name)
+        {
+            Blueprint blueprint = new Blueprint();
+            blueprint.ModelId = modelId;
+            blueprint.Id = ID;
+            blueprint.Name = name;
+            return blueprint;
+        }
+        /// <summary>
+        /// There are no comments for Property ModelId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Collections.ObjectModel.ObservableCollection<string> Keys
+        public long ModelId
         {
             get
             {
-                return this._Keys;
+                return this._ModelId;
             }
             set
             {
-                this.OnKeysChanging(value);
-                this._Keys = value;
-                this.OnKeysChanged();
-                this.OnPropertyChanged("Keys");
+                this.OnModelIdChanging(value);
+                this._ModelId = value;
+                this.OnModelIdChanged();
+                this.OnPropertyChanged("ModelId");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Collections.ObjectModel.ObservableCollection<string> _Keys = new global::System.Collections.ObjectModel.ObservableCollection<string>();
-        partial void OnKeysChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
-        partial void OnKeysChanged();
+        private long _ModelId;
+        partial void OnModelIdChanging(long value);
+        partial void OnModelIdChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Model in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.Inventory.Model Model
+        {
+            get
+            {
+                return this._Model;
+            }
+            set
+            {
+                this._Model = value;
+                this.OnPropertyChanged("Model");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.Inventory.Model _Model;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Order.Order in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Orders")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Order : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Order object.
+        /// </summary>
+        /// <param name="jobId">Initial value of JobId.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Order CreateOrder(long jobId, long ID, string name)
+        {
+            Order order = new Order();
+            order.JobId = jobId;
+            order.Id = ID;
+            order.Name = name;
+            return order;
+        }
+        /// <summary>
+        /// There are no comments for Property JobId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long JobId
+        {
+            get
+            {
+                return this._JobId;
+            }
+            set
+            {
+                this.OnJobIdChanging(value);
+                this._JobId = value;
+                this.OnJobIdChanged();
+                this.OnPropertyChanged("JobId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _JobId;
+        partial void OnJobIdChanging(long value);
+        partial void OnJobIdChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for OrderItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<OrderItem> OrderItems
+        {
+            get
+            {
+                return this._OrderItems;
+            }
+            set
+            {
+                this._OrderItems = value;
+                this.OnPropertyChanged("OrderItems");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<OrderItem> _OrderItems = new global::System.Data.Services.Client.DataServiceCollection<OrderItem>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// There are no comments for Job in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.Control.Job Job
+        {
+            get
+            {
+                return this._Job;
+            }
+            set
+            {
+                this._Job = value;
+                this.OnPropertyChanged("Job");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.Control.Job _Job;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Order.Cart in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Carts")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Cart : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Cart object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Cart CreateCart(long ID, string name)
+        {
+            Cart cart = new Cart();
+            cart.Id = ID;
+            cart.Name = name;
+            return cart;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for CartItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<CartItem> CartItems
+        {
+            get
+            {
+                return this._CartItems;
+            }
+            set
+            {
+                this._CartItems = value;
+                this.OnPropertyChanged("CartItems");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<CartItem> _CartItems = new global::System.Data.Services.Client.DataServiceCollection<CartItem>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Order.OrderItem in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("OrderItems")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class OrderItem : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new OrderItem object.
+        /// </summary>
+        /// <param name="orderId">Initial value of OrderId.</param>
+        /// <param name="jobId">Initial value of JobId.</param>
+        /// <param name="blueprintId">Initial value of BlueprintId.</param>
+        /// <param name="configuration">Initial value of Configuration.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static OrderItem CreateOrderItem(long orderId, long jobId, long blueprintId, global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdValuePair> configuration, long ID, string name)
+        {
+            OrderItem orderItem = new OrderItem();
+            orderItem.OrderId = orderId;
+            orderItem.JobId = jobId;
+            orderItem.BlueprintId = blueprintId;
+            if ((configuration == null))
+            {
+                throw new global::System.ArgumentNullException("configuration");
+            }
+            orderItem.Configuration = configuration;
+            orderItem.Id = ID;
+            orderItem.Name = name;
+            return orderItem;
+        }
+        /// <summary>
+        /// There are no comments for Property OrderId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long OrderId
+        {
+            get
+            {
+                return this._OrderId;
+            }
+            set
+            {
+                this.OnOrderIdChanging(value);
+                this._OrderId = value;
+                this.OnOrderIdChanged();
+                this.OnPropertyChanged("OrderId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _OrderId;
+        partial void OnOrderIdChanging(long value);
+        partial void OnOrderIdChanged();
+        /// <summary>
+        /// There are no comments for Property JobId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long JobId
+        {
+            get
+            {
+                return this._JobId;
+            }
+            set
+            {
+                this.OnJobIdChanging(value);
+                this._JobId = value;
+                this.OnJobIdChanged();
+                this.OnPropertyChanged("JobId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _JobId;
+        partial void OnJobIdChanging(long value);
+        partial void OnJobIdChanged();
+        /// <summary>
+        /// There are no comments for Property BlueprintId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long BlueprintId
+        {
+            get
+            {
+                return this._BlueprintId;
+            }
+            set
+            {
+                this.OnBlueprintIdChanging(value);
+                this._BlueprintId = value;
+                this.OnBlueprintIdChanged();
+                this.OnPropertyChanged("BlueprintId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _BlueprintId;
+        partial void OnBlueprintIdChanging(long value);
+        partial void OnBlueprintIdChanged();
+        /// <summary>
+        /// There are no comments for Property Configuration in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdValuePair> Configuration
+        {
+            get
+            {
+                return this._Configuration;
+            }
+            set
+            {
+                this.OnConfigurationChanging(value);
+                this._Configuration = value;
+                this.OnConfigurationChanged();
+                this.OnPropertyChanged("Configuration");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdValuePair> _Configuration = new global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdValuePair>();
+        partial void OnConfigurationChanging(global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdValuePair> value);
+        partial void OnConfigurationChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Order in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Order Order
+        {
+            get
+            {
+                return this._Order;
+            }
+            set
+            {
+                this._Order = value;
+                this.OnPropertyChanged("Order");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Order _Order;
+        /// <summary>
+        /// There are no comments for Job in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.Control.Job Job
+        {
+            get
+            {
+                return this._Job;
+            }
+            set
+            {
+                this._Job = value;
+                this.OnPropertyChanged("Job");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.Control.Job _Job;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Order.CartItem in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("CartItems")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class CartItem : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new CartItem object.
+        /// </summary>
+        /// <param name="cartId">Initial value of CartId.</param>
+        /// <param name="catalogueItemId">Initial value of CatalogueItemId.</param>
+        /// <param name="configuration">Initial value of Configuration.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static CartItem CreateCartItem(long cartId, long catalogueItemId, global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdValuePair> configuration, long ID, string name)
+        {
+            CartItem cartItem = new CartItem();
+            cartItem.CartId = cartId;
+            cartItem.CatalogueItemId = catalogueItemId;
+            if ((configuration == null))
+            {
+                throw new global::System.ArgumentNullException("configuration");
+            }
+            cartItem.Configuration = configuration;
+            cartItem.Id = ID;
+            cartItem.Name = name;
+            return cartItem;
+        }
+        /// <summary>
+        /// There are no comments for Property CartId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long CartId
+        {
+            get
+            {
+                return this._CartId;
+            }
+            set
+            {
+                this.OnCartIdChanging(value);
+                this._CartId = value;
+                this.OnCartIdChanged();
+                this.OnPropertyChanged("CartId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _CartId;
+        partial void OnCartIdChanging(long value);
+        partial void OnCartIdChanged();
+        /// <summary>
+        /// There are no comments for Property CatalogueItemId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long CatalogueItemId
+        {
+            get
+            {
+                return this._CatalogueItemId;
+            }
+            set
+            {
+                this.OnCatalogueItemIdChanging(value);
+                this._CatalogueItemId = value;
+                this.OnCatalogueItemIdChanged();
+                this.OnPropertyChanged("CatalogueItemId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _CatalogueItemId;
+        partial void OnCatalogueItemIdChanging(long value);
+        partial void OnCatalogueItemIdChanged();
+        /// <summary>
+        /// There are no comments for Property Configuration in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdValuePair> Configuration
+        {
+            get
+            {
+                return this._Configuration;
+            }
+            set
+            {
+                this.OnConfigurationChanging(value);
+                this._Configuration = value;
+                this.OnConfigurationChanged();
+                this.OnPropertyChanged("Configuration");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdValuePair> _Configuration = new global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdValuePair>();
+        partial void OnConfigurationChanging(global::System.Collections.ObjectModel.ObservableCollection<Net.Appclusive.Public.Types.IdValuePair> value);
+        partial void OnConfigurationChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Cart in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Cart Cart
+        {
+            get
+            {
+                return this._Cart;
+            }
+            set
+            {
+                this._Cart = value;
+                this.OnPropertyChanged("Cart");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Cart _Cart;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Order.Catalogue in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Catalogues")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Catalogue : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Catalogue object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Catalogue CreateCatalogue(long ID, string name)
+        {
+            Catalogue catalogue = new Catalogue();
+            catalogue.Id = ID;
+            catalogue.Name = name;
+            return catalogue;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for CatalogueItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<CatalogueItem> CatalogueItems
+        {
+            get
+            {
+                return this._CatalogueItems;
+            }
+            set
+            {
+                this._CatalogueItems = value;
+                this.OnPropertyChanged("CatalogueItems");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<CatalogueItem> _CatalogueItems = new global::System.Data.Services.Client.DataServiceCollection<CatalogueItem>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Order.CatalogueItem in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("CatalogueItems")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class CatalogueItem : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new CatalogueItem object.
+        /// </summary>
+        /// <param name="catalogueId">Initial value of CatalogueId.</param>
+        /// <param name="blueprintId">Initial value of BlueprintId.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static CatalogueItem CreateCatalogueItem(long catalogueId, long blueprintId, long ID, string name)
+        {
+            CatalogueItem catalogueItem = new CatalogueItem();
+            catalogueItem.CatalogueId = catalogueId;
+            catalogueItem.BlueprintId = blueprintId;
+            catalogueItem.Id = ID;
+            catalogueItem.Name = name;
+            return catalogueItem;
+        }
+        /// <summary>
+        /// There are no comments for Property CatalogueId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long CatalogueId
+        {
+            get
+            {
+                return this._CatalogueId;
+            }
+            set
+            {
+                this.OnCatalogueIdChanging(value);
+                this._CatalogueId = value;
+                this.OnCatalogueIdChanged();
+                this.OnPropertyChanged("CatalogueId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _CatalogueId;
+        partial void OnCatalogueIdChanging(long value);
+        partial void OnCatalogueIdChanged();
+        /// <summary>
+        /// There are no comments for Property BlueprintId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long BlueprintId
+        {
+            get
+            {
+                return this._BlueprintId;
+            }
+            set
+            {
+                this.OnBlueprintIdChanging(value);
+                this._BlueprintId = value;
+                this.OnBlueprintIdChanged();
+                this.OnPropertyChanged("BlueprintId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _BlueprintId;
+        partial void OnBlueprintIdChanging(long value);
+        partial void OnBlueprintIdChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Catalogue in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Catalogue Catalogue
+        {
+            get
+            {
+                return this._Catalogue;
+            }
+            set
+            {
+                this._Catalogue = value;
+                this.OnPropertyChanged("Catalogue");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Catalogue _Catalogue;
+        /// <summary>
+        /// There are no comments for Blueprint in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Blueprint Blueprint
+        {
+            get
+            {
+                return this._Blueprint;
+            }
+            set
+            {
+                this._Blueprint = value;
+                this.OnPropertyChanged("Blueprint");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Blueprint _Blueprint;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -9234,199 +7005,7 @@ namespace Net.Appclusive.Api.Core.biz.dfch.CS.Commons
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
-namespace Net.Appclusive.Core.Domain
-{
-    
-    /// <summary>
-    /// There are no comments for ComplexType Net.Appclusive.Core.Domain.EmptyActionParameters in the schema.
-    /// </summary>
-    public partial class EmptyActionParameters : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-}
-// Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
-namespace Net.Appclusive.Core.Domain.Configuration
-{
-    
-    /// <summary>
-    /// There are no comments for ComplexType Net.Appclusive.Core.Domain.Configuration.AltogetherNowReturnType in the schema.
-    /// </summary>
-    public partial class AltogetherNowReturnType : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new AltogetherNowReturnType object.
-        /// </summary>
-        /// <param name="longProperty">Initial value of LongProperty.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static AltogetherNowReturnType CreateAltogetherNowReturnType(long longProperty)
-        {
-            AltogetherNowReturnType altogetherNowReturnType = new AltogetherNowReturnType();
-            altogetherNowReturnType.LongProperty = longProperty;
-            return altogetherNowReturnType;
-        }
-        /// <summary>
-        /// There are no comments for Property StringProperty in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string StringProperty
-        {
-            get
-            {
-                return this._StringProperty;
-            }
-            set
-            {
-                this.OnStringPropertyChanging(value);
-                this._StringProperty = value;
-                this.OnStringPropertyChanged();
-                this.OnPropertyChanged("StringProperty");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _StringProperty;
-        partial void OnStringPropertyChanging(string value);
-        partial void OnStringPropertyChanged();
-        /// <summary>
-        /// There are no comments for Property LongProperty in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long LongProperty
-        {
-            get
-            {
-                return this._LongProperty;
-            }
-            set
-            {
-                this.OnLongPropertyChanging(value);
-                this._LongProperty = value;
-                this.OnLongPropertyChanged();
-                this.OnPropertyChanged("LongProperty");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _LongProperty;
-        partial void OnLongPropertyChanging(long value);
-        partial void OnLongPropertyChanged();
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for ComplexType Net.Appclusive.Core.Domain.Configuration.EntityActionReturningDto in the schema.
-    /// </summary>
-    public partial class EntityActionReturningDto : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new EntityActionReturningDto object.
-        /// </summary>
-        /// <param name="longProperty">Initial value of LongProperty.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static EntityActionReturningDto CreateEntityActionReturningDto(long longProperty)
-        {
-            EntityActionReturningDto entityActionReturningDto = new EntityActionReturningDto();
-            entityActionReturningDto.LongProperty = longProperty;
-            return entityActionReturningDto;
-        }
-        /// <summary>
-        /// There are no comments for Property StringProperty in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string StringProperty
-        {
-            get
-            {
-                return this._StringProperty;
-            }
-            set
-            {
-                this.OnStringPropertyChanging(value);
-                this._StringProperty = value;
-                this.OnStringPropertyChanged();
-                this.OnPropertyChanged("StringProperty");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _StringProperty;
-        partial void OnStringPropertyChanging(string value);
-        partial void OnStringPropertyChanged();
-        /// <summary>
-        /// There are no comments for Property LongProperty in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public long LongProperty
-        {
-            get
-            {
-                return this._LongProperty;
-            }
-            set
-            {
-                this.OnLongPropertyChanging(value);
-                this._LongProperty = value;
-                this.OnLongPropertyChanged();
-                this.OnPropertyChanged("LongProperty");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private long _LongProperty;
-        partial void OnLongPropertyChanging(long value);
-        partial void OnLongPropertyChanged();
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-}
-// Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
-namespace Net.Appclusive.Api.Core.System.Collections.ObjectModel
-{
-    
-    /// <summary>
-    /// There are no comments for ComplexType System.Collections.ObjectModel.Collection_1OfString in the schema.
-    /// </summary>
-    public partial class Collection_1OfString : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-}
-// Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
+// Generation date: 5/3/2017 10:33:41 AM
 namespace Net.Appclusive.Api.Core.System.Collections.Generic
 {
     
@@ -9481,7 +7060,2227 @@ namespace Net.Appclusive.Api.Core.System.Collections.Generic
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
+// Generation date: 5/3/2017 10:33:41 AM
+namespace Net.Appclusive.Public.Domain.Security
+{
+    
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Security.Authentication in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Authentications")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Authentication : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Authentication object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Authentication CreateAuthentication(long ID, string name)
+        {
+            Authentication authentication = new Authentication();
+            authentication.Id = ID;
+            authentication.Name = name;
+            return authentication;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Security.ItemAcl in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("ItemAcls")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class ItemAcl : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new ItemAcl object.
+        /// </summary>
+        /// <param name="parentId">Initial value of ParentId.</param>
+        /// <param name="noInheritance">Initial value of NoInheritance.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static ItemAcl CreateItemAcl(long parentId, bool noInheritance, long ID, string name)
+        {
+            ItemAcl itemAcl = new ItemAcl();
+            itemAcl.ParentId = parentId;
+            itemAcl.NoInheritance = noInheritance;
+            itemAcl.Id = ID;
+            itemAcl.Name = name;
+            return itemAcl;
+        }
+        /// <summary>
+        /// There are no comments for Property ParentId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long ParentId
+        {
+            get
+            {
+                return this._ParentId;
+            }
+            set
+            {
+                this.OnParentIdChanging(value);
+                this._ParentId = value;
+                this.OnParentIdChanged();
+                this.OnPropertyChanged("ParentId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _ParentId;
+        partial void OnParentIdChanging(long value);
+        partial void OnParentIdChanged();
+        /// <summary>
+        /// There are no comments for Property NoInheritance in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool NoInheritance
+        {
+            get
+            {
+                return this._NoInheritance;
+            }
+            set
+            {
+                this.OnNoInheritanceChanging(value);
+                this._NoInheritance = value;
+                this.OnNoInheritanceChanged();
+                this.OnPropertyChanged("NoInheritance");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _NoInheritance;
+        partial void OnNoInheritanceChanging(bool value);
+        partial void OnNoInheritanceChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Parent in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public ItemAcl Parent
+        {
+            get
+            {
+                return this._Parent;
+            }
+            set
+            {
+                this._Parent = value;
+                this.OnPropertyChanged("Parent");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private ItemAcl _Parent;
+        /// <summary>
+        /// There are no comments for Children in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<ItemAcl> Children
+        {
+            get
+            {
+                return this._Children;
+            }
+            set
+            {
+                this._Children = value;
+                this.OnPropertyChanged("Children");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ItemAcl> _Children = new global::System.Data.Services.Client.DataServiceCollection<ItemAcl>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// There are no comments for Aces in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<ItemAce> Aces
+        {
+            get
+            {
+                return this._Aces;
+            }
+            set
+            {
+                this._Aces = value;
+                this.OnPropertyChanged("Aces");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ItemAce> _Aces = new global::System.Data.Services.Client.DataServiceCollection<ItemAce>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Security.Ace in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Aces")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Ace : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Ace object.
+        /// </summary>
+        /// <param name="aclId">Initial value of AclId.</param>
+        /// <param name="permissionId">Initial value of PermissionId.</param>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Ace CreateAce(long aclId, long permissionId, string type, long ID, string name)
+        {
+            Ace ace = new Ace();
+            ace.AclId = aclId;
+            ace.PermissionId = permissionId;
+            ace.Type = type;
+            ace.Id = ID;
+            ace.Name = name;
+            return ace;
+        }
+        /// <summary>
+        /// There are no comments for Property AclId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long AclId
+        {
+            get
+            {
+                return this._AclId;
+            }
+            set
+            {
+                this.OnAclIdChanging(value);
+                this._AclId = value;
+                this.OnAclIdChanged();
+                this.OnPropertyChanged("AclId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _AclId;
+        partial void OnAclIdChanging(long value);
+        partial void OnAclIdChanged();
+        /// <summary>
+        /// There are no comments for Property PermissionId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long PermissionId
+        {
+            get
+            {
+                return this._PermissionId;
+            }
+            set
+            {
+                this.OnPermissionIdChanging(value);
+                this._PermissionId = value;
+                this.OnPermissionIdChanged();
+                this.OnPropertyChanged("PermissionId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _PermissionId;
+        partial void OnPermissionIdChanging(long value);
+        partial void OnPermissionIdChanged();
+        /// <summary>
+        /// There are no comments for Property UserId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<long> UserId
+        {
+            get
+            {
+                return this._UserId;
+            }
+            set
+            {
+                this.OnUserIdChanging(value);
+                this._UserId = value;
+                this.OnUserIdChanged();
+                this.OnPropertyChanged("UserId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<long> _UserId;
+        partial void OnUserIdChanging(global::System.Nullable<long> value);
+        partial void OnUserIdChanged();
+        /// <summary>
+        /// There are no comments for Property RoleId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<long> RoleId
+        {
+            get
+            {
+                return this._RoleId;
+            }
+            set
+            {
+                this.OnRoleIdChanging(value);
+                this._RoleId = value;
+                this.OnRoleIdChanged();
+                this.OnPropertyChanged("RoleId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<long> _RoleId;
+        partial void OnRoleIdChanging(global::System.Nullable<long> value);
+        partial void OnRoleIdChanged();
+        /// <summary>
+        /// There are no comments for Property Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Type
+        {
+            get
+            {
+                return this._Type;
+            }
+            set
+            {
+                this.OnTypeChanging(value);
+                this._Type = value;
+                this.OnTypeChanged();
+                this.OnPropertyChanged("Type");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Type;
+        partial void OnTypeChanging(string value);
+        partial void OnTypeChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Permission in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Permission Permission
+        {
+            get
+            {
+                return this._Permission;
+            }
+            set
+            {
+                this._Permission = value;
+                this.OnPropertyChanged("Permission");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Permission _Permission;
+        /// <summary>
+        /// There are no comments for User in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.Identity.User User
+        {
+            get
+            {
+                return this._User;
+            }
+            set
+            {
+                this._User = value;
+                this.OnPropertyChanged("User");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.Identity.User _User;
+        /// <summary>
+        /// There are no comments for Role in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Role Role
+        {
+            get
+            {
+                return this._Role;
+            }
+            set
+            {
+                this._Role = value;
+                this.OnPropertyChanged("Role");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Role _Role;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Security.Right in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Rights")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Right : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Right object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Right CreateRight(long ID, string name)
+        {
+            Right right = new Right();
+            right.Id = ID;
+            right.Name = name;
+            return right;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Security.Role in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Roles")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Role : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Role object.
+        /// </summary>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Role CreateRole(string type, long ID, string name)
+        {
+            Role role = new Role();
+            role.Type = type;
+            role.Id = ID;
+            role.Name = name;
+            return role;
+        }
+        /// <summary>
+        /// There are no comments for Property Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Type
+        {
+            get
+            {
+                return this._Type;
+            }
+            set
+            {
+                this.OnTypeChanging(value);
+                this._Type = value;
+                this.OnTypeChanged();
+                this.OnPropertyChanged("Type");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Type;
+        partial void OnTypeChanging(string value);
+        partial void OnTypeChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Users in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Identity.User> Users
+        {
+            get
+            {
+                return this._Users;
+            }
+            set
+            {
+                this._Users = value;
+                this.OnPropertyChanged("Users");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Identity.User> _Users = new global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Identity.User>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// There are no comments for Rights in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<Right> Rights
+        {
+            get
+            {
+                return this._Rights;
+            }
+            set
+            {
+                this._Rights = value;
+                this.OnPropertyChanged("Rights");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Right> _Rights = new global::System.Data.Services.Client.DataServiceCollection<Right>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Security.Acl in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Acls")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Acl : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Acl object.
+        /// </summary>
+        /// <param name="parentId">Initial value of ParentId.</param>
+        /// <param name="noInheritance">Initial value of NoInheritance.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Acl CreateAcl(long parentId, bool noInheritance, long ID, string name)
+        {
+            Acl acl = new Acl();
+            acl.ParentId = parentId;
+            acl.NoInheritance = noInheritance;
+            acl.Id = ID;
+            acl.Name = name;
+            return acl;
+        }
+        /// <summary>
+        /// There are no comments for Property ParentId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long ParentId
+        {
+            get
+            {
+                return this._ParentId;
+            }
+            set
+            {
+                this.OnParentIdChanging(value);
+                this._ParentId = value;
+                this.OnParentIdChanged();
+                this.OnPropertyChanged("ParentId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _ParentId;
+        partial void OnParentIdChanging(long value);
+        partial void OnParentIdChanged();
+        /// <summary>
+        /// There are no comments for Property NoInheritance in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool NoInheritance
+        {
+            get
+            {
+                return this._NoInheritance;
+            }
+            set
+            {
+                this.OnNoInheritanceChanging(value);
+                this._NoInheritance = value;
+                this.OnNoInheritanceChanged();
+                this.OnPropertyChanged("NoInheritance");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _NoInheritance;
+        partial void OnNoInheritanceChanging(bool value);
+        partial void OnNoInheritanceChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Parent in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Acl Parent
+        {
+            get
+            {
+                return this._Parent;
+            }
+            set
+            {
+                this._Parent = value;
+                this.OnPropertyChanged("Parent");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Acl _Parent;
+        /// <summary>
+        /// There are no comments for Children in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<Acl> Children
+        {
+            get
+            {
+                return this._Children;
+            }
+            set
+            {
+                this._Children = value;
+                this.OnPropertyChanged("Children");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Acl> _Children = new global::System.Data.Services.Client.DataServiceCollection<Acl>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// There are no comments for Aces in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<Ace> Aces
+        {
+            get
+            {
+                return this._Aces;
+            }
+            set
+            {
+                this._Aces = value;
+                this.OnPropertyChanged("Aces");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Ace> _Aces = new global::System.Data.Services.Client.DataServiceCollection<Ace>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Security.ItemAce in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("ItemAces")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class ItemAce : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new ItemAce object.
+        /// </summary>
+        /// <param name="itemId">Initial value of ItemId.</param>
+        /// <param name="permissionId">Initial value of PermissionId.</param>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static ItemAce CreateItemAce(long itemId, long permissionId, string type, long ID, string name)
+        {
+            ItemAce itemAce = new ItemAce();
+            itemAce.ItemId = itemId;
+            itemAce.PermissionId = permissionId;
+            itemAce.Type = type;
+            itemAce.Id = ID;
+            itemAce.Name = name;
+            return itemAce;
+        }
+        /// <summary>
+        /// There are no comments for Property ItemId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long ItemId
+        {
+            get
+            {
+                return this._ItemId;
+            }
+            set
+            {
+                this.OnItemIdChanging(value);
+                this._ItemId = value;
+                this.OnItemIdChanged();
+                this.OnPropertyChanged("ItemId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _ItemId;
+        partial void OnItemIdChanging(long value);
+        partial void OnItemIdChanged();
+        /// <summary>
+        /// There are no comments for Property PermissionId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long PermissionId
+        {
+            get
+            {
+                return this._PermissionId;
+            }
+            set
+            {
+                this.OnPermissionIdChanging(value);
+                this._PermissionId = value;
+                this.OnPermissionIdChanged();
+                this.OnPropertyChanged("PermissionId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _PermissionId;
+        partial void OnPermissionIdChanging(long value);
+        partial void OnPermissionIdChanged();
+        /// <summary>
+        /// There are no comments for Property RoleId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<long> RoleId
+        {
+            get
+            {
+                return this._RoleId;
+            }
+            set
+            {
+                this.OnRoleIdChanging(value);
+                this._RoleId = value;
+                this.OnRoleIdChanged();
+                this.OnPropertyChanged("RoleId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<long> _RoleId;
+        partial void OnRoleIdChanging(global::System.Nullable<long> value);
+        partial void OnRoleIdChanged();
+        /// <summary>
+        /// There are no comments for Property UserId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<long> UserId
+        {
+            get
+            {
+                return this._UserId;
+            }
+            set
+            {
+                this.OnUserIdChanging(value);
+                this._UserId = value;
+                this.OnUserIdChanged();
+                this.OnPropertyChanged("UserId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<long> _UserId;
+        partial void OnUserIdChanging(global::System.Nullable<long> value);
+        partial void OnUserIdChanged();
+        /// <summary>
+        /// There are no comments for Property Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Type
+        {
+            get
+            {
+                return this._Type;
+            }
+            set
+            {
+                this.OnTypeChanging(value);
+                this._Type = value;
+                this.OnTypeChanged();
+                this.OnPropertyChanged("Type");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Type;
+        partial void OnTypeChanging(string value);
+        partial void OnTypeChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Permission in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Permission Permission
+        {
+            get
+            {
+                return this._Permission;
+            }
+            set
+            {
+                this._Permission = value;
+                this.OnPropertyChanged("Permission");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Permission _Permission;
+        /// <summary>
+        /// There are no comments for Role in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Role Role
+        {
+            get
+            {
+                return this._Role;
+            }
+            set
+            {
+                this._Role = value;
+                this.OnPropertyChanged("Role");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Role _Role;
+        /// <summary>
+        /// There are no comments for User in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.Identity.User User
+        {
+            get
+            {
+                return this._User;
+            }
+            set
+            {
+                this._User = value;
+                this.OnPropertyChanged("User");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.Identity.User _User;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Security.Permission in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Permissions")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Permission : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Permission object.
+        /// </summary>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Permission CreatePermission(string type, long ID, string name)
+        {
+            Permission permission = new Permission();
+            permission.Type = type;
+            permission.Id = ID;
+            permission.Name = name;
+            return permission;
+        }
+        /// <summary>
+        /// There are no comments for Property Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Type
+        {
+            get
+            {
+                return this._Type;
+            }
+            set
+            {
+                this.OnTypeChanging(value);
+                this._Type = value;
+                this.OnTypeChanged();
+                this.OnPropertyChanged("Type");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Type;
+        partial void OnTypeChanging(string value);
+        partial void OnTypeChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+}
+// Original file name:
+// Generation date: 5/3/2017 10:33:41 AM
+namespace Net.Appclusive.Public.Domain.Identity
+{
+    
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Identity.User in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Users")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class User : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new User object.
+        /// </summary>
+        /// <param name="mappedId">Initial value of MappedId.</param>
+        /// <param name="mappedType">Initial value of MappedType.</param>
+        /// <param name="mail">Initial value of Mail.</param>
+        /// <param name="isHidden">Initial value of IsHidden.</param>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static User CreateUser(string mappedId, string mappedType, string mail, bool isHidden, long ID, string name)
+        {
+            User user = new User();
+            user.MappedId = mappedId;
+            user.MappedType = mappedType;
+            user.Mail = mail;
+            user.IsHidden = isHidden;
+            user.Id = ID;
+            user.Name = name;
+            return user;
+        }
+        /// <summary>
+        /// There are no comments for Property MappedId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string MappedId
+        {
+            get
+            {
+                return this._MappedId;
+            }
+            set
+            {
+                this.OnMappedIdChanging(value);
+                this._MappedId = value;
+                this.OnMappedIdChanged();
+                this.OnPropertyChanged("MappedId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _MappedId;
+        partial void OnMappedIdChanging(string value);
+        partial void OnMappedIdChanged();
+        /// <summary>
+        /// There are no comments for Property MappedType in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string MappedType
+        {
+            get
+            {
+                return this._MappedType;
+            }
+            set
+            {
+                this.OnMappedTypeChanging(value);
+                this._MappedType = value;
+                this.OnMappedTypeChanged();
+                this.OnPropertyChanged("MappedType");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _MappedType;
+        partial void OnMappedTypeChanging(string value);
+        partial void OnMappedTypeChanged();
+        /// <summary>
+        /// There are no comments for Property Mail in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Mail
+        {
+            get
+            {
+                return this._Mail;
+            }
+            set
+            {
+                this.OnMailChanging(value);
+                this._Mail = value;
+                this.OnMailChanged();
+                this.OnPropertyChanged("Mail");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Mail;
+        partial void OnMailChanging(string value);
+        partial void OnMailChanged();
+        /// <summary>
+        /// There are no comments for Property IsHidden in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool IsHidden
+        {
+            get
+            {
+                return this._IsHidden;
+            }
+            set
+            {
+                this.OnIsHiddenChanging(value);
+                this._IsHidden = value;
+                this.OnIsHiddenChanged();
+                this.OnPropertyChanged("IsHidden");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _IsHidden;
+        partial void OnIsHiddenChanging(bool value);
+        partial void OnIsHiddenChanged();
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.PublicEntityDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.PublicEntityDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Roles in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Security.Role> Roles
+        {
+            get
+            {
+                return this._Roles;
+            }
+            set
+            {
+                this._Roles = value;
+                this.OnPropertyChanged("Roles");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Security.Role> _Roles = new global::System.Data.Services.Client.DataServiceCollection<Net.Appclusive.Public.Domain.Security.Role>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.Identity.Tenant in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("Tenants")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class Tenant : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Tenant object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="name">Initial value of Name.</param>
+        /// <param name="mappedId">Initial value of MappedId.</param>
+        /// <param name="mappedType">Initial value of MappedType.</param>
+        /// <param name="parentId">Initial value of ParentId.</param>
+        /// <param name="namespace">Initial value of Namespace.</param>
+        /// <param name="customerId">Initial value of CustomerId.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static Tenant CreateTenant(global::System.Guid ID, string name, string mappedId, string mappedType, global::System.Guid parentId, string @namespace, long customerId)
+        {
+            Tenant tenant = new Tenant();
+            tenant.Id = ID;
+            tenant.Name = name;
+            tenant.MappedId = mappedId;
+            tenant.MappedType = mappedType;
+            tenant.ParentId = parentId;
+            tenant.Namespace = @namespace;
+            tenant.CustomerId = customerId;
+            return tenant;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Guid Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Guid _Id;
+        partial void OnIdChanging(global::System.Guid value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this._Description = value;
+                this.OnDescriptionChanged();
+                this.OnPropertyChanged("Description");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property Details in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Net.Appclusive.Public.Domain.TenantDetails Details
+        {
+            get
+            {
+                if (((this._Details == null) 
+                            && (this._DetailsInitialized != true)))
+                {
+                    this._Details = new Net.Appclusive.Public.Domain.TenantDetails();
+                    this._DetailsInitialized = true;
+                }
+                return this._Details;
+            }
+            set
+            {
+                this.OnDetailsChanging(value);
+                this._Details = value;
+                this._DetailsInitialized = true;
+                this.OnDetailsChanged();
+                this.OnPropertyChanged("Details");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Net.Appclusive.Public.Domain.TenantDetails _Details;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _DetailsInitialized;
+        partial void OnDetailsChanging(Net.Appclusive.Public.Domain.TenantDetails value);
+        partial void OnDetailsChanged();
+        /// <summary>
+        /// There are no comments for Property MappedId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string MappedId
+        {
+            get
+            {
+                return this._MappedId;
+            }
+            set
+            {
+                this.OnMappedIdChanging(value);
+                this._MappedId = value;
+                this.OnMappedIdChanged();
+                this.OnPropertyChanged("MappedId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _MappedId;
+        partial void OnMappedIdChanging(string value);
+        partial void OnMappedIdChanged();
+        /// <summary>
+        /// There are no comments for Property MappedType in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string MappedType
+        {
+            get
+            {
+                return this._MappedType;
+            }
+            set
+            {
+                this.OnMappedTypeChanging(value);
+                this._MappedType = value;
+                this.OnMappedTypeChanged();
+                this.OnPropertyChanged("MappedType");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _MappedType;
+        partial void OnMappedTypeChanging(string value);
+        partial void OnMappedTypeChanged();
+        /// <summary>
+        /// There are no comments for Property ParentId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Guid ParentId
+        {
+            get
+            {
+                return this._ParentId;
+            }
+            set
+            {
+                this.OnParentIdChanging(value);
+                this._ParentId = value;
+                this.OnParentIdChanged();
+                this.OnPropertyChanged("ParentId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Guid _ParentId;
+        partial void OnParentIdChanging(global::System.Guid value);
+        partial void OnParentIdChanged();
+        /// <summary>
+        /// There are no comments for Property Namespace in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Namespace
+        {
+            get
+            {
+                return this._Namespace;
+            }
+            set
+            {
+                this.OnNamespaceChanging(value);
+                this._Namespace = value;
+                this.OnNamespaceChanged();
+                this.OnPropertyChanged("Namespace");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Namespace;
+        partial void OnNamespaceChanging(string value);
+        partial void OnNamespaceChanged();
+        /// <summary>
+        /// There are no comments for Property CustomerId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long CustomerId
+        {
+            get
+            {
+                return this._CustomerId;
+            }
+            set
+            {
+                this.OnCustomerIdChanging(value);
+                this._CustomerId = value;
+                this.OnCustomerIdChanged();
+                this.OnPropertyChanged("CustomerId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _CustomerId;
+        partial void OnCustomerIdChanging(long value);
+        partial void OnCustomerIdChanged();
+        /// <summary>
+        /// There are no comments for Parent in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public Tenant Parent
+        {
+            get
+            {
+                return this._Parent;
+            }
+            set
+            {
+                this._Parent = value;
+                this.OnPropertyChanged("Parent");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private Tenant _Parent;
+        /// <summary>
+        /// There are no comments for Children in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<Tenant> Children
+        {
+            get
+            {
+                return this._Children;
+            }
+            set
+            {
+                this._Children = value;
+                this.OnPropertyChanged("Children");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Tenant> _Children = new global::System.Data.Services.Client.DataServiceCollection<Tenant>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+}
+// Original file name:
+// Generation date: 5/3/2017 10:33:41 AM
 namespace Net.Appclusive.Api.Core.System.Security.Principal
 {
     
@@ -9503,7 +9302,7 @@ namespace Net.Appclusive.Api.Core.System.Security.Principal
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 9:38:28 AM
+// Generation date: 5/3/2017 10:33:41 AM
 namespace Net.Appclusive.Core.Domain.Security
 {
     

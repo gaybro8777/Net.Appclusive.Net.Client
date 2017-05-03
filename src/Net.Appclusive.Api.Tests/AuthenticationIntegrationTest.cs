@@ -20,8 +20,8 @@ using System.Linq;
 using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Net.Appclusive.Api.Constants;
-using Net.Appclusive.Api.Core;
 using Net.Appclusive.Public.Domain.Identity;
+using Net.Appclusive.Public.Types;
 
 namespace Net.Appclusive.Api.Tests
 {
