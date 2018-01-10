@@ -146,7 +146,7 @@ namespace Net.Appclusive.PS.Client
 
             // perform login
             // DFTODO - support negotiate authentication
-            string loginEndpoint = ResolveLoginEndpoint(Credential);
+            var loginEndpoint = ResolveLoginEndpoint(Credential);
 
             try
             {

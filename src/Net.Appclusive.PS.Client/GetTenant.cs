@@ -115,22 +115,22 @@ namespace Net.Appclusive.PS.Client
             switch (ParameterSetName)
             {
                 case ParameterSets.LIST:
-                    {
-                        ProcessParameterSetList();
-                        return;
-                    }
+                {
+                    ProcessParameterSetList();
+                    return;
+                }
 
                 case ParameterSets.ID:
-                    {
-                        ProcessParameterSetId();
-                        return;
-                    }
+                {
+                    ProcessParameterSetId();
+                    return;
+                }
 
                 case ParameterSets.NAME:
-                    {
-                        ProcessParameterSetName();
-                        return;
-                    }
+                {
+                    ProcessParameterSetName();
+                    return;
+                }
 
                 default:
                     throw new NotImplementedException();
