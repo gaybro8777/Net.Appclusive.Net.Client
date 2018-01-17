@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Api.Core
 {
     
@@ -2881,7 +2881,7 @@ namespace Net.Appclusive.Api.Core
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Public.Types
 {
     
@@ -3269,7 +3269,7 @@ namespace Net.Appclusive.Public.Types
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Public.Domain
 {
     
@@ -3599,7 +3599,7 @@ namespace Net.Appclusive.Public.Domain
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Api.Core.biz.dfch.CS.Commons
 {
     
@@ -3643,7 +3643,7 @@ namespace Net.Appclusive.Api.Core.biz.dfch.CS.Commons
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Core.Domain
 {
     
@@ -3665,7 +3665,7 @@ namespace Net.Appclusive.Core.Domain
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Core.Domain.Configuration
 {
     
@@ -3813,7 +3813,7 @@ namespace Net.Appclusive.Core.Domain.Configuration
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Api.Core.System.Collections.ObjectModel
 {
     
@@ -3835,7 +3835,7 @@ namespace Net.Appclusive.Api.Core.System.Collections.ObjectModel
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Public.Domain.Inventory
 {
     
@@ -4997,7 +4997,7 @@ namespace Net.Appclusive.Public.Domain.Inventory
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Public.Domain.Control
 {
     
@@ -5630,7 +5630,7 @@ namespace Net.Appclusive.Public.Domain.Control
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Public.Domain.Order
 {
     
@@ -7005,7 +7005,7 @@ namespace Net.Appclusive.Public.Domain.Order
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Api.Core.System.Collections.Generic
 {
     
@@ -7060,7 +7060,7 @@ namespace Net.Appclusive.Api.Core.System.Collections.Generic
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Public.Domain.Security
 {
     
@@ -8742,7 +8742,7 @@ namespace Net.Appclusive.Public.Domain.Security
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Public.Domain.Identity
 {
     
@@ -9280,7 +9280,7 @@ namespace Net.Appclusive.Public.Domain.Identity
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Api.Core.System.Security.Principal
 {
     
@@ -9302,7 +9302,7 @@ namespace Net.Appclusive.Api.Core.System.Security.Principal
     }
 }
 // Original file name:
-// Generation date: 5/3/2017 10:33:41 AM
+// Generation date: 01/16/2018 8:19:41 AM
 namespace Net.Appclusive.Core.Domain.Security
 {
     
