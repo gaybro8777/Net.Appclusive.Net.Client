@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 5/3/2017 10:33:47 AM
+// Generation date: 01/16/2018 8:20:06 AM
 namespace Net.Appclusive.Api.Diagnostics
 {
     
@@ -39,12 +39,12 @@ namespace Net.Appclusive.Api.Diagnostics
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected global::System.Type ResolveTypeFromName(string typeName)
         {
-            global::System.Type resolvedType = this.DefaultResolveType(typeName, "Net.Appclusive.Public.Domain.Diagnostics", "Net.Appclusive.Api.Diagnostics");
+            global::System.Type resolvedType = this.DefaultResolveType(typeName, "Net.Appclusive.Public.Domain.Diagnostics", "Net.Appclusive.Api.Diagnostics.Net.Appclusive.Public.Domain.Diagnostics");
             if ((resolvedType != null))
             {
                 return resolvedType;
             }
-            resolvedType = this.DefaultResolveType(typeName, "Net.Appclusive.Public.Domain", "Net.Appclusive.Api.Diagnostics.Net.Appclusive.Public.Domain");
+            resolvedType = this.DefaultResolveType(typeName, "Net.Appclusive.Public.Domain", "Net.Appclusive.Api.Diagnostics");
             if ((resolvedType != null))
             {
                 return resolvedType;
@@ -59,72 +59,97 @@ namespace Net.Appclusive.Api.Diagnostics
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected string ResolveNameFromType(global::System.Type clientType)
         {
-            if (clientType.Namespace.Equals("Net.Appclusive.Api.Diagnostics.Net.Appclusive.Public.Domain", global::System.StringComparison.Ordinal))
+            if (clientType.Namespace.Equals("Net.Appclusive.Api.Diagnostics.Net.Appclusive.Public.Domain.Diagnostics", global::System.StringComparison.Ordinal))
             {
-                return string.Concat("Net.Appclusive.Public.Domain.", clientType.Name);
+                return string.Concat("Net.Appclusive.Public.Domain.Diagnostics.", clientType.Name);
             }
             if (clientType.Namespace.Equals("Net.Appclusive.Api.Diagnostics", global::System.StringComparison.Ordinal))
             {
-                return string.Concat("Net.Appclusive.Public.Domain.Diagnostics.", clientType.Name);
+                return string.Concat("Net.Appclusive.Public.Domain.", clientType.Name);
             }
             return null;
         }
         /// <summary>
+        /// There are no comments for PublicEntityDetailss in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<PublicEntityDetails> PublicEntityDetailss
+        {
+            get
+            {
+                if ((this._PublicEntityDetailss == null))
+                {
+                    this._PublicEntityDetailss = base.CreateQuery<PublicEntityDetails>("PublicEntityDetailss");
+                }
+                return this._PublicEntityDetailss;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<PublicEntityDetails> _PublicEntityDetailss;
+        /// <summary>
         /// There are no comments for CacheItems in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<CacheItem> CacheItems
+        public global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Diagnostics.CacheItem> CacheItems
         {
             get
             {
                 if ((this._CacheItems == null))
                 {
-                    this._CacheItems = base.CreateQuery<CacheItem>("CacheItems");
+                    this._CacheItems = base.CreateQuery<Net.Appclusive.Public.Domain.Diagnostics.CacheItem>("CacheItems");
                 }
                 return this._CacheItems;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<CacheItem> _CacheItems;
+        private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Diagnostics.CacheItem> _CacheItems;
         /// <summary>
         /// There are no comments for WorkflowInstances in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<WorkflowInstance> WorkflowInstances
+        public global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Diagnostics.WorkflowInstance> WorkflowInstances
         {
             get
             {
                 if ((this._WorkflowInstances == null))
                 {
-                    this._WorkflowInstances = base.CreateQuery<WorkflowInstance>("WorkflowInstances");
+                    this._WorkflowInstances = base.CreateQuery<Net.Appclusive.Public.Domain.Diagnostics.WorkflowInstance>("WorkflowInstances");
                 }
                 return this._WorkflowInstances;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<WorkflowInstance> _WorkflowInstances;
+        private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Diagnostics.WorkflowInstance> _WorkflowInstances;
         /// <summary>
         /// There are no comments for HealthChecks in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<HealthCheck> HealthChecks
+        public global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Diagnostics.HealthCheck> HealthChecks
         {
             get
             {
                 if ((this._HealthChecks == null))
                 {
-                    this._HealthChecks = base.CreateQuery<HealthCheck>("HealthChecks");
+                    this._HealthChecks = base.CreateQuery<Net.Appclusive.Public.Domain.Diagnostics.HealthCheck>("HealthChecks");
                 }
                 return this._HealthChecks;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<HealthCheck> _HealthChecks;
+        private global::System.Data.Services.Client.DataServiceQuery<Net.Appclusive.Public.Domain.Diagnostics.HealthCheck> _HealthChecks;
+        /// <summary>
+        /// There are no comments for PublicEntityDetailss in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToPublicEntityDetailss(PublicEntityDetails publicEntityDetails)
+        {
+            base.AddObject("PublicEntityDetailss", publicEntityDetails);
+        }
         /// <summary>
         /// There are no comments for CacheItems in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToCacheItems(CacheItem cacheItem)
+        public void AddToCacheItems(Net.Appclusive.Public.Domain.Diagnostics.CacheItem cacheItem)
         {
             base.AddObject("CacheItems", cacheItem);
         }
@@ -132,7 +157,7 @@ namespace Net.Appclusive.Api.Diagnostics
         /// There are no comments for WorkflowInstances in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToWorkflowInstances(WorkflowInstance workflowInstance)
+        public void AddToWorkflowInstances(Net.Appclusive.Public.Domain.Diagnostics.WorkflowInstance workflowInstance)
         {
             base.AddObject("WorkflowInstances", workflowInstance);
         }
@@ -140,7 +165,7 @@ namespace Net.Appclusive.Api.Diagnostics
         /// There are no comments for HealthChecks in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToHealthChecks(HealthCheck healthCheck)
+        public void AddToHealthChecks(Net.Appclusive.Public.Domain.Diagnostics.HealthCheck healthCheck)
         {
             base.AddObject("HealthChecks", healthCheck);
         }
@@ -153,90 +178,103 @@ namespace Net.Appclusive.Api.Diagnostics
             private const string ModelPart0 = "<edmx:Edmx Version=\"1.0\" xmlns:edmx=\"http://schemas.microsoft.com/ado/2007/06/edm" +
                 "x\"><edmx:DataServices m:DataServiceVersion=\"3.0\" m:MaxDataServiceVersion=\"3.0\" x" +
                 "mlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\"><Schema " +
-                "Namespace=\"Net.Appclusive.Public.Domain.Diagnostics\" xmlns=\"http://schemas.micro" +
-                "soft.com/ado/2009/11/edm\"><EntityType Name=\"CacheItem\"><Key><PropertyRef Name=\"I" +
-                "d\" /></Key><Property Name=\"Value\" Type=\"Edm.String\" Nullable=\"false\" /><Property" +
-                " Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.S" +
-                "tring\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Navi" +
-                "gationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_App" +
-                "clusive_Public_Domain_Diagnostics_CacheItem_Details_Net_Appclusive_Public_Domain" +
+                "Namespace=\"Net.Appclusive.Public.Domain\" xmlns=\"http://schemas.microsoft.com/ado" +
+                "/2009/11/edm\"><EntityType Name=\"PublicEntityDetails\"><Key><PropertyRef Name=\"Row" +
+                "Version\" /></Key><Property Name=\"Tid\" Type=\"Edm.Guid\" Nullable=\"false\" /><Proper" +
+                "ty Name=\"CreatedById\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Modifi" +
+                "edById\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Created\" Type=\"Edm.D" +
+                "ateTimeOffset\" Nullable=\"false\" /><Property Name=\"Modified\" Type=\"Edm.DateTimeOf" +
+                "fset\" Nullable=\"false\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=" +
+                "\"false\" /></EntityType><Association Name=\"Net_Appclusive_Public_Domain_Diagnosti" +
+                "cs_CacheItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPar" +
+                "tner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=\"Details" +
+                "\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Diagnostics.Cach" +
+                "eItem\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association><Association Na" +
+                "me=\"Net_Appclusive_Public_Domain_Diagnostics_WorkflowInstance_Details_Net_Appclu" +
+                "sive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive" +
+                ".Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Ty" +
+                "pe=\"Net.Appclusive.Public.Domain.Diagnostics.WorkflowInstance\" Role=\"DetailsPart" +
+                "ner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusive_Publi" +
+                "c_Domain_Diagnostics_HealthCheck_Details_Net_Appclusive_Public_Domain_PublicEnti" +
+                "tyDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDe" +
+                "tails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Dom" +
+                "ain.Diagnostics.HealthCheck\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Assoc" +
+                "iation></Schema><Schema Namespace=\"Net.Appclusive.Public.Domain.Diagnostics\" xml" +
+                "ns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityType Name=\"CacheItem\"><" +
+                "Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"Value\" Type=\"Edm.String\" Null" +
+                "able=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property" +
+                " Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Description\" T" +
+                "ype=\"Edm.String\" /><NavigationProperty Name=\"Details\" Relationship=\"Net.Appclusi" +
+                "ve.Public.Domain.Net_Appclusive_Public_Domain_Diagnostics_CacheItem_Details_Net_" +
+                "Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" Fr" +
+                "omRole=\"DetailsPartner\" /></EntityType><EntityType Name=\"WorkflowInstance\"><Key>" +
+                "<PropertyRef Name=\"Id\" /></Key><Property Name=\"WorkflowInstanceId\" Type=\"Edm.Gui" +
+                "d\" Nullable=\"false\" /><Property Name=\"SurrogateInstanceId\" Type=\"Edm.Int64\" Null" +
+                "able=\"false\" /><Property Name=\"SurrogateLockOwnerId\" Type=\"Edm.Int64\" /><Propert" +
+                "y Name=\"PrimitiveDataProperties\" Type=\"Edm.String\" /><Property Name=\"ComplexData" +
+                "Properties\" Type=\"Edm.String\" /><Property Name=\"WriteOnlyPrimitiveDataProperties" +
+                "\" Type=\"Edm.String\" /><Property Name=\"WriteOnlyComplexDataProperties\" Type=\"Edm." +
+                "String\" /><Property Name=\"MetadataProperties\" Type=\"Edm.String\" /><Property Name" +
+                "=\"DataEncodingOption\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"Meta" +
+                "dataEncodingOption\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"Versio" +
+                "n\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"PendingTimer\" Type=\"Edm.D" +
+                "ateTimeOffset\" /><Property Name=\"WorkflowHostType\" Type=\"Edm.Guid\" Nullable=\"fal" +
+                "se\" /><Property Name=\"ServiceDeploymentId\" Type=\"Edm.Int64\" /><Property Name=\"Su" +
+                "spensionExceptionName\" Type=\"Edm.String\" /><Property Name=\"SuspensionReason\" Typ" +
+                "e=\"Edm.String\" /><Property Name=\"BlockingBookmarks\" Type=\"Edm.String\" /><Propert" +
+                "y Name=\"LastMachineRunOn\" Type=\"Edm.String\" /><Property Name=\"IsInitialized\" Typ" +
+                "e=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"IsSuspended\" Type=\"Edm.Boolea" +
+                "n\" Nullable=\"false\" /><Property Name=\"IsReadyToRun\" Type=\"Edm.Boolean\" Nullable=" +
+                "\"false\" /><Property Name=\"IsCompleted\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Pr" +
+                "operty Name=\"SurrogateIdentityId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property " +
+                "Name=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.St" +
+                "ring\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Navig" +
+                "ationProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appc" +
+                "lusive_Public_Domain_Diagnostics_WorkflowInstance_Details_Net_Appclusive_Public_" +
+                "Domain_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPar" +
+                "tner\" /></EntityType><EntityType Name=\"HealthCheck\"><Key><PropertyRef Name=\"Id\" " +
+                "/></Key><Property Name=\"Status\" Type=\"Edm.String\" Nullable=\"false\" /><Property N" +
+                "ame=\"Id\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.Str" +
+                "ing\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Naviga" +
+                "tionProperty Name=\"Details\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appcl" +
+                "usive_Public_Domain_Diagnostics_HealthCheck_Details_Net_Appclusive_Public_Domain" +
                 "_PublicEntityDetails_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" " +
-                "/></EntityType><EntityType Name=\"WorkflowInstance\"><Key><PropertyRef Name=\"Id\" /" +
-                "></Key><Property Name=\"WorkflowInstanceId\" Type=\"Edm.Guid\" Nullable=\"false\" /><P" +
-                "roperty Name=\"SurrogateInstanceId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property" +
-                " Name=\"SurrogateLockOwnerId\" Type=\"Edm.Int64\" /><Property Name=\"PrimitiveDataPro" +
-                "perties\" Type=\"Edm.String\" /><Property Name=\"ComplexDataProperties\" Type=\"Edm.St" +
-                "ring\" /><Property Name=\"WriteOnlyPrimitiveDataProperties\" Type=\"Edm.String\" /><P" +
-                "roperty Name=\"WriteOnlyComplexDataProperties\" Type=\"Edm.String\" /><Property Name" +
-                "=\"MetadataProperties\" Type=\"Edm.String\" /><Property Name=\"DataEncodingOption\" Ty" +
-                "pe=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"MetadataEncodingOption\" Type" +
-                "=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"Version\" Type=\"Edm.Int64\" Null" +
-                "able=\"false\" /><Property Name=\"PendingTimer\" Type=\"Edm.DateTimeOffset\" /><Proper" +
-                "ty Name=\"WorkflowHostType\" Type=\"Edm.Guid\" Nullable=\"false\" /><Property Name=\"Se" +
-                "rviceDeploymentId\" Type=\"Edm.Int64\" /><Property Name=\"SuspensionExceptionName\" T" +
-                "ype=\"Edm.String\" /><Property Name=\"SuspensionReason\" Type=\"Edm.String\" /><Proper" +
-                "ty Name=\"BlockingBookmarks\" Type=\"Edm.String\" /><Property Name=\"LastMachineRunOn" +
-                "\" Type=\"Edm.String\" /><Property Name=\"IsInitialized\" Type=\"Edm.Boolean\" Nullable" +
-                "=\"false\" /><Property Name=\"IsSuspended\" Type=\"Edm.Boolean\" Nullable=\"false\" /><P" +
-                "roperty Name=\"IsReadyToRun\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property Name" +
-                "=\"IsCompleted\" Type=\"Edm.Boolean\" Nullable=\"false\" /><Property Name=\"SurrogateId" +
-                "entityId\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int6" +
-                "4\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" /" +
-                "><Property Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"Deta" +
-                "ils\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Dia" +
-                "gnostics_WorkflowInstance_Details_Net_Appclusive_Public_Domain_PublicEntityDetai" +
-                "ls_DetailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType><En" +
-                "tityType Name=\"HealthCheck\"><Key><PropertyRef Name=\"Id\" /></Key><Property Name=\"" +
-                "Status\" Type=\"Edm.String\" Nullable=\"false\" /><Property Name=\"Id\" Type=\"Edm.Int64" +
-                "\" Nullable=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" />" +
-                "<Property Name=\"Description\" Type=\"Edm.String\" /><NavigationProperty Name=\"Detai" +
-                "ls\" Relationship=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Diag" +
-                "nostics_HealthCheck_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_Det" +
-                "ailsPartner\" ToRole=\"Details\" FromRole=\"DetailsPartner\" /></EntityType></Schema>" +
-                "<Schema Namespace=\"Net.Appclusive.Public.Domain\" xmlns=\"http://schemas.microsoft" +
-                ".com/ado/2009/11/edm\"><EntityType Name=\"PublicEntityDetails\"><Key><PropertyRef N" +
-                "ame=\"RowVersion\" /></Key><Property Name=\"Tid\" Type=\"Edm.Guid\" Nullable=\"false\" /" +
-                "><Property Name=\"CreatedById\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name" +
-                "=\"ModifiedById\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"Created\" Typ" +
-                "e=\"Edm.DateTimeOffset\" Nullable=\"false\" /><Property Name=\"Modified\" Type=\"Edm.Da" +
-                "teTimeOffset\" Nullable=\"false\" /><Property Name=\"RowVersion\" Type=\"Edm.Binary\" N" +
-                "ullable=\"false\" /></EntityType><Association Name=\"Net_Appclusive_Public_Domain_D" +
-                "iagnostics_CacheItem_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_De" +
-                "tailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.PublicEntityDetails\" Role=" +
-                "\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Public.Domain.Diagnost" +
-                "ics.CacheItem\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /></Association><Associ" +
-                "ation Name=\"Net_Appclusive_Public_Domain_Diagnostics_WorkflowInstance_Details_Ne" +
-                "t_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End Type=\"Net.Ap" +
-                "pclusive.Public.Domain.PublicEntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" /" +
-                "><End Type=\"Net.Appclusive.Public.Domain.Diagnostics.WorkflowInstance\" Role=\"Det" +
-                "ailsPartner\" Multiplicity=\"0..1\" /></Association><Association Name=\"Net_Appclusi" +
-                "ve_Public_Domain_Diagnostics_HealthCheck_Details_Net_Appclusive_Public_Domain_Pu" +
-                "blicEntityDetails_DetailsPartner\"><End Type=\"Net.Appclusive.Public.Domain.Public" +
-                "EntityDetails\" Role=\"Details\" Multiplicity=\"0..1\" /><End Type=\"Net.Appclusive.Pu" +
-                "blic.Domain.Diagnostics.HealthCheck\" Role=\"DetailsPartner\" Multiplicity=\"0..1\" /" +
-                "></Association></Schema><Schema Namespace=\"Default\" xmlns=\"http://schemas.micros" +
+                "/></EntityType></Schema><Schema Namespace=\"Default\" xmlns=\"http://schemas.micros" +
                 "oft.com/ado/2009/11/edm\"><EntityContainer Name=\"Diagnostics\" m:IsDefaultEntityCo" +
-                "ntainer=\"true\"><EntitySet Name=\"CacheItems\" EntityType=\"Net.Appclusive.Public.Do" +
-                "main.Diagnostics.CacheItem\" /><EntitySet Name=\"WorkflowInstances\" EntityType=\"Ne" +
-                "t.Appclusive.Public.Domain.Diagnostics.WorkflowInstance\" /><EntitySet Name=\"Heal" +
-                "thChecks\" EntityType=\"Net.Appclusive.Public.Domain.Diagnostics.HealthCheck\" /><F" +
-                "unctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Diagnosti" +
-                "cs.CacheItem\" IsBindable=\"true\" EntitySet=\"CacheItems\" m:IsAlwaysBindable=\"true\"" +
-                "><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domai" +
-                "n.Diagnostics.CacheItem)\" Nullable=\"false\" /></FunctionImport><FunctionImport Na" +
-                "me=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Diagnostics.WorkflowInsta" +
-                "nce\" IsBindable=\"true\" EntitySet=\"WorkflowInstances\" m:IsAlwaysBindable=\"true\"><" +
-                "Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain." +
-                "Diagnostics.WorkflowInstance)\" Nullable=\"false\" /></FunctionImport><FunctionImpo" +
-                "rt Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Diagnostics.HealthCh" +
-                "eck\" IsBindable=\"true\" EntitySet=\"HealthChecks\" m:IsAlwaysBindable=\"true\"><Param" +
-                "eter Name=\"bindingParameter\" Type=\"Collection(Net.Appclusive.Public.Domain.Diagn" +
-                "ostics.HealthCheck)\" Nullable=\"false\" /></FunctionImport></EntityContainer></Sch" +
-                "ema></edmx:DataServices></edmx:Edmx>";
+                "ntainer=\"true\"><EntitySet Name=\"PublicEntityDetailss\" EntityType=\"Net.Appclusive" +
+                ".Public.Domain.PublicEntityDetails\" /><EntitySet Name=\"CacheItems\" EntityType=\"N" +
+                "et.Appclusive.Public.Domain.Diagnostics.CacheItem\" /><EntitySet Name=\"WorkflowIn" +
+                "stances\" EntityType=\"Net.Appclusive.Public.Domain.Diagnostics.WorkflowInstance\" " +
+                "/><EntitySet Name=\"HealthChecks\" EntityType=\"Net.Appclusive.Public.Domain.Diagno" +
+                "stics.HealthCheck\" /><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive." +
+                "Public.Domain.Diagnostics.CacheItem\" IsBindable=\"true\" EntitySet=\"CacheItems\" m:" +
+                "IsAlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net." +
+                "Appclusive.Public.Domain.Diagnostics.CacheItem)\" Nullable=\"false\" /></FunctionIm" +
+                "port><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Domain.Di" +
+                "agnostics.WorkflowInstance\" IsBindable=\"true\" EntitySet=\"WorkflowInstances\" m:Is" +
+                "AlwaysBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Ap" +
+                "pclusive.Public.Domain.Diagnostics.WorkflowInstance)\" Nullable=\"false\" /></Funct" +
+                "ionImport><FunctionImport Name=\"Template\" ReturnType=\"Net.Appclusive.Public.Doma" +
+                "in.Diagnostics.HealthCheck\" IsBindable=\"true\" EntitySet=\"HealthChecks\" m:IsAlway" +
+                "sBindable=\"true\"><Parameter Name=\"bindingParameter\" Type=\"Collection(Net.Appclus" +
+                "ive.Public.Domain.Diagnostics.HealthCheck)\" Nullable=\"false\" /></FunctionImport>" +
+                "<AssociationSet Name=\"Net_Appclusive_Public_Domain_Diagnostics_CacheItem_Details" +
+                "_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet\" Association" +
+                "=\"Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Diagnostics_CacheIte" +
+                "m_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner\"><End " +
+                "Role=\"DetailsPartner\" EntitySet=\"CacheItems\" /><End Role=\"Details\" EntitySet=\"Pu" +
+                "blicEntityDetailss\" /></AssociationSet><AssociationSet Name=\"Net_Appclusive_Publ" +
+                "ic_Domain_Diagnostics_WorkflowInstance_Details_Net_Appclusive_Public_Domain_Publ" +
+                "icEntityDetails_DetailsPartnerSet\" Association=\"Net.Appclusive.Public.Domain.Net" +
+                "_Appclusive_Public_Domain_Diagnostics_WorkflowInstance_Details_Net_Appclusive_Pu" +
+                "blic_Domain_PublicEntityDetails_DetailsPartner\"><End Role=\"DetailsPartner\" Entit" +
+                "ySet=\"WorkflowInstances\" /><End Role=\"Details\" EntitySet=\"P";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+            private const string ModelPart1 = @"ublicEntityDetailss"" /></AssociationSet><AssociationSet Name=""Net_Appclusive_Public_Domain_Diagnostics_HealthCheck_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartnerSet"" Association=""Net.Appclusive.Public.Domain.Net_Appclusive_Public_Domain_Diagnostics_HealthCheck_Details_Net_Appclusive_Public_Domain_PublicEntityDetails_DetailsPartner""><End Role=""DetailsPartner"" EntitySet=""HealthChecks"" /><End Role=""Details"" EntitySet=""PublicEntityDetailss"" /></AssociationSet></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
-                return string.Concat(ModelPart0);
+                return string.Concat(ModelPart0, ModelPart1);
             }
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             public static global::Microsoft.Data.Edm.IEdmModel GetInstance()
@@ -264,6 +302,193 @@ namespace Net.Appclusive.Api.Diagnostics
             }
         }
     }
+    /// <summary>
+    /// There are no comments for Net.Appclusive.Public.Domain.PublicEntityDetails in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// RowVersion
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("PublicEntityDetailss")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("RowVersion")]
+    public partial class PublicEntityDetails : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new PublicEntityDetails object.
+        /// </summary>
+        /// <param name="tid">Initial value of Tid.</param>
+        /// <param name="createdById">Initial value of CreatedById.</param>
+        /// <param name="modifiedById">Initial value of ModifiedById.</param>
+        /// <param name="created">Initial value of Created.</param>
+        /// <param name="modified">Initial value of Modified.</param>
+        /// <param name="rowVersion">Initial value of RowVersion.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static PublicEntityDetails CreatePublicEntityDetails(global::System.Guid tid, long createdById, long modifiedById, global::System.DateTimeOffset created, global::System.DateTimeOffset modified, byte[] rowVersion)
+        {
+            PublicEntityDetails publicEntityDetails = new PublicEntityDetails();
+            publicEntityDetails.Tid = tid;
+            publicEntityDetails.CreatedById = createdById;
+            publicEntityDetails.ModifiedById = modifiedById;
+            publicEntityDetails.Created = created;
+            publicEntityDetails.Modified = modified;
+            publicEntityDetails.RowVersion = rowVersion;
+            return publicEntityDetails;
+        }
+        /// <summary>
+        /// There are no comments for Property Tid in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Guid Tid
+        {
+            get
+            {
+                return this._Tid;
+            }
+            set
+            {
+                this.OnTidChanging(value);
+                this._Tid = value;
+                this.OnTidChanged();
+                this.OnPropertyChanged("Tid");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Guid _Tid;
+        partial void OnTidChanging(global::System.Guid value);
+        partial void OnTidChanged();
+        /// <summary>
+        /// There are no comments for Property CreatedById in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long CreatedById
+        {
+            get
+            {
+                return this._CreatedById;
+            }
+            set
+            {
+                this.OnCreatedByIdChanging(value);
+                this._CreatedById = value;
+                this.OnCreatedByIdChanged();
+                this.OnPropertyChanged("CreatedById");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _CreatedById;
+        partial void OnCreatedByIdChanging(long value);
+        partial void OnCreatedByIdChanged();
+        /// <summary>
+        /// There are no comments for Property ModifiedById in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long ModifiedById
+        {
+            get
+            {
+                return this._ModifiedById;
+            }
+            set
+            {
+                this.OnModifiedByIdChanging(value);
+                this._ModifiedById = value;
+                this.OnModifiedByIdChanged();
+                this.OnPropertyChanged("ModifiedById");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _ModifiedById;
+        partial void OnModifiedByIdChanging(long value);
+        partial void OnModifiedByIdChanged();
+        /// <summary>
+        /// There are no comments for Property Created in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.DateTimeOffset Created
+        {
+            get
+            {
+                return this._Created;
+            }
+            set
+            {
+                this.OnCreatedChanging(value);
+                this._Created = value;
+                this.OnCreatedChanged();
+                this.OnPropertyChanged("Created");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.DateTimeOffset _Created;
+        partial void OnCreatedChanging(global::System.DateTimeOffset value);
+        partial void OnCreatedChanged();
+        /// <summary>
+        /// There are no comments for Property Modified in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.DateTimeOffset Modified
+        {
+            get
+            {
+                return this._Modified;
+            }
+            set
+            {
+                this.OnModifiedChanging(value);
+                this._Modified = value;
+                this.OnModifiedChanged();
+                this.OnPropertyChanged("Modified");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.DateTimeOffset _Modified;
+        partial void OnModifiedChanging(global::System.DateTimeOffset value);
+        partial void OnModifiedChanged();
+        /// <summary>
+        /// There are no comments for Property RowVersion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+}
+// Original file name:
+// Generation date: 01/16/2018 8:20:06 AM
+namespace Net.Appclusive.Public.Domain.Diagnostics
+{
+    
     /// <summary>
     /// There are no comments for Net.Appclusive.Public.Domain.Diagnostics.CacheItem in the schema.
     /// </summary>
@@ -381,7 +606,7 @@ namespace Net.Appclusive.Api.Diagnostics
         /// There are no comments for Details in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        public Net.Appclusive.Api.Diagnostics.PublicEntityDetails Details
         {
             get
             {
@@ -394,7 +619,7 @@ namespace Net.Appclusive.Api.Diagnostics
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        private Net.Appclusive.Api.Diagnostics.PublicEntityDetails _Details;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1027,7 +1252,7 @@ namespace Net.Appclusive.Api.Diagnostics
         /// There are no comments for Details in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        public Net.Appclusive.Api.Diagnostics.PublicEntityDetails Details
         {
             get
             {
@@ -1040,7 +1265,7 @@ namespace Net.Appclusive.Api.Diagnostics
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        private Net.Appclusive.Api.Diagnostics.PublicEntityDetails _Details;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -1169,7 +1394,7 @@ namespace Net.Appclusive.Api.Diagnostics
         /// There are no comments for Details in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public Net.Appclusive.Public.Domain.PublicEntityDetails Details
+        public Net.Appclusive.Api.Diagnostics.PublicEntityDetails Details
         {
             get
             {
@@ -1182,7 +1407,7 @@ namespace Net.Appclusive.Api.Diagnostics
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private Net.Appclusive.Public.Domain.PublicEntityDetails _Details;
+        private Net.Appclusive.Api.Diagnostics.PublicEntityDetails _Details;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
