@@ -17,7 +17,6 @@
 using System;
 using System.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Net.Appclusive.Api.Diagnostics;
 using Telerik.JustMock;
 using Net.Appclusive.Public.Domain.Diagnostics;
 

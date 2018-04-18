@@ -18,7 +18,6 @@ extern alias Api;
 using System;
 using System.Collections.Generic;
 using System.Data.Services.Client;
-using System.Linq;
 using Api::Net.Appclusive.Api;
 using Api::Net.Appclusive.Public.Domain.Identity;
 using biz.dfch.CS.Testing.Attributes;
