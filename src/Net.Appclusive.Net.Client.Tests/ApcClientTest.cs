@@ -42,7 +42,7 @@ namespace Net.Appclusive.Net.Client.Tests
 
         [TestMethod]
         [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+apiBaseUri")]
-        public void InstantiateApcClientWithEmptyApiBaseUriThrowsContractException()
+        public void InstantiateApcClientWithWhitespaceApiBaseUriThrowsContractException()
         {
             // Arrange
 
@@ -104,7 +104,7 @@ namespace Net.Appclusive.Net.Client.Tests
 
         [TestMethod]
         [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+oAuth2Token")]
-        public void LoginWithEmptyOAuth2TokenThrowsContractException()
+        public void LoginWithWhitespaceOAuth2TokenThrowsContractException()
         {
             // Arrange
             var apcClient = new ApcClient(API_BASE_URI);
@@ -116,7 +116,7 @@ namespace Net.Appclusive.Net.Client.Tests
         }
 
         [TestMethod]
-        public void LoginWithValidOAuth2TokenSetsCredentialAndReturnsTrue()
+        public void LoginWithInvalidOAuth2TokenCallsBearerLoginEndpointSetsIsLoggedInToFalseAndReturnsFalse()
         {
             // Arrange
             var apcClient = new ApcClient(API_BASE_URI);
@@ -125,13 +125,44 @@ namespace Net.Appclusive.Net.Client.Tests
             var result = apcClient.Login(OAUTH2_TOKEN);
 
             // Assert
+            Assert.IsFalse(result);
+            Assert.IsNotNull(apcClient);
 
+            Assert.IsNull(apcClient.Credentials);
+            Assert.IsFalse(apcClient.IsLoggedIn);
+        }
+
+        [TestMethod]
+        public void LoginWithValidOAuth2TokenCallsBearerLoginEndpointSetsCredentialSetsIsLoggedInToTrueAndReturnsTrue()
+        {
+            // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Act
+            var result = apcClient.Login(OAUTH2_TOKEN);
+
+            // Assert
             Assert.IsTrue(result);
             Assert.IsNotNull(apcClient);
+
             Assert.IsNotNull(apcClient.Credentials);
             var credential = apcClient.Credentials as NetworkCredential;
             Assert.IsNotNull(credential);
             Assert.AreEqual(Authentication.AUTHORIZATION_BAERER_USER_NAME, credential.UserName);
+
+            Assert.IsTrue(apcClient.IsLoggedIn);
+        }
+
+        // DFTODO - tests for basic login!!!
+
+        [TestMethod]
+        public void LogoutCallsLogoutEndpointAndSetsCredentialToNullAndIsLoggedInToFalse()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
         }
     }
 }
