@@ -160,6 +160,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Net.Appclusive.Public\src\Net.Appclusive.Public\Net.Appclusive.Public.csproj">
+      <Project>{5ed5a163-5cbf-4a5b-913a-51bce3e1b6da}</Project>
+      <Name>Net.Appclusive.Public</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Net.Appclusive.Api\Net.Appclusive.Api.csproj">
       <Project>{85cba151-145f-46ad-8175-e12c98a5951d}</Project>
       <Name>Net.Appclusive.Api</Name>
