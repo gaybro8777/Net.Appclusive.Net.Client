@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyDescription("C#/.Net and PowerShell Clients for the Appclusive Blueprint Modelling and Automation Engine")]
 [assembly: AssemblyCompany("d-fens GmbH")]
-[assembly: AssemblyCopyright("Copyright © 2013-2017 d-fens GmbH")]
+[assembly: AssemblyCopyright("Copyright © 2013-2018 d-fens GmbH")]
 [assembly: AssemblyTrademark("The d-fens logo is a registered trademark in the European Union and/or other countries. Appclusive is a registered trademark in Switzerland and/or other countries.")]
 [assembly: AssemblyCulture("")]
 
