@@ -54,13 +54,17 @@ namespace Net.Appclusive.Net.Client
             ApiBaseUri = new Uri(apiBaseUri);
         }
 
-        public void Login(string oAuth2Token)
+        public bool Login(string oAuth2Token)
         {
-            Login(Authentication.AUTHORIZATION_BAERER_USER_NAME, oAuth2Token);
+            Contract.Requires(!string.IsNullOrWhiteSpace(oAuth2Token));
+
+            return Login(Authentication.AUTHORIZATION_BAERER_USER_NAME, oAuth2Token);
         }
 
         public bool Login(string username, string password)
         {
+            Contract.Requires(!string.IsNullOrWhiteSpace(username));
+
             var secureString = new SecureString();
             password.ToCharArray().ToList().ForEach(c => secureString.AppendChar(c));
             Credentials = new NetworkCredential(username, secureString);
@@ -69,11 +73,11 @@ namespace Net.Appclusive.Net.Client
 
             // var loginEndpoint = ResolveLoginEndpoint(Credential);
 
-            _logger.TraceEvent(TraceEventType.Information, (int)Logging.EventId.Start, Messages.ApcClient_Login__START);
+            _logger.TraceEvent(TraceEventType.Information, (int)Logging.EventId.Start, Messages.ApcClient_Login__START, ApiBaseUri);
 
             // dataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)].InvokeEntitySetActionWithSingleResult<User>(nameof(Api::Net.Appclusive.Api.Core.Core.Authentications), loginEndpoint, null);
 
-            _logger.TraceEvent(TraceEventType.Information, (int)Logging.EventId.Stop, Messages.ApcClient_Login__SUCCEEDED);
+            _logger.TraceEvent(TraceEventType.Information, (int)Logging.EventId.Stop, Messages.ApcClient_Login__SUCCEEDED, ApiBaseUri);
 
             return true;
         }

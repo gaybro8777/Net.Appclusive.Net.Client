@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
+using System.Net;
 using biz.dfch.CS.Testing.Attributes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Net.Appclusive.Api.Constants;
 
 namespace Net.Appclusive.Net.Client.Tests
 {
@@ -23,6 +25,7 @@ namespace Net.Appclusive.Net.Client.Tests
     public class ApcClientTest
     {
         private const string API_BASE_URI = "http://appclusive/api";
+        private const string OAUTH2_TOKEN = "ey8324ac79df78==";
 
         [TestMethod]
         [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+apiBaseUri")]
@@ -35,7 +38,6 @@ namespace Net.Appclusive.Net.Client.Tests
 
 
             // Assert
-
         }
 
         [TestMethod]
@@ -49,7 +51,6 @@ namespace Net.Appclusive.Net.Client.Tests
 
 
             // Assert
-
         }
 
         [TestMethod]
@@ -62,7 +63,6 @@ namespace Net.Appclusive.Net.Client.Tests
             var apcClient = new ApcClient("arbitrary");
 
             // Assert
-
         }
 
         [TestMethod]
@@ -75,7 +75,6 @@ namespace Net.Appclusive.Net.Client.Tests
             var apcClient = new ApcClient("/arbitrary");
 
             // Assert
-
         }
 
         [TestMethod]
@@ -88,6 +87,51 @@ namespace Net.Appclusive.Net.Client.Tests
 
             // Assert
             Assert.AreEqual(API_BASE_URI, apcClient.ApiBaseUri.AbsoluteUri);
+        }
+
+        [TestMethod]
+        [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+oAuth2Token")]
+        public void LoginWithNullOAuth2TokenThrowsContractException()
+        {
+            // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Act
+            apcClient.Login(null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+oAuth2Token")]
+        public void LoginWithEmptyOAuth2TokenThrowsContractException()
+        {
+            // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Act
+            apcClient.Login(" ");
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void LoginWithValidOAuth2TokenSetsCredentialAndReturnsTrue()
+        {
+            // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Act
+            var result = apcClient.Login(OAUTH2_TOKEN);
+
+            // Assert
+
+            Assert.IsTrue(result);
+            Assert.IsNotNull(apcClient);
+            Assert.IsNotNull(apcClient.Credentials);
+            var credential = apcClient.Credentials as NetworkCredential;
+            Assert.IsNotNull(credential);
+            Assert.AreEqual(Authentication.AUTHORIZATION_BAERER_USER_NAME, credential.UserName);
         }
     }
 }

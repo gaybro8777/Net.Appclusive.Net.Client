@@ -159,6 +159,10 @@
     <Compile Include="Test\TestCodeContracts.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Net.Appclusive.Api\Net.Appclusive.Api.csproj">
+      <Project>{85cba151-145f-46ad-8175-e12c98a5951d}</Project>
+      <Name>Net.Appclusive.Api</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Net.Appclusive.Net.Client\Net.Appclusive.Net.Client.csproj">
       <Project>{41b8af8e-4de1-4c98-a581-932b4d6daa1f}</Project>
       <Name>Net.Appclusive.Net.Client</Name>
