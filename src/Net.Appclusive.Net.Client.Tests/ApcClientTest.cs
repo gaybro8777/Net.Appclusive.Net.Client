@@ -21,17 +21,68 @@ namespace Net.Appclusive.Net.Client.Tests
     [TestClass]
     public class ApcClientTest
     {
+        private const string API_BASE_URI = "http://appclusive/api";
+
         [TestMethod]
-        public void DoSomething()
+        public void InstantiateApcClientWithNullApiBaseUriThrowsContractException()
         {
             // Arrange
 
-
             // Act
+            var apcClient = new ApcClient(null);
 
 
             // Assert
 
+        }
+
+        [TestMethod]
+        public void InstantiateApcClientWithEmptyApiBaseUriThrowsContractException()
+        {
+            // Arrange
+
+            // Act
+            var apcClient = new ApcClient("");
+
+
+            // Assert
+
+        }
+
+        [TestMethod]
+        public void InstantiateApcClientWithNonUriStringAsApiBaseUriThrowsContractException()
+        {
+            // Arrange
+
+            // Act
+            var apcClient = new ApcClient("arbitrary");
+
+            // Assert
+
+        }
+
+        [TestMethod]
+        public void InstantiateApcClientWithNonAbsoluteUriStringAsApiBaseUriThrowsContractException()
+        {
+            // Arrange
+
+            // Act
+            var apcClient = new ApcClient("/arbitrary");
+
+            // Assert
+
+        }
+
+        [TestMethod]
+        public void InstantiateApcClientWithValidApiBaseUriSucceedsAndSetsApiBaseUriPropertyAccordingly()
+        {
+            // Arrange
+
+            // Act
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Assert
+            Assert.AreEqual(API_BASE_URI, apcClient.ApiBaseUri.AbsoluteUri);
         }
     }
 }
