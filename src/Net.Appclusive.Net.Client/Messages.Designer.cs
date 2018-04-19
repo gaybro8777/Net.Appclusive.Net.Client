@@ -19,7 +19,7 @@ namespace Net.Appclusive.Net.Client {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Messages {
@@ -57,6 +57,33 @@ namespace Net.Appclusive.Net.Client {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logging in to Appclusive API (API base URI: &apos;{0}&apos;) FAILED..
+        /// </summary>
+        internal static string ApcClient_Login__FAILED {
+            get {
+                return ResourceManager.GetString("ApcClient_Login__FAILED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logging in to Appclusive API (API base URI: &apos;{0}&apos;) ....
+        /// </summary>
+        internal static string ApcClient_Login__START {
+            get {
+                return ResourceManager.GetString("ApcClient_Login__START", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logging in to Appclusive API (API base URI: &apos;{0}&apos;) SUCCEEDED..
+        /// </summary>
+        internal static string ApcClient_Login__SUCCEEDED {
+            get {
+                return ResourceManager.GetString("ApcClient_Login__SUCCEEDED", resourceCulture);
             }
         }
     }
