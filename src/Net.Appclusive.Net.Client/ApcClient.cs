@@ -14,42 +14,52 @@
  * limitations under the License.
  */
 
-using Net.Appclusive.Api.Constants;
 using System;
+using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Net;
 using System.Security;
+using biz.dfch.CS.Commons.Diagnostics;
+using Net.Appclusive.Public.Constants;
+using Authentication = Net.Appclusive.Api.Constants.Authentication;
+using TraceSource = biz.dfch.CS.Commons.Diagnostics.TraceSource;
 
 namespace Net.Appclusive.Net.Client
 {
     public class ApcClient
     {
+        private static readonly TraceSource _logger = Logger.Get(Logging.TraceSourceName.APPCLUSIVE_NET_CLIENT);
+
+        /// <summary>
+        /// Base URI of the Appclusive API
+        /// </summary>
         public Uri ApiBaseUri { get; protected set; }
 
-        // DFTODO - AuthenticationInformation (protected setter)
-        private ICredentials Credentials {get; set; }
-
-        // DFTODO - TenantId
-        // DFTODO - support tenant switch by setting tenantId differently
+        /// <summary>
+        /// Credentials for authentication purposes
+        /// </summary>
+        public ICredentials Credentials { get; protected set; }
         
         /// <summary>
-        /// Indicates that the call to the /login endpoint succeeded
-        /// with the provided authentication information.
+        /// Indicates, if the login succeeded using the provided API base URI in combination with the credentials
         /// </summary>
         public bool IsLoggedIn { get; protected set; }
 
-        public ApcClient(Uri apiBaseUri)
+        public ApcClient(string apiBaseUri)
         {
-            ApiBaseUri = apiBaseUri;
+            Contract.Requires(!string.IsNullOrEmpty(apiBaseUri));
+            Contract.Requires(Uri.IsWellFormedUriString(apiBaseUri, UriKind.Absolute));
+
+            ApiBaseUri = new Uri(apiBaseUri);
         }
 
-        // DFTODO - login -> uri, authenticationInformation
-        public void Authenticate(string oAuth2Token)
+        public void Login(string oAuth2Token)
         {
-            Authenticate(Authentication.AUTHORIZATION_BAERER_USER_NAME, oAuth2Token);
+            Login(Authentication.AUTHORIZATION_BAERER_USER_NAME, oAuth2Token);
         }
 
-        public void Authenticate(string username, string password)
+        public bool Login(string username, string password)
         {
             var secureString = new SecureString();
             password.ToCharArray().ToList().ForEach(c => secureString.AppendChar(c));
@@ -59,15 +69,36 @@ namespace Net.Appclusive.Net.Client
 
             // var loginEndpoint = ResolveLoginEndpoint(Credential);
 
-            // DFTODO - add logging
+            _logger.TraceEvent(TraceEventType.Information, (int)Logging.EventId.Start, Messages.ApcClient_Login__START);
 
             // dataServiceContexts[nameof(Api::Net.Appclusive.Api.Core.Core)].InvokeEntitySetActionWithSingleResult<User>(nameof(Api::Net.Appclusive.Api.Core.Core.Authentications), loginEndpoint, null);
+
+            _logger.TraceEvent(TraceEventType.Information, (int)Logging.EventId.Stop, Messages.ApcClient_Login__SUCCEEDED);
+
+            return true;
+        }
+
+        public void Logout()
+        {
+            // DFTODO - add logging
+
+            // DFTODO - logout
+            // DFTODO - set isLoggedIn to false
 
             // DFTODO - add logging
         }
 
-        // DFTODO - logout
+        // DFTODO - support tenant switch by setting tenantId differently (either by a property or by a method that sets the tenantId in Contexts)
 
         // DFTODO - CRUD
+        // DFTODO - get by id (entity)
+        // DFTODO - get by id (tenant)
+        // DFTODO - get by filter
+        // DFTODO - attachIfNeeded on update
+
+        // DFTODO - action invocation for single entity (void, single and collection result)
+        // DFTODO - action invocation for entity set (void, single and collection result)
+
+        // DFTODO - get metadata???
     }
 }
