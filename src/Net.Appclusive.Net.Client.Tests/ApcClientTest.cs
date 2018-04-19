@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using biz.dfch.CS.Testing.Attributes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Net.Appclusive.Net.Client.Tests
@@ -24,6 +25,7 @@ namespace Net.Appclusive.Net.Client.Tests
         private const string API_BASE_URI = "http://appclusive/api";
 
         [TestMethod]
+        [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+apiBaseUri")]
         public void InstantiateApcClientWithNullApiBaseUriThrowsContractException()
         {
             // Arrange
@@ -37,12 +39,13 @@ namespace Net.Appclusive.Net.Client.Tests
         }
 
         [TestMethod]
+        [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+apiBaseUri")]
         public void InstantiateApcClientWithEmptyApiBaseUriThrowsContractException()
         {
             // Arrange
 
             // Act
-            var apcClient = new ApcClient("");
+            var apcClient = new ApcClient(" ");
 
 
             // Assert
@@ -50,6 +53,7 @@ namespace Net.Appclusive.Net.Client.Tests
         }
 
         [TestMethod]
+        [ExpectContractFailure(MessagePattern = @"Precondition.+IsWellFormedUriString.+apiBaseUri")]
         public void InstantiateApcClientWithNonUriStringAsApiBaseUriThrowsContractException()
         {
             // Arrange
@@ -62,6 +66,7 @@ namespace Net.Appclusive.Net.Client.Tests
         }
 
         [TestMethod]
+        [ExpectContractFailure(MessagePattern = @"Precondition.+IsWellFormedUriString.+apiBaseUri")]
         public void InstantiateApcClientWithNonAbsoluteUriStringAsApiBaseUriThrowsContractException()
         {
             // Arrange

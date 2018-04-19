@@ -48,7 +48,7 @@ namespace Net.Appclusive.Net.Client
 
         public ApcClient(string apiBaseUri)
         {
-            Contract.Requires(!string.IsNullOrEmpty(apiBaseUri));
+            Contract.Requires(!string.IsNullOrWhiteSpace(apiBaseUri));
             Contract.Requires(Uri.IsWellFormedUriString(apiBaseUri, UriKind.Absolute));
 
             ApiBaseUri = new Uri(apiBaseUri);
