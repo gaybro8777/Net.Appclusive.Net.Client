@@ -149,7 +149,7 @@
       <HintPath>..\packages\Microsoft.PowerShell.5.ReferenceAssemblies.1.0.0\lib\net4\System.Management.Automation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.JustMock, Version=2017.2.821.1, Culture=neutral, PublicKeyToken=721b6c5bc0326b3a, processorArchitecture=MSIL">
+    <Reference Include="Telerik.JustMock, Version=2018.1.117.2, Culture=neutral, PublicKeyToken=721b6c5bc0326b3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\JustMock\Telerik.JustMock.dll</HintPath>
     </Reference>
