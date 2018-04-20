@@ -26,6 +26,8 @@ namespace Net.Appclusive.Net.Client.Tests
     {
         private const string API_BASE_URI = "http://appclusive/api";
         private const string OAUTH2_TOKEN = "ey8324ac79df78==";
+        private const string USERNAME = "ArbitraryUser";
+        private const string PASSWORD = "P@ssw0rd";
 
         [TestMethod]
         [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+apiBaseUri")]
@@ -153,16 +155,110 @@ namespace Net.Appclusive.Net.Client.Tests
             Assert.IsTrue(apcClient.IsLoggedIn);
         }
 
-        // DFTODO - tests for basic login!!!
+        [TestMethod]
+        [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+username")]
+        public void LoginWithNullUsernameThrowsContractException()
+        {
+            // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Act
+            apcClient.Login(null, PASSWORD);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+username")]
+        public void LoginWithWhitespaceUsernameThrowsContractException()
+        {
+            // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Act
+            apcClient.Login(" ", PASSWORD);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+password")]
+        public void LoginWithNullPasswordThrowsContractException()
+        {
+            // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Act
+            apcClient.Login(USERNAME, null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectContractFailure(MessagePattern = @"Precondition.+IsNullOrWhiteSpace.+password")]
+        public void LoginWithWhitespacePasswordThrowsContractException()
+        {
+            // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Act
+            apcClient.Login(USERNAME, " ");
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void LoginWithInvalidUsernamePasswordCombinationCallsBearerLoginEndpointSetsIsLoggedInToFalseAndReturnsFalse()
+        {
+            // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Act
+            var result = apcClient.Login(USERNAME, PASSWORD);
+
+            // Assert
+            Assert.IsFalse(result);
+            Assert.IsNotNull(apcClient);
+
+            Assert.IsNull(apcClient.Credentials);
+            Assert.IsFalse(apcClient.IsLoggedIn);
+        }
+
+        [TestMethod]
+        public void LoginWithValidUsernamePasswordCombinationCallsBearerLoginEndpointSetsCredentialSetsIsLoggedInToTrueAndReturnsTrue()
+        {
+            // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
+
+            // Act
+            var result = apcClient.Login(USERNAME, PASSWORD);
+
+            // Assert
+            Assert.IsTrue(result);
+            Assert.IsNotNull(apcClient);
+
+            Assert.IsNotNull(apcClient.Credentials);
+            var credential = apcClient.Credentials as NetworkCredential;
+            Assert.IsNotNull(credential);
+            Assert.AreEqual(USERNAME, credential.UserName);
+            Assert.AreEqual(PASSWORD, credential.Password);
+
+            Assert.IsTrue(apcClient.IsLoggedIn);
+        }
 
         [TestMethod]
         public void LogoutCallsLogoutEndpointAndSetsCredentialToNullAndIsLoggedInToFalse()
         {
             // Arrange
+            var apcClient = new ApcClient(API_BASE_URI);
 
             // Act
+            apcClient.Logout();
 
             // Assert
+            Assert.IsNotNull(apcClient);
+            Assert.IsFalse(apcClient.IsLoggedIn);
+            Assert.IsNull(apcClient.Credentials);
         }
     }
 }
