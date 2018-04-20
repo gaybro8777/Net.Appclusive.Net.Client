@@ -251,11 +251,14 @@ namespace Net.Appclusive.Net.Client.Tests
         {
             // Arrange
             var apcClient = new ApcClient(API_BASE_URI);
+            var result = apcClient.Login(OAUTH2_TOKEN);
 
             // Act
             apcClient.Logout();
 
             // Assert
+            Assert.IsTrue(result);
+
             Assert.IsNotNull(apcClient);
             Assert.IsFalse(apcClient.IsLoggedIn);
             Assert.IsNull(apcClient.Credentials);

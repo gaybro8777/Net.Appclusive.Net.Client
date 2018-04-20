@@ -64,6 +64,7 @@ namespace Net.Appclusive.Net.Client
         public bool Login(string username, string password)
         {
             Contract.Requires(!string.IsNullOrWhiteSpace(username));
+            Contract.Requires(!string.IsNullOrWhiteSpace(password));
 
             var secureString = new SecureString();
             password.ToCharArray().ToList().ForEach(c => secureString.AppendChar(c));
