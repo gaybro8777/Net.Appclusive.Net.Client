@@ -50,6 +50,7 @@ namespace Net.Appclusive.Net.Client
         {
             Contract.Requires(!string.IsNullOrWhiteSpace(apiBaseUri));
             Contract.Requires(Uri.IsWellFormedUriString(apiBaseUri, UriKind.Absolute));
+            Contract.Ensures(null != ApiBaseUri);
 
             ApiBaseUri = new Uri(apiBaseUri);
         }
@@ -65,6 +66,7 @@ namespace Net.Appclusive.Net.Client
         {
             Contract.Requires(!string.IsNullOrWhiteSpace(username));
             Contract.Requires(!string.IsNullOrWhiteSpace(password));
+            // DFTODO - ensures
 
             var secureString = new SecureString();
             password.ToCharArray().ToList().ForEach(c => secureString.AppendChar(c));
